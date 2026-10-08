@@ -1,0 +1,383 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "nccoig-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "logo_asset": "brand-ncco-ig-logo.png",
+        "brand_color": "#53BDD8",
+        "cta_text_color": "#ffffff",
+        "headline": "<p>Advanced Skin</p><p><em>Protection &amp; Repair</em></p>",
+        "subtext": "Experience invisible gloves technology that protects, hydrates & heals every single day.",
+        "bullet_1": "Eliminates toxic gases & VOCs",
+        "bullet_2": "Built for labs, defense & industry",
+        "bullet_3": "Advanced ionic filtration technology",
+        "cta_label": "Shop Now",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "brand-ncco-ig-hero-card.jpg",
+        "background_asset": "brand-ncco-ig-hero-bg.jpg",
+        "overlay_opacity": 55,
+        "subtext_gap": 180
+      }
+    },
+    "nccoig-about": {
+      "type": "ncco-brand-inline-about",
+      "blocks": {
+        "a1": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-shield.svg",
+            "title": "Proven Protection",
+            "body": "Clinically tested to kill 99.9% of germs & viruses.",
+            "position": "top-right"
+          }
+        },
+        "a2": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-tech.svg",
+            "title": "Clean Formula",
+            "body": "Non-toxic, alcohol-free, and safe for sensitive skin.",
+            "position": "bottom-left"
+          }
+        },
+        "a3": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-design.svg",
+            "title": "Skin First",
+            "body": "Hydrates, repairs, and soothes even for allergy-prone skin.",
+            "position": "bottom-right"
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "eyebrow": "About Us",
+        "heading_part_1": "NCCO-IG",
+        "show_pill_1": true,
+        "heading_part_2": "is powered by science-backed skincare that protects like a glove and heals like a",
+        "show_pill_2": true,
+        "heading_part_3": "treatment all without harsh chemicals.",
+        "accent_color": "#53BDD8"
+      }
+    },
+    "nccoig-ingredients": {
+      "type": "ncco-feature-split",
+      "blocks": {
+        "i1": {
+          "type": "feature",
+          "settings": {
+            "title": "Anti-Viral Complex",
+            "body": "Clinically proven to kill 99.9% of germs and viruses, including human coronavirus."
+          }
+        },
+        "i2": {
+          "type": "feature",
+          "settings": {
+            "title": "Plant-Based Soothing Agents",
+            "body": "Naturally relieves allergy symptoms, redness, and inflammation."
+          }
+        },
+        "i3": {
+          "type": "feature",
+          "settings": {
+            "title": "MoistureLock Technology",
+            "body": "Provides deep, long-lasting hydration while repairing dry and damaged skin."
+          }
+        },
+        "i4": {
+          "type": "feature",
+          "settings": {
+            "title": "Invisible Shield Polymer",
+            "body": "Forms a breathable, invisible layer that defends skin like a second skin."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "eyebrow": "Ingredients That Matter",
+        "heading": "Safe. Powerful. Proven.",
+        "body": "<p>Every ingredient in NCCO-IG Skin Recovery Essence is carefully selected to protect your skin, restore its health, and keep it nourished without any harmful chemicals.</p>",
+        "dark": false,
+        "numbered": false,
+        "bg_color": "rgba(83, 189, 216, 0.08)",
+        "accent_color": "#53BDD8",
+        "cta_label": "Discover the Science Behind",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue"
+      }
+    },
+    "nccoig-products": {
+      "type": "ncco-product-grid",
+      "blocks": {
+        "p1": {
+          "type": "product",
+          "settings": {
+            "product_code": "NCCO-IG Skin Recovery Essence 30ml",
+            "product_name": "HK $68.00",
+            "link_label": "Quick View",
+            "link_url": "/pages/contact-us",
+            "category": "recovery-essence",
+            "asset": "nccoig-p1.png"
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "product_code": "B.Duck × NCCO-IG Skin Recovery Essence 50ml",
+            "product_name": "HK $118.00",
+            "link_label": "Quick View",
+            "link_url": "/pages/contact-us",
+            "category": "b-duck",
+            "asset": "nccoig-p2.png"
+          }
+        },
+        "p3": {
+          "type": "product",
+          "settings": {
+            "product_code": "NCCO-IG Skin Recovery Essence 500ml",
+            "product_name": "HK $380.00",
+            "link_label": "Quick View",
+            "link_url": "/pages/contact-us",
+            "category": "recovery-essence",
+            "asset": "nccoig-p3.png"
+          }
+        },
+        "p4": {
+          "type": "product",
+          "settings": {
+            "product_code": "B.Duck × NCCO-IG Skin Recovery Essence 50ml",
+            "product_name": "HK $118.00",
+            "link_label": "Quick View",
+            "link_url": "/pages/contact-us",
+            "category": "b-duck",
+            "asset": "nccoig-product-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "settings": {
+        "eyebrow": "Product Lineup",
+        "heading": "NCCO-IG Skin Recovery Essence",
+        "subtext": "A clinically-tested skin recovery formula that hydrates, heals, and protects. Kills 99.9% of viruses and germs while soothing dry, sensitive, and allergy-prone skin all without toxins or alcohol.",
+        "cta_label": "View All Products",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue",
+        "tab_1": "All Products",
+        "tab_2": "NCCO-IG × B.Duck",
+        "tab_3": "Recovery Essence",
+        "dark": false,
+        "accent_color": "#53BDD8"
+      }
+    },
+    "nccoig-benefits": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "b1": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-shield.svg",
+            "title": "Invisible Shield",
+            "body": "<p>Creates a breathable, protective barrier that shields skin from germs, irritants, and pollutants.</p>"
+          }
+        },
+        "b2": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-tech.svg",
+            "title": "Clinically Proven",
+            "body": "<p>Clinically tested to kill 99.9% of viruses and germs, including human coronavirus.</p>"
+          }
+        },
+        "b3": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-filter.svg",
+            "title": "Deep Hydration",
+            "body": "<p>Hydrates and repairs dry, cracked, or eczema-prone skin without stickiness or residue.</p>"
+          }
+        },
+        "b4": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-design.svg",
+            "title": "Safe & Clean",
+            "body": "<p>Safe for all skin types, including sensitive and allergy-prone skin. No harsh chemicals.</p>"
+          }
+        },
+        "b5": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-power.svg",
+            "title": "Long-Lasting Effect",
+            "body": "<p>Stays effective for hours, providing continuous protection throughout your day.</p>"
+          }
+        },
+        "b6": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-portable.svg",
+            "title": "Travel-Friendly",
+            "body": "<p>Compact and lightweight tube perfect for pockets, bags, or desks.</p>"
+          }
+        },
+        "b7": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-silent.svg",
+            "title": "Non-Sticky Feel",
+            "body": "<p>Smooth, clean finish that feels natural on your hands or skin.</p>"
+          }
+        },
+        "b8": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "bmola-icon-global.svg",
+            "title": "Science-Backed",
+            "body": "<p>Developed with advanced skincare technology and dermatological research.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8"
+      ],
+      "settings": {
+        "eyebrow": "Unique Benefits",
+        "heading": "Experience Skin Protection Like Never Before",
+        "subtext": "NCCO-IG blends advanced skincare science with daily practicality delivering invisible, long-lasting protection that's gentle, powerful, and proven effective.",
+        "columns": "4",
+        "align": "center",
+        "numbered": false,
+        "flat": false,
+        "cta_label": "",
+        "cta_url": "",
+        "dark": true,
+        "split_header": false,
+        "table_grid": true,
+        "hero_card": false,
+        "accent_color": "#53BDD8",
+        "cta_variant": "blue"
+      }
+    },
+    "nccoig-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "Lab-Tested Protection",
+        "heading": "Proven by Science. Trusted by Experts.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "nccoig-faq": {
+      "type": "ncco-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What makes NCCO-IG suitable for hospitals and clinical environments?",
+            "answer": "<p>NCCO-IG uses patented nano-catalytic oxidation to eliminate airborne bacteria, viruses, and harmful gases making it ideal for sterile zones and healthcare facilities.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can NCCO-IG be installed in operating rooms, ICUs, or other high-sensitivity areas?",
+            "answer": "<p>Yes. NCCO-IG systems are designed to meet strict hospital hygiene standards and are actively deployed in critical medical spaces including operating rooms and ICUs.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How effective is NCCO-IG at removing airborne pathogens and VOCs?",
+            "answer": "<p>NCCO-IG is clinically proven to eliminate 99.9% of viruses, bacteria, and volatile organic compounds through its patented catalytic filtration process.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How often does the system require maintenance or filter replacement?",
+            "answer": "<p>The NCCO catalyst lasts up to 12 years under normal usage — significantly longer than conventional HEPA or activated carbon filters which need replacing every 6–12 months.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can NCCO-IG units be customized based on room size or facility type?",
+            "answer": "<p>Yes. Our engineering team designs tailored NCCO-IG configurations based on room dimensions, air exchange requirements, and specific clinical use cases.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is NCCO-IG certified for medical or industrial-grade use?",
+            "answer": "<p>NCCO-IG is certified to CE, RoHS, GS, TÜV, Intertek, and California Air Resources Board standards for medical, industrial, and commercial applications.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "eyebrow": "You Ask",
+        "accent_color": "#53BDD8",
+        "heading": "Frequently Asked Questions",
+        "three_col": true
+      }
+    },
+    "nccoig-contact": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "accent_color": "#53BDD8",
+        "heading": "We're Here to Help",
+        "email": "info@ncco-tech.com",
+        "phone": "+852 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "nccoig-hero",
+    "nccoig-about",
+    "nccoig-ingredients",
+    "nccoig-products",
+    "nccoig-benefits",
+    "nccoig-certifications",
+    "nccoig-faq",
+    "nccoig-contact"
+  ]
+}

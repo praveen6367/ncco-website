@@ -1,0 +1,207 @@
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- if accent == blank -%}{%- assign accent = '#FECB07' -%}{%- endif -%}
+
+<section class="ncco-commit">
+  <div class="ncco-commit__inner">
+    <div class="ncco-commit__mosaic">
+      {%- for i in (1..7) -%}
+        {%- assign key = 'tile_' | append: i -%}
+        {%- assign asset = section.settings[key] -%}
+        {%- if i == 4 -%}
+          <div class="ncco-commit__tile ncco-commit__tile--stat" style="grid-area: t{{ i }};">
+            <p class="ncco-commit__stat-num">{{ section.settings.stat_number | default: '99' }}<span>{{ section.settings.stat_unit | default: '%' }}</span></p>
+            <p class="ncco-commit__stat-label">{{ section.settings.stat_label | default: 'Air Purification Efficiency' }}</p>
+          </div>
+        {%- else -%}
+          <div class="ncco-commit__tile" style="grid-area: t{{ i }};">
+            {%- if asset != blank -%}
+              <img src="{{ asset | asset_url }}" alt="" loading="lazy">
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="ncco-commit__text">
+      <div class="ncco-commit__main">
+        <div class="ncco-commit__head">
+          <div class="ncco-commit__eyebrow">
+            <span class="ncco-commit__eyebar" style="background:{{ accent }}"></span>
+            <p>{{ section.settings.eyebrow }}</p>
+          </div>
+          <div class="ncco-commit__title-cluster">
+            <h2 class="ncco-commit__heading">{{ section.settings.heading }}</h2>
+            {%- if section.settings.subtext != blank -%}
+              <p class="ncco-commit__sub">{{ section.settings.subtext }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="ncco-commit__blocks">
+          {%- if section.settings.block_1_title != blank -%}
+            <div class="ncco-commit__block">
+              <p class="ncco-commit__block-title">{{ section.settings.block_1_title }}</p>
+              <div class="ncco-commit__block-body">{{ section.settings.block_1_body }}</div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.block_2_title != blank -%}
+            <div class="ncco-commit__block">
+              <p class="ncco-commit__block-title">{{ section.settings.block_2_title }}</p>
+              <div class="ncco-commit__block-body">{{ section.settings.block_2_body }}</div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.cta_label != blank -%}
+        <div class="ncco-commit__cta">
+          {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+.ncco-commit { padding: 120px 240px; background: #fff; }
+.ncco-commit__inner { display: flex; gap: 152px; align-items: center; max-width: 1920px; margin: 0 auto; }
+
+.ncco-commit__mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 184px);
+  grid-template-rows: repeat(3, 248px);
+  grid-template-areas:
+    "t1 t2 t2"
+    "t3 t4 t5"
+    "t6 t6 t7";
+  gap: 16px;
+  flex-shrink: 0;
+}
+.ncco-commit__tile {
+  border-radius: 28px; overflow: hidden; position: relative;
+  background: rgba(100,112,130,0.08);
+}
+.ncco-commit__tile img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ncco-commit__tile--stat {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px; padding: 24px; text-align: center; background: rgba(100,112,130,0.08);
+}
+.ncco-commit__stat-num {
+  font-family: 'Geist', sans-serif; font-weight: 500;
+  font-size: 78px; line-height: 68px; letter-spacing: -3.52px;
+  color: #081D3A; margin: 0;
+}
+.ncco-commit__stat-num span { font-size: 48px; }
+.ncco-commit__stat-label {
+  font-family: 'Geist', sans-serif; font-weight: 500;
+  font-size: 18px; line-height: 24px; letter-spacing: -0.72px;
+  color: #647082; margin: 0;
+}
+
+.ncco-commit__text { flex: 1 1 auto; max-width: 705px; display: flex; flex-direction: column; gap: 122px; }
+.ncco-commit__main { display: flex; flex-direction: column; gap: 70px; }
+.ncco-commit__head { display: flex; flex-direction: column; gap: 40px; }
+.ncco-commit__title-cluster { display: flex; flex-direction: column; gap: 35px; }
+
+.ncco-commit__eyebrow { display: flex; flex-direction: column; gap: 8px; }
+.ncco-commit__eyebar { width: 28px; height: 2px; display: block; }
+.ncco-commit__eyebrow p {
+  font-family: 'Geist', sans-serif; font-weight: 500;
+  font-size: 16px; letter-spacing: -0.32px; text-transform: uppercase;
+  color: #647082; margin: 0;
+}
+
+.ncco-commit__heading {
+  font-family: 'Geist', sans-serif; font-weight: 500;
+  font-size: 58px; line-height: 68px; letter-spacing: -2.32px;
+  color: #081D3A; margin: 0;
+}
+.ncco-commit__sub {
+  font-family: 'Geist', sans-serif; font-weight: 400;
+  font-size: 18px; line-height: 24px; letter-spacing: -0.36px;
+  color: #647082; margin: 0;
+}
+
+.ncco-commit__blocks { display: flex; flex-direction: column; gap: 38px; }
+.ncco-commit__block { display: flex; flex-direction: column; gap: 28px; }
+.ncco-commit__block-title {
+  font-family: 'Geist', sans-serif; font-weight: 500;
+  font-size: 20px; letter-spacing: -0.4px; text-transform: uppercase;
+  color: #081D3A; margin: 0;
+}
+.ncco-commit__block-body {
+  font-family: 'Geist', sans-serif; font-weight: 400;
+  font-size: 16px; line-height: 24px; letter-spacing: -0.32px;
+  color: #647082;
+}
+.ncco-commit__block-body p { margin: 0 0 12px; }
+.ncco-commit__block-body p:last-child { margin-bottom: 0; }
+
+.ncco-commit__cta a { align-self: flex-start; }
+
+@media (max-width: 1440px) {
+  .ncco-commit { padding: 100px 80px; }
+  .ncco-commit__inner { gap: 80px; }
+  .ncco-commit__text { gap: 80px; }
+  .ncco-commit__main { gap: 50px; }
+}
+@media (max-width: 1024px) {
+  .ncco-commit { padding: 80px 40px; }
+  .ncco-commit__inner { flex-direction: column; gap: 60px; align-items: stretch; }
+  .ncco-commit__mosaic { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 180px); max-width: 100%; }
+  .ncco-commit__text { max-width: 100%; gap: 60px; }
+  .ncco-commit__main { gap: 40px; }
+  .ncco-commit__head { gap: 28px; }
+  .ncco-commit__title-cluster { gap: 24px; }
+  .ncco-commit__heading { font-size: 42px; line-height: 1.15; letter-spacing: -1.4px; }
+  .ncco-commit__stat-num { font-size: 56px; line-height: 1; }
+  .ncco-commit__stat-num span { font-size: 32px; }
+}
+@media (max-width: 600px) {
+  .ncco-commit { padding: 60px 16px; }
+  .ncco-commit__mosaic { grid-template-rows: repeat(3, 120px); gap: 8px; }
+  .ncco-commit__heading { font-size: 32px; letter-spacing: -0.8px; }
+  .ncco-commit__stat-num { font-size: 40px; }
+  .ncco-commit__stat-num span { font-size: 24px; }
+  .ncco-commit__stat-label { font-size: 13px; line-height: 18px; }
+  .ncco-commit__text { gap: 40px; }
+  .ncco-commit__main { gap: 32px; }
+  .ncco-commit__title-cluster { gap: 20px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Commitment",
+  "tag": "section",
+  "settings": [
+    {"type": "header", "content": "Text"},
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "accent_color", "label": "Eyebrow bar color (hex, default #FECB07)"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "textarea", "id": "subtext", "label": "Subtext"},
+    {"type": "header", "content": "Block 1"},
+    {"type": "text", "id": "block_1_title", "label": "Title (UPPERCASE)"},
+    {"type": "richtext", "id": "block_1_body", "label": "Body"},
+    {"type": "header", "content": "Block 2"},
+    {"type": "text", "id": "block_2_title", "label": "Title (UPPERCASE)"},
+    {"type": "richtext", "id": "block_2_body", "label": "Body"},
+    {"type": "header", "content": "CTA"},
+    {"type": "text", "id": "cta_label", "label": "Button label"},
+    {"type": "url", "id": "cta_url", "label": "Button URL"},
+    {"type": "header", "content": "Mosaic tiles (7 total, tile_4 = stat)"},
+    {"type": "text", "id": "tile_1", "label": "Tile 1 asset filename"},
+    {"type": "text", "id": "tile_2", "label": "Tile 2 asset filename (spans 2 cols)"},
+    {"type": "text", "id": "tile_3", "label": "Tile 3 asset filename"},
+    {"type": "text", "id": "stat_number", "label": "Stat number", "default": "99"},
+    {"type": "text", "id": "stat_unit", "label": "Stat unit", "default": "%"},
+    {"type": "text", "id": "stat_label", "label": "Stat label", "default": "Air Purification Efficiency"},
+    {"type": "text", "id": "tile_5", "label": "Tile 5 asset filename"},
+    {"type": "text", "id": "tile_6", "label": "Tile 6 asset filename (spans 2 cols)"},
+    {"type": "text", "id": "tile_7", "label": "Tile 7 asset filename"}
+  ],
+  "presets": [{"name": "NCCO Commitment"}]
+}
+{% endschema %}

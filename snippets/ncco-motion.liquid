@@ -1,0 +1,119 @@
+<style>
+/* ── Scroll reveal ── */
+.ncco-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+  will-change: opacity, transform;
+}
+.ncco-reveal.is-visible { opacity: 1; transform: none; }
+.ncco-reveal--d1 { transition-delay: 0.08s; }
+.ncco-reveal--d2 { transition-delay: 0.16s; }
+.ncco-reveal--d3 { transition-delay: 0.24s; }
+.ncco-reveal--d4 { transition-delay: 0.32s; }
+.ncco-reveal--d5 { transition-delay: 0.40s; }
+.ncco-reveal--d6 { transition-delay: 0.48s; }
+
+.ncco-reveal--scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ncco-reveal--scale.is-visible { opacity: 1; transform: none; }
+
+/* Hero load-time entrance (no scroll needed) */
+.ncco-hero__eyebrow,
+.ncco-hero__title,
+.ncco-hero__sub,
+.ncco-hero__ctas {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ncco-fadein 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.ncco-hero__eyebrow { animation-delay: 0.05s; }
+.ncco-hero__title   { animation-delay: 0.15s; }
+.ncco-hero__sub     { animation-delay: 0.25s; }
+.ncco-hero__ctas    { animation-delay: 0.35s; }
+.ncco-hero__card {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  animation: ncco-fadein 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+}
+@keyframes ncco-fadein {
+  to { opacity: 1; transform: none; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ncco-reveal, .ncco-reveal--scale {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .ncco-hero__eyebrow, .ncco-hero__title, .ncco-hero__sub,
+  .ncco-hero__ctas, .ncco-hero__card {
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+}
+</style>
+
+<script>
+(function() {
+  if (!window.IntersectionObserver) {
+    document.querySelectorAll('.ncco-reveal').forEach(function(el) {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  /* Scroll-reveal observer */
+  var revealIO = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-visible');
+      revealIO.unobserve(e.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+  /* Stats counter */
+  function animateCounter(el) {
+    var text = el.getAttribute('data-count-original') || el.textContent.trim();
+    el.setAttribute('data-count-original', text);
+    var match = text.match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)([^0-9\s]*)(\s*.*)$/);
+    if (!match) return;
+    var prefix = match[1], num = parseFloat(match[2]), suffix = match[3] + match[4];
+    var isDecimal = match[2].indexOf('.') !== -1;
+    var duration = 1600, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      var val = ease * num;
+      el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.floor(val).toLocaleString()) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + (isDecimal ? num.toFixed(1) : num.toLocaleString()) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterIO = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
+      animateCounter(e.target);
+      counterIO.unobserve(e.target);
+    });
+  }, { threshold: 0.4 });
+
+  function init() {
+    document.querySelectorAll('.ncco-reveal').forEach(function(el) {
+      revealIO.observe(el);
+    });
+    document.querySelectorAll('.ncco-stats__number').forEach(function(el) {
+      var t = el.textContent.trim();
+      if (/[0-9]/.test(t)) counterIO.observe(el);
+    });
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
+})();
+</script>

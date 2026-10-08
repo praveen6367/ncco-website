@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Commercial",
+        "headline": "<p>Smarter Air for <em>Modern Commercial Spaces</em></p>",
+        "subtext": "NCCO provides 24/7 reliable air purification for offices, retail, schools, airports, and public spaces — combating VOCs, bacteria, and odours without disrupting business operations.",
+        "cta_label": "Explore Commercial Solutions",
+        "cta_url": "#solutions",
+        "overlay_opacity": 55,
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "settings": {
+        "heading": "Trusted by world-leading businesses"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "24/7 Continuous Operation",
+            "body": "<p>NCCO systems are engineered for round-the-clock performance in high-traffic environments — offices, malls, airports, schools, and hotels.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "HVAC Integration Ready",
+            "body": "<p>NCCO technology integrates modularly with existing PAU/AHU HVAC systems, enabling large-scale commercial deployment without full infrastructure replacement.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "No Secondary Pollution",
+            "body": "<p>Unlike activated carbon that re-releases pollutants when saturated, NCCO breaks them down permanently. Clean air stays clean.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "eyebrow": "Commercial Applications",
+        "heading": "Purifying the Air That Powers Your Business",
+        "subtext": "Cleaner air drives better performance. Studies show improved indoor air quality directly links to higher productivity and lower absenteeism.",
+        "columns": "3",
+        "dark": false
+      }
+    },
+    "ncco-iwt-1": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Smarter Air Quality for Smart Workspaces",
+        "text": "<p>Poor indoor air quality costs businesses billions annually in lost productivity and sick days. NCCO technology eliminates the root cause — not just the symptoms. Our systems run silently, continuously, and without disruption to your team or customers.</p>",
+        "asset": "ncco-img-commercial-office.png",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-iwt-2": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Proven Across Hong Kong's Most Demanding Venues",
+        "text": "<p>NCCO has been deployed in Hong Kong International Airport, MTR Lok Ma Chau station washrooms, IFC Mall, schools, and office buildings. The same technology trusted in hospitals is now available for commercial deployment at any scale.</p>",
+        "asset": "ncco-img-city-night.png",
+        "layout": "text_first",
+        "dark": false
+      }
+    },
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "heading": "Providing Cleaner Air Solutions for Business",
+        "subtext": "Speak to our commercial team about system sizing, HVAC integration, and installation for your space.",
+        "cta_label": "Request a Consultation",
+        "cta_url": "/pages/contact-us",
+        "bg_color": "#081d3a"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "International Standards",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What commercial environments is NCCO suitable for?",
+            "row_content": "<p>NCCO is deployed in offices, retail stores, shopping malls, hotels, schools, airports, public transport facilities, and restaurants. Any enclosed commercial space with air quality requirements benefits from NCCO.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can NCCO be integrated into our existing HVAC system?",
+            "row_content": "<p>Yes. NCCO technology is modular and can be retrofitted into existing Primary Air Units (PAUs) and Air Handling Units (AHUs). Our team will assess your current system and recommend the optimal integration approach.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the maintenance requirements for commercial NCCO systems?",
+            "row_content": "<p>The NCCO catalyst lasts up to 12 years under normal conditions. Routine maintenance is minimal — primarily filter inspection and system checks. Our team provides ongoing maintenance support packages.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "caption": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h2",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-icon-grid",
+    "ncco-iwt-1",
+    "ncco-iwt-2",
+    "ncco-cta-band",
+    "ncco-certifications",
+    "collapsible-content",
+    "ncco-contact-cta"
+  ]
+}

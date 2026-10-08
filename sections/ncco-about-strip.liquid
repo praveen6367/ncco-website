@@ -1,0 +1,196 @@
+{%- comment -%} Figma About Strip node 1423:25101 {%- endcomment -%}
+<section class="ncco-about-wrap">
+  <div class="ncco-about-strip">
+
+    <div class="ncco-about-strip__left ncco-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ncco-about-strip__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ncco-about-strip__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtext != blank -%}
+        <p class="ncco-about-strip__sub">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="ncco-about-strip__grid">
+      {%- comment -%} Col 1 = items 1,2 (pt:74) — Col 2 = items 3,4 (pb:74) {%- endcomment -%}
+      <div class="ncco-about-strip__col ncco-about-strip__col--1">
+        {%- for block in section.blocks limit: 2 -%}
+          <div class="ncco-about-card ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
+            <span class="ncco-about-card__num">{{ block.settings.number }}</span>
+            {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
+            {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="ncco-about-strip__col ncco-about-strip__col--2">
+        {%- for block in section.blocks offset: 2 -%}
+          {%- assign _d = forloop.index | plus: 2 -%}
+          <div class="ncco-about-card ncco-reveal ncco-reveal--d{{ _d }}" {{ block.shopify_attributes }}>
+            <span class="ncco-about-card__num">{{ block.settings.number }}</span>
+            {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
+            {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue', class: 'ncco-about-strip__cta' -%}
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+/* ── Figma About Strip (1423:25101, 1920×802) ── */
+.ncco-about-wrap { background: #fff; padding: 0 16px; }
+.ncco-about-strip {
+  display: grid;
+  grid-template-columns: 583px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "left grid" "cta grid";
+  column-gap: 152px;
+  row-gap: 40px;
+  max-width: 1888px; margin: 0 auto;
+  padding: 120px 224px; box-sizing: border-box;
+  border-radius: 32px;
+}
+
+/* Left column */
+.ncco-about-strip__left { grid-area: left; display: flex; flex-direction: column; }
+.ncco-about-strip__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
+  color: #647082; text-transform: uppercase; margin: 0 0 40px;
+}
+.ncco-about-strip__eyebrow::before {
+  content: ''; display: block; width: 28px; height: 2px; background: #FECB07; margin-bottom: 8px;
+}
+.ncco-about-strip__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
+  color: #081D3A; margin: 0 0 35px;
+}
+.ncco-about-strip__sub {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  color: #647082; margin: 0;
+}
+
+/* CTA — grid area below left text */
+.ncco-about-strip__cta { grid-area: cta; align-self: start; }
+
+/* Right grid — 2 staggered cols 338px each, 30px gap */
+.ncco-about-strip__grid {
+  grid-area: grid; align-self: center;
+  display: flex; gap: 30px;
+}
+.ncco-about-strip__col {
+  display: flex; flex-direction: column; gap: 30px; width: 338px;
+}
+.ncco-about-strip__col--1 { padding-top: 74px; }
+.ncco-about-strip__col--2 { padding-bottom: 74px; }
+
+/* Card */
+.ncco-about-card {
+  background: #fff;
+  border: 1px solid rgba(100,112,130,0.12);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 24px rgba(8,29,58,0.04);
+  display: flex; flex-direction: column; gap: 28px;
+  width: 338px; box-sizing: border-box;
+}
+.ncco-about-card__num {
+  font-family: 'Geist', sans-serif;
+  font-size: 32px; font-weight: 500; line-height: 1; letter-spacing: -1.28px;
+  color: #D7D9DC;
+}
+.ncco-about-card__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px; font-weight: 500; letter-spacing: -0.4px; line-height: 1.2;
+  color: #081D3A; text-transform: uppercase; margin: -8px 0 0;
+}
+.ncco-about-card__body {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
+  color: #647082; margin: 0;
+}
+
+@media (max-width: 1600px) {
+  .ncco-about-strip { padding: 100px 80px; column-gap: 80px; }
+}
+@media (max-width: 1200px) {
+  .ncco-about-strip {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "left" "grid" "cta";
+    row-gap: 60px;
+    padding: 80px 40px;
+    border-radius: 24px;
+  }
+  .ncco-about-strip__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
+  .ncco-about-strip__grid { justify-content: center; }
+}
+@media (max-width: 989px) {
+  .ncco-about-strip { padding: 60px 24px; row-gap: 40px; }
+  .ncco-about-strip__heading { font-size: 36px; line-height: 44px; letter-spacing: -1.2px; }
+  .ncco-about-strip__grid { flex-wrap: wrap; }
+  .ncco-about-strip__col { width: calc(50% - 15px); }
+  .ncco-about-card { width: 100%; }
+}
+@media (max-width: 600px) {
+  /* Figma mobile: centered text → 1-col cards → full-width CTA */
+  .ncco-about-strip { padding: 40px 16px; border-radius: 16px; row-gap: 24px; }
+
+  /* Center heading area */
+  .ncco-about-strip__left { align-items: center; text-align: center; }
+  .ncco-about-strip__eyebrow { text-align: center; }
+  .ncco-about-strip__eyebrow::before { margin: 0 auto 8px; }
+  .ncco-about-strip__heading { font-size: 28px; line-height: 36px; letter-spacing: -0.8px; text-align: center; }
+  .ncco-about-strip__sub { font-size: 15px; line-height: 1.6; text-align: center; }
+
+  /* Cards: single column, full-width */
+  .ncco-about-strip__grid { flex-direction: column; gap: 12px; }
+  .ncco-about-strip__col { width: 100%; padding: 0; gap: 12px; }
+  .ncco-about-strip__col--1, .ncco-about-strip__col--2 { padding: 0; }
+  .ncco-about-card { width: 100%; gap: 12px; padding: 20px; border-radius: 16px; }
+  .ncco-about-card__num { font-size: 24px; letter-spacing: -0.8px; }
+  .ncco-about-card__title { font-size: 14px; margin: 0; }
+  .ncco-about-card__body { font-size: 13px; line-height: 1.5; }
+
+  /* Full-width CTA */
+  .ncco-about-strip__cta { width: 100% !important; justify-content: center !important; }
+  .ncco-about-strip .ncco-cta { width: 100%; justify-content: space-between; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO About Strip",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About Us"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "textarea", "id": "subtext", "label": "Subtext"},
+    {"type": "text", "id": "cta_label", "label": "CTA button text", "default": "Know more about us"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"}
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Numbered Card",
+      "settings": [
+        {"type": "text", "id": "number", "label": "Number", "default": "01"},
+        {"type": "text", "id": "title", "label": "Title"},
+        {"type": "textarea", "id": "body", "label": "Body text"}
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{"name": "NCCO About Strip"}]
+}
+{% endschema %}

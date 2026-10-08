@@ -1,0 +1,465 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rht-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "logo_asset": "brand-rht-logo.png",
+        "brand_color": "#22B39F",
+        "cta_text_color": "#ffffff",
+        "headline": "<p>Industrial-Grade</p><p><em>Air Purification</em></p>",
+        "subtext": "Designed for hospitals, factories, and high-demand environments, RHT systems deliver reliable, large-scale air purification backed by NCCO's patented technology.",
+        "bullet_1": "99.9% purification rate against airborne pollutants",
+        "bullet_2": "Adapts in real time to changing air quality",
+        "bullet_3": "Backed by NCCO's patented technology",
+        "cta_label": "Discover our Products",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "brand-rht-hero-card.png",
+        "background_asset": "brand-rht-hero-bg.jpg",
+        "overlay_opacity": 65,
+        "subtext_gap": 255
+      }
+    },
+    "rht-trust": {
+      "type": "ncco-trust-logos",
+      "blocks": {
+        "tl_01": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-New-World-China.webp",
+            "alt": "New World China"
+          }
+        },
+        "tl_02": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-JLL.svg",
+            "alt": "JLL"
+          }
+        },
+        "tl_03": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HSBC.svg",
+            "alt": "HSBC"
+          }
+        },
+        "tl_04": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-IFC-Mall.webp",
+            "alt": "IFC"
+          }
+        },
+        "tl_05": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR.svg",
+            "alt": "MTR"
+          }
+        },
+        "tl_06": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HKHA.svg",
+            "alt": "HKHA"
+          }
+        }
+      },
+      "block_order": [
+        "tl_01",
+        "tl_02",
+        "tl_03",
+        "tl_04",
+        "tl_05",
+        "tl_06"
+      ],
+      "settings": {
+        "heading": "Trusted by Industry Leaders for",
+        "heading_highlight": "Quality and Reliability"
+      }
+    },
+    "rht-about": {
+      "type": "ncco-brand-about",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "title": "Bringing Clean Air to Scale",
+            "body": "We develop industrial-grade air purification systems for hospitals, transit, and factories — built to run continuously and reliably."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "title": "Built for Critical Infrastructure",
+            "body": "RHT units use NCCO technology and are designed for high-demand spaces — efficient, adaptable, and trusted by professionals."
+          }
+        },
+        "i1": {
+          "type": "image",
+          "settings": {
+            "asset": "rht-p1.png",
+            "caption": "HSBC Asia Pacific Data Centre"
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "asset": "rht-p2.png",
+            "caption": "Yan Oi Tong Kindergarten"
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "asset": "rht-p3.png",
+            "caption": "HK Baptist Hospital"
+          }
+        },
+        "i4": {
+          "type": "image",
+          "settings": {
+            "asset": "rht-p4.png",
+            "caption": "Singapore Airport & Zoo"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "bg_color": "#EEF7F5",
+        "eyebrow": "Just An Intro",
+        "heading": "An Industrial Air Purification Brand Built for Performance",
+        "cta_label": "Know More About Us",
+        "cta_url": "/pages/about-us",
+        "cta_color": "#22B39F",
+        "cta_text_color": "#ffffff"
+      }
+    },
+    "rht-benefits": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "b1": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-spaces.svg",
+            "title": "Designed for Large Spaces",
+            "body": "<p>Purifies high air volumes across hospitals, stations, and factories.</p>"
+          }
+        },
+        "b2": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-modular.svg",
+            "title": "Modular Installation",
+            "body": "<p>Fits diverse infrastructures with scalable setup options.</p>"
+          }
+        },
+        "b3": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-reliable.svg",
+            "title": "24/7 Reliable Operation",
+            "body": "<p>Non-stop air treatment with minimal downtime or servicing.</p>"
+          }
+        },
+        "b4": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-tech.svg",
+            "title": "Powered by NCCO Technology",
+            "body": "<p>Breaks down pollutants using patented nanotech purification.</p>"
+          }
+        },
+        "b5": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-energy.svg",
+            "title": "Energy-Efficient Design",
+            "body": "<p>Optimized airflow reduces power use without compromising results.</p>"
+          }
+        },
+        "b6": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "rht-icon-maintenance.svg",
+            "title": "Low Maintenance, Long Life",
+            "body": "<p>Durable systems that reduce filter change cycles and cost.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Industrial Benefits",
+        "heading": "Engineered for Demanding Spaces",
+        "subtext": "RHT systems are built to deliver powerful, continuous air purification in high-risk, high-traffic environments where performance and reliability are non-negotiable.",
+        "columns": "3",
+        "align": "left",
+        "numbered": false,
+        "flat": false,
+        "cta_label": "Explore Product Range",
+        "cta_url": "/pages/contact-us",
+        "dark": false,
+        "split_header": true,
+        "table_grid": true,
+        "accent_color": "#20B39F",
+        "cta_variant": "teal"
+      }
+    },
+    "rht-invented": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "t1": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO Air",
+            "body": "<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air purification and widely used in commercial, industrial, and medical institutions.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        },
+        "t2": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO - Invisible Glove",
+            "body": "<p>The NCCO-IG technology uses nanotechnology to form a layer of film on the surface of the skin that disinfects, moisturizes, and protects against damaged skin infections.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        },
+        "t3": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO - ZRD",
+            "body": "<p>ZRD (Zeolite Radioactive Dust Removal System) effectively removes radioactive materials and toxic gases from the air — for airports and hospitals.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        },
+        "t4": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO - PIS",
+            "body": "<p>Pollutants Isolation System creates an indoor air barrier to prevent outdoor contaminants from entering, decomposing pollutants into water and CO₂.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        },
+        "t5": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO - Masks",
+            "body": "<p>NCCO masks protect factory workers from long-term exposure to high-concentration harmful chemical gases, with patents secured globally.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        },
+        "t6": {
+          "type": "card",
+          "settings": {
+            "title": "NCCO - MDS",
+            "body": "<p>Mobile Deodorising System uses NCCO's patented technology for far longer-lasting odour treatment than activated charcoal at sewage and waste sites.</p>",
+            "link_label": "Learn More",
+            "link_url": "/pages/about-us"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6"
+      ],
+      "settings": {
+        "eyebrow": "Industrial Benefits",
+        "heading": "Invented in Hong Kong",
+        "columns": "3",
+        "align": "left",
+        "numbered": false,
+        "flat": false,
+        "cta_label": "Request Product Specs",
+        "cta_url": "/pages/contact-us",
+        "dark": true,
+        "split_header": true,
+        "hero_card": true,
+        "bg_asset": "rht-invented-bg.jpg",
+        "accent_color": "#20B39F",
+        "cta_variant": "teal"
+      }
+    },
+    "rht-products": {
+      "type": "ncco-product-grid",
+      "blocks": {
+        "p1": {
+          "type": "product",
+          "settings": {
+            "product_code": "RH-490C",
+            "product_name": "Ceiling Filtration Unit",
+            "link_label": "Learn More",
+            "link_url": "/pages/contact-us",
+            "category": "industrial",
+            "asset": "rht-product-1.png"
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "product_code": "RH-220",
+            "product_name": "Duct Mounted Mobile Unit",
+            "link_label": "Learn More",
+            "link_url": "/pages/contact-us",
+            "category": "industrial",
+            "asset": "rht-product-2.png"
+          }
+        },
+        "p3": {
+          "type": "product",
+          "settings": {
+            "product_code": "RM-480",
+            "product_name": "Mobile Filtration Unit",
+            "link_label": "Learn More",
+            "link_url": "/pages/contact-us",
+            "category": "industrial",
+            "asset": "rht-product-3.png"
+          }
+        },
+        "p4": {
+          "type": "product",
+          "settings": {
+            "product_code": "RA-805",
+            "product_name": "Customised Deodorising System",
+            "link_label": "Learn More",
+            "link_url": "/pages/contact-us",
+            "category": "industrial",
+            "asset": "rht-product-4.png"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "settings": {
+        "eyebrow": "Product Lineup",
+        "heading": "Solutions Built for Scale",
+        "subtext": "Explore our range of industrial air purification systems, engineered for diverse infrastructure from transit stations to clinical spaces.",
+        "cta_label": "Request Product Specs",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "teal",
+        "tab_1": "Solutions",
+        "tab_2": "Industrial",
+        "tab_3": "Domestic",
+        "dark": false,
+        "accent_color": "#20B39F"
+      }
+    },
+    "rht-faq": {
+      "type": "ncco-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What environments is RHT designed for?",
+            "answer": "<p>RHT systems are engineered for large-scale, high-traffic environments including hospitals, subway stations, airports, factories, and data centres where continuous air quality control is critical.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How does RHT differ from standard HEPA filters?",
+            "answer": "<p>Unlike HEPA filters that trap pollutants, RHT uses NCCO (Nano-Confined Catalytic Oxidation) technology to decompose pollutants at the molecular level into harmless water and CO₂ — with no filter replacement needed.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is RHT technology safe for hospitals?",
+            "answer": "<p>Yes. RHT systems produce zero ozone and no toxic byproducts, making them safe for patients, healthcare workers, and high-sensitivity environments including ICUs and operating theatres.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What is the maintenance requirement?",
+            "answer": "<p>RHT systems require minimal maintenance. The NCCO reactor is washable and reusable, dramatically reducing the frequency and cost of filter replacements compared to conventional systems.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can RHT systems integrate with existing HVAC?",
+            "answer": "<p>Yes. RHT units are modular and designed to integrate with existing HVAC infrastructure, duct systems, and building management systems for seamless operation at scale.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Where are RHT systems deployed globally?",
+            "answer": "<p>RHT systems are deployed in hundreds of facilities worldwide including HSBC Asia Pacific Data Centre, Hong Kong Baptist Hospital, Yan Oi Tong Kindergarten, and major transit networks.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "eyebrow": "You Ask",
+        "accent_color": "#20B39F",
+        "heading": "Frequently Asked Questions",
+        "three_col": true
+      }
+    },
+    "rht-contact": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "accent_color": "#20B39F",
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "rht-hero",
+    "rht-trust",
+    "rht-about",
+    "rht-benefits",
+    "rht-invented",
+    "rht-products",
+    "rht-faq",
+    "rht-contact"
+  ]
+}

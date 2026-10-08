@@ -1,0 +1,653 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "custom_css": [],
+      "settings": {
+        "eyebrow": "Trusted by 500+ institutions worldwide",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>Advanced Air Purification <em>Begins with NCCO</em></p>",
+        "subtext": "Advanced air purification technology for healthier homes, safer hospitals, and cleaner workplaces powered by patented NCCO innovation.",
+        "bullet_1": "99.9% purification efficiency",
+        "bullet_2": "Safe for kids, pets, and hospitals",
+        "bullet_3": "Proven by 20+ years of research",
+        "cta_label": "Get a Free Consultation",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "ncco-hero-card-img.png",
+        "background_asset": "",
+        "compact": false,
+        "overlay_opacity": 85,
+        "overlay_solid_color": "",
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "blocks": {
+        "logo_QAmmWq": {
+          "type": "logo",
+          "settings": {
+            "asset": "",
+            "alt": ""
+          }
+        },
+        "tl_01": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Hospital-authority.webp",
+            "alt": "Hospital Authority"
+          }
+        },
+        "tl_02": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ArchSD.webp",
+            "alt": "ArchSD"
+          }
+        },
+        "tl_03": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Emaar-Properties.webp",
+            "alt": "Emaar Properties"
+          }
+        },
+        "tl_04": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-New-World-China.webp",
+            "alt": "New World China"
+          }
+        },
+        "tl_05": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Hong-Kong-Land.webp",
+            "alt": "Hong Kong Land"
+          }
+        },
+        "tl_06": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-IFC-Mall.webp",
+            "alt": "HK IFC Mall"
+          }
+        },
+        "tl_07": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HAECO.webp",
+            "alt": "HAECO"
+          }
+        },
+        "tl_08": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-changi-airport-singapore.webp",
+            "alt": "Changi Airport Singapore"
+          }
+        },
+        "tl_09": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Perfit.webp",
+            "alt": "Perfit"
+          }
+        },
+        "tl_10": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-International-Airport.webp",
+            "alt": "HK International Airport"
+          }
+        },
+        "tl_11": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Henderson.webp",
+            "alt": "Henderson"
+          }
+        },
+        "tl_12": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CMA-Testing.webp",
+            "alt": "CMA Testing"
+          }
+        },
+        "tl_13": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Megabox.webp",
+            "alt": "Megabox"
+          }
+        },
+        "tl_14": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR.webp",
+            "alt": "MTR"
+          }
+        },
+        "tl_15": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Mira-Place.webp",
+            "alt": "Mira Place"
+          }
+        },
+        "tl_16": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ABC-Pathways-International-Kindergarten.webp",
+            "alt": "ABC Pathways International Kindergarten"
+          }
+        },
+        "tl_17": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CPL-Aromas.webp",
+            "alt": "CPL Aromas"
+          }
+        },
+        "tl_18": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HKJC.webp",
+            "alt": "HKJC"
+          }
+        },
+        "tl_19": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-LCSD.webp",
+            "alt": "LCSD"
+          }
+        },
+        "tl_20": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-kai-shing-management-services-limited.webp",
+            "alt": "Kai Shing Management Services"
+          }
+        },
+        "tl_21": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR-Propertym.webp",
+            "alt": "MTR Property"
+          }
+        },
+        "tl_22": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Royal-Perth-Hospital.webp",
+            "alt": "Royal Perth Hospital"
+          }
+        },
+        "tl_23": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Savills.webp",
+            "alt": "Savills"
+          }
+        },
+        "tl_24": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Cohiba-atmosphere.webp",
+            "alt": "Cohiba Atmosphere"
+          }
+        },
+        "tl_25": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-FEHD.webp",
+            "alt": "FEHD"
+          }
+        }
+      },
+      "block_order": [
+        "logo_QAmmWq",
+        "tl_01",
+        "tl_02",
+        "tl_03",
+        "tl_04",
+        "tl_05",
+        "tl_06",
+        "tl_07",
+        "tl_08",
+        "tl_09",
+        "tl_10",
+        "tl_11",
+        "tl_12",
+        "tl_13",
+        "tl_14",
+        "tl_15",
+        "tl_16",
+        "tl_17",
+        "tl_18",
+        "tl_19",
+        "tl_20",
+        "tl_21",
+        "tl_22",
+        "tl_23",
+        "tl_24",
+        "tl_25"
+      ],
+      "settings": {
+        "heading": "Trusted by industry leaders for",
+        "heading_highlight": "Quality and Reliability",
+        "static_grid": false
+      }
+    },
+    "ncco-about-strip": {
+      "type": "ncco-about-strip",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "number": "01",
+            "title": "Founded on Scientific Research",
+            "body": "Backed by Hong Kong University of Science and Technology, our patented NCCO technology is trusted in hospitals, labs, and homes across the globe."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "number": "02",
+            "title": "Driven by Purpose",
+            "body": "From allergy relief to environmental protection, our mission is to deliver breathable, pollutant-free air for everyone, everywhere."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "number": "03",
+            "title": "Trusted Worldwide",
+            "body": "Deployed in over 200+ institutions, NCCO products are used by government bodies, healthcare providers, and industries with critical air quality needs."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "number": "04",
+            "title": "Innovation Across Brands",
+            "body": "With five distinct sub-brands, we bring tailored air purification solutions for personal, professional, and industrial spaces."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "eyebrow": "About",
+        "heading": "Pioneering Clean Air for a Healthier World",
+        "subtext": "With decades of research and innovation, NCCO is redefining air purification through science, technology, and global impact.",
+        "cta_label": "Know More About Us",
+        "cta_url": "/pages/about-us"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-1.png",
+            "eyebrow": "",
+            "title": "Eliminates Harmful Pollutants",
+            "body": "<p>Removes VOCs, allergens, bacteria, and viruses — not just captures them.</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-2.png",
+            "eyebrow": "",
+            "title": "24/7 Continuous Purification",
+            "body": "<p>Unlike traditional purifiers, NCCO technology runs non-stop without harmful by-products.</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-3.png",
+            "eyebrow": "",
+            "title": "Safe for Pets, Babies & Seniors",
+            "body": "<p>Ozone-free and non-toxic — ideal for sensitive living environments.</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-4.png",
+            "eyebrow": "",
+            "title": "Reduces Allergic Reactions",
+            "body": "<p>Clinically shown to improve respiratory comfort for asthma and allergy sufferers.</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-5.png",
+            "eyebrow": "",
+            "title": "Patented Scientific Process",
+            "body": "<p>Developed through decades of research with real-world testing and international certifications.</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "benefit-icon-6.png",
+            "eyebrow": "",
+            "title": "Eco-Friendly & Reusable System",
+            "body": "<p>NCCO filters are long-lasting and recyclable, minimising environmental impact.</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "eyebrow": "Benefits of Using NCCO",
+        "heading": "Why Choose NCCO for Safer, Cleaner Air",
+        "subtext": "Patented technology trusted worldwide to protect your health and environment.",
+        "columns": "3",
+        "align": "center",
+        "numbered": false,
+        "flat": false,
+        "cta_label": "Explore Our Impact",
+        "cta_url": "/pages/ncco",
+        "dark": true,
+        "split_header": false,
+        "table_grid": false,
+        "hero_card": false,
+        "bg_asset": "",
+        "accent_color": "",
+        "cta_variant": "yellow"
+      }
+    },
+    "ncco-steps": {
+      "type": "ncco-steps",
+      "settings": {
+        "eyebrow": "NCCO MEANING",
+        "heading": "Every Letter, Breakthrough. The Technology Behind NCCO",
+        "body": "Each letter in NCCO reflects the scientific thinking that powers our innovation from nanotech structures to safe molecular oxidation. It’s not just a name — it’s our entire process, defined.",
+        "cta_label": "Explore NCCO Technology",
+        "cta_url": "/pages/ncco",
+        "body_nano": "The catalytic material is a synthetic mineral featuring nanoscale pores. It is non-toxic and fully reusable.",
+        "body_confined": "The nanoporous structure effectively adsorbs airborne pollutants, thereby reducing their concentration in the air.",
+        "body_catalytic": "The nanopores contain abundant transition metals that efficiently catalyze gaseous pollutants.",
+        "body_oxidation": "Only clean air, water vapor, and CO₂ are released filter lasts up to 12 years."
+      }
+    },
+    "ncco-tech-explainer": {
+      "type": "ncco-tech-explainer",
+      "blocks": {
+        "step_01": {
+          "type": "step",
+          "settings": {
+            "caption": "Pollutants enter the NCCO channel."
+          }
+        },
+        "step_02": {
+          "type": "step",
+          "settings": {
+            "caption": "Chemical reaction occurs with active oxygen."
+          }
+        },
+        "step_03": {
+          "type": "step",
+          "settings": {
+            "caption": "Pollutants are broken down into water molecules and carbon dioxide."
+          }
+        }
+      },
+      "block_order": [
+        "step_01",
+        "step_02",
+        "step_03"
+      ],
+      "settings": {
+        "eyebrow": "HOW IT WORK",
+        "heading": "Capture + Breakdown",
+        "subtext": "Oxygen Polymerization Decomposition Technology",
+        "cta_label": "Explore NCCO Technology",
+        "cta_url": "/pages/ncco",
+        "explain_1": "The NCCO layer reacts with active oxygen to break down harmful pollutants into water and carbon dioxide.",
+        "explain_2": "This enables continuous filter regeneration and ensures high-efficiency air purification."
+      }
+    },
+    "ncco-faq": {
+      "type": "ncco-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is there any oxygen consumed during the NCCO process?",
+            "answer": "<p>No. The NCCO process is a catalytic reaction — the catalyst facilitates the oxidation of pollutants without being consumed itself. Oxygen acts as the oxidising agent, but the catalyst remains intact for up to 12 years under normal use.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What contaminants can NCCO technology break down?",
+            "answer": "<p>NCCO technology effectively breaks down VOCs (volatile organic compounds), formaldehyde, benzene, toluene, bacteria, viruses, mould spores, and odours at the molecular level — converting them into harmless water vapour and CO₂.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How long does the NCCO catalyst last?",
+            "answer": "<p>The NCCO catalyst has a lifespan of up to 12 years under normal maintenance conditions. Unlike HEPA filters which require frequent replacement, the catalyst does not degrade during the purification process.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does NCCO technology produce any harmful by-products?",
+            "answer": "<p>No. The catalytic oxidation process converts pollutants exclusively into water vapour and carbon dioxide — both harmless and naturally occurring. There is no secondary pollution, ozone generation, or toxic residue.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "accent_color": "",
+        "heading": "All You Need To Know",
+        "bg_image": "ncco-faq-bg.png",
+        "three_col": false
+      }
+    },
+    "ncco-brands": {
+      "type": "ncco-brands",
+      "blocks": {
+        "brand_1": {
+          "type": "brand",
+          "settings": {
+            "name": "NCCO",
+            "logo_asset": "brand-ncco-sm-logo.png",
+            "description": "Our core technology brand powering advanced air purification with nano-catalyst oxidation for long-lasting protection."
+          }
+        },
+        "brand_2": {
+          "type": "brand",
+          "settings": {
+            "name": "RHT",
+            "logo_asset": "brand-rht-logo.png",
+            "description": "A technology-led environmental enterprise, translating patented HKUST innovation into real-world products that improve quality of life."
+          }
+        },
+        "brand_3": {
+          "type": "brand",
+          "settings": {
+            "name": "B-mola",
+            "logo_asset": "brand-bmola-logo.png",
+            "description": "Our consumer electronics line, integrating NCCO tech into stylish, portable, and high-performance devices for homes, cars, and travel."
+          }
+        },
+        "brand_4": {
+          "type": "brand",
+          "settings": {
+            "name": "05+",
+            "logo_asset": "brand-05plus-logo.png",
+            "description": "Our premium lifestyle brand, offering design-forward air purifiers that blend aesthetics with performance for modern interiors."
+          }
+        },
+        "brand_5": {
+          "type": "brand",
+          "settings": {
+            "name": "NCCO-IG",
+            "logo_asset": "brand-nccoig-logo.png",
+            "description": "Focused on industrial-grade applications, NCCO-IG delivers powerful purification systems for factories, healthcare, and large-scale operations."
+          }
+        }
+      },
+      "block_order": [
+        "brand_1",
+        "brand_2",
+        "brand_3",
+        "brand_4",
+        "brand_5"
+      ],
+      "settings": {
+        "eyebrow": "Our Brands",
+        "heading": "One Technology. Many Solutions.",
+        "subtext": "From home to industry, explore how each of our brands brings NCCO purification to life.",
+        "cta_label": "Explore All Brands",
+        "cta_url": "/pages/brands"
+      }
+    },
+    "ncco-case-studies": {
+      "type": "ncco-case-studies",
+      "blocks": {
+        "case_1": {
+          "type": "case",
+          "settings": {
+            "title": "HSBC Data Centre",
+            "image_asset": "case-hsbc-datacenter.png",
+            "excerpt": "Resolved indoor air quality issues caused by high humidity. After installing the purification system, TVOC removal rate reached 93.4%."
+          }
+        },
+        "case_2": {
+          "type": "case",
+          "settings": {
+            "title": "Hong Kong International Airport",
+            "image_asset": "case-hkia.png",
+            "excerpt": "Nearly 300 NCCO air purifiers installed across 108 public washrooms in the passenger terminal, eliminating odours and reducing operational costs."
+          }
+        },
+        "case_3": {
+          "type": "case",
+          "settings": {
+            "title": "Grand Marais Residential",
+            "image_asset": "case-grand-marais.png",
+            "excerpt": "Henderson Land installed NCCO ceiling purifiers in residential lobbies and clubhouses to remove post-renovation VOCs and improve air quality."
+          }
+        },
+        "case_4": {
+          "type": "case",
+          "settings": {
+            "title": "HKJC Sha Tin Racecourse",
+            "image_asset": "case-hkjc-shatin.png",
+            "excerpt": "NCCO system reduced indoor VOC concentration from 130 ppb to below 50 ppb, far exceeding client expectations for large-scale gatherings."
+          }
+        },
+        "case_5": {
+          "type": "case",
+          "settings": {
+            "title": "HK Alliance Academy International",
+            "image_asset": "case-hk-alliance-academy.png",
+            "excerpt": "NCCO ceiling purifiers installed to remove harmful chemical residues post-renovation. Indoor air quality achieved the HKEPD Good Grade standard."
+          }
+        }
+      },
+      "block_order": [
+        "case_1",
+        "case_2",
+        "case_3",
+        "case_4",
+        "case_5"
+      ],
+      "settings": {
+        "eyebrow": "Proven Results",
+        "heading": "Trusted by Thousands. Recognized Worldwide.",
+        "subtext": "Real people. Real results. Backed by global recognition."
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "eyebrow": "Get In Touch",
+        "accent_color": "",
+        "heading": "We're Here to Help",
+        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+        "email": "info@ncco-tech.com",
+        "phone": "(852) 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "SUBMIT"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-about-strip",
+    "ncco-icon-grid",
+    "ncco-steps",
+    "ncco-tech-explainer",
+    "ncco-faq",
+    "ncco-brands",
+    "ncco-case-studies",
+    "ncco-contact-cta"
+  ]
+}

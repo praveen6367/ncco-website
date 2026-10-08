@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100">
+  <!-- JLL concentric oval rings -->
+  <g transform="translate(10,10)">
+    <ellipse cx="40" cy="40" rx="38" ry="38" fill="none" stroke="#E3002B" stroke-width="7"/>
+    <ellipse cx="40" cy="40" rx="27" ry="27" fill="none" stroke="#E3002B" stroke-width="7"/>
+    <ellipse cx="40" cy="40" rx="15" ry="15" fill="none" stroke="#E3002B" stroke-width="7"/>
+  </g>
+  <text x="100" y="62" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="42" fill="#1A1A1A" letter-spacing="-1">JLL</text>
+</svg>

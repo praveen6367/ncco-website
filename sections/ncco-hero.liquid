@@ -1,0 +1,302 @@
+{%- assign bg = section.settings.background_image -%}
+{%- assign overlay = section.settings.overlay_opacity | divided_by: 100.0 -%}
+{%- assign default_bg = 'ncco-hero-bg.jpg' | asset_url -%}
+{%- assign bg_url = default_bg -%}
+{%- if bg %}{% assign bg_url = bg | image_url: width: 2000 %}{% endif -%}
+{%- if section.settings.background_asset != blank -%}
+  {%- assign bg_url = section.settings.background_asset | asset_url -%}
+{%- endif -%}
+
+{%- assign has_bullets = false -%}
+{%- if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank -%}
+  {%- assign has_bullets = true -%}
+{%- endif -%}
+
+{%- assign brand_color = section.settings.brand_color | default: '#FECB07' -%}
+{%- if brand_color == blank -%}{%- assign brand_color = '#FECB07' -%}{%- endif -%}
+{%- assign cta_text_color = section.settings.cta_text_color | default: '#081D3A' -%}
+{%- if cta_text_color == blank -%}{%- assign cta_text_color = '#081D3A' -%}{%- endif -%}
+
+<section class="ncco-hero-wrap{% if section.settings.compact %} ncco-hero-wrap--compact{% endif %}">
+  <div class="ncco-hero__bg" style="background-image: url('{{ bg_url }}')">
+    <div class="ncco-hero__overlay"{% if section.settings.overlay_solid_color != blank %} style="background: {{ section.settings.overlay_solid_color }}"{% endif %}></div>
+
+    <div class="ncco-hero__inner">
+      <div class="ncco-hero__left">
+        {%- if section.settings.logo_asset != blank -%}
+          <img class="ncco-hero__logo" src="{{ section.settings.logo_asset | asset_url }}" alt="{{ section.settings.eyebrow }}" loading="eager">
+        {%- elsif section.settings.eyebrow != blank -%}
+          <p class="ncco-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        <h1 class="ncco-hero__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+        {%- if section.settings.subtext != blank -%}
+          <p class="ncco-hero__sub"{% if section.settings.subtext_gap != blank %} style="margin-top:{{ section.settings.subtext_gap }}px"{% endif %}>{{ section.settings.subtext }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if has_bullets or section.settings.cta_label != blank -%}
+        <div class="ncco-hero__card" style="border-color:{{ brand_color }}">
+          {%- if section.settings.card_image_asset != blank -%}
+            <img class="ncco-hero__card-img" src="{{ section.settings.card_image_asset | asset_url }}" alt="" loading="eager">
+          {%- endif -%}
+          <div class="ncco-hero__card-shade"></div>
+
+          {%- if has_bullets -%}
+            <div class="ncco-hero__bullets">
+              {%- if section.settings.bullet_1 != blank -%}<p>* {{ section.settings.bullet_1 }}</p>{%- endif -%}
+              {%- if section.settings.bullet_2 != blank -%}<p>* {{ section.settings.bullet_2 }}</p>{%- endif -%}
+              {%- if section.settings.bullet_3 != blank -%}<p>* {{ section.settings.bullet_3 }}</p>{%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.cta_label != blank -%}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="ncco-hero__cta" style="background:{{ brand_color }};color:{{ cta_text_color }}">
+              <span>{{ section.settings.cta_label }}</span>
+              <span class="ncco-hero__cta-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 13L13 3M13 3H6M13 3V10" stroke="{{ brand_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── Figma Hero (node 1423:25035, 1920×978) ── */
+.ncco-hero-wrap { padding: 0; background: #fff; }
+
+/* Outer rounded card — 1888×978, 16px side gutter, border-radius 32 */
+.ncco-hero__bg {
+  position: relative;
+  margin: 0 16px;
+  height: 978px;
+  border-radius: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.ncco-hero__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+background: linear-gradient(
+  180deg,
+  rgba(2, 8, 16, 0.92) 0%,
+  rgba(8, 29, 58, 0.62) 45%,
+  rgba(8, 29, 58, 0.38) 100%
+) !important;
+  z-index: 1;
+}
+
+.ncco-hero__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1 !important;
+
+}
+
+/* Inner content — pinned right:240 top:224, flex row, gap:224 */
+.ncco-hero__inner {
+  position: absolute; top: 224px; right: 240px; left: 240px;
+  display: flex; align-items: center; gap: 224px; z-index: 2;
+}
+
+/* Left column — width 756, big gap between heading block and subtext */
+.ncco-hero__left {
+  flex: 0 0 756px; max-width: 756px;
+  display: flex; flex-direction: column;
+}
+
+.ncco-hero__logo {
+  height: 48px; width: auto; object-fit: contain; display: block; margin: 0 0 28px;
+}
+.ncco-hero__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-weight: 500; font-size: 18px; letter-spacing: -0.36px;
+  color: #fff; margin: 0 0 28px;
+}
+
+.ncco-hero__title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600; font-size: 70px; line-height: 1.05; letter-spacing: -4.2px;
+  color: #fff; margin: 0;
+}
+/* Accent color for <em> — gradient from brand_color (#FECB07) to white */
+.ncco-hero__title em {
+  font-style: normal;
+  background: linear-gradient(90deg, {{ brand_color }} 0%, rgba(254, 203, 7, 0) 100%),
+              linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding-right: 0.2em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.ncco-hero__sub {
+  font-family: 'Geist', sans-serif;
+  font-weight: 500; font-size: 20px; line-height: 1.4; letter-spacing: -0.4px;
+  color: #fff; margin: 255px 0 0; max-width: 705px;
+}
+.ncco-hero-wrap--compact .ncco-hero__bg { height: 460px; }
+.ncco-hero-wrap--compact .ncco-hero__inner { top: 110px; }
+.ncco-hero-wrap--compact .ncco-hero__sub { margin-top: 24px; }
+
+.ncco-hero__card {
+  position: relative;
+  width: 460px;
+  height: 460px;
+  flex: 0 0 460px;
+
+  border: 1px solid #FECB07;
+  border-radius: 30px;
+  overflow: hidden;
+
+  box-shadow: 0 8px 48px rgba(3, 12, 23, 0.78);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.ncco-hero__card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+  z-index: 0;
+
+  filter: brightness(0.65) saturate(0.75);
+}
+
+.ncco-hero__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8, 29, 58, 0.65);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ncco-hero__card-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(8, 29, 58, 0.78) !important;
+}
+
+/* Bullets: sit above CTA, gap 20 between, gap 20 to CTA */
+.ncco-hero__bullets {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 20px;
+  margin-bottom: 24px;
+}
+.ncco-hero__bullets p {
+  margin: 0; font-family: 'Geist', sans-serif;
+  font-weight: 500; font-size: 18px; letter-spacing: -0.36px;
+  color: #fff;
+}
+
+/* CTA — full-width pill anchored under bullets */
+.ncco-hero__cta {
+  position: relative; z-index: 2;
+  display: inline-flex; align-self: flex-start;
+  align-items: center; gap: 24px;
+  background: #FECB07; color: #081D3A;
+  font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px;
+  text-transform: uppercase; text-decoration: none; letter-spacing: -0.02em;
+  padding: 8px 8px 8px 28px; border-radius: 78px; white-space: nowrap;
+  box-shadow: none;
+  transition: filter .2s ease;
+}
+.ncco-hero__cta:hover { filter: brightness(0.95); color: #081D3A; }
+.ncco-hero__cta-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; min-width: 38px;
+  background: #081D3A; border-radius: 50%;
+}
+
+/* ── Responsive ──
+   Below 1440, tighten side pins. Below 1024 stack card under text. */
+@media (max-width: 1600px) {
+  .ncco-hero__inner { right: 80px; left: 80px; gap: 80px; }
+  .ncco-hero__left { flex: 1 1 auto; }
+}
+@media (max-width: 1024px) {
+  .ncco-hero__bg { height: auto; padding-bottom: 40px; }
+  .ncco-hero__inner {
+    position: static; padding: 120px 40px 0;
+    flex-direction: column; gap: 40px; align-items: stretch;
+  }
+  .ncco-hero__title { font-size: 48px; letter-spacing: -2px; }
+  .ncco-hero__sub { margin-top: 32px; font-size: 18px; }
+  .ncco-hero__card { width: 100%; max-width: 460px; align-self: center; }
+}
+@media (max-width: 600px) {
+  .ncco-hero-wrap { padding: 0; }
+  .ncco-hero__bg { margin: 0; border-radius: 0; }
+  .ncco-hero__inner { padding: 80px 16px 0; }
+  .ncco-hero__title { font-size: 32px; letter-spacing: -0.8px; }
+  .ncco-hero__eyebrow { font-size: 13px; }
+  .ncco-hero__sub { font-size: 15px; margin-top: 24px; }
+  .ncco-hero__card { height: auto; aspect-ratio: 1; max-width: 100%; }
+  .ncco-hero__bullets p { font-size: 15px; white-space: normal; }
+  .ncco-hero-wrap--compact .ncco-hero__inner { padding-top: 64px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Hero",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow text"},
+    {"type": "text", "id": "logo_asset", "label": "Logo asset filename (shows instead of eyebrow text)"},
+    {"type": "text", "id": "brand_color", "label": "Brand accent color (hex, default #FECB07 yellow)"},
+    {"type": "text", "id": "cta_text_color", "label": "CTA text color (hex, default #081D3A dark)"},
+    {"type": "richtext", "id": "headline", "label": "Headline (use <em> for yellow gradient)"},
+    {"type": "textarea", "id": "subtext", "label": "Subtext"},
+    {"type": "header", "content": "Right card bullets (optional)"},
+    {"type": "text", "id": "bullet_1", "label": "Bullet 1"},
+    {"type": "text", "id": "bullet_2", "label": "Bullet 2"},
+    {"type": "text", "id": "bullet_3", "label": "Bullet 3"},
+    {"type": "header", "content": "CTA button"},
+    {"type": "text", "id": "cta_label", "label": "Button text"},
+    {"type": "url", "id": "cta_url", "label": "Button URL"},
+    {"type": "header", "content": "Card image"},
+    {"type": "text", "id": "card_image_asset", "label": "Card image filename (assets/)"},
+    {"type": "header", "content": "Background"},
+    {"type": "image_picker", "id": "background_image", "label": "Background image"},
+    {"type": "text", "id": "background_asset", "label": "Background asset filename (overrides image picker)"},
+    {"type": "checkbox", "id": "compact", "label": "Compact hero (shorter height, subtext tight below heading)", "default": false},
+    {"type": "range", "id": "overlay_opacity", "min": 0, "max": 85, "step": 5, "unit": "%", "label": "Overlay opacity (unused — hero uses fixed 3-stop gradient)", "default": 55},
+    {"type": "text", "id": "overlay_solid_color", "label": "Solid overlay color (e.g. rgba(8,29,58,0.78)) — overrides gradient"},
+    {"type": "checkbox", "id": "dark", "label": "Dark background (unused)", "default": true},
+    {"type": "number", "id": "subtext_gap", "label": "Subtext top gap (px, overrides default 255)"}
+  ],
+  "presets": [{"name": "NCCO Hero"}]
+}
+{% endschema %}

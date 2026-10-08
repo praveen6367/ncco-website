@@ -1,0 +1,74 @@
+<section class="ncco-certifications ncco-section">
+  <div class="ncco-container" style="text-align:center">
+    {% if section.settings.eyebrow != blank %}
+      <p class="ncco-eyebrow ncco-reveal">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="ncco-certifications__heading ncco-reveal">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.blocks.size > 0 %}
+      <div class="ncco-certifications__grid">
+        {% for block in section.blocks %}
+          <div class="ncco-certifications__item" {{ block.shopify_attributes }}>
+            {% if block.settings.logo != blank %}
+              <img src="{{ block.settings.logo | image_url: width: 200 }}"
+                   alt="{{ block.settings.name }}" loading="lazy">
+            {% endif %}
+            {% if block.settings.name != blank %}
+              <p>{{ block.settings.name }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% elsif section.settings.featured_asset != blank %}
+      <img src="{{ section.settings.featured_asset | asset_url }}"
+           alt="{{ section.settings.heading }}"
+           loading="lazy"
+           class="ncco-certifications__featured ncco-reveal ncco-reveal--d2">
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.ncco-certifications__heading { font-size: 32px; font-weight: 600; letter-spacing: -1px; color: var(--ncco-navy); margin-bottom: 40px; }
+.ncco-certifications__grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; align-items: center; }
+.ncco-certifications__item img { max-height: 80px; width: auto; max-width: 100%; }
+.ncco-certifications__item p { font-size: 13px; color: #888; margin-top: 8px; }
+.ncco-certifications__featured { max-width: 900px; width: 100%; height: auto; border-radius: 16px; }
+
+@media (max-width: 989px) {
+  .ncco-certifications__heading { font-size: 26px; letter-spacing: -0.6px; margin-bottom: 28px; }
+  .ncco-certifications__grid { gap: 24px; }
+  .ncco-certifications__item img { max-height: 60px; }
+}
+@media (max-width: 600px) {
+  .ncco-certifications__heading { font-size: 22px; }
+  .ncco-certifications__grid { gap: 16px; }
+  .ncco-certifications__item img { max-height: 48px; }
+  .ncco-certifications__featured { border-radius: 12px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Certifications",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Certified Safe. Trusted Worldwide."},
+    {"type": "text", "id": "featured_asset", "label": "Featured image asset filename", "info": "Shows when no cert blocks added. E.g. ncco-certifications-web.png"}
+  ],
+  "blocks": [
+    {
+      "type": "cert",
+      "name": "Certification",
+      "settings": [
+        {"type": "image_picker", "id": "logo", "label": "Logo"},
+        {"type": "text", "id": "name", "label": "Name"}
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [{"name": "NCCO Certifications"}]
+}
+{% endschema %}

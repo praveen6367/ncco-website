@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Medical",
+        "headline": "<p>Trusted Air Purification in <em>Over 300 Hospitals</em></p>",
+        "subtext": "NCCO technology meets the most demanding air quality requirements in ICUs, operating theatres, isolation wards, clinics, and laboratories — chosen by healthcare institutions worldwide for its proven, non-toxic performance.",
+        "cta_label": "Explore Medical Solutions",
+        "cta_url": "#solutions",
+        "overlay_opacity": 55,
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "settings": {
+        "heading": "Trusted by world-leading institutions"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "Used in 300+ Hospitals Globally",
+            "body": "<p>NCCO is trusted by over 300 hospitals worldwide — from Hong Kong to international healthcare institutions — for air purification in the most sensitive clinical zones.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "Pathogen Elimination at Molecular Level",
+            "body": "<p>NCCO breaks down airborne viruses, bacteria, and bioaerosols at the molecular level. Unlike HEPA filters that trap pathogens, NCCO permanently eliminates them.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Safe for Patients and Clinical Staff",
+            "body": "<p>Non-toxic catalyst. Ozone levels below 0.03 ppm. No chemical agents. Suitable for ICUs, neonatal wards, maternity units, and immunocompromised patient areas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "eyebrow": "Medical Applications",
+        "heading": "Chosen by 300+ Hospitals for Safer Medical Air",
+        "subtext": "In clinical environments, air quality is a matter of patient safety. NCCO delivers hospital-grade protection without chemicals, ozone, or secondary pollution.",
+        "columns": "3",
+        "dark": false
+      }
+    },
+    "ncco-iwt-1": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Trusted by 300+ Hospitals. Backed by Proven Science.",
+        "text": "<p>NCCO has been independently tested and clinically validated across multiple international healthcare institutions. Its performance in eliminating airborne pathogens in hospital environments — including bacterial colonies, airborne viruses, and bioaerosols — is backed by published research and real-world deployment data.</p>",
+        "asset": "ncco-img-air-purifier-room.png",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-iwt-2": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Proven in 300+ Hospitals Worldwide",
+        "text": "<p>Bioaerosols and persistent odours from patient rooms and labs can compromise comfort and perceived hygiene in clinical zones. NCCO systems eliminate these at the source — maintaining continuously clean air without disrupting clinical workflows or patient comfort.</p>",
+        "asset": "ncco-img-residential-room.png",
+        "layout": "text_first",
+        "dark": false
+      }
+    },
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "heading": "What's in the Air Inside Your Hospital or Clinic?",
+        "subtext": "Speak to our medical sector team about NCCO specifications for ICUs, isolation wards, operating theatres, and clinical laboratories.",
+        "cta_label": "Request Medical Sector Info",
+        "cta_url": "/pages/contact-us",
+        "bg_color": "#081d3a"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "Medical Grade Certification",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is NCCO safe for ICUs and neonatal wards?",
+            "row_content": "<p>Yes. The NCCO catalyst is a non-toxic artificial mineral with ozone output below 0.03 ppm — well under international clinical safety thresholds. NCCO systems are deployed in ICUs, neonatal wards, maternity units, and other high-sensitivity clinical environments globally.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does NCCO compare to UV air disinfection?",
+            "row_content": "<p>UV systems disinfect by irradiating pathogens and require direct exposure. NCCO breaks pathogens down at the molecular level through catalytic oxidation — no UV radiation, no ozone generation beyond safe limits, and effective against a broader range of gaseous pollutants that UV cannot address.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What clinical environments is NCCO used in?",
+            "row_content": "<p>NCCO is deployed in ICUs, operating theatres, isolation wards, clinical laboratories, outpatient clinics, maternity wards, elderly care facilities, and dental surgeries. It has also been used in pharmaceutical manufacturing environments requiring strict air quality control.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "caption": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h2",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-icon-grid",
+    "ncco-iwt-1",
+    "ncco-iwt-2",
+    "ncco-cta-band",
+    "ncco-certifications",
+    "collapsible-content",
+    "ncco-contact-cta"
+  ]
+}

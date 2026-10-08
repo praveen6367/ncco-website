@@ -1,0 +1,91 @@
+<section class="ncco-ndiag">
+  <div class="ncco-ndiag__header">
+    <div class="ncco-ndiag__title-col">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ncco-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ncco-ndiag__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.body != blank -%}
+      <div class="ncco-ndiag__desc">{{ section.settings.body }}</div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.diagram_asset != blank -%}
+    <div class="ncco-ndiag__diagram-wrap">
+      <img class="ncco-ndiag__diagram" src="{{ section.settings.diagram_asset | asset_url }}"
+           alt="{{ section.settings.heading }}" loading="lazy">
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+.ncco-ndiag { padding: 120px 240px 60px; background: #fff; }
+.ncco-ndiag__header {
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+.ncco-ndiag__title-col {
+  flex: 0 0 582px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ncco-ndiag .ncco-eyebrow { margin-bottom: 0; }
+.ncco-ndiag__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
+  color: #081D3A; margin: 0;
+}
+.ncco-ndiag__desc {
+  flex: 1;
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  color: #647082;
+  align-self: flex-end;
+}
+.ncco-ndiag__desc p { margin: 0 0 16px; }
+.ncco-ndiag__desc p:last-child { margin-bottom: 0; }
+
+.ncco-ndiag__diagram-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ncco-ndiag__diagram {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1600px) { .ncco-ndiag { padding: 100px 80px 60px; } }
+@media (max-width: 1200px) {
+  .ncco-ndiag { padding: 80px 40px 40px; }
+  .ncco-ndiag__header { flex-direction: column; gap: 32px; }
+  .ncco-ndiag__title-col { flex: none; }
+  .ncco-ndiag__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
+}
+@media (max-width: 600px) {
+  .ncco-ndiag { padding: 40px 16px 24px; }
+  .ncco-ndiag__heading { font-size: 32px; line-height: 40px; letter-spacing: -1px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Technology Diagram",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NCCO Technology"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "NCCO Technology"},
+    {"type": "richtext", "id": "body", "label": "Description (HTML)"},
+    {"type": "text", "id": "diagram_asset", "label": "Diagram image filename (assets/)"}
+  ],
+  "presets": [{"name": "NCCO Technology Diagram"}]
+}
+{% endschema %}

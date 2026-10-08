@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Our Impact",
+        "headline": "<p>Clean Air for <em>Every Environment</em></p>",
+        "subtext": "From hospitals and factories to homes and offices — NCCO technology delivers proven air purification across every sector, every day.",
+        "cta_label": "Explore All Applications",
+        "cta_url": "#sectors",
+        "overlay_opacity": 55,
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "settings": {
+        "heading": "Trusted by world-leading institutions"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_medical": {
+          "type": "card",
+          "settings": {
+            "title": "Medical",
+            "body": "<p>Trusted in 300+ hospitals worldwide. Hospital-grade pathogen elimination for ICUs, theatres, and clinical laboratories.</p><p><a href=\"/pages/medical-use\">Explore Medical →</a></p>"
+          }
+        },
+        "card_commercial": {
+          "type": "card",
+          "settings": {
+            "title": "Commercial",
+            "body": "<p>HVAC-integrated purification for offices, airports, shopping malls, hotels, and schools across Hong Kong and beyond.</p><p><a href=\"/pages/commercial-use\">Explore Commercial →</a></p>"
+          }
+        },
+        "card_industrial": {
+          "type": "card",
+          "settings": {
+            "title": "Industrial",
+            "body": "<p>VOC and toxic emission control for factories, waste processing facilities, and large-scale manufacturing plants.</p><p><a href=\"/pages/industrial-use\">Explore Industrial →</a></p>"
+          }
+        },
+        "card_residential": {
+          "type": "card",
+          "settings": {
+            "title": "Residential",
+            "body": "<p>Hong Kong's #1 home air purification brand — whisper-quiet, 12-year catalyst, and proven safe for the whole family.</p><p><a href=\"/pages/residential-use\">Explore Residential →</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_medical",
+        "card_commercial",
+        "card_industrial",
+        "card_residential"
+      ],
+      "settings": {
+        "eyebrow": "Impact Areas",
+        "heading": "One Technology. Four Sectors.",
+        "subtext": "NCCO is the only air purification technology simultaneously deployed across residential, commercial, industrial, and medical sectors worldwide.",
+        "columns": "4",
+        "dark": false
+      }
+    },
+    "ncco-stats": {
+      "type": "ncco-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "300+",
+            "label": "Hospitals worldwide",
+            "sublabel": ""
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "600+",
+            "label": "Trusted partners",
+            "sublabel": ""
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "20+",
+            "label": "Years of research",
+            "sublabel": ""
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "99%",
+            "label": "Bactericidal rate",
+            "sublabel": ""
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "heading": "The Numbers Behind Our Impact"
+      }
+    },
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "eyebrow": "Next Step",
+        "heading": "Ready to See NCCO in Action?",
+        "subtext": "Our team can assess your environment and recommend the right NCCO system for your sector and scale.",
+        "cta_label": "Request a Consultation",
+        "cta_url": "/pages/contact-us",
+        "bg_color": "#003da5"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "International Standards",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-icon-grid",
+    "ncco-stats",
+    "ncco-cta-band",
+    "ncco-certifications",
+    "ncco-contact-cta"
+  ]
+}

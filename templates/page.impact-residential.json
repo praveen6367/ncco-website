@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-page-banner": {
+      "type": "ncco-page-banner",
+      "settings": {
+        "headline": "<p>Hong Kong's No.1 Choice<br><em>for Cleaner, Safer Home Air</em></p>",
+        "subtext": "NCCO's advanced technology is trusted by thousands of families protecting homes from harmful particles, odors, and indoor air pollutants.",
+        "accent_color": "#FECB07",
+        "height": 588,
+        "background_asset": "residential-hero.png"
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "blocks": {
+        "p01": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-01.png",
+            "alt": "Caritas Hong Kong"
+          }
+        },
+        "p02": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-02.png",
+            "alt": "Hong Kong International Airport"
+          }
+        },
+        "p03": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-03.png",
+            "alt": "New World China"
+          }
+        },
+        "p04": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-04.png",
+            "alt": "JLL"
+          }
+        },
+        "p05": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-05.png",
+            "alt": "HSBC"
+          }
+        },
+        "p06": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-06.png",
+            "alt": "ifc"
+          }
+        },
+        "p07": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-07.png",
+            "alt": "MTR"
+          }
+        },
+        "p08": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-08.png",
+            "alt": "Henderson"
+          }
+        },
+        "p09": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-09.png",
+            "alt": "Food and Environmental Hygiene Department"
+          }
+        },
+        "p10": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-partner-10.png",
+            "alt": "CPL Aromas"
+          }
+        }
+      },
+      "block_order": [
+        "p01",
+        "p02",
+        "p03",
+        "p04",
+        "p05",
+        "p06",
+        "p07",
+        "p08",
+        "p09",
+        "p10"
+      ],
+      "settings": {
+        "heading": "Trusted by Industry Leaders for",
+        "heading_highlight": "Quality and Reliability"
+      }
+    },
+    "ncco-commitment": {
+      "type": "ncco-commitment",
+      "settings": {
+        "eyebrow": "OUR COMMITMENT TO HOMES",
+        "accent_color": "#FECB07",
+        "heading": "Cleaner Air, Trusted by Hong Kong Homes",
+        "subtext": "We're proud to be Hong Kong's best-selling home air purifier — turning everyday living spaces into cleaner, safer environments. Our proven NCCO technology brings peace of mind through long-term protection and smart design.",
+        "block_1_title": "WHY IT MATTERS",
+        "block_1_body": "<p>Indoor air may look clean, but it often carries harmful pollutants from cleaning agents, furniture, and daily routines. These invisible particles can affect sleep, breathing, and family wellness.</p><p>NCCO purifiers don't just trap — they actively break down airborne threats to ensure truly safe air.</p>",
+        "block_2_title": "WHAT WE SOLVE",
+        "block_2_body": "<p>From chemical fumes and cooking smells to allergens and pet dander, NCCO systems purify your entire home. Whether in bedrooms, baby rooms, or kitchens — our quiet, hospital-grade technology creates a cleaner, healthier space for everyone: kids, elders, and pets included.</p>",
+        "cta_label": "Get a Free Consultation",
+        "cta_url": "/pages/contact-us",
+        "tile_1": "commit-tile-2.png",
+        "tile_2": "commit-tile-1.png",
+        "tile_3": "commit-tile-6.png",
+        "stat_number": "99",
+        "stat_unit": "%",
+        "stat_label": "Air Purification Efficiency",
+        "tile_5": "commit-tile-7.png",
+        "tile_6": "commit-tile-3.png",
+        "tile_7": "commit-tile-4.png"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "Active Molecular Breakdown",
+            "body": "<p>NCCO breaks down formaldehyde, VOCs, bacteria, and viruses into harmless water and CO₂ — not just trap them behind a filter.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "Family-Safe Technology",
+            "body": "<p>Non-toxic mineral catalyst. Ozone levels below 0.03 ppm. Safe for infants, elderly, pregnant women, and pets — proven in kindergartens and elderly care homes.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Whisper-Quiet Operation",
+            "body": "<p>As low as 26 dB on low speed — quieter than a library. Designed for bedrooms, nurseries, and study rooms.</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "title": "Low Maintenance Design",
+            "body": "<p>The NCCO catalyst lasts up to 12 years under normal maintenance. No monthly filter purchases, no ongoing replacement costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "settings": {
+        "eyebrow": "Why Families Choose NCCO",
+        "heading": "Cleaner Air, Trusted by Hong Kong Homes",
+        "subtext": "Indoor air often carries invisible threats — from cleaning products, furniture off-gassing, pet dander, and dust mites. NCCO actively breaks them down.",
+        "columns": "4",
+        "dark": false
+      }
+    },
+    "ncco-iwt-1": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Built for Daily Comfort & Trusted Protection",
+        "text": "<p>NCCO brings hospital-grade air purification into everyday family life. It combines long-lasting performance, whisper-quiet operation, and family-safe technology. From compact city apartments to larger homes, NCCO provides reliable daily protection for every family member.</p>",
+        "asset": "ncco-img-residential-room.png",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-iwt-2": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Real Change You Can See and Breathe",
+        "text": "<p>Microscopic particles from pets, dust mites, and fabrics can trigger allergies, asthma, and skin sensitivities — especially in children. NCCO targets these threats directly, breaking them down rather than recirculating them. Families using NCCO report measurably better sleep, fewer allergy episodes, and fresher indoor air.</p>",
+        "asset": "ncco-img-air-purifier-room.png",
+        "layout": "text_first",
+        "dark": false
+      }
+    },
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "heading": "What's Lurking in Your Home's Air?",
+        "subtext": "Most indoor air contains pollutants you can't see. NCCO removes them at the molecular level — not just filters them.",
+        "cta_label": "Get In Touch",
+        "cta_url": "/pages/contact-us",
+        "bg_color": "#003da5"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "International Standards",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What pollutants does NCCO remove from home air?",
+            "row_content": "<p>NCCO removes formaldehyde, benzene, VOCs (volatile organic compounds), bacteria, viruses, pet dander allergens, dust mite particles, cooking odours, and smoke. It breaks these down into harmless water and CO₂ rather than trapping them.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does a b-MoLa home purifier filter last?",
+            "row_content": "<p>The NCCO catalyst is proven to last up to 12 years under normal maintenance — far longer than HEPA or activated carbon filters that need replacing every 6–12 months.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is NCCO safe to use in a nursery or baby's room?",
+            "row_content": "<p>Yes. The NCCO catalyst is a non-toxic artificial mineral. Ozone levels during purification are below 0.03 ppm — well under the UL 867 international safety standard. NCCO systems have been used in kindergartens and maternity wards.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "caption": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h2",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-page-banner",
+    "ncco-trust-logos",
+    "ncco-commitment",
+    "ncco-icon-grid",
+    "ncco-iwt-1",
+    "ncco-iwt-2",
+    "ncco-cta-band",
+    "ncco-certifications",
+    "collapsible-content",
+    "ncco-contact-cta"
+  ]
+}

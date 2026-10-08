@@ -1,0 +1,354 @@
+{% comment %}
+  Custom NCCO nav: CSS hover dropdowns + custom lang switcher.
+  Replaces Dawn's details/summary approach.
+{% endcomment %}
+
+{%- assign menu_links = section.settings.menu.links -%}
+{%- assign show_lang = false -%}
+{%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+  {%- assign show_lang = true -%}
+{%- endif -%}
+
+<nav class="ncco-nav small-hide medium-hide" aria-label="Main navigation">
+  <ul class="ncco-nav__list" role="list">
+
+    {%- for link in menu_links -%}
+      {%- assign is_last = false -%}
+      {%- if forloop.last -%}{%- assign is_last = true -%}{%- endif -%}
+
+      {%- if is_last -%}
+        {%- comment -%} Language switcher before Contact Us {%- endcomment -%}
+        {%- if show_lang -%}
+          {%- assign lang_flag = '🌐' -%}
+          {%- assign lang_short = localization.language.endonym_name | capitalize -%}
+          {%- if localization.language.iso_code == 'zh-TW' or localization.language.iso_code == 'zh-HK' -%}
+            {%- assign lang_flag = '🇭🇰' -%}{%- assign lang_short = '繁體' -%}
+          {%- elsif localization.language.iso_code == 'zh-CN' -%}
+            {%- assign lang_flag = '🇨🇳' -%}{%- assign lang_short = '简体' -%}
+          {%- elsif localization.language.iso_code contains 'en' -%}
+            {%- assign lang_flag = '🇬🇧' -%}{%- assign lang_short = 'EN' -%}
+          {%- endif -%}
+          <li class="ncco-nav__item ncco-nav__item--lang">
+            <button class="ncco-nav__link ncco-nav__lang-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+              <span class="ncco-nav__lang-flag">{{ lang_flag }}</span>
+              <span>{{ lang_short }}</span>
+              <svg class="ncco-nav__caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="ncco-nav__dropdown ncco-nav__dropdown--lang">
+              <localization-form data-prevent-hide>
+                {%- form 'localization', id: 'NccoLangForm', class: 'ncco-lang-form' -%}
+                  <ul class="ncco-nav__dropdown-list" role="list">
+                    {%- for language in localization.available_languages -%}
+                      {%- assign lf = '🌐' -%}
+                      {%- assign ls = language.endonym_name | capitalize -%}
+                      {%- if language.iso_code == 'zh-TW' or language.iso_code == 'zh-HK' -%}
+                        {%- assign lf = '🇭🇰' -%}{%- assign ls = '繁體中文' -%}
+                      {%- elsif language.iso_code == 'zh-CN' -%}
+                        {%- assign lf = '🇨🇳' -%}{%- assign ls = '简体中文' -%}
+                      {%- elsif language.iso_code contains 'en' -%}
+                        {%- assign lf = '🇬🇧' -%}{%- assign ls = 'English' -%}
+                      {%- endif -%}
+                      <li>
+                        <a class="ncco-nav__dropdown-link{% if language.iso_code == localization.language.iso_code %} ncco-nav__dropdown-link--active{% endif %}"
+                           href="#"
+                           hreflang="{{ language.iso_code }}"
+                           lang="{{ language.iso_code }}"
+                           data-value="{{ language.iso_code }}"
+                           {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}>
+                          <span>{{ lf }}</span>
+                          <span>{{ ls }}</span>
+                          {%- if language.iso_code == localization.language.iso_code -%}
+                            <svg class="ncco-nav__check" width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                              <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          {%- endif -%}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  <input type="hidden" name="locale_code" id="NccoLangCode" value="{{ localization.language.iso_code }}">
+                {%- endform -%}
+              </localization-form>
+            </div>
+          </li>
+        {%- endif -%}
+
+        {%- comment -%} Last nav item → CTA pill button {%- endcomment -%}
+        <li class="ncco-nav__item ncco-nav__item--cta">
+          <a href="{{ link.url }}" class="ncco-nav__cta">
+            {{ link.title | escape }}
+            <span class="ncco-nav__cta-icon" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+      {%- else -%}
+        <li class="ncco-nav__item{% if link.links != blank %} ncco-nav__item--has-drop{% endif %}">
+          {%- if link.links != blank -%}
+            <button class="ncco-nav__link ncco-nav__drop-trigger"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-href="{{ link.url }}">
+              <span{% if link.current or link.child_active %} class="ncco-nav__link--active"{% endif %}>{{ link.title | escape }}</span>
+              <svg class="ncco-nav__caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="ncco-nav__dropdown" role="list">
+              {%- for childlink in link.links -%}
+                <li>
+                  <a class="ncco-nav__dropdown-link{% if childlink.current %} ncco-nav__dropdown-link--active{% endif %}"
+                     href="{{ childlink.url }}"
+                     {% if childlink.current %}aria-current="page"{% endif %}>
+                    {{ childlink.title | escape }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- else -%}
+            <a class="ncco-nav__link{% if link.current %} ncco-nav__link--active{% endif %}"
+               href="{{ link.url }}"
+               {% if link.current %}aria-current="page"{% endif %}>
+              {{ link.title | escape }}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+
+  </ul>
+</nav>
+
+<style>
+/* ── NCCO Custom Nav ──────────────────────────────── */
+.ncco-nav { display: flex; align-items: center; }
+.ncco-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ncco-nav__item { position: relative; }
+
+/* Base link/button style */
+.ncco-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ncco-navy);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+.ncco-nav__link:hover,
+.ncco-nav__link--active { color: var(--ncco-blue); }
+.ncco-nav__item--has-drop:hover .ncco-nav__link { color: var(--ncco-blue); }
+
+/* Caret */
+.ncco-nav__caret {
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: currentColor;
+}
+.ncco-nav__item--has-drop.ncco-drop-open .ncco-nav__caret,
+.ncco-nav__item--lang.ncco-drop-open .ncco-nav__caret { transform: rotate(180deg); }
+
+/* Dropdown panel */
+.ncco-nav__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(8,29,58,0.12);
+  padding: 6px;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  z-index: 200;
+}
+.ncco-nav__dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ncco-drop-open > .ncco-nav__dropdown,
+.ncco-drop-open > div > localization-form > form > .ncco-nav__dropdown-list,
+.ncco-nav__item--lang.ncco-drop-open .ncco-nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.ncco-nav__dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ncco-navy);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.ncco-nav__dropdown-link:hover { background: var(--ncco-grey-bg); color: var(--ncco-blue); }
+.ncco-nav__dropdown-link--active { color: var(--ncco-blue); font-weight: 600; }
+.ncco-nav__check { color: var(--ncco-blue); margin-left: auto; }
+
+/* Lang trigger — pill with flag circle */
+.ncco-nav__lang-trigger {
+  padding: 4px 14px 4px 4px !important;
+  background: #f1f3f5 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 50px !important;
+  gap: 8px !important;
+  font-family: 'Roboto', Arial, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: var(--ncco-navy) !important;
+}
+.ncco-nav__lang-trigger:hover { background: #e8eaed !important; }
+.ncco-nav__lang-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Lang dropdown — right-align */
+.ncco-nav__item--lang .ncco-nav__dropdown { left: auto; right: 0; min-width: 180px; }
+
+/* CTA pill button */
+.ncco-nav__item--cta { margin-left: 8px; }
+.ncco-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 18px;
+  min-height: 48px;
+  background: var(--ncco-blue);
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 78px;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+.ncco-nav__cta:hover { background: #002d7a; color: #fff; }
+.ncco-nav__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: var(--ncco-yellow);
+  color: var(--ncco-navy);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
+
+<script>
+(function() {
+  function initNav() {
+    var items = document.querySelectorAll('.ncco-nav__item--has-drop, .ncco-nav__item--lang');
+
+    items.forEach(function(item) {
+      var trigger = item.querySelector('.ncco-nav__drop-trigger, .ncco-nav__lang-trigger');
+      if (!trigger) return;
+
+      // Click to toggle
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = item.classList.contains('ncco-drop-open');
+        // Close all
+        items.forEach(function(i) { i.classList.remove('ncco-drop-open'); });
+        // Toggle this
+        if (!isOpen) item.classList.add('ncco-drop-open');
+        trigger.setAttribute('aria-expanded', !isOpen);
+      });
+
+      // If dropdown link clicked: navigate
+      var dropBtn = item.querySelector('.ncco-nav__drop-trigger');
+      if (dropBtn) {
+        // Allow clicking the text part to navigate to parent link
+        var span = dropBtn.querySelector('span');
+        if (span) {
+          span.addEventListener('click', function(e) {
+            var href = dropBtn.dataset.href;
+            if (href && href !== '#' && href !== 'javascript:void(0)') {
+              window.location.href = href;
+            }
+          });
+        }
+      }
+    });
+
+    // Lang form: clicking a language link submits the form
+    var langLinks = document.querySelectorAll('.ncco-nav__dropdown--lang .ncco-nav__dropdown-link, .ncco-nav__dropdown-list .ncco-nav__dropdown-link');
+    langLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var code = this.dataset.value;
+        var input = document.getElementById('NccoLangCode');
+        var form = document.querySelector('#NccoLangForm');
+        if (input && form && code) {
+          input.value = code;
+          form.submit();
+        }
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function() {
+      items.forEach(function(i) { i.classList.remove('ncco-drop-open'); });
+      items.forEach(function(i) {
+        var t = i.querySelector('.ncco-nav__drop-trigger, .ncco-nav__lang-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
+  }
+})();
+</script>

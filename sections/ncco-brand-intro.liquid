@@ -1,0 +1,163 @@
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- assign heading_color = section.settings.heading_color | default: '#101B2B' -%}
+<section class="ncco-brand-intro" style="--brand-accent:{{ accent }};--heading-color:{{ heading_color }}">
+  <div class="ncco-brand-intro__inner">
+    <div class="ncco-brand-intro__top">
+      <div class="ncco-brand-intro__eyebrow-wrap ncco-reveal">
+        <span class="ncco-brand-intro__eyebrow-bar"></span>
+        {% if section.settings.eyebrow != blank %}
+          <p class="ncco-brand-intro__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+      </div>
+      <div class="ncco-brand-intro__heading-col ncco-reveal ncco-reveal--d1">
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-brand-intro__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.cta_label != blank %}
+          {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: section.settings.cta_variant -%}
+        {% endif %}
+      </div>
+    </div>
+    {% if section.blocks.size > 0 %}
+      <div class="ncco-brand-intro__features">
+        {% for block in section.blocks %}
+          <div class="ncco-brand-intro__feature ncco-reveal ncco-reveal--d{{ forloop.index | plus: 1 }}" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <h3 class="ncco-brand-intro__feature-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.body != blank %}
+              <p class="ncco-brand-intro__feature-body">{{ block.settings.body }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.ncco-brand-intro {
+  padding: 120px 0 0;
+  background: #fff;
+}
+.ncco-brand-intro__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex; flex-direction: column;
+  align-items: flex-end;
+  gap: 50px;
+  box-sizing: border-box;
+}
+
+/* Top: eyebrow left, heading+CTA right */
+.ncco-brand-intro__top {
+  align-self: stretch;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 60px;
+}
+.ncco-brand-intro__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  padding-top: 6px;
+}
+.ncco-brand-intro__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: var(--brand-accent, #FECB07);
+}
+.ncco-brand-intro__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500;
+  color: #647082; text-transform: uppercase; margin: 0;
+  letter-spacing: 0;
+}
+
+.ncco-brand-intro__heading-col {
+  width: 857px; max-width: 100%;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 50px;
+}
+.ncco-brand-intro__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px;
+  color: var(--heading-color, #101B2B);
+  text-align: right; margin: 0;
+  letter-spacing: -1.2px;
+}
+
+/* Features row */
+.ncco-brand-intro__features {
+  align-self: stretch;
+  display: flex; justify-content: flex-start; align-items: flex-start;
+  gap: 30px;
+}
+.ncco-brand-intro__feature {
+  flex: 1 1 460px; max-width: 460px;
+  padding: 48px 0;
+  border-top: 1px solid #DFE1E3;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.ncco-brand-intro__feature-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px; font-weight: 500;
+  color: #081D3A; text-transform: uppercase; margin: 0;
+  letter-spacing: -0.4px;
+}
+.ncco-brand-intro__feature-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px;
+  color: #647082; margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ncco-brand-intro { padding: 80px 0 0; }
+  .ncco-brand-intro__inner { padding: 0 24px; }
+  .ncco-brand-intro__heading { font-size: 44px; line-height: 54px; }
+  .ncco-brand-intro__heading-col { width: 100%; max-width: 700px; }
+}
+@media (max-width: 900px) {
+  .ncco-brand-intro__top {
+    flex-direction: column; align-items: flex-start; gap: 24px;
+  }
+  .ncco-brand-intro__heading-col { width: 100%; max-width: 100%; align-items: flex-start; }
+  .ncco-brand-intro__heading { text-align: left; font-size: 36px; line-height: 46px; }
+  .ncco-brand-intro__features { flex-direction: column; gap: 24px; }
+  .ncco-brand-intro__feature { max-width: 100%; padding: 32px 0; }
+}
+@media (max-width: 600px) {
+  .ncco-brand-intro { padding: 60px 0 0; }
+  .ncco-brand-intro__inner { padding: 0 16px; }
+  .ncco-brand-intro__heading { font-size: 28px; line-height: 36px; }
+  .ncco-brand-intro__feature-title { font-size: 18px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Brand Intro",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "textarea", "id": "heading", "label": "Heading (right-aligned)"},
+    {"type": "text", "id": "cta_label", "label": "CTA button text"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"},
+    {"type": "select", "id": "cta_variant", "label": "CTA style", "options": [
+      {"value": "yellow", "label": "Yellow"},
+      {"value": "blue", "label": "Blue"},
+      {"value": "teal", "label": "Teal"}
+    ], "default": "blue"},
+    {"type": "text", "id": "accent_color", "label": "Accent bar color (hex)", "default": "#FECB07"},
+    {"type": "text", "id": "heading_color", "label": "Heading text color (hex)", "default": "#101B2B"}
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title"},
+        {"type": "textarea", "id": "body", "label": "Body text"}
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{"name": "NCCO Brand Intro"}]
+}
+{% endschema %}

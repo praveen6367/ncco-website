@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-blog-article": {
+      "type": "ncco-blog-article",
+      "settings": {}
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "eyebrow": "Get In Touch",
+        "heading": "We're Here to Help",
+        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities — we'd love to hear from you.",
+        "email": "info@ncco-tech.com",
+        "phone": "(852) 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "SUBMIT"
+      }
+    }
+  },
+  "order": [
+    "ncco-blog-article",
+    "ncco-contact-cta"
+  ]
+}

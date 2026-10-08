@@ -1,0 +1,307 @@
+{%- assign brand_cta_color = section.settings.cta_color | default: '#22B39F' -%}
+{%- assign brand_cta_text = section.settings.cta_text_color | default: '#fff' -%}
+{%- assign brand_bg = section.settings.bg_color | default: '#F4F6FA' -%}
+{%- assign ba_cols = section.settings.gallery_columns | default: '4' -%}
+
+<section class="ncco-ba{% if section.settings.centered %} ncco-ba--centered{% endif %}" style="background:{{ brand_bg }};--ba-cols:{{ ba_cols }}">
+  <div class="ncco-container">
+
+    {% if section.settings.centered %}
+      <!-- Centered header -->
+      <div class="ncco-ba__top-centered">
+        {% if section.settings.eyebrow != blank %}
+          <div class="ncco-ba__eyebrow-wrap">
+            <span class="ncco-ba__eyebrow-bar" style="background:{{ brand_cta_color }}"></span>
+            <p class="ncco-ba__eyebrow">{{ section.settings.eyebrow }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-ba__heading ncco-reveal">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.subtext != blank %}
+          <p class="ncco-ba__subtext ncco-reveal">{{ section.settings.subtext }}</p>
+        {% endif %}
+        {% if section.settings.cta_label != blank %}
+          <a href="{{ section.settings.cta_url | default: '#' }}" class="ncco-ba__cta ncco-reveal ncco-reveal--d2" style="background:{{ brand_cta_color }};color:{{ brand_cta_text }}">
+            <span>{{ section.settings.cta_label }}</span>
+            <span class="ncco-ba__cta-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H6M13 3V10" stroke="{{ brand_cta_text }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        {% endif %}
+      </div>
+    {% else %}
+      <!-- Two-col header: eyebrow left / heading + CTA right -->
+      <div class="ncco-ba__top">
+        <div class="ncco-ba__eyebrow-col">
+          {% if section.settings.eyebrow != blank %}
+            <div class="ncco-ba__eyebrow-wrap">
+              <span class="ncco-ba__eyebrow-bar" style="background:{{ brand_cta_color }}"></span>
+              <p class="ncco-ba__eyebrow">{{ section.settings.eyebrow }}</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="ncco-ba__heading-col">
+          {% if section.settings.heading != blank %}
+            <h2 class="ncco-ba__heading ncco-reveal">{{ section.settings.heading }}</h2>
+          {% endif %}
+          {% if section.settings.cta_label != blank %}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="ncco-ba__cta ncco-reveal ncco-reveal--d2" style="background:{{ brand_cta_color }};color:{{ brand_cta_text }}">
+              <span>{{ section.settings.cta_label }}</span>
+              <span class="ncco-ba__cta-icon" style="border-color:rgba(255,255,255,0.2)">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 13L13 3M13 3H6M13 3V10" stroke="{{ brand_cta_text }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Feature text blocks — right-aligned, flush with heading col -->
+    {%- assign feature_blocks = section.blocks | where: 'type', 'feature' -%}
+    {% if feature_blocks.size > 0 %}
+      <div class="ncco-ba__features ncco-reveal">
+        {% for block in feature_blocks %}
+          <div class="ncco-ba__feat" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <h3 class="ncco-ba__feat-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.body != blank %}
+              <p class="ncco-ba__feat-body">{{ block.settings.body }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div><!-- /ncco-container -->
+
+  <!-- Full-width image gallery (no container) -->
+  {%- assign image_blocks = section.blocks | where: 'type', 'image' -%}
+  {% if image_blocks.size > 0 %}
+    <div class="ncco-ba__gallery">
+      {% for block in image_blocks %}
+        <div class="ncco-ba__img-wrap ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
+          {% if block.settings.asset != blank %}
+            <img src="{{ block.settings.asset | asset_url }}"
+                 alt="{{ block.settings.caption }}" loading="lazy" class="ncco-ba__img">
+          {% elsif block.settings.image != blank %}
+            <img src="{{ block.settings.image | image_url: width: 800 }}"
+                 alt="{{ block.settings.caption }}" loading="lazy" class="ncco-ba__img">
+          {% endif %}
+          <div class="ncco-ba__img-shade"></div>
+          {% if block.settings.caption != blank %}
+            <div class="ncco-ba__caption">
+              <svg class="ncco-ba__cap-arrow" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                <path d="M1 1L6 5.5L1 10" stroke="{{ brand_cta_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="ncco-ba__caption-text">{{ block.settings.caption | upcase }}</span>
+              <svg class="ncco-ba__cap-arrow ncco-ba__cap-arrow--flip" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                <path d="M1 1L6 5.5L1 10" stroke="{{ brand_cta_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</section>
+
+<style>
+.ncco-ba { padding: 0; }
+
+/* Container: top padding only — gallery bleeds to bottom */
+.ncco-ba .ncco-container {
+  max-width: 100%; padding: 120px 240px 64px;
+  box-sizing: border-box;
+}
+
+/* ─── Top: eyebrow left / heading+CTA right ─── */
+.ncco-ba__top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.ncco-ba__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  padding-top: 10px;
+}
+.ncco-ba__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: #FECB07;
+}
+.ncco-ba__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.6px;
+  color: #647082; text-transform: uppercase; margin: 0;
+}
+
+.ncco-ba__heading-col {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 32px;
+}
+.ncco-ba__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
+  color: #081D3A; margin: 0;
+}
+
+/* CTA pill */
+.ncco-ba__cta {
+  display: inline-flex; align-items: center; gap: 20px;
+  padding: 8px 8px 8px 28px; border-radius: 78px;
+  font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14px;
+  text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+  transition: filter .2s ease; white-space: nowrap;
+}
+.ncco-ba__cta:hover { filter: brightness(0.9); }
+.ncco-ba__cta-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; min-width: 36px;
+  border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.15);
+}
+
+/* ─── Feature text blocks (right-aligned) ─── */
+.ncco-ba__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  /* offset left by 1/3 to align under heading col */
+  margin-left: calc(33.33% + 30px);
+  border-top: 1px solid rgba(100,112,130,0.15);
+  padding-top: 40px;
+}
+.ncco-ba__feat { display: flex; flex-direction: column; gap: 14px; }
+.ncco-ba__feat-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px; font-weight: 600; line-height: 1.3; letter-spacing: 0.8px;
+  color: #081D3A; text-transform: uppercase; margin: 0;
+}
+.ncco-ba__feat-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: -0.28px;
+  color: #647082; margin: 0;
+}
+
+/* ─── Centered header variant ─── */
+.ncco-ba--centered .ncco-ba__top-centered {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 20px; padding-bottom: 48px;
+}
+.ncco-ba--centered .ncco-ba__eyebrow-wrap { align-items: center; }
+.ncco-ba--centered .ncco-ba__heading { letter-spacing: -2.32px; }
+.ncco-ba__subtext {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
+  color: #647082; margin: 0; max-width: 560px;
+}
+
+/* ─── Full-width image gallery ─── */
+.ncco-ba__gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--ba-cols, 4), 1fr);
+  overflow: hidden;
+}
+/* Fixed-height only when 4-col (original RHT layout) */
+.ncco-ba:not(.ncco-ba--centered) .ncco-ba__gallery { height: 380px; }
+.ncco-ba--centered .ncco-ba__gallery .ncco-ba__img-wrap { height: 280px; }
+
+.ncco-ba__img-wrap { position: relative; overflow: hidden; }
+.ncco-ba__img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
+  transition: transform .5s ease;
+}
+.ncco-ba__img-wrap:hover .ncco-ba__img { transform: scale(1.04); }
+
+.ncco-ba__img-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,29,58,0) 40%, rgba(8,29,58,0.72) 100%);
+  opacity: 0;
+}
+.ncco-ba__img-wrap:has(.ncco-ba__caption) .ncco-ba__img-shade { opacity: 1; }
+.ncco-ba__caption {
+  position: absolute; bottom: 18px; left: 0; right: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.ncco-ba__caption-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 1.2px;
+  color: #fff; text-transform: uppercase;
+}
+.ncco-ba__cap-arrow--flip { transform: rotate(180deg); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1600px) {
+  .ncco-ba .ncco-container { padding: 100px 80px 56px; }
+  .ncco-ba__heading { font-size: 48px; line-height: 56px; letter-spacing: -1.8px; }
+}
+@media (max-width: 1200px) {
+  .ncco-ba .ncco-container { padding: 80px 40px 48px; }
+  .ncco-ba__top { grid-template-columns: 1fr; gap: 24px; }
+  .ncco-ba__features { margin-left: 0; }
+  .ncco-ba__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.5px; }
+  .ncco-ba:not(.ncco-ba--centered) .ncco-ba__gallery { height: 280px; }
+}
+@media (max-width: 989px) {
+  .ncco-ba .ncco-container { padding: 60px 24px 40px; }
+  .ncco-ba__gallery { grid-template-columns: repeat(2, 1fr) !important; height: auto !important; }
+  .ncco-ba__img-wrap { height: 240px !important; }
+}
+@media (max-width: 600px) {
+  .ncco-ba .ncco-container { padding: 40px 16px 32px; }
+  .ncco-ba__heading { font-size: 28px; line-height: 36px; letter-spacing: -0.8px; }
+  .ncco-ba__features { grid-template-columns: 1fr; gap: 24px; }
+  .ncco-ba__gallery { grid-template-columns: 1fr !important; }
+  .ncco-ba__img-wrap { height: 220px !important; }
+  .ncco-ba__cta { font-size: 13px; }
+  .ncco-ba--centered .ncco-ba__top-centered { gap: 16px; padding-bottom: 32px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Brand About",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "bg_color", "label": "Background color (hex, default #F4F6FA light gray)", "default": "#F4F6FA"},
+    {"type": "checkbox", "id": "centered", "label": "Centered header layout", "default": false},
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "text", "id": "subtext", "label": "Subtext (centered layout only)"},
+    {"type": "select", "id": "gallery_columns", "label": "Gallery columns", "options": [{"value": "3", "label": "3 columns"}, {"value": "4", "label": "4 columns"}], "default": "4"},
+    {"type": "text", "id": "cta_label", "label": "CTA label"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"},
+    {"type": "text", "id": "cta_color", "label": "CTA bg color (hex, default teal)", "default": "#22B39F"},
+    {"type": "text", "id": "cta_text_color", "label": "CTA text color (hex)", "default": "#ffffff"}
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Text",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title"},
+        {"type": "text", "id": "body", "label": "Body text"}
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Gallery Image",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Image (via Theme Editor)"},
+        {"type": "text", "id": "asset", "label": "Image asset filename"},
+        {"type": "text", "id": "caption", "label": "Caption text"}
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [{"name": "NCCO Brand About"}]
+}
+{% endschema %}

@@ -1,0 +1,249 @@
+{%- assign accent = section.settings.accent_color | default: '#53BDD8' -%}
+<section class="ncco-brand-ia" style="--brand-accent:{{ accent }}">
+  {% if section.settings.eyebrow != blank %}
+    <div class="ncco-brand-ia__eyebrow-wrap">
+      <span class="ncco-brand-ia__eyebrow-bar"></span>
+      <p class="ncco-brand-ia__eyebrow">{{ section.settings.eyebrow }}</p>
+    </div>
+  {% endif %}
+  <h2 class="ncco-brand-ia__heading ncco-reveal">
+    {%- if section.settings.heading_part_1 != blank -%}<span class="ncco-brand-ia__text">{{ section.settings.heading_part_1 }}</span>{%- endif -%}
+    {%- if section.settings.show_pill_1 -%}
+      {%- if section.settings.inline_image_1 != blank -%}
+        <span class="ncco-brand-ia__pill"><img src="{{ section.settings.inline_image_1 | asset_url }}" alt="" loading="lazy"></span>
+      {%- else -%}
+        <span class="ncco-brand-ia__pill ncco-brand-ia__pill--blue" aria-hidden="true"></span>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if section.settings.heading_part_2 != blank -%}<span class="ncco-brand-ia__text">{{ section.settings.heading_part_2 }}</span>{%- endif -%}
+    {%- if section.settings.show_pill_2 -%}
+      {%- if section.settings.inline_image_2 != blank -%}
+        <span class="ncco-brand-ia__pill"><img src="{{ section.settings.inline_image_2 | asset_url }}" alt="" loading="lazy"></span>
+      {%- else -%}
+        <span class="ncco-brand-ia__pill ncco-brand-ia__pill--green" aria-hidden="true"></span>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if section.settings.heading_part_3 != blank -%}<span class="ncco-brand-ia__text">{{ section.settings.heading_part_3 }}</span>{%- endif -%}
+  </h2>
+
+  {% for block in section.blocks %}
+    <div class="ncco-brand-ia__card ncco-brand-ia__card--{{ block.settings.position }} ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
+      <div class="ncco-brand-ia__card-top">
+        {% if block.settings.icon_asset != blank %}
+          <div class="ncco-brand-ia__card-icon">
+            <img src="{{ block.settings.icon_asset | asset_url }}" alt="{{ block.settings.title }}" width="24" height="24" loading="lazy">
+          </div>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h3 class="ncco-brand-ia__card-title">{{ block.settings.title }}</h3>
+        {% endif %}
+      </div>
+      {% if block.settings.body != blank %}
+        <p class="ncco-brand-ia__card-body">{{ block.settings.body }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>
+
+<style>
+/* Figma spec (1475:12220 About section, 1920×909)
+   padding-top:280 padding-bottom:300, cards absolutely positioned to Figma coords */
+.ncco-brand-ia {
+  position: relative;
+  width: 100%;
+  min-height: 909px;
+  padding: 280px 0 300px;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Eyebrow (centered) */
+.ncco-brand-ia__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  margin-bottom: 11px;
+  position: relative; z-index: 2;
+}
+.ncco-brand-ia__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: var(--brand-accent, #53BDD8);
+}
+.ncco-brand-ia__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500;
+  color: #899CA8; text-transform: uppercase; margin: 0;
+}
+
+/* Heading — narrower so cards fit in margins */
+.ncco-brand-ia__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 44px; font-weight: 500; line-height: 68px;
+  color: #0D3B59;
+  text-align: center; max-width: 920px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative; z-index: 2;
+  box-sizing: border-box;
+  letter-spacing: -0.5px;
+}
+.ncco-brand-ia__text { display: inline; }
+
+/* Inline pills: proportional to heading */
+.ncco-brand-ia__pill {
+  display: inline-block;
+  width: 130px; height: 72px;
+  border-radius: 78px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 10px;
+  background: rgba(217,217,217,0.48);
+  box-shadow: 0 0 28px rgba(34,78,122,0.12);
+  outline: 4px solid #fff;
+  outline-offset: -4px;
+  transform: translateY(-4px);
+}
+.ncco-brand-ia__pill img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Gradient pill variants (WP source design) */
+.ncco-brand-ia__pill--blue {
+  background:
+    radial-gradient(120% 80% at 30% 30%, #89b6ff 0%, #3869e8 40%, #142a55 70%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.35) 0 6px, rgba(0,0,0,.1) 6px 12px);
+  background-blend-mode: overlay, normal;
+}
+.ncco-brand-ia__pill--green {
+  background:
+    radial-gradient(120% 80% at 70% 60%, #b7ffcc 0%, #2bb673 45%, #0d3b2e 75%),
+    radial-gradient(35% 50% at 30% 30%, rgba(255,255,255,.6), rgba(255,255,255,0) 70%);
+  background-blend-mode: screen, normal;
+}
+
+/* Floating cards */
+.ncco-brand-ia__card {
+  position: absolute;
+  width: 277px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  outline: 1px solid rgba(34,78,122,0.08);
+  outline-offset: -1px;
+  box-shadow: 0 8px 48px rgba(34,78,122,0.05);
+  display: flex; flex-direction: column; gap: 28px;
+  z-index: 3;
+  box-sizing: border-box;
+}
+.ncco-brand-ia__card-top {
+  display: flex; flex-direction: column; gap: 20px;
+  align-items: flex-start;
+}
+.ncco-brand-ia__card-icon {
+  padding: 8px;
+  background: var(--brand-accent, #53BDD8);
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+}
+.ncco-brand-ia__card-icon img {
+  width: 24px; height: 24px; object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.ncco-brand-ia__card-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px; font-weight: 500;
+  color: #0D3B59; text-transform: uppercase; margin: 0;
+  letter-spacing: -0.4px;
+}
+.ncco-brand-ia__card-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px;
+  color: #647082; margin: 0;
+  width: 229px;
+}
+
+/* Card positions — sit in margins around narrower heading */
+.ncco-brand-ia__card--top-right {
+  top: 140px;
+  right: max(40px, calc((100% - 1440px) / 2));
+}
+.ncco-brand-ia__card--bottom-left {
+  bottom: 180px;
+  left: max(40px, calc((100% - 1440px) / 2));
+}
+.ncco-brand-ia__card--bottom-right {
+  bottom: 60px;
+  right: max(120px, calc((100% - 1440px) / 2 + 100px));
+}
+
+/* Larger viewport: scale heading up */
+@media (min-width: 1700px) {
+  .ncco-brand-ia__heading { font-size: 52px; line-height: 76px; max-width: 1080px; }
+  .ncco-brand-ia__pill { width: 150px; height: 82px; }
+}
+@media (min-width: 1920px) {
+  .ncco-brand-ia__heading { font-size: 58px; line-height: 88px; max-width: 1200px; }
+  .ncco-brand-ia__pill { width: 178px; height: 98px; }
+}
+
+/* Smaller viewport */
+@media (max-width: 1200px) {
+  .ncco-brand-ia { padding: 200px 0 240px; min-height: 780px; }
+  .ncco-brand-ia__heading { font-size: 38px; line-height: 58px; max-width: 760px; }
+  .ncco-brand-ia__pill { width: 108px; height: 60px; margin: 0 8px; }
+  .ncco-brand-ia__card { width: 240px; padding: 20px; }
+  .ncco-brand-ia__card--top-right { top: 100px; right: 24px; }
+  .ncco-brand-ia__card--bottom-left { bottom: 140px; left: 24px; }
+  .ncco-brand-ia__card--bottom-right { bottom: 40px; right: 60px; }
+}
+@media (max-width: 900px) {
+  .ncco-brand-ia { padding: 120px 24px 100px; min-height: auto; }
+  .ncco-brand-ia__heading { font-size: 30px; line-height: 46px; padding: 0; max-width: 100%; }
+  .ncco-brand-ia__pill { width: 88px; height: 48px; margin: 0 6px; }
+  .ncco-brand-ia__card {
+    position: static;
+    width: 100%;
+    max-width: 480px;
+    margin: 24px auto 0;
+  }
+}
+@media (max-width: 600px) {
+  .ncco-brand-ia { padding: 80px 16px 80px; }
+  .ncco-brand-ia__heading { font-size: 24px; line-height: 38px; }
+  .ncco-brand-ia__pill { width: 64px; height: 36px; margin: 0 4px; border-radius: 40px; outline-width: 3px; }
+  .ncco-brand-ia__card { padding: 20px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Brand Inline About",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "textarea", "id": "heading_part_1", "label": "Heading part 1 (before first inline image)"},
+    {"type": "checkbox", "id": "show_pill_1", "label": "Show first pill (blue gradient by default)", "default": true},
+    {"type": "text", "id": "inline_image_1", "label": "Optional: image asset filename for pill 1 (overrides gradient)"},
+    {"type": "textarea", "id": "heading_part_2", "label": "Heading part 2 (between images)"},
+    {"type": "checkbox", "id": "show_pill_2", "label": "Show second pill (green gradient by default)", "default": true},
+    {"type": "text", "id": "inline_image_2", "label": "Optional: image asset filename for pill 2 (overrides gradient)"},
+    {"type": "textarea", "id": "heading_part_3", "label": "Heading part 3 (after second image)"},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex, default #53BDD8)"}
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Floating card",
+      "settings": [
+        {"type": "text", "id": "icon_asset", "label": "Icon asset filename"},
+        {"type": "text", "id": "title", "label": "Title"},
+        {"type": "textarea", "id": "body", "label": "Body text"},
+        {"type": "select", "id": "position", "label": "Card position", "options": [
+          {"value": "top-right", "label": "Top right"},
+          {"value": "bottom-left", "label": "Bottom left"},
+          {"value": "bottom-right", "label": "Bottom right"}
+        ], "default": "top-right"}
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [{"name": "NCCO Brand Inline About"}]
+}
+{% endschema %}

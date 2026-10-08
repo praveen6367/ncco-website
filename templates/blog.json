@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "",
+        "headline": "<p>Stay Informed. <em>Stay Ahead.</em></p>",
+        "subtext": "Explore the latest insights, stories, and guides around technology, business, and lifestyle. From how-to articles to industry updates: all in one place.",
+        "dark": true,
+        "overlay_opacity": 55
+      }
+    },
+    "ncco-blog-featured": {
+      "type": "ncco-blog-featured",
+      "settings": {
+        "eyebrow": "POPULAR",
+        "heading": "Popular Articles",
+        "subtext": "Follow us to see more from-the-field discoveries, stories, and updates on technology, business, and lifestyle.",
+        "blog": "news"
+      }
+    },
+    "ncco-blog-grid": {
+      "type": "ncco-blog-grid",
+      "settings": {
+        "eyebrow": "LATEST",
+        "heading": "Latest Articles",
+        "subtext": "Stay up to date with the latest research, product launches, and insights from the NCCO team.",
+        "blog": "news",
+        "count": 3
+      }
+    }
+  },
+  "order": ["ncco-hero", "ncco-blog-featured", "ncco-blog-grid"]
+}

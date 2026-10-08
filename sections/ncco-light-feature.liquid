@@ -1,0 +1,200 @@
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- assign cta_variant = section.settings.cta_variant | default: 'blue' -%}
+{%- assign bullet_blocks = section.blocks | where: 'type', 'bullet' -%}
+{%- assign image_blocks = section.blocks | where: 'type', 'image' -%}
+<section class="ncco-lfeat" style="--brand-accent:{{ accent }}">
+  <div class="ncco-lfeat__inner">
+    <div class="ncco-lfeat__head ncco-reveal">
+      {% if section.settings.eyebrow != blank %}
+        <div class="ncco-lfeat__eyebrow-wrap">
+          <span class="ncco-lfeat__eyebrow-bar"></span>
+          <p class="ncco-lfeat__eyebrow">{{ section.settings.eyebrow }}</p>
+        </div>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="ncco-lfeat__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.body != blank %}
+        <p class="ncco-lfeat__body">{{ section.settings.body }}</p>
+      {% endif %}
+    </div>
+
+    {% if bullet_blocks.size > 0 %}
+      <ul class="ncco-lfeat__bullets ncco-reveal ncco-reveal--d1">
+        {% for block in bullet_blocks %}
+          <li class="ncco-lfeat__bullet" {{ block.shopify_attributes }}>
+            <span class="ncco-lfeat__bullet-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1L9.8 6.2L15 6.2L10.8 9.4L12.4 14.6L8 11.4L3.6 14.6L5.2 9.4L1 6.2L6.2 6.2L8 1Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="ncco-lfeat__bullet-text">{{ block.settings.text }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if image_blocks.size > 0 %}
+      <div class="ncco-lfeat__images ncco-lfeat__images--{{ image_blocks.size }}">
+        {% for block in image_blocks %}
+          <div class="ncco-lfeat__img-wrap ncco-reveal ncco-reveal--d{{ forloop.index | plus: 1 }}" {{ block.shopify_attributes }}>
+            {% if block.settings.asset != blank %}
+              <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.alt }}" loading="lazy">
+            {% elsif block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.alt }}" loading="lazy">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_label != blank %}
+      <div class="ncco-lfeat__cta ncco-reveal ncco-reveal--d5">
+        {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant -%}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.ncco-lfeat {
+  padding: 100px 40px;
+  background: #fff;
+  color: #081D3A;
+}
+.ncco-lfeat__inner {
+  max-width: 1600px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 50px;
+}
+.ncco-lfeat__head {
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  text-align: center; max-width: 900px;
+}
+.ncco-lfeat__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.ncco-lfeat__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: var(--brand-accent, #FECB07);
+}
+.ncco-lfeat__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500; letter-spacing: 0;
+  color: #647082; text-transform: uppercase; margin: 0;
+}
+.ncco-lfeat__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px;
+  color: #081D3A; margin: 0;
+  letter-spacing: -1.4px;
+}
+.ncco-lfeat__body {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px;
+  color: #647082; margin: 0;
+  max-width: 640px;
+}
+
+.ncco-lfeat__bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  width: 100%;
+}
+.ncco-lfeat__bullet {
+  display: flex; align-items: center; gap: 16px;
+}
+.ncco-lfeat__bullet-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--brand-accent, #FECB07) 12%, transparent);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--brand-accent, #FECB07);
+}
+.ncco-lfeat__bullet-icon svg { width: 20px; height: 20px; }
+.ncco-lfeat__bullet-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 22px;
+  color: #081D3A;
+}
+
+.ncco-lfeat__images {
+  width: 100%;
+  display: grid; gap: 30px;
+}
+.ncco-lfeat__images--3 { grid-template-columns: 565fr 418fr 748fr; }
+.ncco-lfeat__images--2 { grid-template-columns: 1fr 1fr; }
+.ncco-lfeat__images--1 { grid-template-columns: 1fr; }
+
+.ncco-lfeat__img-wrap {
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(8, 29, 58, 0.03);
+  border: 1px solid rgba(8, 29, 58, 0.08);
+}
+.ncco-lfeat__images--3 > .ncco-lfeat__img-wrap:nth-child(1) { aspect-ratio: 565 / 415; }
+.ncco-lfeat__images--3 > .ncco-lfeat__img-wrap:nth-child(2) { aspect-ratio: 418 / 415; }
+.ncco-lfeat__images--3 > .ncco-lfeat__img-wrap:nth-child(3) { aspect-ratio: 748 / 415; }
+.ncco-lfeat__images--2 > .ncco-lfeat__img-wrap { aspect-ratio: 4 / 3; }
+.ncco-lfeat__images--1 > .ncco-lfeat__img-wrap { aspect-ratio: 16 / 9; }
+.ncco-lfeat__img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.ncco-lfeat__img-wrap:hover img { transform: scale(1.04); }
+
+.ncco-lfeat__cta { display: flex; justify-content: center; }
+
+@media (max-width: 1024px) {
+  .ncco-lfeat { padding: 80px 24px; }
+  .ncco-lfeat__heading { font-size: 40px; line-height: 50px; }
+  .ncco-lfeat__bullets { grid-template-columns: repeat(2, 1fr); }
+  .ncco-lfeat__images--3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .ncco-lfeat { padding: 60px 16px; }
+  .ncco-lfeat__heading { font-size: 30px; line-height: 40px; }
+  .ncco-lfeat__bullets { grid-template-columns: 1fr; }
+  .ncco-lfeat__images--3, .ncco-lfeat__images--2 { grid-template-columns: 1fr; }
+  .ncco-lfeat__img-wrap { aspect-ratio: 16 / 10; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Light Feature",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "textarea", "id": "body", "label": "Body text"},
+    {"type": "text", "id": "cta_label", "label": "CTA text"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"},
+    {"type": "select", "id": "cta_variant", "label": "CTA style", "options": [
+      {"value": "yellow", "label": "Yellow"},
+      {"value": "blue", "label": "Blue"},
+      {"value": "teal", "label": "Teal"}
+    ], "default": "blue"},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex)", "default": "#FECB07"}
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Star bullet",
+      "settings": [
+        {"type": "text", "id": "text", "label": "Bullet text"}
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Image"},
+        {"type": "text", "id": "asset", "label": "Or asset filename"},
+        {"type": "text", "id": "alt", "label": "Alt text"}
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [{"name": "NCCO Light Feature"}]
+}
+{% endschema %}

@@ -1,0 +1,119 @@
+{%- assign bg = section.settings.background_image -%}
+{%- assign bg_url = '' -%}
+{%- if bg %}{% assign bg_url = bg | image_url: width: 2400 %}{% endif -%}
+{%- if section.settings.background_asset != blank -%}
+  {%- assign bg_url = section.settings.background_asset | asset_url -%}
+{%- endif -%}
+
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- if accent == blank -%}{%- assign accent = '#FECB07' -%}{%- endif -%}
+{%- assign height = section.settings.height | default: 588 -%}
+
+<section class="ncco-pbanner-wrap">
+  <div class="ncco-pbanner__bg" style="background-image: url('{{ bg_url }}'); height: {{ height }}px;">
+    <div class="ncco-pbanner__overlay"></div>
+    <div class="ncco-pbanner__inner">
+      <div class="ncco-pbanner__stack">
+        <h1 class="ncco-pbanner__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+        {%- if section.settings.subtext != blank -%}
+          <p class="ncco-pbanner__sub">{{ section.settings.subtext }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ncco-pbanner-wrap { padding: 0; background: #fff; }
+
+.ncco-pbanner__bg {
+  position: relative;
+  margin: 0 16px;
+  border-radius: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.ncco-pbanner__overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(2,8,17,0.78) 0%,
+    rgba(3,19,44,0.78) 37.146%,
+    rgba(4,30,70,0.06) 100%
+  );
+}
+
+.ncco-pbanner__inner {
+  position: relative; z-index: 1;
+  height: 100%;
+  display: flex; align-items: center;
+  padding: 0 224px;
+}
+
+.ncco-pbanner__stack {
+  display: flex; flex-direction: column; gap: 160px;
+  max-width: 100%;
+}
+
+.ncco-pbanner__title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600; font-size: 70px; line-height: 1.05; letter-spacing: -4.2px;
+  color: #fff; margin: 0;
+  display: flex; flex-direction: column; gap: 24px;
+}
+/* <em> = gold-to-transparent gradient text (Figma line 2 effect) */
+.ncco-pbanner__title em {
+  font-style: normal;
+  background-image: linear-gradient(90deg, {{ accent }} 0%, rgba(254,203,7,0) 54.5%),
+                    linear-gradient(90deg, #fff 0%, #fff 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
+.ncco-pbanner__sub {
+  font-family: 'Geist', sans-serif;
+  font-weight: 500; font-size: 20px; line-height: 1.4; letter-spacing: -0.4px;
+  color: #fff; margin: 0; max-width: 705px;
+}
+
+@media (max-width: 1440px) {
+  .ncco-pbanner__inner { padding: 0 120px; }
+  .ncco-pbanner__stack { gap: 80px; }
+}
+@media (max-width: 1024px) {
+  .ncco-pbanner__bg { height: auto !important; padding: 120px 0; }
+  .ncco-pbanner__inner { padding: 0 40px; }
+  .ncco-pbanner__stack { gap: 40px; }
+  .ncco-pbanner__title { font-size: 48px; letter-spacing: -2px; }
+  .ncco-pbanner__sub { font-size: 18px; }
+}
+@media (max-width: 600px) {
+  .ncco-pbanner__bg { margin: 0; border-radius: 0; padding: 80px 0; }
+  .ncco-pbanner__inner { padding: 0 16px; }
+  .ncco-pbanner__stack { gap: 24px; }
+  .ncco-pbanner__title { font-size: 32px; letter-spacing: -0.8px; }
+  .ncco-pbanner__sub { font-size: 15px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Page Banner",
+  "tag": "section",
+  "settings": [
+    {"type": "richtext", "id": "headline", "label": "Headline (wrap accent line in <em>)"},
+    {"type": "textarea", "id": "subtext", "label": "Subtext"},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex, default #FECB07)"},
+    {"type": "number", "id": "height", "label": "Banner height (px, default 588)"},
+    {"type": "header", "content": "Background"},
+    {"type": "image_picker", "id": "background_image", "label": "Background image"},
+    {"type": "text", "id": "background_asset", "label": "Background asset filename (overrides image picker)"}
+  ],
+  "presets": [{"name": "NCCO Page Banner"}]
+}
+{% endschema %}

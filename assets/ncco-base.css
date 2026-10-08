@@ -1,0 +1,370 @@
+/* NCCO base — fonts, tokens, shared utilities. Figma tokens verbatim. */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+:root {
+  --ncco-navy:       #081d3a;
+  --ncco-blue:       #003da5;
+  --ncco-yellow:     #fecb07;
+  --ncco-body:       #647082;
+  --ncco-body-alt:   #97a0ac; /* light gray on dark bg */
+  --ncco-grey-num:   #d7d9dc; /* card numerals */
+  --ncco-border:     rgba(100,112,130,0.12);
+  --ncco-grey-bg:    #f9f9fa;
+  --ncco-container:  1440px; /* 1920 - 240*2 */
+  --ncco-gutter:     240px;
+  --ncco-section-v:  120px;
+}
+
+body { font-family: 'Geist', sans-serif; color: var(--ncco-body); font-size: 16px; line-height: 1.6; font-weight: 400; }
+
+h1, h2, h3, h4 {
+  font-family: 'Geist', sans-serif;
+  color: var(--ncco-navy);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.ncco-container {
+  max-width: var(--ncco-container);
+  margin: 0 auto;
+  padding: 0 var(--ncco-gutter);
+  box-sizing: border-box;
+}
+@media (max-width: 1440px) { .ncco-container { padding: 0 80px; } }
+@media (max-width: 900px)  { .ncco-container { padding: 0 24px; } }
+
+.ncco-section { padding: var(--ncco-section-v) 0; }
+.ncco-section--dark { background: var(--ncco-navy); color: #fff; }
+.ncco-section--grey { background: var(--ncco-grey-bg); }
+
+/* Yellow bar + label eyebrow (Figma pattern used everywhere) */
+.ncco-eyebrow {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  font-size: 16px; font-weight: 500; letter-spacing: -0.02em;
+  color: var(--ncco-body); text-transform: uppercase; margin-bottom: 40px;
+}
+.ncco-eyebrow::before {
+  content: ''; display: block; width: 28px; height: 2px; background: var(--ncco-yellow);
+}
+.ncco-eyebrow--center { align-items: center; text-align: center; }
+.ncco-eyebrow--on-dark { color: #fff; }
+
+/* Figma canonical CTA button (used across all sections)
+   Modifiers: --blue (default), --yellow, --outline
+   Icon: 38x38 right-aligned circle */
+.ncco-cta {
+  display: inline-flex; align-items: center; gap: 24px;
+  padding: 8px 8px 8px 28px; border-radius: 78px;
+  font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px;
+  text-transform: uppercase; text-decoration: none; letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: filter .2s ease, box-shadow .2s ease;
+}
+.ncco-cta--blue   { background: var(--ncco-blue);   color: #fff; box-shadow: 0 8px 14px rgba(0,61,165,0.16); }
+.ncco-cta--yellow { background: var(--ncco-yellow); color: var(--ncco-navy); box-shadow: 0 8px 8px rgba(254,203,7,0.28); }
+.ncco-cta--teal   { background: var(--ncco-accent, #22B39F); color: #fff; box-shadow: 0 8px 14px rgba(34,179,159,0.2); }
+.ncco-cta:hover { filter: brightness(0.95); }
+.ncco-cta__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; min-width: 38px; border-radius: 50%; flex-shrink: 0;
+}
+.ncco-cta--blue   .ncco-cta__icon { background: var(--ncco-yellow); }
+.ncco-cta--yellow .ncco-cta__icon { background: var(--ncco-blue); }
+.ncco-cta--teal   .ncco-cta__icon { background: rgba(255,255,255,0.2); }
+.ncco-cta__icon svg { display: block; }
+
+/* Back-compat aliases for older sections still using .ncco-btn-primary/--yellow */
+.ncco-btn-primary, .ncco-btn-yellow { display: inline-flex; align-items: center; gap: 24px; padding: 8px 8px 8px 28px; border-radius: 78px; font-weight: 500; font-size: 16px; text-transform: uppercase; text-decoration: none; }
+.ncco-btn-primary { background: var(--ncco-blue); color: #fff; }
+.ncco-btn-yellow  { background: var(--ncco-yellow); color: var(--ncco-navy); }
+
+.ncco-btn-outline {
+  display: inline-block;
+  border: 2px solid var(--ncco-yellow);
+  color: var(--ncco-yellow);
+  padding: 12px 28px;
+  border-radius: 78px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.ncco-btn-outline:hover { background: rgba(254,203,7,0.1); }
+
+@media (max-width: 768px) {
+  :root { --ncco-section-v: 40px; }
+  .ncco-container { padding: 0 20px; }
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+
+/* Hide Dawn announcement bar */
+.shopify-section-group-header-group .announcement-bar { display: none !important; }
+.announcement-bar-section { display: none !important; }
+
+/* Force white bg, remove Dawn's color-scheme tinting */
+.header-wrapper {
+  background: #fff !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+/* Full-width nav layout: logo left | nav right */
+.header {
+  max-width: var(--ncco-container) !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Logo sizing */
+.header__heading-logo {
+  max-height: 56px !important;
+  width: auto !important;
+}
+
+/* Hide Dawn's icons area — our nav handles everything */
+.header__icons { display: none !important; }
+
+/* Hide cart + search + account (no ecommerce) */
+.header__icon--cart,
+.header__icon--search,
+.header__icon--account { display: none !important; }
+
+/* Sticky */
+.section-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
+/* Mobile header */
+@media (max-width: 989px) {
+  .header {
+    padding: 0 20px !important;
+    height: 60px !important;
+  }
+}
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+
+.footer {
+  background: var(--ncco-navy) !important;
+  color: rgba(255,255,255,0.75) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Column headings */
+.footer-block__heading {
+  color: #fff !important;
+  font-family: 'Geist', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 16px !important;
+}
+
+/* Footer links */
+.footer .link,
+.footer .list-menu__item--link,
+.footer a {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  line-height: 2 !important;
+}
+
+.footer .link:hover,
+.footer .list-menu__item--link:hover,
+.footer a:hover { color: #fff !important; }
+
+/* Copyright bar */
+.footer__content-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  margin-top: 40px !important;
+}
+
+.footer__copyright,
+.footer .caption { color: rgba(255,255,255,0.4) !important; }
+
+/* Remove payment icons (no ecommerce) */
+.footer__payment { display: none !important; }
+
+/* Remove "powered by Shopify" */
+.footer .powered-by { display: none !important; }
+
+/* Social icons */
+.footer .social-icons__link svg,
+.footer .list-social__link svg { fill: rgba(255,255,255,0.6) !important; }
+.footer .social-icons__link:hover svg,
+.footer .list-social__link:hover svg { fill: #fff !important; }
+
+/* NCCO watermark — large text at bottom of footer */
+.footer::after {
+  content: 'NCCO';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(80px, 15vw, 180px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Footer grid layout */
+.footer__content-top.page-width {
+  max-width: var(--ncco-container) !important;
+  padding: 0 40px !important;
+}
+
+.footer__content-bottom-wrapper.page-width {
+  max-width: var(--ncco-container) !important;
+  padding: 0 40px !important;
+}
+
+@media (max-width: 768px) {
+  .footer__content-top.page-width,
+  .footer__content-bottom-wrapper.page-width {
+    padding: 0 20px !important;
+  }
+}
+
+/* ── FAQ / COLLAPSIBLE CONTENT ───────────────────────────── */
+
+.collapsible-content .collapsible-content__heading,
+.collapsible-content h2 {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: var(--ncco-navy) !important;
+  text-align: center !important;
+}
+
+.collapsible-content .caption {
+  color: var(--ncco-yellow) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 12px !important;
+  text-align: center !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.collapsible-content__header { text-align: center; }
+
+.collapsible-content details,
+.collapsible-content .collapsible-content-item {
+  border: none !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  background: transparent !important;
+}
+
+.collapsible-content summary,
+.collapsible-content .collapsible-content-item__heading {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--ncco-navy) !important;
+  padding: 20px 0 !important;
+  cursor: pointer !important;
+}
+
+.collapsible-content summary:hover { color: var(--ncco-blue) !important; }
+
+.collapsible-content .content-container,
+.collapsible-content .collapsible-content-item__content {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: var(--ncco-body) !important;
+  padding-bottom: 20px !important;
+}
+
+/* Remove Shopify scheme color backgrounds from FAQ */
+.collapsible-content .color-scheme-1,
+.collapsible-content .color-background-1 {
+  background: transparent !important;
+}
+
+/* ── MAIN PAGE (page.json default) ──────────────────────── */
+
+.main-page-title {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: var(--ncco-navy) !important;
+  margin-bottom: 24px !important;
+}
+
+/* ── DAWN NATIVE IMAGE-WITH-TEXT override ─────────────────
+   For any remaining native sections not yet replaced */
+.image-with-text .image-with-text__content {
+  font-family: 'Geist', sans-serif !important;
+}
+
+.image-with-text h2,
+.image-with-text .image-with-text__heading {
+  font-family: 'Geist', sans-serif !important;
+  font-size: clamp(24px, 2.8vw, 36px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -1px !important;
+  color: var(--ncco-navy) !important;
+  line-height: 1.2 !important;
+}
+
+.image-with-text .image-with-text__text {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: var(--ncco-body) !important;
+}
+
+.image-with-text .image-with-text__image-container img,
+.image-with-text .image-with-text__media img {
+  border-radius: 24px !important;
+}
+
+/* ── RICH TEXT section ───────────────────────────────────── */
+
+.rich-text h2 {
+  font-family: 'Geist', sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  letter-spacing: -1px !important;
+  color: var(--ncco-navy) !important;
+}
+
+/* ── BLOG CARD OVERRIDES ─────────────────────────────────── */
+
+.blog .article-card__title,
+.article-card h3 {
+  font-family: 'Geist', sans-serif !important;
+  color: var(--ncco-navy) !important;
+}
+
+/* ── CONTACT FORM NATIVE ─────────────────────────────────── */
+
+.contact-form .field__input,
+.contact-form .field__label {
+  font-family: 'Geist', sans-serif !important;
+}
+
+
+/* ── 404 PAGE ────────────────────────────────────────────── */
+
+.main-404 h1 { font-family: 'Geist', sans-serif !important; color: var(--ncco-navy) !important; }
+
+/* ── GLOBAL LINK COLOUR ──────────────────────────────────── */
+
+a { color: var(--ncco-blue); }
+a:hover { color: #002d7a; }

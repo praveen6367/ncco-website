@@ -1,0 +1,270 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+<div class="ncco-article-layout ncco-container">
+  <article class="ncco-article__body">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+
+        {%- when 'featured_image' -%}
+          {%- if article.image -%}
+            <div class="ncco-article__hero" {{ block.shopify_attributes }}>
+              <img
+                srcset="
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {{ article.image | image_url }} {{ article.image.width }}w
+                "
+                sizes="(min-width: 900px) 65vw, 100vw"
+                src="{{ article.image | image_url: width: 1100 }}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+              >
+            </div>
+          {%- endif -%}
+
+        {%- when 'title' -%}
+          <header {{ block.shopify_attributes }}>
+            <h1 class="ncco-article__title">{{ article.title | escape }}</h1>
+            {%- if block.settings.blog_show_date -%}
+              <span class="ncco-article__date">
+                {{- article.published_at | time_tag: format: 'date' -}}
+              </span>
+            {%- endif -%}
+            {%- if block.settings.blog_show_author -%}
+              <span class="ncco-article__author">{{ article.author }}</span>
+            {%- endif -%}
+          </header>
+
+        {%- when 'content' -%}
+          <div class="ncco-article__content rte" {{ block.shopify_attributes }}>
+            {{ article.content }}
+          </div>
+
+        {%- when 'share' -%}
+          <div class="ncco-article__share" {{ block.shopify_attributes }}>
+            {% assign share_url = request.origin | append: article.url %}
+            {% render 'share-button', block: block, share_link: share_url %}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+
+    <div class="ncco-article__back">
+      <a href="{{ blog.url }}" class="link animate-arrow">
+        <span class="icon-wrap">
+          <span class="svg-wrapper">
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </span>
+        </span>
+        {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+      </a>
+    </div>
+  </article>
+
+  <aside class="ncco-article__toc-wrap">
+    <div class="ncco-article__toc">
+      <p class="ncco-article__toc-label">Contents</p>
+      <ul class="ncco-article__toc-list" id="ncco-toc-list"></ul>
+    </div>
+  </aside>
+</div>
+
+<style>
+.ncco-article-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 64px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+.ncco-article__hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+.ncco-article__title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--ncco-navy);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.ncco-article__date {
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-bottom: 32px;
+}
+.ncco-article__author { font-size: 13px; color: #888; }
+.ncco-article__content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 72ch;
+}
+.ncco-article__content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ncco-navy);
+  margin: 48px 0 16px;
+}
+.ncco-article__content h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ncco-navy);
+  margin: 32px 0 12px;
+}
+.ncco-article__back {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+.ncco-article__share { margin-top: 32px; }
+
+/* TOC sidebar */
+.ncco-article__toc-wrap {
+  position: sticky;
+  top: 100px;
+}
+.ncco-article__toc {
+  background: var(--ncco-grey-bg);
+  border-radius: 8px;
+  padding: 24px;
+}
+.ncco-article__toc-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  margin: 0 0 12px;
+}
+.ncco-article__toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ncco-article__toc-list li { margin-bottom: 8px; }
+.ncco-article__toc-list a {
+  font-size: 14px;
+  color: var(--ncco-navy);
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+}
+.ncco-article__toc-list a:hover { color: var(--ncco-blue); }
+.ncco-article__toc-list .ncco-toc__sub a {
+  padding-left: 12px;
+  color: #666;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .ncco-article-layout {
+    grid-template-columns: 1fr;
+  }
+  .ncco-article__toc-wrap { display: none; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var content = document.querySelector('.ncco-article__content');
+  var list = document.getElementById('ncco-toc-list');
+  if (!content || !list) return;
+  var headings = content.querySelectorAll('h2, h3');
+  if (headings.length < 2) {
+    var wrap = document.querySelector('.ncco-article__toc-wrap');
+    if (wrap) wrap.style.display = 'none';
+    return;
+  }
+  headings.forEach(function (h, i) {
+    h.id = 'heading-' + i;
+    var li = document.createElement('li');
+    if (h.tagName === 'H3') li.className = 'ncco-toc__sub';
+    li.innerHTML = '<a href="#heading-' + i + '">' + h.textContent + '</a>';
+    list.appendChild(li);
+  });
+});
+</script>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            { "value": "adapt", "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label" },
+            { "value": "small", "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label" },
+            { "value": "medium", "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label" },
+            { "value": "large", "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label" }
+          ],
+          "default": "adapt",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "t:sections.main-article.blocks.share.settings.text.default"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

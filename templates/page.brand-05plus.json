@@ -1,0 +1,480 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "05plus-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "logo_asset": "brand-05plus-logo.png",
+        "brand_color": "#FECB07",
+        "cta_text_color": "#081D3A",
+        "headline": "<p>Powered by</p><p><em>NCCO's 05+ Brands</em></p>",
+        "subtext": "From food preservation to pest control, NCCO's 05+ Brands bring clean technology into your everyday life with science-backed solutions designed for safety, sustainability, and simplicity.",
+        "bullet_1": "2–3x longer food freshness",
+        "bullet_2": "100% chemical-free pest protection",
+        "bullet_3": "Family-safe, eco-conscious design",
+        "cta_label": "Shop Products Now",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "brand-05plus-hero-card.png",
+        "background_asset": "brand-05plus-hero-bg.jpg",
+        "overlay_opacity": 60,
+        "overlay_solid_color": "rgba(8, 29, 58, 0.78)",
+        "subtext_gap": 160
+      }
+    },
+    "05plus-about": {
+      "type": "ncco-brand-intro",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "title": "Bringing Clean Air to Scale",
+            "body": "We develop industrial-grade air purification systems for hospitals, transit, and factories built to run continuously and reliably."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "title": "Built for Critical Infrastructure",
+            "body": "05+ units use NCCO technology and are designed for high-demand spaces efficient, adaptable, and trusted by professionals."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2"
+      ],
+      "settings": {
+        "eyebrow": "Just An Intro",
+        "heading": "An Industrial Air Purification Brand Built for Performance",
+        "cta_label": "Know more about us",
+        "cta_url": "/pages/about-us",
+        "cta_variant": "blue",
+        "accent_color": "#FECB07",
+        "heading_color": "#101B2B"
+      }
+    },
+    "05plus-seal": {
+      "type": "ncco-product-feature",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "text": "One-button vacuum sealing for instant airtight storage"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Extends food freshness by 2–3x"
+          }
+        },
+        "b3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Prevents bacteria, oxidation, and moisture buildup"
+          }
+        },
+        "b4": {
+          "type": "bullet",
+          "settings": {
+            "text": "USB-rechargeable, washable, and freezer-safe jars"
+          }
+        },
+        "b5": {
+          "type": "bullet",
+          "settings": {
+            "text": "3 jar sizes suitable for daily household needs"
+          }
+        },
+        "i1": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-seal-71.png",
+            "alt": "Vacuum sealing in action"
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-seal-72.png",
+            "alt": "Vacuum jars with pasta and vegetables"
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-seal-73.png",
+            "alt": "Vacuum jars with fruits"
+          }
+        },
+        "i4": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-seal-74.png",
+            "alt": "05+ vacuum storage set"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "eyebrow": "One-button vacuum storage that keeps your food safer, longer",
+        "heading": "Seal in Freshness",
+        "body": "NCCO's vacuum technology makes it easy to keep your food fresh, hygienic, and well-preserved all with a single touch.",
+        "cta_label": "Buy Vacuum Storage Set",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue",
+        "accent_color": "#FECB07"
+      }
+    },
+    "05plus-safe": {
+      "type": "ncco-dark-feature",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Fruits and vegetables stay crisp and bacteria-free"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Grains and pasta remain dry and uncontaminated"
+          }
+        },
+        "b3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Coffee and tea stay aromatic in sealed sections"
+          }
+        },
+        "b4": {
+          "type": "bullet",
+          "settings": {
+            "text": "Reduces everyday food waste with simple storage habits"
+          }
+        },
+        "i1": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-safe-l.png",
+            "alt": "Herbs and spices in jars"
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-safe-c.png",
+            "alt": "Kitchen with vacuum storage"
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-safe-r.png",
+            "alt": "Pantry with vacuum jars"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "eyebrow": "Organize and Protect Your Pantry with Smarter Storage.",
+        "heading": "Everyday Ingredients, Safely Stored",
+        "body": "From breakfast to dinner prep NCCO vacuum jars help preserve your ingredients in their best state, with no compromise on quality or health.",
+        "cta_label": "Shop Food Storage Solutions",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "yellow",
+        "accent_color": "#FECB07"
+      }
+    },
+    "05plus-mosquito": {
+      "type": "ncco-product-highlight",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Lightweight at just 36.5g, easy to carry for travel, outdoor activities, and daily use."
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Unique sound waves repel common mosquito species like Aedes albopictus and Culex, ensuring effective coverage."
+          }
+        },
+        "b3": {
+          "type": "bullet",
+          "settings": {
+            "text": "100% chemical-free, harmless to babies, pregnant women, pets, and the environment."
+          }
+        },
+        "b4": {
+          "type": "bullet",
+          "settings": {
+            "text": "Enjoy up to 20 hours of uninterrupted mosquito protection with a single charge."
+          }
+        },
+        "b5": {
+          "type": "bullet",
+          "settings": {
+            "text": "Covers up to 3m², creating a reliable protective zone wherever you are."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "eyebrow": "Product Highlight",
+        "heading": "Stay Safe,<br/>No More Bites.",
+        "body": "Experience superior mosquito protection with the 05+ Mini-Mosquito Repellent. Designed with innovative ultrasonic technology, it's chemical-free, portable, and safe for the whole family. Perfect for outdoor adventures or everyday use.",
+        "image_asset": "05plus-mosquito-composite.png",
+        "image_alt": "05+ Mini-Mosquito Repellent lifestyle collage",
+        "cta_label": "Buy Home Pest Repeller",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue",
+        "accent_color": "#FECB07"
+      }
+    },
+    "05plus-bite": {
+      "type": "ncco-light-feature",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Targets Aedes & Culex mosquitoes"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Covers 3m² of personal space"
+          }
+        },
+        "b3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Compact (36.5g) and easy to carry"
+          }
+        },
+        "b4": {
+          "type": "bullet",
+          "settings": {
+            "text": "20-hour battery backup for day or night use"
+          }
+        },
+        "i1": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-bite-l.png",
+            "alt": "Family with mosquito repeller"
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-bite-c.png",
+            "alt": "05+ mosquito repeller product"
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-bite-r.png",
+            "alt": "05+ repeller lifestyle"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "eyebrow": "Pocket-sized Mosquito Defense for Everyday Protection.",
+        "heading": "Bite-Free, Anywhere",
+        "body": "Whether you're traveling, walking your pet, or putting the baby to sleep this lightweight device keeps mosquitoes away without sprays.",
+        "cta_label": "Buy Mosquito Repeller",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue",
+        "accent_color": "#FECB07"
+      }
+    },
+    "05plus-clean": {
+      "type": "ncco-tools-showcase",
+      "blocks": {
+        "i1": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-clean-1.png",
+            "alt": "Clean living"
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-clean-2.png",
+            "alt": "Portable air purifier"
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-clean-3.png",
+            "alt": "Bedroom with 05+"
+          }
+        },
+        "i4": {
+          "type": "image",
+          "settings": {
+            "asset": "05plus-clean-4.png",
+            "alt": "Travel-ready 05+"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "eyebrow": "Chemical-free tools for sustainable, safe daily use.",
+        "heading": "Clean Tech for Modern Homes",
+        "body": "Every 05+ product reflects NCCO's mission to simplify healthy living through tools that are safe, eco-conscious, and thoughtfully designed for today's homes.",
+        "cta_label": "Browse All Products",
+        "cta_url": "/pages/contact-us",
+        "cta_variant": "blue",
+        "accent_color": "#FECB07"
+      }
+    },
+    "05plus-certifications": {
+      "type": "ncco-cert-split",
+      "settings": {
+        "eyebrow": "Certifications",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "body": "NCCO air purification technology is more than just innovative it is backed by internationally recognized certifications and proven real-world performance. From FDA approval to CE compliance, NCCO meets the highest safety and performance standards worldwide. Trusted in hospitals, airports, public transit systems, and homes across the globe, NCCO sets a new benchmark in sustainable and effective air purification.",
+        "featured_asset": "ncco-certifications-web.png",
+        "cta_label": "Discover NCCO",
+        "cta_url": "/pages/about-us",
+        "cta_variant": "blue",
+        "accent_color": "#D9AC32"
+      }
+    },
+    "05plus-faq": {
+      "type": "ncco-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What does 05+ stand for?",
+            "answer": "<p>05+ means \"starting from zero, adding what's good.\" The brand philosophy is about enriching everyday life with products that are safe, thoughtfully designed, and backed by science — nothing harmful, nothing unnecessary.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Are the ultrasonic pest repellers safe around babies?",
+            "answer": "<p>Yes. Our multi-frequency ultrasonic pest repellers use purely physical principles with no chemicals or harmful radiation. They are safe for use around pregnant women, infants, toddlers, and pets.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What is the EWG Green Grade rating?",
+            "answer": "<p>EWG (Environmental Working Group) is an independent US-based research organisation that rates products on ingredient safety. EWG Green Grade means the product uses only ingredients rated as safe and low-risk for human health and the environment.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How does the vacuum seal storage extend food life?",
+            "answer": "<p>05+ vacuum seal storage uses patented negative-pressure technology to remove oxygen from the container, dramatically slowing oxidation and bacterial growth — extending freshness 2–3x compared to conventional storage.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is the 05+ pet shampoo safe for all breeds?",
+            "answer": "<p>Yes. The 05+ EWG-certified pet care range is formulated without sulphates, parabens, or artificial fragrances — safe for all dog and cat breeds, including puppies and senior animals.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Where can I buy 05+ products?",
+            "answer": "<p>05+ products are available through authorised retailers in Hong Kong and across 40+ countries, as well as through the NCCO Group online store and selected lifestyle retailers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "eyebrow": "You Ask",
+        "heading": "Frequently Asked Questions",
+        "three_col": true
+      }
+    },
+    "05plus-contact": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "05plus-hero",
+    "05plus-about",
+    "05plus-seal",
+    "05plus-safe",
+    "05plus-mosquito",
+    "05plus-bite",
+    "05plus-clean",
+    "05plus-certifications",
+    "05plus-faq",
+    "05plus-contact"
+  ]
+}

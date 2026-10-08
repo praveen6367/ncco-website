@@ -1,0 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "404 Error",
+        "headline": "<p>Page <em>Not Found</em></p>",
+        "subtext": "The page you're looking for doesn't exist or has been moved.",
+        "cta_label": "Back to Home",
+        "cta_url": "/",
+        "dark": true,
+        "overlay_opacity": 0
+      }
+    }
+  },
+  "order": ["ncco-hero"]
+}

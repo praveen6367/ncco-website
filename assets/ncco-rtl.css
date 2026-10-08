@@ -1,0 +1,70 @@
+/* NCCO Arabic RTL overrides */
+
+/* Global: flip direction and text alignment */
+[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header: nav links row order + logo/search/icon group */
+[lang="ar"] .header__menu { flex-direction: row-reverse; }
+[lang="ar"] .header__icons { flex-direction: row-reverse; }
+[lang="ar"] .header__heading { text-align: right; }
+[lang="ar"] .header-drawer__navigation { text-align: right; }
+[lang="ar"] .header-drawer__close-button { left: auto; right: 0; }
+
+/* Hero: inner text block alignment */
+[lang="ar"] .ncco-hero__inner { text-align: right; }
+[lang="ar"] .ncco-eyebrow { text-align: right; }
+
+/* Stats: numbers still center, labels right-align on mobile */
+[lang="ar"] .ncco-stats__grid { direction: rtl; }
+
+/* Icon grid: CSS grid auto-reverses with direction: rtl */
+[lang="ar"] .ncco-icon-grid__grid { direction: rtl; }
+[lang="ar"] .ncco-icon-grid__card { text-align: right; }
+
+/* Steps: CSS grid auto-reverses */
+[lang="ar"] .ncco-steps__grid { direction: rtl; }
+[lang="ar"] .ncco-steps__step { text-align: right; }
+
+/* Tech explainer: grid auto-reverses; step flex col — no change needed */
+[lang="ar"] .ncco-tech-explainer__grid { direction: rtl; }
+[lang="ar"] .ncco-tech-explainer__text { text-align: right; }
+
+/* Brand showcase: grid auto-reverses */
+[lang="ar"] .ncco-brand-showcase__card { direction: rtl; }
+[lang="ar"] .ncco-brand-showcase__text { text-align: right; }
+
+/* Blog featured: list items use flex row — reverse */
+[lang="ar"] .ncco-blog-featured__list-item { flex-direction: row-reverse; }
+[lang="ar"] .ncco-blog-featured__main { text-align: right; }
+
+/* Blog grid: cards text alignment */
+[lang="ar"] .ncco-blog-grid__card-body { text-align: right; }
+
+/* Contact CTA: CSS grid auto-reverses; fix old broken flex override */
+[lang="ar"] .ncco-contact-cta__inner { direction: rtl; }
+
+/* Contact form inputs + textarea */
+[lang="ar"] input,
+[lang="ar"] textarea,
+[lang="ar"] select {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Article TOC layout: grid auto-reverses */
+[lang="ar"] .ncco-article-layout { direction: rtl; }
+[lang="ar"] .ncco-article__toc-list a { text-align: right; }
+[lang="ar"] .ncco-article__toc-list .ncco-toc__sub a { padding-left: 0; padding-right: 12px; }
+
+/* Footer */
+[lang="ar"] .footer__content-top { direction: rtl; }
+[lang="ar"] .footer__column { text-align: right; }
+
+/* CTA band: centered so no change, just text-align handled by global */
+
+/* Trust logos + certification logos: flex-wrap row, auto-reverses with direction */
+[lang="ar"] .ncco-trust-logos__inner { direction: rtl; }
+[lang="ar"] .ncco-certifications__logos { direction: rtl; }

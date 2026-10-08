@@ -1,0 +1,22 @@
+{%- comment -%}
+  Figma canonical CTA button.
+  Params:
+    label   (required) — button text
+    url     (required) — href
+    variant — 'blue' (default) | 'yellow'
+    class   — extra classes
+    id      — dom id
+{%- endcomment -%}
+{%- assign _v = variant | default: 'blue' -%}
+<a href="{{ url | default: '#' }}" class="ncco-cta ncco-cta--{{ _v }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <span class="ncco-cta__text">{{ label }}</span>
+  <span class="ncco-cta__icon" aria-hidden="true">
+    {%- if _v == 'yellow' -%}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="#FECB07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    {%- elsif _v == 'teal' -%}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    {%- else -%}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    {%- endif -%}
+  </span>
+</a>

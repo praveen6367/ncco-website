@@ -1,0 +1,586 @@
+{% assign layout = section.settings.layout | default: 'cards' %}
+{% assign cta_variant = section.settings.cta_variant | default: 'blue' %}
+{% assign card_theme = section.settings.card_theme | default: 'dark' %}
+
+{% if layout == 'dark-gallery' %}
+
+<section class="ncco-bshow ncco-bshow--dg">
+  <div class="ncco-bshow-dg__card{% if card_theme == 'light' %} ncco-bshow-dg__card--light{% endif %}">
+
+    <div class="ncco-bshow-dg__inner">
+      <div class="ncco-bshow__header ncco-bshow__header--dark">
+        {% if section.settings.eyebrow != blank %}
+          <p class="ncco-eyebrow ncco-eyebrow--center{% if card_theme == 'dark' %} ncco-eyebrow--white{% endif %}">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        {% if section.settings.brand_logo_asset != blank %}
+          <img class="ncco-bshow__logo{% if card_theme == 'dark' %} ncco-bshow__logo--invert{% endif %}" src="{{ section.settings.brand_logo_asset | asset_url }}"
+               alt="{{ section.settings.brand_name | default: section.settings.eyebrow }}" loading="lazy">
+        {% elsif section.settings.brand_name != blank %}
+          <h2 class="ncco-bshow__name{% if card_theme == 'dark' %} ncco-bshow__name--white{% endif %}">{{ section.settings.brand_name }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="ncco-bshow__desc{% if card_theme == 'dark' %} ncco-bshow__desc--muted{% endif %}">{{ section.settings.description }}</p>
+        {% endif %}
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="ncco-bshow-dg__stats">
+          {% for block in section.blocks %}
+            {% unless forloop.first %}<div class="ncco-bshow-dg__divider"></div>{% endunless %}
+            <div class="ncco-bshow-dg__stat" {{ block.shopify_attributes }}>
+              {% if block.settings.icon_asset != blank %}
+                <div class="ncco-bshow-dg__icon">
+                  <img src="{{ block.settings.icon_asset | asset_url }}"
+                       alt="{{ block.settings.title }}" width="24" height="24" loading="lazy">
+                </div>
+              {% else %}
+                <div class="ncco-bshow-dg__icon">
+                  <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 0C8.46 4 12 7.54 16 8C12 8.46 8.46 12 8 16C7.54 12 4 8.46 0 8C4 7.54 7.54 4 8 0Z" fill="#FECB07"/></svg>
+                </div>
+              {% endif %}
+              <div class="ncco-bshow-dg__stat-text">
+                {% if block.settings.title != blank %}
+                  <p class="ncco-bshow-dg__stat-title">{{ block.settings.title }}</p>
+                {% endif %}
+                {% if block.settings.body != blank %}
+                  <p class="ncco-bshow-dg__stat-body">{{ block.settings.body }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% assign has_images = false %}
+    {% if section.settings.asset_1 != blank or section.settings.asset_2 != blank or section.settings.asset_3 != blank or section.settings.asset_4 != blank %}
+      {% assign has_images = true %}
+    {% endif %}
+    {% if has_images %}
+      <div class="ncco-bshow-dg__images{% if card_theme == 'light' %} ncco-bshow-dg__images--light{% endif %}">
+        {% for i in (1..4) %}
+          {% assign ak = 'asset_' | append: i %}
+          {% if section.settings[ak] != blank %}
+            <div class="ncco-bshow-dg__img-wrap">
+              <img src="{{ section.settings[ak] | asset_url }}" alt="{{ section.settings.brand_name }} product {{ i }}"
+                   loading="lazy" class="ncco-bshow-dg__img">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_label != blank %}
+      <div class="ncco-bshow-dg__cta-wrap">
+        {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant -%}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% elsif layout == 'split' %}
+
+<section class="ncco-bshow ncco-bshow--split">
+  <div class="ncco-container">
+    <div class="ncco-bshow-split__inner">
+
+      <div class="ncco-bshow-split__left">
+        <div class="ncco-bshow-split__left-content">
+          {% if section.settings.eyebrow != blank %}
+            <p class="ncco-eyebrow">{{ section.settings.eyebrow }}</p>
+          {% endif %}
+          {% if section.settings.brand_logo_asset != blank %}
+            <img class="ncco-bshow__logo ncco-bshow__logo--left" src="{{ section.settings.brand_logo_asset | asset_url }}"
+                 alt="{{ section.settings.brand_name | default: section.settings.eyebrow }}" loading="lazy">
+          {% elsif section.settings.brand_name != blank %}
+            <h2 class="ncco-bshow__name">{{ section.settings.brand_name }}</h2>
+          {% endif %}
+          {% if section.settings.description != blank %}
+            <p class="ncco-bshow__desc ncco-bshow__desc--left">{{ section.settings.description }}</p>
+          {% endif %}
+
+          {% if section.blocks.size > 0 %}
+            <div class="ncco-bshow-split__features">
+              {% for block in section.blocks %}
+                <div class="ncco-bshow-split__feature" {{ block.shopify_attributes }}>
+                  {% if block.settings.icon_asset != blank %}
+                    <div class="ncco-bshow-split__feat-icon">
+                      <img src="{{ block.settings.icon_asset | asset_url }}" alt="{{ block.settings.title }}"
+                           width="24" height="24" loading="lazy">
+                    </div>
+                  {% else %}
+                    <div class="ncco-bshow-split__feat-icon">
+                      <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 0C8.46 4 12 7.54 16 8C12 8.46 8.46 12 8 16C7.54 12 4 8.46 0 8C4 7.54 7.54 4 8 0Z" fill="#FECB07"/></svg>
+                    </div>
+                  {% endif %}
+                  <div class="ncco-bshow-split__feat-text">
+                    {% if block.settings.title != blank %}
+                      <p class="ncco-bshow-split__feat-title">{{ block.settings.title }}</p>
+                    {% endif %}
+                    {% if block.settings.body != blank %}
+                      <p class="ncco-bshow-split__feat-body">{{ block.settings.body }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if section.settings.cta_label != blank %}
+          {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant, class: 'ncco-bshow-split__cta' -%}
+        {% endif %}
+      </div>
+
+      <div class="ncco-bshow-split__right">
+        <div class="ncco-bshow-split__top-row">
+          <div class="ncco-bshow-split__img-wrap">
+            {% if section.settings.asset_1 != blank %}
+              <img src="{{ section.settings.asset_1 | asset_url }}" alt="{{ section.settings.brand_name }} 1"
+                   loading="lazy" class="ncco-bshow-split__img">
+            {% endif %}
+          </div>
+          <div class="ncco-bshow-split__img-wrap">
+            {% if section.settings.asset_2 != blank %}
+              <img src="{{ section.settings.asset_2 | asset_url }}" alt="{{ section.settings.brand_name }} 2"
+                   loading="lazy" class="ncco-bshow-split__img">
+            {% endif %}
+          </div>
+        </div>
+        <div class="ncco-bshow-split__img-wrap ncco-bshow-split__img-wrap--full">
+          {% if section.settings.asset_3 != blank %}
+            <img src="{{ section.settings.asset_3 | asset_url }}" alt="{{ section.settings.brand_name }} 3"
+                 loading="lazy" class="ncco-bshow-split__img">
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% else %}
+
+<section class="ncco-bshow">
+  <div class="ncco-container">
+
+    <div class="ncco-bshow__header">
+      {% if section.settings.eyebrow != blank %}
+        <p class="ncco-eyebrow ncco-eyebrow--center">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.brand_logo_asset != blank %}
+        <img class="ncco-bshow__logo" src="{{ section.settings.brand_logo_asset | asset_url }}"
+             alt="{{ section.settings.brand_name | default: section.settings.eyebrow }}" loading="lazy">
+      {% elsif section.settings.brand_logo != blank %}
+        <img class="ncco-bshow__logo" src="{{ section.settings.brand_logo | image_url: width: 300 }}"
+             alt="{{ section.settings.brand_name }}" loading="lazy">
+      {% elsif section.settings.brand_name != blank %}
+        <h2 class="ncco-bshow__name">{{ section.settings.brand_name }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="ncco-bshow__desc">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="ncco-bshow__grid">
+        {% for block in section.blocks %}
+          <div class="ncco-bshow__card{% if forloop.index_is_odd %} ncco-bshow__card--muted{% endif %} ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.icon_asset != blank %}
+              <img class="ncco-bshow__icon" src="{{ block.settings.icon_asset | asset_url }}"
+                   alt="{{ block.settings.title }}" width="58" height="58" loading="lazy">
+            {% endif %}
+            <div class="ncco-bshow__card-text">
+              {% if block.settings.title != blank %}
+                <h3 class="ncco-bshow__card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.body != blank %}
+                <p class="ncco-bshow__card-body">{{ block.settings.body }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_label != blank %}
+      {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant, class: 'ncco-bshow__cta' -%}
+    {% endif %}
+
+  </div>
+</section>
+
+{% endif %}
+
+<style>
+/* ── Shared ── */
+.ncco-bshow__logo { height: 80px; width: auto; object-fit: contain; }
+.ncco-bshow__logo--left { align-self: flex-start; }
+.ncco-bshow__name {
+  font-family: 'Geist', sans-serif;
+  font-size: 42px; font-weight: 500; letter-spacing: -1.68px;
+  color: #081D3A; margin: 0;
+}
+.ncco-bshow__name--white { color: #fff; }
+.ncco-bshow__desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  color: #647082; margin: 0; max-width: 688px;
+}
+.ncco-bshow__desc--muted { color: #97A0AC; }
+.ncco-bshow__desc--left { text-align: left; max-width: 100%; }
+.ncco-bshow__logo--invert { filter: brightness(0) invert(1); }
+
+/* ── CARDS layout ── */
+.ncco-bshow { padding: 120px 240px; background: #fff; }
+.ncco-bshow .ncco-container { max-width: 100%; padding: 0; }
+
+.ncco-bshow__header {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  text-align: center; margin-bottom: 70px;
+}
+.ncco-bshow .ncco-eyebrow { margin-bottom: 0; }
+
+.ncco-bshow__grid {
+  display: flex; flex-wrap: wrap; gap: 30px;
+  justify-content: center; margin-bottom: 48px;
+}
+.ncco-bshow__card {
+  width: 460px; padding: 38px; border-radius: 28px;
+  display: flex; flex-direction: column; gap: 26px;
+  box-sizing: border-box;
+}
+.ncco-bshow__card--muted { background: rgba(100,112,130,0.04); }
+.ncco-bshow__card:not(.ncco-bshow__card--muted) {
+  background: #fff;
+  border: 1px solid rgba(100,112,130,0.12);
+  box-shadow: 0 16px 24px rgba(8,29,58,0.04);
+}
+.ncco-bshow__icon { width: 58px; height: 58px; object-fit: contain; flex-shrink: 0; }
+.ncco-bshow__card-text { display: flex; flex-direction: column; gap: 16px; }
+.ncco-bshow__card-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px; font-weight: 500; letter-spacing: -0.4px; line-height: 1;
+  color: #081D3A; margin: 0; text-transform: uppercase;
+}
+.ncco-bshow__card-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
+  color: #647082; margin: 0;
+}
+.ncco-bshow__cta { display: block; margin: 0 auto; width: fit-content; }
+
+/* ── DARK-GALLERY layout ── */
+.ncco-bshow--dg { padding: 120px 24px; background: #fff; }
+
+.ncco-bshow-dg__card {
+  background: #081D3A;
+  border-radius: 32px;
+  padding-top: 80px;
+  padding-bottom: 64px;
+  overflow: hidden;
+}
+
+.ncco-bshow-dg__inner { padding: 0 80px; }
+
+.ncco-bshow__header--dark {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  text-align: center; margin-bottom: 56px;
+}
+.ncco-bshow__header--dark .ncco-eyebrow { margin-bottom: 0; }
+.ncco-eyebrow--white { color: #fff !important; }
+.ncco-eyebrow--white::before { background: #FECB07 !important; }
+
+.ncco-bshow-dg__stats {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.ncco-bshow-dg__stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  padding: 0 28px;
+}
+.ncco-bshow-dg__stat:first-child { padding-left: 0; }
+.ncco-bshow-dg__stat:last-child { padding-right: 0; }
+.ncco-bshow-dg__divider {
+  width: 1px;
+  background: #003DA5;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.ncco-bshow-dg__icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.ncco-bshow-dg__stat-text { display: flex; flex-direction: column; gap: 4px; }
+.ncco-bshow-dg__stat-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.32px;
+  color: #fff; margin: 0;
+}
+.ncco-bshow-dg__stat-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 28px; letter-spacing: -0.36px;
+  color: #fff; margin: 0;
+}
+.ncco-bshow-dg__stat-title + .ncco-bshow-dg__stat-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 22px;
+  letter-spacing: -0.28px;
+}
+
+/* Light card variant (NCCO-IG) */
+.ncco-bshow-dg__card--light {
+  background: rgba(100,112,130,0.04);
+}
+.ncco-bshow-dg__card--light .ncco-eyebrow { color: #647082 !important; }
+.ncco-bshow-dg__card--light .ncco-eyebrow::before { background: #FECB07 !important; }
+.ncco-bshow-dg__card--light .ncco-bshow__logo--invert { filter: none; }
+.ncco-bshow-dg__card--light .ncco-bshow__name { color: #081D3A; }
+.ncco-bshow-dg__card--light .ncco-bshow__desc { color: #647082; }
+.ncco-bshow-dg__card--light .ncco-bshow-dg__stat-body { color: #081D3A; }
+.ncco-bshow-dg__card--light .ncco-bshow-dg__stat-title { color: #081D3A; }
+.ncco-bshow-dg__card--light .ncco-bshow-dg__icon { background: rgba(100,112,130,0.08); }
+
+.ncco-bshow-dg__images {
+  display: flex; gap: 30px;
+  padding: 60px 16px 0;
+}
+.ncco-bshow-dg__img-wrap {
+  flex: 1; height: 415px; border-radius: 28px;
+  background: #fff; overflow: hidden;
+  border: 1px solid rgba(100,112,130,0.10);
+}
+.ncco-bshow-dg__img {
+  width: 100%; height: 100%; object-fit: contain;
+}
+.ncco-bshow-dg__images--light .ncco-bshow-dg__img-wrap {
+  background: rgba(234,234,234,0.48);
+  border-color: rgba(8,29,58,0.08);
+}
+.ncco-bshow-dg__images--light .ncco-bshow-dg__img-wrap:first-child,
+.ncco-bshow-dg__images--light .ncco-bshow-dg__img-wrap:last-child { flex: 2; }
+.ncco-bshow-dg__images--light .ncco-bshow-dg__img-wrap:nth-child(2) { flex: 3; background: transparent; }
+.ncco-bshow-dg__cta-wrap {
+  display: flex; justify-content: center;
+  padding-top: 48px;
+}
+
+/* ── SPLIT layout ── */
+.ncco-bshow--split { padding: 120px 0; background: #fff; }
+.ncco-bshow--split .ncco-container { max-width: 1440px; padding: 0 240px; }
+
+.ncco-bshow-split__inner {
+  display: flex;
+  gap: 152px;
+  align-items: flex-start;
+}
+.ncco-bshow-split__left {
+  flex: 0 0 583px;
+  display: flex; flex-direction: column;
+}
+.ncco-bshow-split__left-content {
+  display: flex; flex-direction: column; gap: 24px;
+  flex: 1;
+}
+.ncco-bshow-split__cta { margin-top: 88px; }
+.ncco-bshow-split__right {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 29px;
+}
+.ncco-bshow-split__top-row { display: flex; gap: 29px; }
+.ncco-bshow-split__img-wrap {
+  flex: 1; height: 412px; border-radius: 28px;
+  background: rgba(234,234,234,0.48);
+  border: 1px solid rgba(8,29,58,0.08);
+  overflow: hidden;
+}
+.ncco-bshow-split__img-wrap--full { flex: unset; width: 100%; }
+.ncco-bshow-split__img { width: 100%; height: 100%; object-fit: cover; }
+
+.ncco-bshow-split__features {
+  display: flex; flex-direction: column; gap: 30px;
+}
+.ncco-bshow-split__feature {
+  display: flex; align-items: center; gap: 16px;
+}
+.ncco-bshow-split__feat-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(100,112,130,0.06);
+  border: 1px solid rgba(100,112,130,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ncco-bshow-split__feat-text { display: flex; flex-direction: column; gap: 6px; }
+.ncco-bshow-split__feat-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 500; letter-spacing: -0.36px; line-height: 1.2;
+  color: #081D3A; margin: 0;
+}
+.ncco-bshow-split__feat-body {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 28px; letter-spacing: -0.36px;
+  color: #081D3A; margin: 0;
+}
+
+/* ── Responsive: 1600px ── */
+@media (max-width: 1600px) {
+  .ncco-bshow { padding: 100px 80px; }
+  .ncco-bshow--dg { padding: 100px 16px; }
+  .ncco-bshow-dg__inner { padding: 0 60px; }
+  .ncco-bshow--split .ncco-container { padding: 0 80px; }
+  .ncco-bshow-split__inner { gap: 80px; }
+  .ncco-bshow-split__left { flex: 0 0 460px; }
+}
+
+/* ── Responsive: 1200px ── */
+@media (max-width: 1200px) {
+  .ncco-bshow { padding: 80px 40px; }
+  .ncco-bshow__card { width: calc(50% - 15px); }
+  .ncco-bshow--dg { padding: 80px 12px; }
+  .ncco-bshow-dg__inner { padding: 0 48px; }
+  .ncco-bshow-dg__card { border-radius: 24px; }
+  .ncco-bshow--split .ncco-container { padding: 0 40px; }
+  .ncco-bshow-split__left { flex: 0 0 380px; }
+  .ncco-bshow-split__inner { gap: 40px; }
+}
+
+/* ── Responsive: 989px ── */
+@media (max-width: 989px) {
+  .ncco-bshow { padding: 60px 24px; }
+  .ncco-bshow__card { width: 100%; }
+  .ncco-bshow__grid { gap: 20px; }
+  .ncco-bshow--dg { padding: 60px 8px; }
+  .ncco-bshow-dg__inner { padding: 0 28px; }
+  .ncco-bshow-dg__card { padding-top: 40px; padding-bottom: 36px; border-radius: 20px; }
+  .ncco-bshow-dg__stats { flex-wrap: wrap; gap: 20px; }
+  .ncco-bshow-dg__stat { flex: 0 0 calc(50% - 10px); padding: 0; }
+  .ncco-bshow-dg__divider { display: none; }
+  .ncco-bshow-dg__images { gap: 16px; padding: 40px 12px 0; }
+  .ncco-bshow-dg__img-wrap { height: 260px; }
+  .ncco-bshow--split .ncco-container { padding: 0 24px; }
+  .ncco-bshow-split__inner { flex-direction: column; gap: 48px; }
+  .ncco-bshow-split__left { flex: unset; width: 100%; }
+  .ncco-bshow-split__img-wrap { height: 300px; }
+  .ncco-bshow-split__cta { margin-top: 40px; }
+}
+
+/* ── Responsive: 600px ── */
+@media (max-width: 600px) {
+  /* cards */
+  .ncco-bshow { padding: 40px 16px; }
+  .ncco-bshow__header { gap: 16px; margin-bottom: 40px; }
+  .ncco-bshow__logo { height: 60px; }
+  .ncco-bshow__desc { font-size: 15px; }
+  .ncco-bshow__card { padding: 24px; border-radius: 20px; gap: 16px; }
+  .ncco-bshow__icon { width: 44px; height: 44px; }
+  .ncco-bshow__card-title { font-size: 16px; }
+  .ncco-bshow__card-body { font-size: 14px; }
+  .ncco-bshow__grid { gap: 12px; }
+  .ncco-bshow__cta { width: 100% !important; }
+  .ncco-bshow .ncco-cta { width: 100%; justify-content: space-between; }
+
+  /* dark-gallery */
+  .ncco-bshow--dg { padding: 40px 8px; }
+  .ncco-bshow-dg__inner { padding: 0 20px; }
+  .ncco-bshow__header--dark { margin-bottom: 36px; gap: 16px; }
+  .ncco-bshow-dg__stats { flex-direction: column; gap: 16px; }
+  .ncco-bshow-dg__stat { padding: 0; }
+  .ncco-bshow-dg__stat-body { font-size: 15px; line-height: 24px; }
+  .ncco-bshow-dg__images {
+    flex-direction: row; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    gap: 12px; padding: 28px 12px 4px; scrollbar-width: none;
+  }
+  .ncco-bshow-dg__images::-webkit-scrollbar { display: none; }
+  .ncco-bshow-dg__img-wrap {
+    flex: 0 0 calc(75vw - 20px); scroll-snap-align: start;
+    height: 240px; border-radius: 16px;
+  }
+  .ncco-bshow-dg__cta-wrap { padding: 28px 20px 0; }
+  .ncco-bshow-dg__cta-wrap .ncco-cta { width: 100%; justify-content: space-between; }
+
+  /* split */
+  .ncco-bshow--split .ncco-container { padding: 0 16px; }
+  .ncco-bshow-split__inner { gap: 32px; }
+  .ncco-bshow-split__top-row { gap: 12px; }
+  .ncco-bshow-split__img-wrap { height: 200px; border-radius: 16px; }
+  .ncco-bshow-split__features { gap: 16px; }
+  .ncco-bshow-split__feat-title { font-size: 15px; }
+  .ncco-bshow-split__feat-body { font-size: 15px; line-height: 22px; }
+  .ncco-bshow-split__cta { width: 100% !important; margin-top: 32px; }
+  .ncco-bshow--split .ncco-cta { width: 100%; justify-content: space-between; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Brand Showcase",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {"value": "cards",        "label": "Feature Cards (NCCO, 05+)"},
+        {"value": "dark-gallery", "label": "Dark Gallery (RHT, NCCO-IG)"},
+        {"value": "split",        "label": "Split (b-MOLA)"}
+      ],
+      "default": "cards"
+    },
+    {
+      "type": "select",
+      "id": "card_theme",
+      "label": "Card theme (dark-gallery only)",
+      "options": [
+        {"value": "dark",  "label": "Dark navy (RHT)"},
+        {"value": "light", "label": "Light blue-gray (NCCO-IG)"}
+      ],
+      "default": "dark"
+    },
+    {
+      "type": "select",
+      "id": "cta_variant",
+      "label": "CTA colour",
+      "options": [
+        {"value": "blue",   "label": "Blue"},
+        {"value": "yellow", "label": "Yellow"}
+      ],
+      "default": "blue"
+    },
+    {"type": "text",         "id": "eyebrow",          "label": "Eyebrow label"},
+    {"type": "image_picker", "id": "brand_logo",        "label": "Brand logo (Theme Editor)"},
+    {"type": "text",         "id": "brand_logo_asset",  "label": "Brand logo asset filename"},
+    {"type": "text",         "id": "brand_name",        "label": "Brand name (fallback if no logo)"},
+    {"type": "textarea",     "id": "description",       "label": "Brand description"},
+    {"type": "text",         "id": "cta_label",         "label": "CTA label"},
+    {"type": "url",          "id": "cta_url",           "label": "CTA URL"},
+    {"type": "header",       "content": "Product Images (dark-gallery & split layouts)"},
+    {"type": "text",         "id": "asset_1",           "label": "Image 1 asset filename"},
+    {"type": "text",         "id": "asset_2",           "label": "Image 2 asset filename"},
+    {"type": "text",         "id": "asset_3",           "label": "Image 3 asset filename"},
+    {"type": "text",         "id": "asset_4",           "label": "Image 4 asset filename (dark-gallery only)"}
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature / Stat",
+      "settings": [
+        {"type": "text",     "id": "icon_asset", "label": "Icon asset filename"},
+        {"type": "text",     "id": "title",      "label": "Title"},
+        {"type": "textarea", "id": "body",       "label": "Body text"}
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{"name": "NCCO Brand Showcase"}]
+}
+{% endschema %}

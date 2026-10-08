@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Get In Touch",
+        "headline": "<p>We're Here <em>to Help</em></p>",
+        "subtext": "Speak to our team about product enquiries, commercial solutions, or technical support. We respond within one business day.",
+        "overlay_opacity": 50,
+        "dark": true
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Send Us a Message",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "Our Office",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Pak Shek Kok, Shatin, New Territories, Hong Kong",
+        "phone": "+852 2417 0075",
+        "email": "sales@rhtind.com.hk",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "contact-form",
+    "ncco-contact-cta"
+  ]
+}

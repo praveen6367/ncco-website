@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100">
+  <!-- HSBC hexagonal diamond mark -->
+  <g transform="translate(8,8)">
+    <polygon points="42,0 84,21 84,63 42,84 0,63 0,21" fill="#DB0011"/>
+    <polygon points="42,0 84,21 42,42" fill="#fff" opacity="0.55"/>
+    <polygon points="0,63 42,42 84,63 42,84" fill="#fff" opacity="0.55"/>
+  </g>
+  <text x="106" y="62" font-family="Arial, sans-serif" font-weight="700" font-size="36" fill="#1A1A1A" letter-spacing="1">HSBC</text>
+</svg>

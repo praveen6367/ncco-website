@@ -1,0 +1,380 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Trusted by leading industries across the globe",
+        "headline": "<p>Air Innovation,</p><p><em>Brand by Brand</em></p>",
+        "subtext": "From personal spaces to large-scale industries, each NCCO brand delivers specialized solutions backed by nanotechnology and global trust.",
+        "bullet_1": "5 specialist brands under one group",
+        "bullet_2": "Technology deployed in 500+ organisations",
+        "bullet_3": "Trusted across 40+ countries and regions",
+        "cta_label": "Get a Free Consultation",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "brand-ncco-hero-card.png",
+        "background_asset": "brand-ncco-hero-bg.png",
+        "overlay_opacity": 55,
+        "subtext_gap": 180
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "blocks": {
+        "tl_01": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-New-World-China.webp",
+            "alt": "New World China"
+          }
+        },
+        "tl_02": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-JLL.svg",
+            "alt": "JLL"
+          }
+        },
+        "tl_03": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HSBC.svg",
+            "alt": "HSBC"
+          }
+        },
+        "tl_04": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-IFC-Mall.webp",
+            "alt": "IFC"
+          }
+        },
+        "tl_05": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR.svg",
+            "alt": "MTR"
+          }
+        },
+        "tl_06": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HKHA.svg",
+            "alt": "HKHA"
+          }
+        }
+      },
+      "block_order": [
+        "tl_01",
+        "tl_02",
+        "tl_03",
+        "tl_04",
+        "tl_05",
+        "tl_06"
+      ],
+      "settings": {
+        "heading": "Trusted by industry leaders for",
+        "heading_highlight": "Quality and Reliability",
+        "static_grid": false
+      }
+    },
+    "ncco-parent": {
+      "type": "ncco-brand-showcase",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-1.png",
+            "title": "Molecular-Level Purification",
+            "body": "Decomposes pollutants like VOCs, formaldehyde, and viruses — doesn't just trap them."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-2.png",
+            "title": "Continuous & Stable Operation",
+            "body": "Operates 24/7 without generating secondary pollution or ozone."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-3.png",
+            "title": "Research-Driven Performance",
+            "body": "Developed from years of academic and industrial research with global certifications."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-4.png",
+            "title": "Patented Nanotech Reactor",
+            "body": "Powered by exclusive NCCO reactor technology built for durability and high efficiency."
+          }
+        },
+        "f5": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-5.png",
+            "title": "Deployed Worldwide",
+            "body": "Used by over 500+ organizations across public transport, hospitals, and industrial setups."
+          }
+        },
+        "f6": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "benefit-icon-6.png",
+            "title": "Reusable & Low Maintenance",
+            "body": "NCCO filters are long-lasting, washable, and reduce replacement costs."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {
+        "layout": "cards",
+        "cta_variant": "yellow",
+        "eyebrow": "Parent Brand",
+        "brand_logo_asset": "brand-ncco-logo.png",
+        "brand_name": "NCCO",
+        "description": "As the foundation of our group, NCCO leads with breakthrough nanotechnology, setting the standard for long-lasting and effective air purification across all applications.",
+        "cta_label": "Discover NCCO",
+        "cta_url": "/pages/brand-ncco"
+      }
+    },
+    "ncco-rht": {
+      "type": "ncco-brand-showcase",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "body": "Trusted worldwide in demanding operational settings."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "body": "Engineered for durability in high-traffic or industrial environments."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "body": "Ideal for subways, cleanrooms, and government facilities."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "body": "Features modular installation and energy-efficient designs."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "layout": "dark-gallery",
+        "cta_variant": "yellow",
+        "eyebrow": "Commercial & Industrial Solutions",
+        "brand_logo_asset": "brand-rht-logo.png",
+        "brand_name": "RHT",
+        "description": "Engineered for hospitals, transport, and industries, RHT delivers high-capacity air purification systems for demanding environments.",
+        "cta_label": "View More Details",
+        "cta_url": "/pages/brand-rht",
+        "asset_1": "rht-p1.png",
+        "asset_2": "rht-p2.png",
+        "asset_3": "rht-p3.png",
+        "asset_4": "rht-p4.png"
+      }
+    },
+    "ncco-bmola": {
+      "type": "ncco-brand-showcase",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "body": "Perfect for individuals, families, and remote work setups"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "body": "Combines high-performance filtration with elegant design."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "body": "Brings clean air to everyday spaces at home or on the move"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "body": "Easy to use, lightweight, and low-maintenance"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "layout": "split",
+        "cta_variant": "blue",
+        "eyebrow": "Consumer Air Purifiers",
+        "brand_logo_asset": "brand-bmola-logo.png",
+        "brand_name": "b-MOLA",
+        "description": "Designed for everyday comfort and convenience, b-MOLA brings advanced NCCO technology into compact devices for homes, cars, workspaces, and beyond.",
+        "cta_label": "View More Details",
+        "cta_url": "/pages/brand-bmola",
+        "asset_1": "bmola-p1.png",
+        "asset_2": "bmola-p2.png",
+        "asset_3": "bmola-p3.png"
+      }
+    },
+    "ncco-ig": {
+      "type": "ncco-brand-showcase",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "body": "Specializes in long-term sterilization systems for healthcare and critical care facilities"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "body": "Effective against airborne viruses, bacteria, and VOCs"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "body": "Designed for continuous, high-safety operation in labs, clinics, and quarantine areas"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "body": "Requires minimal maintenance over time"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "layout": "dark-gallery",
+        "card_theme": "light",
+        "cta_variant": "blue",
+        "eyebrow": "Sterilization & Healthcare",
+        "brand_logo_asset": "brand-nccoig-logo.png",
+        "brand_name": "NCCO-IG",
+        "description": "Built for critical healthcare and lab environments, NCCO-IG offers robust sterilization systems that deliver continuous protection against airborne pathogens and pollutants.",
+        "cta_label": "View More Details",
+        "cta_url": "/pages/brand-nccoog",
+        "asset_1": "nccoig-p1.png",
+        "asset_2": "nccoig-p2.png",
+        "asset_3": "nccoig-p3.png"
+      }
+    },
+    "ncco-05plus": {
+      "type": "ncco-brand-showcase",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "05plus-icon-1.svg",
+            "title": "Low Noise Operation",
+            "body": "Enjoy a peaceful atmosphere while O5+ works silently to maintain the perfect indoor climate."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "05plus-icon-2.svg",
+            "title": "Smart Humidity Sensing",
+            "body": "Automatically detects and adjusts humidity levels to keep your room consistently fresh and balanced."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon_asset": "05plus-icon-3.svg",
+            "title": "Large Water Tank Capacity",
+            "body": "With a 1750ml tank, O5+ runs longer without frequent emptying, making it convenient for daily use."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "settings": {
+        "layout": "cards",
+        "cta_variant": "blue",
+        "eyebrow": "Fresh Living Made Simple",
+        "brand_logo_asset": "05plus-logo.png",
+        "brand_name": "05+",
+        "description": "Keep your space dry, healthy, and comfortable with advanced O5+ technology designed to prevent mold, reduce humidity, and create a fresher home environment.",
+        "cta_label": "View More Details",
+        "cta_url": "/pages/brand-05plus"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "certifications",
+        "heading": "Globally Certified. Internationally Trusted.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-parent",
+    "ncco-rht",
+    "ncco-bmola",
+    "ncco-ig",
+    "ncco-05plus",
+    "ncco-certifications",
+    "ncco-contact-cta"
+  ]
+}

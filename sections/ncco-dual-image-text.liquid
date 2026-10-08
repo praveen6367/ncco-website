@@ -1,0 +1,115 @@
+{%- assign dit_accent = section.settings.accent_color | default: '#FECB07' -%}
+<section class="ncco-dit ncco-section{% if section.settings.dark %} ncco-section--dark{% endif %}" style="--ncco-accent:{{ dit_accent }}">
+  <div class="ncco-dit__inner{% if section.settings.layout == 'text_first' %} ncco-dit__inner--reverse{% endif %}">
+    <div class="ncco-dit__images ncco-reveal ncco-reveal--d2">
+      {% if section.settings.image_primary != blank %}
+        <img class="ncco-dit__img ncco-dit__img--primary" src="{{ section.settings.image_primary | asset_url }}" alt="{{ section.settings.heading }}" loading="lazy">
+      {% endif %}
+      {% if section.settings.image_secondary != blank %}
+        <img class="ncco-dit__img ncco-dit__img--secondary" src="{{ section.settings.image_secondary | asset_url }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+    <div class="ncco-dit__text ncco-reveal">
+      {% if section.settings.eyebrow != blank %}
+        <p class="ncco-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <div class="ncco-dit__heading-wrap">
+          <span class="ncco-dit__bar"></span>
+          <h2 class="ncco-dit__heading">{{ section.settings.heading }}</h2>
+        </div>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="ncco-dit__body">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.ncco-dit { padding: 100px 240px; }
+.ncco-dit__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.ncco-dit__inner--reverse .ncco-dit__images { order: 2; }
+.ncco-dit__inner--reverse .ncco-dit__text { order: 1; }
+
+.ncco-dit__images {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  height: auto;
+  min-height: 280px;
+}
+.ncco-dit__img {
+  display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 16px; min-width: 0;
+}
+.ncco-dit__img--primary  { flex: 7; }
+.ncco-dit__img--secondary { flex: 10; }
+
+.ncco-dit__heading-wrap { margin-bottom: 20px; }
+.ncco-dit__bar {
+  display: block; width: 32px; height: 2px;
+  background: var(--ncco-accent, #FECB07); margin-bottom: 16px;
+}
+.ncco-dit__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -0.5px;
+  color: #081D3A; margin: 0; text-transform: uppercase;
+}
+.ncco-section--dark .ncco-dit__heading { color: #fff; }
+.ncco-dit__body {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 28px; letter-spacing: -0.36px;
+  color: #647082;
+}
+.ncco-section--dark .ncco-dit__body { color: #97A0AC; }
+.ncco-dit__body p { margin: 0 0 16px; }
+.ncco-dit__body p:last-child { margin-bottom: 0; }
+.ncco-dit .ncco-eyebrow { margin-bottom: 40px; }
+
+@media (max-width: 1600px) { .ncco-dit { padding: 80px 80px; } .ncco-dit__inner { gap: 60px; } }
+@media (max-width: 1024px) {
+  .ncco-dit { padding: 60px 40px; }
+  .ncco-dit__inner { grid-template-columns: 1fr; gap: 40px; }
+  .ncco-dit__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.5px; }
+  .ncco-dit__inner--reverse .ncco-dit__images { order: unset; }
+  .ncco-dit__inner--reverse .ncco-dit__text { order: unset; }
+  .ncco-dit__images { min-height: 240px; }
+}
+@media (max-width: 989px) {
+  .ncco-dit { padding: 48px 24px; }
+  .ncco-dit__heading { font-size: 34px; line-height: 42px; letter-spacing: -1.2px; }
+  .ncco-dit__body { font-size: 16px; line-height: 24px; }
+}
+@media (max-width: 600px) {
+  .ncco-dit { padding: 40px 16px; }
+  .ncco-dit__heading { font-size: 26px; line-height: 34px; letter-spacing: -0.8px; }
+  .ncco-dit__images { min-height: 180px; }
+  .ncco-dit__img { border-radius: 12px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Dual Image + Text",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "richtext", "id": "text", "label": "Body text"},
+    {"type": "text", "id": "image_primary", "label": "Primary image asset (top)"},
+    {"type": "text", "id": "image_secondary", "label": "Secondary image asset (bottom)"},
+    {"type": "select", "id": "layout", "label": "Layout", "options": [
+      {"value": "image_first", "label": "Images left, text right"},
+      {"value": "text_first", "label": "Text left, images right"}
+    ], "default": "image_first"},
+    {"type": "checkbox", "id": "dark", "label": "Dark background", "default": false},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex, default #FECB07 yellow)"}
+  ],
+  "presets": [{"name": "NCCO Dual Image + Text"}]
+}
+{% endschema %}

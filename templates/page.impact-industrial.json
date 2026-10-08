@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Industrial",
+        "headline": "<p>Industrial-Grade Air Purification for <em>Waste & Emission Control</em></p>",
+        "subtext": "NCCO technology controls VOCs, smoke, and toxic gas emissions in factories, waste processing facilities, and industrial sites — without producing harmful byproducts.",
+        "cta_label": "Explore Industrial Solutions",
+        "cta_url": "#solutions",
+        "overlay_opacity": 55,
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "settings": {
+        "heading": "Trusted by world-leading businesses"
+      }
+    },
+    "ncco-icon-grid": {
+      "type": "ncco-icon-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "VOC and Gas Control",
+            "body": "<p>NCCO targets and breaks down volatile organic compounds, solvent vapours, and combustion gases at the molecular level — meeting strict industrial emission standards.</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "No Filter Saturation",
+            "body": "<p>Unlike activated carbon which saturates and re-releases absorbed pollutants, NCCO's catalytic process permanently eliminates contaminants. No secondary pollution. No filter replacement for up to 12 years.</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Scalable to Any Facility",
+            "body": "<p>From small workshops to large-scale manufacturing plants and waste processing facilities — NCCO systems scale to match your facility's airflow and contamination load.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "eyebrow": "Industrial Applications",
+        "heading": "Purifying Waste Zones. Filtering Factory Emissions.",
+        "subtext": "Industrial environments demand air purification that handles continuous high-concentration pollutants. NCCO delivers — 24/7, without saturation or secondary pollution.",
+        "columns": "3",
+        "dark": false
+      }
+    },
+    "ncco-iwt-1": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Clear Air Solutions for Industrial Demands",
+        "text": "<p>Industrial spaces generate continuous air contamination from machinery, chemicals, waste processing, and combustion. NCCO's catalytic oxidation permanently eliminates these pollutants rather than recirculating them — maintaining compliant air quality even in high-load environments.</p>",
+        "asset": "ncco-img-industrial-plant.png",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-iwt-2": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "heading": "Cleaner Air for Demanding Industrial Environments",
+        "text": "<p>Emitted by boilers, engines, and industrial processes, harmful gases are a major source of indoor air contamination. NCCO integrates into existing industrial ventilation to eliminate these at source — protecting workers and meeting occupational health standards.</p>",
+        "asset": "ncco-img-commercial-office.png",
+        "layout": "text_first",
+        "dark": false
+      }
+    },
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "heading": "What's Polluting the Air in Your Factory?",
+        "subtext": "Get a site assessment from our industrial team. We'll specify the right NCCO system for your facility's contamination profile.",
+        "cta_label": "Request a Site Assessment",
+        "cta_url": "/pages/contact-us",
+        "bg_color": "#003da5"
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "International Standards",
+        "heading": "Certified Safe. Trusted Worldwide.",
+        "featured_asset": "ncco-certifications-web.png"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What industrial pollutants does NCCO handle?",
+            "row_content": "<p>NCCO handles VOCs (volatile organic compounds), formaldehyde, benzene, acetone, toluene, solvent vapours, combustion gases, and airborne bacteria and viruses. It is particularly effective in environments with gaseous pollutants that conventional filters cannot capture.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does NCCO compare to industrial scrubbers?",
+            "row_content": "<p>Industrial scrubbers use wet chemical processes to neutralise gases. NCCO achieves molecular-level oxidation through a dry catalytic process — no chemicals, no waste water, and no secondary pollution. Maintenance requirements are significantly lower.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can NCCO systems be retrofitted to existing industrial ventilation?",
+            "row_content": "<p>Yes. NCCO modules can be integrated into existing ductwork and air handling systems. Our engineering team will design a retrofit solution based on your facility's airflow volume, contamination type, and concentration levels.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "caption": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h2",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "heading": "We're Here to Help",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "Send Message"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-icon-grid",
+    "ncco-iwt-1",
+    "ncco-iwt-2",
+    "ncco-cta-band",
+    "ncco-certifications",
+    "collapsible-content",
+    "ncco-contact-cta"
+  ]
+}

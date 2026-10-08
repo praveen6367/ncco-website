@@ -1,0 +1,170 @@
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- assign cta_variant = section.settings.cta_variant | default: 'blue' -%}
+{%- assign bullet_blocks = section.blocks | where: 'type', 'bullet' -%}
+<section class="ncco-phigh" style="--brand-accent:{{ accent }}">
+  <div class="ncco-phigh__inner">
+    <div class="ncco-phigh__left ncco-reveal">
+      <div class="ncco-phigh__head">
+        {% if section.settings.eyebrow != blank %}
+          <div class="ncco-phigh__eyebrow-wrap">
+            <span class="ncco-phigh__eyebrow-bar"></span>
+            <p class="ncco-phigh__eyebrow">{{ section.settings.eyebrow }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-phigh__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.body != blank %}
+          <p class="ncco-phigh__body">{{ section.settings.body }}</p>
+        {% endif %}
+      </div>
+
+      {% if bullet_blocks.size > 0 %}
+        <ul class="ncco-phigh__bullets">
+          {% for block in bullet_blocks %}
+            <li class="ncco-phigh__bullet" {{ block.shopify_attributes }}>
+              <span class="ncco-phigh__bullet-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 1.5L12.35 7.5L18.5 7.75L13.7 11.7L15.4 17.8L10 14.3L4.6 17.8L6.3 11.7L1.5 7.75L7.65 7.5L10 1.5Z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="ncco-phigh__bullet-text">{{ block.settings.text }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if section.settings.cta_label != blank %}
+        {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant -%}
+      {% endif %}
+    </div>
+
+    <div class="ncco-phigh__right ncco-reveal ncco-reveal--d1">
+      {% if section.settings.image_asset != blank %}
+        <img src="{{ section.settings.image_asset | asset_url }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+      {% elsif section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 1400 }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.ncco-phigh { padding: 120px 40px; background: #fff; }
+.ncco-phigh__inner {
+  max-width: 1600px; margin: 0 auto;
+  display: flex; align-items: center; gap: 100px;
+}
+.ncco-phigh__left {
+  flex: 0 0 583px; max-width: 583px;
+  display: flex; flex-direction: column; gap: 60px;
+}
+.ncco-phigh .ncco-cta { align-self: flex-start; }
+
+.ncco-phigh__head {
+  display: flex; flex-direction: column; gap: 32px;
+}
+.ncco-phigh__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+}
+.ncco-phigh__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: var(--brand-accent, #FECB07);
+}
+.ncco-phigh__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500; letter-spacing: 0;
+  color: #647082; text-transform: uppercase; margin: 0;
+}
+.ncco-phigh__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px;
+  color: #081D3A; margin: 0;
+  letter-spacing: -1.4px;
+}
+.ncco-phigh__body {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px;
+  color: #647082; margin: 0;
+  max-width: 583px;
+}
+
+.ncco-phigh__bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 30px;
+}
+.ncco-phigh__bullet {
+  display: flex; align-items: center; gap: 16px;
+}
+.ncco-phigh__bullet-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--brand-accent, #FECB07) 12%, transparent);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--brand-accent, #FECB07);
+}
+.ncco-phigh__bullet-icon svg { width: 20px; height: 20px; }
+.ncco-phigh__bullet-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 28px;
+  color: #081D3A;
+}
+
+.ncco-phigh__right {
+  flex: 1 1 0; min-width: 0;
+  display: flex; justify-content: center;
+}
+.ncco-phigh__right img {
+  width: 100%; height: auto; max-width: 780px;
+  display: block; border-radius: 28px;
+}
+
+@media (max-width: 1200px) {
+  .ncco-phigh { padding: 80px 24px; }
+  .ncco-phigh__inner { flex-direction: column; gap: 60px; }
+  .ncco-phigh__left { flex: 1 1 auto; max-width: 100%; }
+  .ncco-phigh__right img { max-width: 640px; }
+}
+@media (max-width: 600px) {
+  .ncco-phigh { padding: 60px 16px; }
+  .ncco-phigh__heading { font-size: 32px; line-height: 40px; }
+  .ncco-phigh__body { font-size: 15px; }
+  .ncco-phigh__left { gap: 40px; }
+  .ncco-phigh__head { gap: 24px; }
+  .ncco-phigh__bullets { gap: 20px; }
+  .ncco-phigh__bullet-icon { width: 40px; height: 40px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Product Highlight",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading (HTML allowed)"},
+    {"type": "textarea", "id": "body", "label": "Body text"},
+    {"type": "image_picker", "id": "image", "label": "Image"},
+    {"type": "text", "id": "image_asset", "label": "Or asset filename"},
+    {"type": "text", "id": "image_alt", "label": "Image alt"},
+    {"type": "text", "id": "cta_label", "label": "CTA text"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"},
+    {"type": "select", "id": "cta_variant", "label": "CTA style", "options": [
+      {"value": "yellow", "label": "Yellow"},
+      {"value": "blue", "label": "Blue"},
+      {"value": "teal", "label": "Teal"}
+    ], "default": "blue"},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex)", "default": "#FECB07"}
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Star bullet",
+      "settings": [
+        {"type": "text", "id": "text", "label": "Bullet text"}
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [{"name": "NCCO Product Highlight"}]
+}
+{% endschema %}

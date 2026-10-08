@@ -1,0 +1,210 @@
+<section class="ncco-cases">
+
+  <div class="ncco-cases__header">
+    <p class="ncco-cases__eyebrow">{{ section.settings.eyebrow | default: 'Proven Results' }}</p>
+    <h2 class="ncco-cases__heading">{{ section.settings.heading | default: 'Trusted by Thousands. Recognized Worldwide.' }}</h2>
+    <p class="ncco-cases__subtext">{{ section.settings.subtext | default: 'Real people. Real results. Backed by global recognition.' }}</p>
+  </div>
+
+  <div class="ncco-cases__wrap" id="nccoCasesWrap">
+    <div class="ncco-cases__track" id="nccoCasesTrack">
+      {% for block in section.blocks %}
+        <div class="ncco-cases__card" {{ block.shopify_attributes }}>
+          {% if block.settings.image_asset != blank %}
+            <div class="ncco-cases__img-wrap">
+              <img src="{{ block.settings.image_asset | asset_url }}" alt="{{ block.settings.title }}" class="ncco-cases__img" loading="lazy">
+            </div>
+          {% endif %}
+          <div class="ncco-cases__body">
+            <h3 class="ncco-cases__title">{{ block.settings.title }}</h3>
+            {% if block.settings.excerpt != blank %}
+              <p class="ncco-cases__excerpt">{{ block.settings.excerpt }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+<style>
+/* ── Figma Innovations (1423:25683, 1920×1085) — outer 16px gutter + 32px radius ── */
+.ncco-cases {
+  background: #081D3A;
+  padding: 120px 0 100px;
+  margin: 0 16px;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.ncco-cases__header {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  max-width: 900px; margin: 0 auto 70px; text-align: center; padding: 0 24px;
+}
+.ncco-cases__eyebrow {
+  order: -1;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
+  color: #fff; text-transform: uppercase; margin: 0;
+}
+.ncco-cases__eyebrow::before {
+  content: ''; display: block; width: 28px; height: 2px; background: #FECB07; margin: 0 auto 8px;
+}
+.ncco-cases__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
+  color: #fff; margin: 16px 0 16px;
+}
+.ncco-cases__subtext {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  color: #97A0AC; margin: 0;
+}
+
+.ncco-cases__wrap { overflow: hidden; padding: 0 40px; touch-action: pan-x; }
+.ncco-cases__track {
+  display: flex; gap: 30px;
+  transition: transform 0.6s ease; will-change: transform;
+}
+.ncco-cases__card { flex-shrink: 0; width: 370px; background: transparent; }
+.ncco-cases__img-wrap { width: 100%; height: 380px; overflow: hidden; border-radius: 24px; }
+.ncco-cases__img { width: 100%; height: 100%; object-fit: cover; }
+.ncco-cases__body { padding: 20px 4px 0; }
+.ncco-cases__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px; font-weight: 500; letter-spacing: -0.4px; line-height: 1.2;
+  color: #fff; text-transform: uppercase; margin: 0 0 12px;
+}
+.ncco-cases__excerpt {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px; font-weight: 400; line-height: 22px; letter-spacing: -0.28px;
+  color: #97A0AC; margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .ncco-cases { padding: 80px 0 60px; }
+  .ncco-cases__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
+  .ncco-cases__card { width: 300px; }
+  .ncco-cases__img-wrap { height: 310px; }
+}
+@media (max-width: 989px) {
+  .ncco-cases { padding: 60px 0 48px; margin: 0 8px; border-radius: 24px; }
+  .ncco-cases__heading { font-size: 36px; line-height: 44px; letter-spacing: -1.2px; }
+  .ncco-cases__card { width: 280px; }
+  .ncco-cases__img-wrap { height: 280px; }
+  .ncco-cases__wrap { padding: 0 24px; }
+}
+@media (max-width: 600px) {
+  .ncco-cases { padding: 48px 0 40px; margin: 0 8px; border-radius: 20px; }
+  .ncco-cases__header { margin-bottom: 32px; }
+  .ncco-cases__heading { font-size: 26px; line-height: 34px; letter-spacing: -0.8px; }
+  .ncco-cases__subtext { font-size: 15px; }
+  .ncco-cases__card { width: 240px; }
+  .ncco-cases__img-wrap { height: 240px; border-radius: 16px; }
+  .ncco-cases__wrap {
+    padding: 0 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ncco-cases__wrap::-webkit-scrollbar { display: none; }
+  .ncco-cases__track { transition: none; }
+  .ncco-cases__title { font-size: 16px; }
+}
+</style>
+
+<script>
+(function() {
+  function initCases() {
+    var wrap = document.getElementById('nccoCasesWrap');
+    var track = document.getElementById('nccoCasesTrack');
+    if (!wrap || !track || track.dataset.inited === '1') return;
+    track.dataset.inited = '1';
+
+    var origCards = Array.from(track.querySelectorAll('.ncco-cases__card'));
+    var total = origCards.length;
+    if (total === 0) return;
+
+    // Read actual gap from computed CSS so it stays in sync with the stylesheet
+    var computedGap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0') || 0;
+    var current = 0;
+    var timer = null;
+    var paused = false;
+
+    function step() {
+      var c = track.querySelector('.ncco-cases__card');
+      return c ? c.offsetWidth + computedGap : 0;
+    }
+
+    function moveTo(idx, animate) {
+      track.style.transition = animate ? 'transform 0.6s ease' : 'none';
+      track.style.transform = 'translate3d(-' + (idx * step()) + 'px,0,0)';
+    }
+
+    function advance() {
+      if (paused) return;
+      current++;
+      moveTo(current, true);
+      if (current >= total) {
+        setTimeout(function() { current = 0; moveTo(0, false); }, 620);
+      }
+    }
+
+    // Duplicate for seamless loop
+    origCards.forEach(function(c) { track.appendChild(c.cloneNode(true)); });
+
+    wrap.addEventListener('mouseenter', function() { paused = true; });
+    wrap.addEventListener('mouseleave', function() { paused = false; });
+
+    // Cards have explicit CSS width — safe to init immediately without waiting for images
+    requestAnimationFrame(function() {
+      moveTo(0, false);
+      if (timer) clearInterval(timer);
+      timer = setInterval(advance, 3000);
+    });
+
+    // Recompute gap + step on resize (also handles rotate)
+    var resizeT;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(function() {
+        computedGap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0') || 0;
+        moveTo(current, false);
+      }, 120);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCases);
+  } else {
+    initCases();
+  }
+  // Shopify editor: re-init on section reload
+  document.addEventListener('shopify:section:load', initCases);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "NCCO Case Studies",
+  "tag": "section",
+  "settings": [
+    {"type": "text",     "id": "eyebrow",  "label": "Eyebrow",  "default": "Proven Results"},
+    {"type": "text",     "id": "heading",  "label": "Heading",  "default": "Trusted by Thousands. Recognized Worldwide."},
+    {"type": "textarea", "id": "subtext",  "label": "Subtext",  "default": "Real people. Real results. Backed by global recognition."}
+  ],
+  "blocks": [
+    {
+      "type": "case",
+      "name": "Case Study",
+      "settings": [
+        {"type": "text",     "id": "title",       "label": "Title"},
+        {"type": "text",     "id": "image_asset", "label": "Image filename (assets/)"},
+        {"type": "textarea", "id": "excerpt",     "label": "Excerpt"}
+      ]
+    }
+  ],
+  "presets": [{"name": "NCCO Case Studies"}]
+}
+{% endschema %}

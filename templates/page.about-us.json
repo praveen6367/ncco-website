@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ncco-hero": {
+      "type": "ncco-hero",
+      "settings": {
+        "eyebrow": "Trusted by 500+ institutions worldwide",
+        "headline": "<p>Driving the Future <em>of Clean Air</em></p>",
+        "subtext": "NCCO is a global leader in advanced air purification, shaping healthier environments through patented technology and purpose-driven innovation.",
+        "cta_label": "",
+        "cta_url": "",
+        "card_image_asset": "",
+        "background_asset": "ncco-about-hero-bg.jpg",
+        "compact": true,
+        "overlay_opacity": 55,
+        "dark": true
+      }
+    },
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
+      "settings": {
+        "heading": "Trusted by industry leaders for",
+        "heading_highlight": "Quality and Reliability",
+        "static_grid": true
+      },
+      "blocks": {
+        "tl_01": {"type": "logo", "settings": {"asset": "tl-New-World-China.webp", "alt": "New World China"}},
+        "tl_02": {"type": "logo", "settings": {"asset": "tl-JLL.svg", "alt": "JLL"}},
+        "tl_03": {"type": "logo", "settings": {"asset": "tl-HSBC.svg", "alt": "HSBC"}},
+        "tl_04": {"type": "logo", "settings": {"asset": "tl-HK-IFC-Mall.webp", "alt": "IFC"}}
+      },
+      "block_order": ["tl_01", "tl_02", "tl_03", "tl_04"]
+    },
+    "ncco-iwt-mission": {
+      "type": "ncco-image-with-text",
+      "settings": {
+        "eyebrow": "Our Mission & Vision",
+        "heading": "Driven by purpose. Powered by science.",
+        "text": "<p>We're shaping a future where clean air is accessible to everyone through science, sustainability, and innovation.</p><p><strong>OUR MISSION</strong><br>To make clean, healthy air accessible to all by delivering sustainable air purification solutions powered by cutting-edge nano-catalytic technology. We are committed to eliminating indoor air pollution not just filtering it, but breaking it down at the molecular level for safer, long-term protection.</p><p><strong>OUR VISION</strong><br>A world where every space from homes to hospitals, schools to factories is protected by intelligent, science-backed air purification. We envision a future where clean air is not a luxury, but a basic right supported by innovation and responsibility.</p>",
+        "asset": "ncco-about-mission-collage.png",
+        "asset_secondary": "",
+        "overlay_text": "",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-about-info": {
+      "type": "ncco-dual-image-text",
+      "settings": {
+        "eyebrow": "",
+        "heading": "About Us",
+        "text": "<p>Hong Kong Technology, International Certification 🏅 <strong>NCCO (Nano Confined Catalytic Oxidation)</strong> technology was invented through the HKUST Entrepreneurship Program in 2003. It can decompose volatile organic compounds in the air, making it the best companion for hypochlorous acid atomization technology.</p><p>During the recent two-year pandemic, NCCO addressed market pain points, enhanced international recognition for the brand, and helped the target brand move beyond Hong Kong's local market towards global partnerships. It created solutions for clean air across various scenarios using NCCO air catalytic technology. NCCO technology has received multiple patents and is adopted by the Hong Kong government and various public and private institutions.</p>",
+        "image_primary": "ncco-about-flame.png",
+        "image_secondary": "ncco-about-filter.png",
+        "layout": "image_first",
+        "dark": false
+      }
+    },
+    "ncco-stats": {
+      "type": "ncco-stats",
+      "settings": {
+        "heading": ""
+      },
+      "blocks": {
+        "stat_1": {"type": "stat", "settings": {"number": "10+", "label": "Years of Expertise in Air Purification Technology"}},
+        "stat_2": {"type": "stat", "settings": {"number": "99%", "label": "Air Purification Efficiency with NCCO Solutions"}},
+        "stat_3": {"type": "stat", "settings": {"number": "500+", "label": "Successful Projects Across Homes, Hospitals & Industries"}},
+        "stat_4": {"type": "stat", "settings": {"number": "600+", "label": "Global Partners Trust Our Clean Air Innovation"}}
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"]
+    },
+    "ncco-iwt-science": {
+      "type": "ncco-feature-split",
+      "settings": {
+        "eyebrow": "Our Story",
+        "heading": "Rooted in Science. Expanding Globally.",
+        "body": "<p>Our patented NCCO technology is backed by decades of scientific research in air purification and environmental safety. Developed by leading researchers, it has redefined how indoor air quality is managed — not by trapping pollutants, but by breaking them down at the molecular level.</p>",
+        "dark": false
+      },
+      "blocks": {
+        "feat_1": {"type": "feature", "settings": {"icon_asset": "ncco-about-feat-1.svg", "title": "Patented Technology", "body": "NCCO is a globally patented catalytic oxidation process developed at HKUST."}},
+        "feat_2": {"type": "feature", "settings": {"icon_asset": "ncco-about-feat-2.svg", "title": "No Secondary Pollution", "body": "Pollutants are broken down into water and CO₂ — zero harmful byproducts."}},
+        "feat_3": {"type": "feature", "settings": {"icon_asset": "ncco-about-feat-3.svg", "title": "12-Year Filter Life", "body": "Recyclable catalyst lasts up to 12 years under normal maintenance conditions."}},
+        "feat_4": {"type": "feature", "settings": {"icon_asset": "ncco-about-feat-4.svg", "title": "Multi-Environment System", "body": "Deployed across hospitals, offices, airports, homes, and industrial facilities."}}
+      },
+      "block_order": ["feat_1", "feat_2", "feat_3", "feat_4"]
+    },
+    "ncco-direction": {
+      "type": "ncco-icon-grid",
+      "settings": {
+        "eyebrow": "Our Direction",
+        "heading": "",
+        "subtext": "",
+        "columns": "2",
+        "dark": true
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "ncco-about-icon-direction.png",
+            "eyebrow": "Vision",
+            "title": "Where We're Headed",
+            "body": "<p>At RHT, we are harnessing the power of our unique NCCO (Nano Confined Catalytic Oxidation) technology to redefine air purification.</p><p>Our systems are not just efficient and long-lasting; they are also energy-saving, sustainable, and eco-friendly.</p><p>We are on a mission to make the world a better place to breathe.</p>",
+            "featured": false
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "ncco-about-icon-drives.png",
+            "eyebrow": "Mission",
+            "title": "What Drives Us",
+            "body": "<p>RHT stands for Regeneration, Hope, and Trust. Through relentless innovation and dedication, we are raising the bar in air purification.</p><p>A passion for engineering and NCCO technology drives us to deliver reliable, well-designed, and technically superior products and services.</p>",
+            "featured": false
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2"]
+    },
+    "ncco-faq": {
+      "type": "ncco-faq",
+      "settings": {
+        "eyebrow": "NCCO FAQ",
+        "heading": "Frequently Asked Questions",
+        "bg_image": ""
+      },
+      "blocks": {
+        "faq_1": {"type": "faq_item", "settings": {"heading": "What is NCCO technology?", "answer": "<p>NCCO stands for Nano Confined Catalytic Oxidation. It is a patented air purification technology that breaks down harmful pollutants — including VOCs, formaldehyde, bacteria, and viruses — at the molecular level into harmless water and CO₂.</p>"}},
+        "faq_2": {"type": "faq_item", "settings": {"heading": "What makes NCCO different from traditional filters?", "answer": "<p>NCCO is the only air purification technology simultaneously applied across industrial, commercial, hospital, and residential settings. Unlike activated carbon, NCCO fully breaks down pollutants — ensuring no secondary pollution at any stage of the process.</p>"}},
+        "faq_3": {"type": "faq_item", "settings": {"heading": "How long does the NCCO catalyst last?", "answer": "<p>The NCCO oxidation layer is recyclable and sustainable. Under normal maintenance, the catalyst can last up to 12 years — making it a highly cost-effective and environmentally responsible solution.</p>"}},
+        "faq_4": {"type": "faq_item", "settings": {"heading": "Is NCCO technology safe for people?", "answer": "<p>Yes. The NCCO catalyst material is a non-toxic artificial mineral. Ozone levels during the purification process are extremely low. NCCO systems are used in hospitals, schools, and family homes worldwide.</p>"}}
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "eyebrow": "Get In Touch",
+        "heading": "We're Here to Help",
+        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+        "email": "info@ncco-tech.com",
+        "phone": "(852) 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "SUBMIT"
+      }
+    }
+  },
+  "order": [
+    "ncco-hero",
+    "ncco-trust-logos",
+    "ncco-about-info",
+    "ncco-stats",
+    "ncco-iwt-mission",
+    "ncco-iwt-science",
+    "ncco-direction",
+    "ncco-faq",
+    "ncco-contact-cta"
+  ]
+}

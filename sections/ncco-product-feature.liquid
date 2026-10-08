@@ -1,0 +1,206 @@
+{%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
+{%- assign cta_variant = section.settings.cta_variant | default: 'blue' -%}
+{%- assign bullet_blocks = section.blocks | where: 'type', 'bullet' -%}
+{%- assign image_blocks = section.blocks | where: 'type', 'image' -%}
+<section class="ncco-pf" style="--brand-accent:{{ accent }}">
+  <div class="ncco-pf__inner">
+    <div class="ncco-pf__left ncco-reveal">
+      <div class="ncco-pf__text-top">
+        {% if section.settings.eyebrow != blank %}
+          <div class="ncco-pf__eyebrow-wrap">
+            <span class="ncco-pf__eyebrow-bar"></span>
+            <p class="ncco-pf__eyebrow">{{ section.settings.eyebrow }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-pf__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.body != blank %}
+          <p class="ncco-pf__body">{{ section.settings.body }}</p>
+        {% endif %}
+      </div>
+      {% if bullet_blocks.size > 0 %}
+        <ul class="ncco-pf__bullets">
+          {% for block in bullet_blocks %}
+            <li class="ncco-pf__bullet" {{ block.shopify_attributes }}>
+              <span class="ncco-pf__bullet-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="ncco-pf__bullet-text">{{ block.settings.text }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if section.settings.cta_label != blank %}
+        {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: cta_variant -%}
+      {% endif %}
+    </div>
+    {% if image_blocks.size > 0 %}
+      <div class="ncco-pf__images ncco-pf__images--{{ image_blocks.size }}">
+        {% for block in image_blocks %}
+          <div class="ncco-pf__img-wrap ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.asset != blank %}
+              <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.alt }}" loading="lazy">
+            {% elsif block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.alt }}" loading="lazy">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.ncco-pf { padding: 100px 120px; background: #fff; }
+.ncco-pf__inner {
+  display: flex; align-items: center; gap: 40px;
+  max-width: 1600px; margin: 0 auto;
+}
+
+.ncco-pf__left {
+  flex: 0 0 500px; max-width: 500px;
+  align-self: stretch;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
+}
+.ncco-pf__text-top {
+  display: flex; flex-direction: column; gap: 24px;
+}
+.ncco-pf__eyebrow-wrap {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  margin-bottom: 16px;
+}
+.ncco-pf__eyebrow-bar {
+  display: block; width: 28px; height: 2px; background: var(--brand-accent, #FECB07);
+}
+.ncco-pf__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: #647082; text-transform: uppercase; margin: 0;
+  letter-spacing: 0.4px; line-height: 1.4;
+  max-width: 400px;
+}
+.ncco-pf__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 50px; font-weight: 500; line-height: 58px;
+  color: #081D3A; margin: 0;
+  letter-spacing: -1.4px;
+}
+.ncco-pf__body {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px;
+  color: #647082; margin: 0;
+}
+
+/* Checklist bullets */
+.ncco-pf__bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.ncco-pf__bullet {
+  display: flex; align-items: center; gap: 14px;
+}
+.ncco-pf__bullet-icon {
+  width: 32px; height: 32px; flex-shrink: 0;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--brand-accent, #FECB07) 18%, transparent);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--brand-accent, #FECB07);
+}
+.ncco-pf__bullet-icon svg { width: 14px; height: 14px; }
+.ncco-pf__bullet-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px; font-weight: 400; line-height: 22px;
+  color: #081D3A;
+}
+
+/* Right image grid */
+.ncco-pf__images {
+  display: grid;
+  gap: 12px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.ncco-pf__images--4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.ncco-pf__images--3 { grid-template-columns: 1fr 1fr 1fr; }
+.ncco-pf__images--2 { grid-template-columns: 1fr 1fr; }
+.ncco-pf__images--1 { grid-template-columns: 1fr; }
+.ncco-pf__img-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(234, 234, 234, 0.35);
+  aspect-ratio: 460 / 415;
+  position: relative;
+}
+.ncco-pf__img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.ncco-pf__img-wrap:hover img { transform: scale(1.04); }
+
+.ncco-pf .ncco-cta { align-self: flex-start; }
+
+@media (max-width: 1600px) {
+  .ncco-pf { padding: 100px 80px; }
+  .ncco-pf__heading { font-size: 48px; line-height: 58px; }
+  .ncco-pf__images { width: 720px; }
+}
+@media (max-width: 1200px) {
+  .ncco-pf { padding: 80px 40px; }
+  .ncco-pf__inner { flex-direction: column; align-items: stretch; gap: 60px; }
+  .ncco-pf__images { width: 100%; max-width: 100%; }
+  .ncco-pf__heading { font-size: 42px; line-height: 52px; }
+}
+@media (max-width: 600px) {
+  .ncco-pf { padding: 60px 16px; }
+  .ncco-pf__heading { font-size: 32px; line-height: 40px; }
+  .ncco-pf__body { font-size: 15px; }
+  .ncco-pf__images--4 { grid-template-columns: 1fr 1fr; }
+  .ncco-pf__bullet-icon { width: 40px; height: 40px; }
+  .ncco-pf__bullet-icon svg { width: 16px; height: 16px; }
+  .ncco-pf__bullet-text { font-size: 15px; line-height: 22px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Product Feature",
+  "tag": "section",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow"},
+    {"type": "text", "id": "heading", "label": "Heading"},
+    {"type": "textarea", "id": "body", "label": "Body text"},
+    {"type": "text", "id": "cta_label", "label": "CTA button text"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"},
+    {"type": "select", "id": "cta_variant", "label": "CTA style", "options": [
+      {"value": "yellow", "label": "Yellow"},
+      {"value": "blue", "label": "Blue"},
+      {"value": "teal", "label": "Teal"}
+    ], "default": "blue"},
+    {"type": "text", "id": "accent_color", "label": "Accent color (hex)", "default": "#FECB07"}
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Checklist item",
+      "settings": [
+        {"type": "text", "id": "text", "label": "Bullet text"}
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Product image",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Image"},
+        {"type": "text", "id": "asset", "label": "Or asset filename"},
+        {"type": "text", "id": "alt", "label": "Alt text"}
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [{"name": "NCCO Product Feature"}]
+}
+{% endschema %}

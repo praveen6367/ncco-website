@@ -1,0 +1,353 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+<footer class="ncco-footer">
+
+  <!-- Content row -->
+  <div class="ncco-container ncco-footer__inner">
+    <div class="ncco-footer__grid">
+
+      <!-- Left: Quick Links -->
+      <div class="ncco-footer__col">
+        <p class="ncco-footer__col-label">QUICK LINKS</p>
+        <ul class="ncco-footer__links">
+          {% for i in (1..6) %}
+            {% assign label_key = 'ql_label_' | append: i %}
+            {% assign url_key   = 'ql_url_'   | append: i %}
+            {% if section.settings[label_key] != blank %}
+              <li><a href="{{ section.settings[url_key] }}">{{ section.settings[label_key] }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Center: Logo + tagline + social -->
+      <div class="ncco-footer__col ncco-footer__col--center">
+
+        <!-- Brand block: logo + tagline (floats to top on mobile) -->
+        <div class="ncco-footer__brand-block">
+          <a href="{{ routes.root_url }}" class="ncco-footer__logo-link">
+            <img src="{{ 'brand-ncco-logo.png' | asset_url }}" alt="NCCO" class="ncco-footer__logo" loading="lazy">
+          </a>
+          {% if section.settings.tagline != blank %}
+            <p class="ncco-footer__tagline">{{ section.settings.tagline }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Social block: follow label + icons + copyright (floats to bottom on mobile) -->
+        <div class="ncco-footer__social-block">
+          <p class="ncco-footer__follow-label">FOLLOW US</p>
+          <div class="ncco-footer__social">
+            {% if section.settings.social_ig != blank %}
+              <a href="{{ section.settings.social_ig }}" class="ncco-footer__social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_tw != blank %}
+              <a href="{{ section.settings.social_tw }}" class="ncco-footer__social-btn" target="_blank" rel="noopener" aria-label="X / Twitter">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_li != blank %}
+              <a href="{{ section.settings.social_li }}" class="ncco-footer__social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_fb != blank %}
+              <a href="{{ section.settings.social_fb }}" class="ncco-footer__social-btn" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            {% endif %}
+          </div>
+          <div class="ncco-footer__copyright">
+            <p>© 2025 NCCO. All rights reserved.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Our Brands -->
+      <div class="ncco-footer__col ncco-footer__col--right">
+        <p class="ncco-footer__col-label">OUR BRANDS</p>
+        <ul class="ncco-footer__links ncco-footer__links--right">
+          {% for i in (1..6) %}
+            {% assign label_key = 'br_label_' | append: i %}
+            {% assign url_key   = 'br_url_'   | append: i %}
+            {% if section.settings[label_key] != blank %}
+              <li><a href="{{ section.settings[url_key] }}">{{ section.settings[label_key] }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Giant watermark — clipped at bottom via overflow:hidden on parent -->
+  <div class="ncco-footer__wm-wrap" aria-hidden="true">
+    <span class="ncco-footer__watermark">NCCO</span>
+  </div>
+
+</footer>
+
+<style>
+.ncco-footer {
+  background: linear-gradient(180deg, #081D3A 0%, #0d2a52 100%);
+  overflow: hidden;
+}
+
+/* Content area */
+.ncco-footer__inner {
+  position: relative;
+  z-index: 2;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+/* 3-col grid */
+.ncco-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Column label — white uppercase */
+.ncco-footer__col-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+/* Links */
+.ncco-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ncco-footer__links a {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #647082;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.ncco-footer__links a:hover { color: #fff; }
+
+/* Right col */
+.ncco-footer__col--right { text-align: right; }
+.ncco-footer__links--right { align-items: flex-end; }
+.ncco-footer__links--right a { color: #647082; }
+.ncco-footer__links--right a:hover { color: #fff; }
+
+/* Center col */
+.ncco-footer__col--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Brand/social blocks are transparent containers at desktop */
+.ncco-footer__brand-block,
+.ncco-footer__social-block {
+  display: contents;
+}
+
+.ncco-footer .ncco-footer__logo-link,
+.ncco-footer .ncco-footer__logo-link:hover,
+.ncco-footer .ncco-footer__logo-link:focus,
+.ncco-footer .ncco-footer__logo-link:visited {
+  display: inline-block;
+  margin-bottom: 10px;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.ncco-footer__logo { height: 48px; width: auto; display: block; border: none !important; }
+
+.ncco-footer__tagline {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #647082;
+  max-width: 280px;
+  margin: 0 0 18px;
+}
+.ncco-footer__follow-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+.ncco-footer__social {
+  display: flex;
+  gap: 8px;
+}
+.ncco-footer__social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.ncco-footer__social-btn:hover { background: rgba(255,255,255,0.16); }
+
+/* Watermark */
+.ncco-footer__wm-wrap {
+  position: relative;
+  height: 20vw;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.ncco-footer__watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 27vw;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  opacity: 0.16;
+  text-align: center;
+  white-space: nowrap;
+  font-family: 'Geist', sans-serif;
+}
+.ncco-footer__wm-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: linear-gradient(to bottom, transparent, #081d3a 92%);
+  pointer-events: none;
+}
+
+/* Copyright bar */
+.ncco-footer__copyright {
+  border-top: 1px solid rgba(255,255,255,0.16);
+  padding-top: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.ncco-footer__copyright p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.28);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ncco-footer__grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .ncco-footer__col--center { grid-column: 1 / -1; order: -1; }
+  .ncco-footer__wm-wrap { height: 24vw; }
+  .ncco-footer__watermark { font-size: 31vw; }
+}
+
+@media (max-width: 600px) {
+  /* 2-col grid: brand-block/social-block escape center col via display:contents
+     and get explicit grid placement */
+  .ncco-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 16px;
+  }
+  .ncco-footer__col--center { display: contents; }
+
+  /* Brand block: full-width row 1, centered */
+  .ncco-footer__brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+  .ncco-footer__tagline { font-size: 13px; max-width: 100%; }
+
+  /* Quick Links: row 2 col 1 */
+  .ncco-footer__col {
+    grid-row: 2;
+    grid-column: 1;
+    order: unset;
+  }
+
+  /* Our Brands: row 2 col 2, right-aligned */
+  .ncco-footer__col--right {
+    grid-row: 2;
+    grid-column: 2;
+    text-align: right;
+  }
+  .ncco-footer__links--right { align-items: flex-end; }
+
+  /* Social block: full-width row 3, centered */
+  .ncco-footer__social-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-row: 3;
+    grid-column: 1 / -1;
+  }
+
+  .ncco-footer__wm-wrap { height: 30vw; }
+  .ncco-footer__watermark { font-size: 38vw; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "settings": [
+    {"type": "textarea", "id": "tagline", "label": "Tagline", "default": "Pioneering clean air technology through advanced nano-catalyst solutions. Trusted worldwide for safe, sustainable, and effective air purification."},
+    {"type": "header", "content": "Social Links"},
+    {"type": "url", "id": "social_ig", "label": "Instagram URL"},
+    {"type": "url", "id": "social_tw", "label": "X / Twitter URL"},
+    {"type": "url", "id": "social_li", "label": "LinkedIn URL"},
+    {"type": "url", "id": "social_fb", "label": "Facebook URL"},
+    {"type": "header", "content": "Quick Links"},
+    {"type": "text", "id": "ql_label_1", "label": "Link 1 label", "default": "Home"},
+    {"type": "url",  "id": "ql_url_1",   "label": "Link 1 URL"},
+    {"type": "text", "id": "ql_label_2", "label": "Link 2 label", "default": "About Us"},
+    {"type": "url",  "id": "ql_url_2",   "label": "Link 2 URL"},
+    {"type": "text", "id": "ql_label_3", "label": "Link 3 label", "default": "Our Brands"},
+    {"type": "url",  "id": "ql_url_3",   "label": "Link 3 URL"},
+    {"type": "text", "id": "ql_label_4", "label": "Link 4 label", "default": "Our Impact"},
+    {"type": "url",  "id": "ql_url_4",   "label": "Link 4 URL"},
+    {"type": "text", "id": "ql_label_5", "label": "Link 5 label", "default": "Blogs"},
+    {"type": "url",  "id": "ql_url_5",   "label": "Link 5 URL"},
+    {"type": "text", "id": "ql_label_6", "label": "Link 6 label", "default": "Contact Us"},
+    {"type": "url",  "id": "ql_url_6",   "label": "Link 6 URL"},
+    {"type": "header", "content": "Our Brands"},
+    {"type": "text", "id": "br_label_1", "label": "Brand 1 label", "default": "NCCO"},
+    {"type": "url",  "id": "br_url_1",   "label": "Brand 1 URL"},
+    {"type": "text", "id": "br_label_2", "label": "Brand 2 label", "default": "RHT"},
+    {"type": "url",  "id": "br_url_2",   "label": "Brand 2 URL"},
+    {"type": "text", "id": "br_label_3", "label": "Brand 3 label", "default": "b-MOLA"},
+    {"type": "url",  "id": "br_url_3",   "label": "Brand 3 URL"},
+    {"type": "text", "id": "br_label_4", "label": "Brand 4 label", "default": "NCCO-IG"},
+    {"type": "url",  "id": "br_url_4",   "label": "Brand 4 URL"},
+    {"type": "text", "id": "br_label_5", "label": "Brand 5 label", "default": "PRICING"},
+    {"type": "url",  "id": "br_url_5",   "label": "Brand 5 URL"},
+    {"type": "text", "id": "br_label_6", "label": "Brand 6 label"},
+    {"type": "url",  "id": "br_url_6",   "label": "Brand 6 URL"}
+  ],
+  "presets": [{"name": "Footer"}]
+}
+{% endschema %}
