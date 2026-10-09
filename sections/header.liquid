@@ -7,20 +7,28 @@
 
     <!-- Logo -->
     <a href="{{ routes.root_url }}" class="ncco-hdr__logo" aria-label="{{ shop.name }}">
-      {%- if settings.logo != blank -%}
-        {{- settings.logo | image_url: width: 280 | image_tag: class: 'ncco-hdr__logo-img', loading: 'eager', width: settings.logo_width, height: settings.logo_width | divided_by: settings.logo.aspect_ratio -}}
-      {%- else -%}
-        <img src="{{ 'brand-ncco-logo.png' | asset_url }}" alt="{{ shop.name }}" class="ncco-hdr__logo-img" width="120" height="44" loading="eager">
-      {%- endif -%}
+      <img src="{{ 'newlogo.png' | asset_url }}" alt="{{ shop.name }}" class="ncco-hdr__logo-img" width="102" height="56" loading="eager">
     </a>
 
     <!-- Desktop nav -->
     <nav class="ncco-hdr__nav" aria-label="Main navigation">
       {%- for link in nav_menu.links -%}
-        {%- if link.links.size > 0 -%}
+        {%- assign title_down = link.title | downcase -%}
+        {%- assign url_down = link.url | downcase -%}
+        {%- assign handle_down = link.handle | downcase -%}
+        {%- assign is_brand_menu = false -%}
+        {%- if title_down contains 'brand' or title_down contains '品牌' or url_down contains 'brand' or handle_down contains 'brand' or forloop.index == 1 -%}
+          {%- assign is_brand_menu = true -%}
+        {%- endif -%}
+        {%- assign is_impact_menu = false -%}
+        {%- if title_down contains 'impact' or title_down contains '影響' or title_down contains '影响' or url_down contains 'impact' or handle_down contains 'impact' or forloop.index == 2 -%}
+          {%- assign is_impact_menu = true -%}
+        {%- endif -%}
+
+        {%- if link.links.size > 0 or is_brand_menu or is_impact_menu -%}
           <div class="ncco-hdr__item ncco-hdr__item--drop">
-            {%- if link.title contains 'Brand' -%}
-              <a href="/pages/our-brands" class="ncco-hdr__link" aria-haspopup="true">
+            {%- if is_brand_menu -%}
+              <a href="{{ link.url | default: '/pages/our-brands' }}" class="ncco-hdr__link" aria-haspopup="true">
                 {{- link.title -}}
                 <svg class="ncco-hdr__chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -35,81 +43,88 @@
               </button>
             {%- endif -%}
 
-            {%- if link.title contains 'Brand' -%}
+            {%- if is_brand_menu -%}
             <!-- Mega: Our Brands -->
             <div class="ncco-hdr__dropdown ncco-drop--brands" role="menu">
-              <a href="/pages/ncco-technology" class="ncco-drop-brands__hero">
-                <img src="{{ 'brand-ncco-sm-logo.png' | asset_url }}" alt="NCCO" class="ncco-drop-brands__hero-logo" loading="lazy">
-                <div class="ncco-drop-brands__hero-text">
-                  <p class="ncco-drop-brands__hero-name">NCCO</p>
-                  <p class="ncco-drop-brands__hero-desc">Core technology powering all air purification.</p>
+              <a href="/pages/our-brands" class="ncco-drop-brands__hero">
+                <div class="ncco-drop-brands__logo-wrap">
+                  <img src="{{ 'nccomenu.png' | asset_url }}" alt="NCCO" class="ncco-drop-brands__logo" loading="lazy">
                 </div>
-                <svg class="ncco-drop-brands__hero-arr" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M4 14L14 4M14 4H7.5M14 4V10.5" stroke="#003DA5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <div class="ncco-drop-brands__text">
+                  <p class="ncco-drop-brands__name">NCCO</p>
+                  <p class="ncco-drop-brands__desc">Core technology powering all air purification.</p>
+                </div>
               </a>
               <div class="ncco-drop-brands__grid">
-                <a href="/pages/rht" class="ncco-drop-brands__card">
-                  <img src="{{ 'brand-rht-logo.png' | asset_url }}" alt="RHT" class="ncco-drop-brands__card-logo" loading="lazy">
-                  <div class="ncco-drop-brands__card-text">
-                    <p class="ncco-drop-brands__card-name">RHT</p>
-                    <p class="ncco-drop-brands__card-desc">Industrial air solutions for large facilities.</p>
+                <a href="/pages/rht" class="ncco-drop-brands__card ncco-drop-brands__card--rht">
+                  <div class="ncco-drop-brands__logo-wrap">
+                    <img src="{{ 'rhtmenu.png' | asset_url }}" alt="RHT" class="ncco-drop-brands__logo" loading="lazy">
+                  </div>
+                  <div class="ncco-drop-brands__text">
+                    <p class="ncco-drop-brands__name">RHT</p>
+                    <p class="ncco-drop-brands__desc">Industrial air solutions for large facilities.</p>
                   </div>
                 </a>
-                <a href="/pages/b-mola" class="ncco-drop-brands__card">
-                  <img src="{{ 'brand-bmola-logo.png' | asset_url }}" alt="b-MoLa" class="ncco-drop-brands__card-logo" loading="lazy">
-                  <div class="ncco-drop-brands__card-text">
-                    <p class="ncco-drop-brands__card-name">b-MoLa</p>
-                    <p class="ncco-drop-brands__card-desc">Smart purifiers for home and personal use.</p>
+                <a href="/pages/b-mola" class="ncco-drop-brands__card ncco-drop-brands__card--bmola">
+                  <div class="ncco-drop-brands__logo-wrap">
+                    <img src="{{ 'b-mollamenu.png' | asset_url }}" alt="b-MOLA" class="ncco-drop-brands__logo" loading="lazy">
+                  </div>
+                  <div class="ncco-drop-brands__text">
+                    <p class="ncco-drop-brands__name">b-MOLA</p>
+                    <p class="ncco-drop-brands__desc">Smart purifiers for home and personal use.</p>
                   </div>
                 </a>
-                <a href="/pages/ncco-ig" class="ncco-drop-brands__card">
-                  <img src="{{ 'brand-nccoig-logo.png' | asset_url }}" alt="NCCO-IG" class="ncco-drop-brands__card-logo" loading="lazy">
-                  <div class="ncco-drop-brands__card-text">
-                    <p class="ncco-drop-brands__card-name">NCCO-IG</p>
-                    <p class="ncco-drop-brands__card-desc">Sterilization systems for clinical environments.</p>
+                <a href="/pages/ncco-ig" class="ncco-drop-brands__card ncco-drop-brands__card--nccoig">
+                  <div class="ncco-drop-brands__logo-wrap">
+                    <img src="{{ 'nccoigmenu.png' | asset_url }}" alt="NCCO-IG" class="ncco-drop-brands__logo" loading="lazy">
+                  </div>
+                  <div class="ncco-drop-brands__text">
+                    <p class="ncco-drop-brands__name">NCCO-IG</p>
+                    <p class="ncco-drop-brands__desc">Sterilization systems for clinical environments.</p>
                   </div>
                 </a>
-                <a href="/pages/05" class="ncco-drop-brands__card">
-                  <img src="{{ 'brand-05plus-logo.png' | asset_url }}" alt="05+" class="ncco-drop-brands__card-logo" loading="lazy">
-                  <div class="ncco-drop-brands__card-text">
-                    <p class="ncco-drop-brands__card-name">05+</p>
-                    <p class="ncco-drop-brands__card-desc">Lifestyle purifiers with elegant design.</p>
+                <a href="/pages/05" class="ncco-drop-brands__card ncco-drop-brands__card--05">
+                  <div class="ncco-drop-brands__logo-wrap">
+                    <img src="{{ 'o5menu.png' | asset_url }}" alt="05+" class="ncco-drop-brands__logo" loading="lazy">
+                  </div>
+                  <div class="ncco-drop-brands__text">
+                    <p class="ncco-drop-brands__name">05+</p>
+                    <p class="ncco-drop-brands__desc">Lifestyle purifiers with elegant design.</p>
                   </div>
                 </a>
               </div>
             </div>
 
-            {%- elsif link.title contains 'Impact' -%}
+            {%- elsif is_impact_menu -%}
             <!-- Mega: Our Impact -->
             <div class="ncco-hdr__dropdown ncco-drop--impact" role="menu">
               <div class="ncco-drop-impact__grid">
-                <a href="/pages/residential" class="ncco-drop-impact__card">
-                  <img src="{{ 'ncco-img-residential-room.png' | asset_url }}" alt="Residential Use" class="ncco-drop-impact__img" loading="lazy">
+                <a href="/pages/residential" class="ncco-drop-impact__card ncco-drop-impact__card--res">
+                  <img src="{{ 'residentialmenu.png' | asset_url }}" alt="Residential Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
                     <p class="ncco-drop-impact__name">Residential Use</p>
                     <p class="ncco-drop-impact__desc">Best seller in Hong Kong.</p>
                   </div>
                 </a>
-                <a href="/pages/medical" class="ncco-drop-impact__card">
-                  <img src="{{ 'ncco-img-section-01.png' | asset_url }}" alt="Medical Use" class="ncco-drop-impact__img" loading="lazy">
+                <a href="/pages/medical" class="ncco-drop-impact__card ncco-drop-impact__card--med">
+                  <img src="{{ 'medicalmenu.png' | asset_url }}" alt="Medical Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
                     <p class="ncco-drop-impact__name">Medical Use</p>
                     <p class="ncco-drop-impact__desc">Provide air purification systems to 300 hospitals.</p>
                   </div>
                 </a>
-                <a href="/pages/industrial" class="ncco-drop-impact__card">
-                  <img src="{{ 'ncco-img-industrial-plant.png' | asset_url }}" alt="Industrial Use" class="ncco-drop-impact__img" loading="lazy">
+                <a href="/pages/industrial" class="ncco-drop-impact__card ncco-drop-impact__card--ind">
+                  <img src="{{ 'industrialmenu.png' | asset_url }}" alt="Industrial Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
                     <p class="ncco-drop-impact__name">Industrial Use</p>
-                    <p class="ncco-drop-impact__desc">Deodorize waste stations, filter exhaust gases for factories.</p>
+                    <p class="ncco-drop-impact__desc">Deodorize waste stations, Filter exhaust gases for factories.</p>
                   </div>
                 </a>
-                <a href="/pages/commercial" class="ncco-drop-impact__card">
-                  <img src="{{ 'ncco-img-commercial-office.png' | asset_url }}" alt="Commercial Use" class="ncco-drop-impact__img" loading="lazy">
+                <a href="/pages/commercial" class="ncco-drop-impact__card ncco-drop-impact__card--com">
+                  <img src="{{ 'commercialmenu.png' | asset_url }}" alt="Commercial Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
                     <p class="ncco-drop-impact__name">Commercial Use</p>
-                    <p class="ncco-drop-impact__desc">Provide air purification systems for commercial buildings.</p>
+                    <p class="ncco-drop-impact__desc">Provide air purification systems to 300 hospitals.</p>
                   </div>
                 </a>
               </div>
@@ -173,15 +188,19 @@
         <a href="{{ section.settings.cta_url | default: '/pages/contact-us' }}" class="ncco-hdr__cta">
           <span>{{ section.settings.cta_label }}</span>
           <span class="ncco-hdr__cta-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="#081D3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="19" cy="19" r="19" fill="#FECB07"/>
+              <path d="M14 24L24 14M24 14H17M24 14V21" stroke="#081D3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
         </a>
       {%- endif -%}
 
       <button class="ncco-hdr__hamburger" id="ncco-hdr-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="ncco-mobile-nav">
-        <span></span><span></span><span></span>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#003DA5"/>
+          <path d="M12.5 20H27.5M12.5 15H27.5M17.5 25H27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </div>
   </div>
@@ -191,18 +210,30 @@
 <div class="ncco-mob-nav" id="ncco-mobile-nav" aria-hidden="true">
   <div class="ncco-mob-nav__head">
     <a href="{{ routes.root_url }}">
-      <img src="{{ 'brand-ncco-logo.png' | asset_url }}" alt="{{ shop.name }}" class="ncco-mob-nav__logo" width="100" height="36">
+      <img src="{{ 'newlogo.png' | asset_url }}" alt="{{ shop.name }}" class="ncco-mob-nav__logo" width="99" height="54">
     </a>
     <button class="ncco-mob-nav__close" id="ncco-mob-close" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M6 18L18 6M6 6l12 12" stroke="#081D3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M15 5L5 15M5 5L15 15" stroke="#647082" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
   </div>
 
   <div class="ncco-mob-nav__body">
     {%- for link in nav_menu.links -%}
-      {%- if link.title contains 'Brand' -%}
+      {%- assign title_down = link.title | downcase -%}
+      {%- assign url_down = link.url | downcase -%}
+      {%- assign handle_down = link.handle | downcase -%}
+      {%- assign is_brand_menu = false -%}
+      {%- if title_down contains 'brand' or title_down contains '品牌' or url_down contains 'brand' or handle_down contains 'brand' or forloop.index == 1 -%}
+        {%- assign is_brand_menu = true -%}
+      {%- endif -%}
+      {%- assign is_impact_menu = false -%}
+      {%- if title_down contains 'impact' or title_down contains '影響' or title_down contains '影响' or url_down contains 'impact' or handle_down contains 'impact' or forloop.index == 2 -%}
+        {%- assign is_impact_menu = true -%}
+      {%- endif -%}
+
+      {%- if is_brand_menu -%}
         <details class="ncco-mob-nav__group">
           <summary class="ncco-mob-nav__group-btn">
             {{ link.title }}
@@ -211,30 +242,57 @@
             </svg>
           </summary>
           <div class="ncco-mob-nav__group-body">
-            <a href="/pages/our-brands" class="ncco-mob-brand">
-              <img src="{{ 'brand-ncco-sm-logo.png' | asset_url }}" alt="NCCO" class="ncco-mob-brand__logo" loading="lazy">
-              <div><p class="ncco-mob-brand__name">NCCO</p><p class="ncco-mob-brand__desc">Core air purification technology</p></div>
-            </a>
-            <a href="/pages/rht" class="ncco-mob-brand">
-              <img src="{{ 'brand-rht-logo.png' | asset_url }}" alt="RHT" class="ncco-mob-brand__logo" loading="lazy">
-              <div><p class="ncco-mob-brand__name">RHT</p><p class="ncco-mob-brand__desc">Industrial air solutions for large facilities</p></div>
-            </a>
-            <a href="/pages/b-mola" class="ncco-mob-brand">
-              <img src="{{ 'brand-bmola-logo.png' | asset_url }}" alt="b-MoLa" class="ncco-mob-brand__logo" loading="lazy">
-              <div><p class="ncco-mob-brand__name">b-MoLa</p><p class="ncco-mob-brand__desc">Smart purifiers for home and personal use</p></div>
-            </a>
-            <a href="/pages/ncco-ig" class="ncco-mob-brand">
-              <img src="{{ 'brand-nccoig-logo.png' | asset_url }}" alt="NCCO-IG" class="ncco-mob-brand__logo" loading="lazy">
-              <div><p class="ncco-mob-brand__name">NCCO-IG</p><p class="ncco-mob-brand__desc">Sterilization systems for clinical environments</p></div>
-            </a>
-            <a href="/pages/05" class="ncco-mob-brand">
-              <img src="{{ 'brand-05plus-logo.png' | asset_url }}" alt="05+" class="ncco-mob-brand__logo" loading="lazy">
-              <div><p class="ncco-mob-brand__name">05+</p><p class="ncco-mob-brand__desc">Lifestyle purifiers with elegant design</p></div>
-            </a>
+            <div class="ncco-mob-card">
+              <a href="/pages/our-brands" class="ncco-mob-brand">
+                <div class="ncco-mob-brand__logo-wrap">
+                  <img src="{{ 'nccomenu.png' | asset_url }}" alt="NCCO" class="ncco-mob-brand__logo" loading="lazy">
+                </div>
+                <div class="ncco-mob-brand__text">
+                  <p class="ncco-mob-brand__name">NCCO</p>
+                  <p class="ncco-mob-brand__desc">Core technology powering all air purification.</p>
+                </div>
+              </a>
+              <a href="/pages/rht" class="ncco-mob-brand">
+                <div class="ncco-mob-brand__logo-wrap">
+                  <img src="{{ 'rhtmenu.png' | asset_url }}" alt="RHT" class="ncco-mob-brand__logo" loading="lazy">
+                </div>
+                <div class="ncco-mob-brand__text">
+                  <p class="ncco-mob-brand__name">RHT</p>
+                  <p class="ncco-mob-brand__desc">Industrial air solutions for large facilities.</p>
+                </div>
+              </a>
+              <a href="/pages/b-mola" class="ncco-mob-brand">
+                <div class="ncco-mob-brand__logo-wrap">
+                  <img src="{{ 'b-mollamenu.png' | asset_url }}" alt="b-MOLA" class="ncco-mob-brand__logo" loading="lazy">
+                </div>
+                <div class="ncco-mob-brand__text">
+                  <p class="ncco-mob-brand__name">b-MOLA</p>
+                  <p class="ncco-mob-brand__desc">Smart purifiers for home and personal use.</p>
+                </div>
+              </a>
+              <a href="/pages/ncco-ig" class="ncco-mob-brand">
+                <div class="ncco-mob-brand__logo-wrap">
+                  <img src="{{ 'nccoigmenu.png' | asset_url }}" alt="NCCO-IG" class="ncco-mob-brand__logo" loading="lazy">
+                </div>
+                <div class="ncco-mob-brand__text">
+                  <p class="ncco-mob-brand__name">NCCO-IG</p>
+                  <p class="ncco-mob-brand__desc">Sterilization systems for clinical environments.</p>
+                </div>
+              </a>
+              <a href="/pages/05" class="ncco-mob-brand">
+                <div class="ncco-mob-brand__logo-wrap">
+                  <img src="{{ 'o5menu.png' | asset_url }}" alt="05+" class="ncco-mob-brand__logo" loading="lazy">
+                </div>
+                <div class="ncco-mob-brand__text">
+                  <p class="ncco-mob-brand__name">05+</p>
+                  <p class="ncco-mob-brand__desc">Lifestyle purifiers with elegant design.</p>
+                </div>
+              </a>
+            </div>
           </div>
         </details>
 
-      {%- elsif link.title contains 'Impact' -%}
+      {%- elsif is_impact_menu -%}
         <details class="ncco-mob-nav__group">
           <summary class="ncco-mob-nav__group-btn">
             {{ link.title }}
@@ -243,30 +301,36 @@
             </svg>
           </summary>
           <div class="ncco-mob-nav__group-body">
-            <a href="/pages/residential" class="ncco-mob-impact">
-              <div class="ncco-mob-impact__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3L21 9.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div><p class="ncco-mob-impact__name">Residential Use</p><p class="ncco-mob-impact__desc">Best seller in Hong Kong</p></div>
-            </a>
-            <a href="/pages/medical" class="ncco-mob-impact">
-              <div class="ncco-mob-impact__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#081D3A" stroke-width="1.8"/><path d="M12 8v8M8 12h8" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div><p class="ncco-mob-impact__name">Medical Use</p><p class="ncco-mob-impact__desc">Partnered with 300+ hospitals</p></div>
-            </a>
-            <a href="/pages/industrial" class="ncco-mob-impact">
-              <div class="ncco-mob-impact__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="13" width="5" height="8" rx="1" stroke="#081D3A" stroke-width="1.8"/><rect x="9" y="9" width="5" height="12" rx="1" stroke="#081D3A" stroke-width="1.8"/><rect x="16" y="5" width="5" height="16" rx="1" stroke="#081D3A" stroke-width="1.8"/><path d="M2 21h20" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div><p class="ncco-mob-impact__name">Industrial Use</p><p class="ncco-mob-impact__desc">Heavy-duty purification at scale</p></div>
-            </a>
-            <a href="/pages/commercial" class="ncco-mob-impact">
-              <div class="ncco-mob-impact__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="14" rx="1" stroke="#081D3A" stroke-width="1.8"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#081D3A" stroke-width="1.8"/><path d="M12 12v3M8 12h8" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div><p class="ncco-mob-impact__name">Commercial Use</p><p class="ncco-mob-impact__desc">Smart air quality for offices &amp; retail</p></div>
-            </a>
+            <div class="ncco-mob-card">
+              <a href="/pages/residential" class="ncco-mob-impact">
+                <img src="{{ 'residentialmenu.png' | asset_url }}" alt="Residential Use" class="ncco-mob-impact__img" loading="lazy">
+                <div class="ncco-mob-impact__text">
+                  <p class="ncco-mob-impact__name">Residential Use</p>
+                  <p class="ncco-mob-impact__desc">Best seller in Hong Kong.</p>
+                </div>
+              </a>
+              <a href="/pages/medical" class="ncco-mob-impact">
+                <img src="{{ 'medicalmenu.png' | asset_url }}" alt="Medical Use" class="ncco-mob-impact__img" loading="lazy">
+                <div class="ncco-mob-impact__text">
+                  <p class="ncco-mob-impact__name">Medical Use</p>
+                  <p class="ncco-mob-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                </div>
+              </a>
+              <a href="/pages/industrial" class="ncco-mob-impact">
+                <img src="{{ 'industrialmenu.png' | asset_url }}" alt="Industrial Use" class="ncco-mob-impact__img" loading="lazy">
+                <div class="ncco-mob-impact__text">
+                  <p class="ncco-mob-impact__name">Industrial Use</p>
+                  <p class="ncco-mob-impact__desc">Deodorize waste stations, Filter exhaust gases for factories.</p>
+                </div>
+              </a>
+              <a href="/pages/commercial" class="ncco-mob-impact">
+                <img src="{{ 'commercialmenu.png' | asset_url }}" alt="Commercial Use" class="ncco-mob-impact__img" loading="lazy">
+                <div class="ncco-mob-impact__text">
+                  <p class="ncco-mob-impact__name">Commercial Use</p>
+                  <p class="ncco-mob-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                </div>
+              </a>
+            </div>
           </div>
         </details>
 
@@ -292,9 +356,15 @@
   </div>
 
   <div class="ncco-mob-nav__foot">
-    {%- if section.settings.cta_label != blank -%}
-      <a href="{{ section.settings.cta_url | default: '/pages/contact-us' }}" class="ncco-mob-nav__cta">{{ section.settings.cta_label }}</a>
-    {%- endif -%}
+    <a href="{{ section.settings.cta_url | default: '/pages/contact-us' }}" class="ncco-mob-nav__cta">
+      <span>{{ section.settings.cta_label | default: 'CONTACT US' }}</span>
+      <span class="ncco-mob-nav__cta-icon" aria-hidden="true">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="19" cy="19" r="19" fill="#FECB07"/>
+          <path d="M14 24L24 14M24 14H17M24 14V21" stroke="#081D3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
   </div>
 </div>
 
@@ -317,22 +387,22 @@
 
 .ncco-hdr__inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 32px; padding: 0 240px; height: 80px;
-  max-width: 1920px; margin: 0 auto; box-sizing: border-box;
+  gap: 24px; padding: 0 36px; height: 76px;
+  max-width: 1360px; margin: 0 auto; box-sizing: border-box;
 }
 
 /* Logo */
 .ncco-hdr__logo { display: flex; align-items: center; flex-shrink: 0; }
-.ncco-hdr__logo-img { height: 44px; width: auto; display: block; object-fit: contain; }
+.ncco-hdr__logo-img { height: 56px; width: auto; display: block; object-fit: contain; }
 
 /* Desktop nav */
-.ncco-hdr__nav { display: flex; align-items: center; gap: 8px; }
+.ncco-hdr__nav { display: flex; align-items: center; gap: 4px; }
 .ncco-hdr__item { position: relative; }
 .ncco-hdr__link {
   display: flex; align-items: center; gap: 6px;
-  font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500;
-  color: #081D3A; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
-  padding: 8px 16px; border-radius: 8px;
+  font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500;
+  color: #081D3A; text-decoration: none; text-transform: none; letter-spacing: -0.1px;
+  padding: 8px 14px; border-radius: 8px;
   white-space: nowrap; transition: color 0.15s, background 0.15s;
   background: none; border: none; cursor: pointer;
 }
@@ -349,9 +419,22 @@
   border-radius: 14px; box-shadow: 0 16px 48px rgba(8,29,58,0.12);
   padding: 8px; min-width: 200px; z-index: 300;
 }
-/* Invisible bridge fills 8px gap so hover stays active when cursor moves toward dropdown */
+/* Invisible bridge fills gap so hover stays active when cursor moves toward dropdown */
 .ncco-hdr__item--drop::after {
-  content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 8px;
+  content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px;
+}
+.ncco-hdr__item--drop:hover > .ncco-hdr__link {
+  color: #003DA5;
+}
+.ncco-hdr__item--drop:hover > .ncco-hdr__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 14px;
+  width: 28px;
+  height: 2px;
+  background: #003DA5;
+  border-radius: 2px;
 }
 .ncco-hdr__item--drop:hover .ncco-hdr__dropdown,
 .ncco-hdr__item--drop .ncco-hdr__dropdown.is-open { display: block; }
@@ -364,75 +447,180 @@
 .ncco-hdr__dropdown-item:hover { background: #f9f9fa; color: #003DA5; }
 
 /* ── Our Brands mega dropdown ── */
-.ncco-drop--brands { width: 600px; padding: 0; overflow: hidden; }
+.ncco-drop--brands {
+  width: 700px;
+  padding: 0;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  transform: none;
+  background: #FFFFFF;
+  border: 1px solid #081D3A1A;
+  box-shadow: 0px -4px 48px 0px #081D3A14;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 300;
+}
 .ncco-drop-brands__hero {
-  display: flex; align-items: center; gap: 16px;
-  padding: 16px 20px;
-  border-bottom: 1px solid rgba(8,29,58,0.08);
-  text-decoration: none; transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #64708229;
+  text-decoration: none;
+  background: #FFFFFF;
+  transition: background 0.15s ease;
 }
-.ncco-drop-brands__hero:hover { background: #F4F6FA; }
-.ncco-drop-brands__hero-logo {
-  width: 72px; height: 44px;
-  object-fit: contain; object-position: left center;
-  flex-shrink: 0; display: block;
+.ncco-drop-brands__hero:hover {
+  background: #F8FAFC;
 }
-.ncco-drop-brands__hero-text { flex: 1; min-width: 0; }
-.ncco-drop-brands__hero-name {
-  font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 600;
-  color: #081D3A; margin: 0 0 3px;
+.ncco-drop-brands__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.ncco-drop-brands__hero-desc {
-  font-family: 'Geist', sans-serif; font-size: 13px; color: #647082; margin: 0;
-}
-.ncco-drop-brands__hero-arr { display: none; }
-.ncco-drop-brands__grid { display: grid; grid-template-columns: 1fr 1fr; }
 .ncco-drop-brands__card {
-  display: flex; flex-direction: row; align-items: center; gap: 14px;
-  padding: 16px 20px; text-decoration: none;
-  border-bottom: 1px solid rgba(8,29,58,0.08);
-  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  text-decoration: none;
+  background: #FFFFFF;
+  transition: background 0.15s ease;
 }
-.ncco-drop-brands__card:nth-child(even) { border-left: 1px solid rgba(8,29,58,0.08); }
-.ncco-drop-brands__card:nth-last-child(-n+2) { border-bottom: none; }
-.ncco-drop-brands__card:hover { background: #F4F6FA; }
-.ncco-drop-brands__card-logo {
-  width: 72px; height: 34px;
-  object-fit: contain; object-position: left center;
-  flex-shrink: 0; display: block;
+.ncco-drop-brands__card:hover {
+  background: #F8FAFC;
 }
-.ncco-drop-brands__card-text { flex: 1; min-width: 0; }
-.ncco-drop-brands__card-name {
-  font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600;
-  color: #081D3A; margin: 0 0 4px; white-space: nowrap;
+.ncco-drop-brands__card--rht {
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #64708229;
 }
-.ncco-drop-brands__card-desc {
-  font-family: 'Geist', sans-serif; font-size: 12px; color: #647082; margin: 0; line-height: 1.4;
+.ncco-drop-brands__card--bmola {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #64708229;
+}
+.ncco-drop-brands__card--nccoig {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: #64708229;
+}
+.ncco-drop-brands__card--05 {
+  border: none;
+}
+.ncco-drop-brands__logo-wrap {
+  width: 60px;
+  min-width: 60px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+.ncco-drop-brands__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+.ncco-drop-brands__text {
+  flex: 1;
+  min-width: 0;
+}
+.ncco-drop-brands__name {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #081D3A;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+.ncco-drop-brands__desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #647082;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* ── Our Impact mega dropdown ── */
-.ncco-drop--impact { width: 680px; padding: 0; overflow: hidden; }
-.ncco-drop-impact__grid { display: grid; grid-template-columns: 1fr 1fr; }
+.ncco-drop--impact {
+  width: 780px;
+  padding: 0;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  transform: none;
+  background: #FFFFFF;
+  border: 1px solid #081D3A1A;
+  box-shadow: 0px -4px 48px 0px #081D3A14;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 300;
+}
+.ncco-drop-impact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .ncco-drop-impact__card {
-  display: flex; flex-direction: row; align-items: flex-start; gap: 14px;
-  padding: 16px; text-decoration: none;
-  border-bottom: 1px solid rgba(8,29,58,0.08);
-  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  text-decoration: none;
+  background: #FFFFFF;
+  transition: background 0.15s ease;
 }
-.ncco-drop-impact__card:nth-child(even) { border-left: 1px solid rgba(8,29,58,0.08); }
-.ncco-drop-impact__card:nth-last-child(-n+2) { border-bottom: none; }
-.ncco-drop-impact__card:hover { background: #F4F6FA; }
+.ncco-drop-impact__card:hover {
+  background: #F8FAFC;
+}
+.ncco-drop-impact__card--res {
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #64708229;
+}
+.ncco-drop-impact__card--med {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #64708229;
+}
+.ncco-drop-impact__card--ind {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: #64708229;
+}
+.ncco-drop-impact__card--com {
+  border: none;
+}
 .ncco-drop-impact__img {
-  width: 110px; height: 84px; border-radius: 10px;
-  object-fit: cover; flex-shrink: 0; display: block;
+  width: 120px;
+  height: 82px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
 }
-.ncco-drop-impact__text { flex: 1; min-width: 0; }
+.ncco-drop-impact__text {
+  flex: 1;
+  min-width: 0;
+}
 .ncco-drop-impact__name {
-  font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600;
-  color: #081D3A; margin: 0 0 4px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #081D3A;
+  margin: 0 0 4px;
+  line-height: 1.25;
 }
 .ncco-drop-impact__desc {
-  font-family: 'Geist', sans-serif; font-size: 12px; color: #647082; margin: 0; line-height: 1.4;
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #647082;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* Right controls */
@@ -467,128 +655,351 @@
 
 /* CTA button */
 .ncco-hdr__cta {
-  display: flex; align-items: center; gap: 20px;
+  display: flex; align-items: center; gap: 14px;
   background: #003DA5; color: #fff;
-  font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.3px; text-decoration: none;
-  padding: 5px 5px 5px 22px; border-radius: 40px;
+  font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+  padding: 3px 3px 3px 20px; border-radius: 40px;
   white-space: nowrap; transition: filter 0.2s;
 }
 .ncco-hdr__cta:hover { filter: brightness(0.92); color: #fff; }
 .ncco-hdr__cta-icon {
   display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; min-width: 34px;
-  background: #FECB07; border-radius: 50%;
+  width: 38px; height: 38px; min-width: 38px;
+  border-radius: 50%;
+  overflow: hidden;
 }
+.ncco-hdr__cta-icon svg { display: block; width: 38px; height: 38px; }
 
-/* Hamburger — Figma: blue filled circle with white bars */
+/* Hamburger — exact SVG icon */
 .ncco-hdr__hamburger {
-  display: none; flex-direction: column; gap: 5px; align-items: center; justify-content: center;
-  width: 44px; height: 44px; min-width: 44px;
-  background: #003DA5 !important; background-color: #003DA5 !important;
+  display: none; align-items: center; justify-content: center;
+  width: 40px; height: 40px; min-width: 40px;
+  background: transparent !important;
   border: none !important; box-shadow: none !important;
-  border-radius: 50% !important;
   cursor: pointer; padding: 0;
   flex-shrink: 0;
 }
-.ncco-hdr__hamburger span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
-.ncco-hdr__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.ncco-hdr__hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.ncco-hdr__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.ncco-hdr__hamburger svg {
+  display: block; width: 40px; height: 40px;
+}
 
 /* ── Mobile Nav Overlay ── */
 .ncco-mob-nav {
-  position: fixed; inset: 0; z-index: 400;
-  background: #fff; display: flex; flex-direction: column;
-  transform: translateX(-100%); visibility: hidden;
-  transition: transform 0.3s ease, visibility 0.3s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
   overflow: hidden;
 }
-.ncco-mob-nav.is-open { transform: translateX(0); visibility: visible; }
+.ncco-mob-nav.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
 .ncco-mob-nav__head {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px; border-bottom: 1px solid rgba(8,29,58,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(8, 29, 58, 0.08);
   flex-shrink: 0;
+  background: #FFFFFF;
+  z-index: 10;
 }
-.ncco-mob-nav__logo { height: 36px; width: auto; display: block; }
+.ncco-mob-nav__logo {
+  height: 38px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 .ncco-mob-nav__close {
-  display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; background: none; border: none; cursor: pointer; color: #081D3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #647082;
+  padding: 0;
+  transition: color 0.15s ease;
 }
-.ncco-mob-nav__body { flex: 1; overflow-y: auto; }
+.ncco-mob-nav__close:hover {
+  color: #081D3A;
+}
+
+/* Scrollable Body */
+.ncco-mob-nav__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 8px 0 24px;
+}
+.ncco-mob-nav__body::-webkit-scrollbar {
+  width: 4px;
+}
+.ncco-mob-nav__body::-webkit-scrollbar-thumb {
+  background: rgba(8, 29, 58, 0.15);
+  border-radius: 4px;
+}
+
+/* Links & Details Groups */
 .ncco-mob-nav__link {
-  display: block; padding: 16px 24px;
-  font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 500;
-  color: #081D3A; text-decoration: none; text-transform: uppercase; letter-spacing: 0.3px;
-  border-bottom: 1px solid rgba(8,29,58,0.06);
+  display: block;
+  padding: 14px 24px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #081D3A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  transition: color 0.15s ease;
 }
-.ncco-mob-nav__link:hover { color: #003DA5; }
-.ncco-mob-nav__group { border-bottom: 1px solid rgba(8,29,58,0.06); }
+.ncco-mob-nav__link:hover {
+  color: #003DA5;
+}
+.ncco-mob-nav__group {
+  border: none;
+}
 .ncco-mob-nav__group-btn {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 24px; list-style: none; cursor: pointer;
-  font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 500;
-  color: #081D3A; text-transform: uppercase; letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  list-style: none;
+  cursor: pointer;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #081D3A;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
   user-select: none;
+  transition: color 0.15s ease;
 }
-.ncco-mob-nav__group-btn::-webkit-details-marker { display: none; }
-.ncco-mob-nav__chev { flex-shrink: 0; transition: transform 0.2s; }
-.ncco-mob-nav__group[open] .ncco-mob-nav__chev { transform: rotate(180deg); }
-.ncco-mob-nav__group-body { padding: 4px 0 16px; }
+.ncco-mob-nav__group-btn::-webkit-details-marker {
+  display: none;
+}
+.ncco-mob-nav__group-btn::marker {
+  display: none;
+}
+.ncco-mob-nav__chev {
+  flex-shrink: 0;
+  color: #081D3A;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+.ncco-mob-nav__group[open] > .ncco-mob-nav__group-btn {
+  color: #003DA5;
+}
+.ncco-mob-nav__group[open] > .ncco-mob-nav__group-btn .ncco-mob-nav__chev {
+  transform: rotate(180deg);
+  color: #003DA5;
+}
+.ncco-mob-nav__group-body {
+  padding: 0;
+}
 .ncco-mob-nav__child {
-  display: block; padding: 10px 24px;
-  font-family: 'Geist', sans-serif; font-size: 14px; color: #647082; text-decoration: none;
+  display: block;
+  padding: 10px 24px;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: #647082;
+  text-decoration: none;
 }
-.ncco-mob-nav__child:hover { color: #003DA5; }
+.ncco-mob-nav__child:hover {
+  color: #003DA5;
+}
+
+/* Mobile card container */
+.ncco-mob-card {
+  margin: 4px 20px 14px;
+  background: #FFFFFF;
+  border: 1px solid #081D3A1A;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px 0px rgba(8, 29, 58, 0.05);
+}
 
 /* Mobile brand items */
 .ncco-mob-brand {
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 24px; text-decoration: none;
-  border-bottom: 1px solid rgba(8,29,58,0.04);
-  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  text-decoration: none;
+  background: #FFFFFF;
+  border-bottom: 1px solid #64708229;
+  transition: background 0.15s ease;
 }
-.ncco-mob-brand:last-child { border-bottom: none; }
-.ncco-mob-brand:hover { background: #F4F6FA; }
-.ncco-mob-brand__logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
-.ncco-mob-brand__name { font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600; color: #081D3A; margin: 0 0 2px; }
-.ncco-mob-brand__desc { font-family: 'Geist', sans-serif; font-size: 12px; color: #647082; margin: 0; }
+.ncco-mob-brand:last-child {
+  border-bottom: none;
+}
+.ncco-mob-brand:hover {
+  background: #F8FAFC;
+}
+.ncco-mob-brand__logo-wrap {
+  width: 58px;
+  min-width: 58px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+.ncco-mob-brand__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+.ncco-mob-brand__text {
+  flex: 1;
+  min-width: 0;
+}
+.ncco-mob-brand__name {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #081D3A;
+  margin: 0 0 2px;
+  line-height: 1.25;
+}
+.ncco-mob-brand__desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #647082;
+  margin: 0;
+  line-height: 1.35;
+}
 
 /* Mobile impact items */
 .ncco-mob-impact {
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 24px; text-decoration: none;
-  border-bottom: 1px solid rgba(8,29,58,0.04);
-  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  text-decoration: none;
+  background: #FFFFFF;
+  border-bottom: 1px solid #64708229;
+  transition: background 0.15s ease;
 }
-.ncco-mob-impact:last-child { border-bottom: none; }
-.ncco-mob-impact:hover { background: #F4F6FA; }
-.ncco-mob-impact__icon {
-  width: 44px; height: 44px; flex-shrink: 0;
-  background: #FFFBE6; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
+.ncco-mob-impact:last-child {
+  border-bottom: none;
 }
-.ncco-mob-impact__name { font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600; color: #081D3A; margin: 0 0 2px; }
-.ncco-mob-impact__desc { font-family: 'Geist', sans-serif; font-size: 12px; color: #647082; margin: 0; }
+.ncco-mob-impact:hover {
+  background: #F8FAFC;
+}
+.ncco-mob-impact__img {
+  width: 88px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+.ncco-mob-impact__text {
+  flex: 1;
+  min-width: 0;
+}
+.ncco-mob-impact__name {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #081D3A;
+  margin: 0 0 2px;
+  line-height: 1.25;
+}
+.ncco-mob-impact__desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #647082;
+  margin: 0;
+  line-height: 1.35;
+}
 
+/* Footer CTA */
 .ncco-mob-nav__foot {
-  padding: 16px 24px; border-top: 1px solid rgba(8,29,58,0.06); flex-shrink: 0;
+  flex-shrink: 0;
+  padding: 16px 24px calc(18px + env(safe-area-inset-bottom, 0px));
+  background: #FFFFFF;
+  border-top: 1px solid rgba(8, 29, 58, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 .ncco-mob-nav__cta {
-  display: block; width: 100%; padding: 16px 24px;
-  background: #003DA5; color: #fff; text-align: center;
-  font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500;
-  text-transform: uppercase; text-decoration: none; border-radius: 40px;
-  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #003DA5;
+  color: #FFFFFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  padding: 4px 4px 4px 26px;
+  border-radius: 40px;
+  min-width: 220px;
+  box-shadow: 0px 8px 24px rgba(0, 61, 165, 0.25);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+.ncco-mob-nav__cta:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  box-shadow: 0px 10px 28px rgba(0, 61, 165, 0.32);
+}
+.ncco-mob-nav__cta-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ncco-mob-nav__cta-icon svg {
+  display: block;
+  width: 38px;
+  height: 38px;
 }
 
 /* Responsive */
-@media (max-width: 1600px) { .ncco-hdr__inner { padding: 0 80px; } }
-@media (max-width: 1200px) { .ncco-hdr__inner { padding: 0 40px; } .ncco-hdr__link { padding: 8px 10px; } }
+@media (max-width: 1200px) {
+  .ncco-hdr__inner { padding: 0 28px; }
+  .ncco-hdr__link { padding: 8px 10px; }
+}
 @media (max-width: 989px) {
   .ncco-hdr__nav, .ncco-hdr__cta { display: none !important; }
   .ncco-hdr__hamburger { display: flex !important; }
-  .ncco-hdr__inner { padding: 0 24px; height: 64px; gap: 12px; }
+  .ncco-hdr__inner { padding: 0 20px; height: 66px; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .ncco-hdr__inner { padding: 0 16px; height: 64px; gap: 10px; }
+  .ncco-hdr__logo-img { height: 42px; }
+  .ncco-hdr__lang { height: 38px; padding: 2px 10px 2px 4px; gap: 6px; font-size: 13px; }
+  .ncco-hdr__flag { width: 30px; height: 30px; }
+  .ncco-hdr__hamburger { width: 40px; height: 40px; min-width: 40px; }
+  .ncco-hdr__hamburger svg { width: 40px; height: 40px; }
 }
 </style>
 

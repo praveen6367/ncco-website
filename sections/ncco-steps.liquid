@@ -1,6 +1,7 @@
-<section class="ncco-meaning">
-  <div class="ncco-container">
-    <div class="ncco-meaning__wrap">
+<section class="ncco-meaning-wrap">
+  <div class="ncco-meaning">
+    <div class="ncco-container">
+      <div class="ncco-meaning__wrap">
 
       <div class="ncco-meaning__header">
         {% if section.settings.eyebrow != blank %}
@@ -70,12 +71,34 @@
 
     </div>
   </div>
+  </div>
 </section>
 
 <style>
 /* ── Figma NCCO Meaning (1423:25230, 1920×968) ── */
-.ncco-meaning { padding: 120px 240px; background: #fff; }
-.ncco-meaning .ncco-container { max-width: 100%; padding: 0; }
+.ncco-meaning-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 12px auto 44px;
+  box-sizing: border-box;
+  background: #fff;
+}
+.ncco-meaning {
+  border-radius: 28px;
+  padding: 64px 40px;
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.ncco-meaning .ncco-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Desktop: header top-left, CTA top-right, grid full-width below */
 .ncco-meaning__wrap {
@@ -84,7 +107,7 @@
   grid-template-rows: auto auto;
   grid-template-areas: "header cta" "grid grid";
   column-gap: 48px;
-  row-gap: 70px;
+  row-gap: 56px;
   align-items: start;
 }
 .ncco-meaning__header { grid-area: header; max-width: 752px; }
@@ -93,24 +116,24 @@
 
 .ncco-meaning__eyebrow {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
-  color: #647082; text-transform: uppercase; margin: 0 0 40px;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.05em;
+  color: #647082; text-transform: uppercase; margin: 0 0 24px;
 }
 .ncco-meaning__eyebrow::before {
   content: ''; display: block; width: 28px; height: 2px; background: #FECB07; margin-bottom: 8px;
 }
 .ncco-meaning__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
-  color: #081D3A; margin: 0 0 35px;
+  font-size: 48px; font-weight: 500; line-height: 1.15; letter-spacing: -1.8px;
+  color: #081D3A; margin: 0 0 24px;
 }
 .ncco-meaning__body {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
   color: #647082; margin: 0;
 }
 
-/* 4-col grid — cols 1&3 offset 61px */
+/* 4-col grid — staggered zig-zag layout (Cols 1 & 3 offset down) */
 .ncco-meaning__grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; align-items: start;
 }
@@ -119,7 +142,7 @@
 }
 .ncco-meaning__col--offset { padding-top: 61px; }
 
-.ncco-meaning__text-block { display: flex; flex-direction: column; margin-top: 30px; }
+.ncco-meaning__text-block { display: flex; flex-direction: column; margin-bottom: 24px; min-height: 130px; }
 .ncco-meaning__letter-title {
   font-family: 'Geist', sans-serif;
   font-size: 20px; font-weight: 500; letter-spacing: -0.4px;
@@ -133,30 +156,28 @@
 }
 .ncco-meaning__letter-body {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
+  font-size: 15px; font-weight: 400; line-height: 22px; letter-spacing: -0.3px;
   color: #647082; margin: 0;
 }
 
-/* Colored icon cards — blue/yellow at 8% opacity, height 198, radius 20 */
+/* Colored icon cards — soft pastel background, height 198, radius 20 */
 .ncco-meaning__card {
   height: 198px; border-radius: 20px;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.ncco-meaning__card--blue   { background: rgba(0,61,165,0.08); }
-.ncco-meaning__card--yellow { background: rgba(254,203,7,0.08); }
+.ncco-meaning__card--blue   { background: #EEF3FA; }
+.ncco-meaning__card--yellow { background: #FFF9E6; }
 .ncco-meaning__card img {
-  max-width: 40%; max-height: 65%; width: auto; height: auto; display: block;
-  opacity: 0.68;
+  max-width: 50%; max-height: 70%; width: auto; height: auto; display: block;
   object-fit: contain;
 }
 
-@media (max-width: 1600px) { .ncco-meaning { padding: 100px 80px; } }
 @media (max-width: 1200px) {
-  .ncco-meaning { padding: 80px 40px; }
+  .ncco-meaning { padding: 48px 24px; }
   .ncco-meaning__grid { grid-template-columns: repeat(2, 1fr); }
   .ncco-meaning__col--offset { padding-top: 0; }
-  .ncco-meaning__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
+  .ncco-meaning__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
 }
 @media (max-width: 989px) {
   .ncco-meaning { padding: 60px 24px; }

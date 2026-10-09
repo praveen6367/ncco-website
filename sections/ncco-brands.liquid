@@ -1,47 +1,73 @@
-<section class="ncco-brands ncco-section">
+<section class="ncco-brands-wrap">
+  <div class="ncco-brands ncco-section">
+    <div class="ncco-container">
 
-  <div class="ncco-brands__header">
-    <p class="ncco-brands__eyebrow">{{ section.settings.eyebrow | default: 'Our Brands' }}</p>
-    <h2 class="ncco-brands__heading">{{ section.settings.heading | default: 'One Technology. Many Solutions.' }}</h2>
-    <p class="ncco-brands__subtext">{{ section.settings.subtext | default: 'From home to industry, explore how each of our brands brings NCCO purification to life.' }}</p>
-  </div>
-
-  <div class="ncco-brands__grid">
-    {% for block in section.blocks %}
-      <div class="ncco-brands__card" {{ block.shopify_attributes }}>
-        <div class="ncco-brands__logo-wrap">
-          {% if block.settings.logo_asset != blank %}
-            <img src="{{ block.settings.logo_asset | asset_url }}" alt="{{ block.settings.name }}" class="ncco-brands__logo" loading="lazy">
-          {% endif %}
-        </div>
-        <div class="ncco-brands__text">
-          <h3 class="ncco-brands__name">{{ block.settings.name }}</h3>
-          <p class="ncco-brands__desc">{{ block.settings.description }}</p>
-        </div>
+      <div class="ncco-brands__header">
+        <p class="ncco-brands__eyebrow">{{ section.settings.eyebrow | default: 'Our Brands' }}</p>
+        <h2 class="ncco-brands__heading">{{ section.settings.heading | default: 'One Technology. Many Solutions.' }}</h2>
+        <p class="ncco-brands__subtext">{{ section.settings.subtext | default: 'From home to industry, explore how each of our brands brings NCCO purification to life.' }}</p>
       </div>
-    {% endfor %}
-  </div>
 
-  {% if section.settings.cta_label != blank %}
-    <div class="ncco-brands__cta-wrap">
-      {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
+      <div class="ncco-brands__grid">
+        {% for block in section.blocks %}
+          <div class="ncco-brands__card" {{ block.shopify_attributes }}>
+            <div class="ncco-brands__logo-wrap">
+              {% if block.settings.logo_asset != blank %}
+                <img src="{{ block.settings.logo_asset | asset_url }}" alt="{{ block.settings.name }}" class="ncco-brands__logo" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="ncco-brands__text">
+              <h3 class="ncco-brands__name">{{ block.settings.name }}</h3>
+              <p class="ncco-brands__desc">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.cta_label != blank %}
+        <div class="ncco-brands__cta-wrap">
+          {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
+        </div>
+      {% endif %}
+
     </div>
-  {% endif %}
-
+  </div>
 </section>
 
 <style>
 /* ── Figma Brands (1423:25625, 1920×1015) ── */
-.ncco-brands { background: #fff; padding: 120px 240px; }
+.ncco-brands-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 12px auto 44px;
+  box-sizing: border-box;
+  background: #fff;
+}
+.ncco-brands {
+  border-radius: 28px;
+  background: #fff;
+  padding: 64px 40px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.ncco-brands .ncco-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .ncco-brands__header {
   display: flex; flex-direction: column; align-items: center; gap: 8px;
-  max-width: 900px; margin: 0 auto 70px; text-align: center;
+  max-width: 900px; margin: 0 auto 56px; text-align: center;
 }
 .ncco-brands__eyebrow {
   order: -1;
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.05em;
   color: #647082; text-transform: uppercase; margin: 0;
 }
 .ncco-brands__eyebrow::before {
@@ -49,12 +75,12 @@
 }
 .ncco-brands__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
-  color: #081D3A; margin: 24px 0 20px;
+  font-size: 48px; font-weight: 500; line-height: 1.15; letter-spacing: -1.8px;
+  color: #081D3A; margin: 20px 0 16px;
 }
 .ncco-brands__subtext {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
   color: #647082; margin: 0;
 }
 

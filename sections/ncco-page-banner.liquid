@@ -7,14 +7,19 @@
 
 {%- assign accent = section.settings.accent_color | default: '#FECB07' -%}
 {%- if accent == blank -%}{%- assign accent = '#FECB07' -%}{%- endif -%}
-{%- assign height = section.settings.height | default: 588 -%}
+{%- assign height = section.settings.height | default: 440 -%}
 
-<section class="ncco-pbanner-wrap">
+<section class="ncco-pbanner-wrap" style="--ncco-accent:{{ accent }}">
   <div class="ncco-pbanner__bg" style="background-image: url('{{ bg_url }}'); height: {{ height }}px;">
     <div class="ncco-pbanner__overlay"></div>
     <div class="ncco-pbanner__inner">
       <div class="ncco-pbanner__stack">
-        <h1 class="ncco-pbanner__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+        <div class="ncco-pbanner__top">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="ncco-pbanner__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          <h1 class="ncco-pbanner__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+        </div>
         {%- if section.settings.subtext != blank -%}
           <p class="ncco-pbanner__sub">{{ section.settings.subtext }}</p>
         {%- endif -%}
@@ -24,80 +29,110 @@
 </section>
 
 <style>
-.ncco-pbanner-wrap { padding: 0; background: #fff; }
+.ncco-pbanner-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0 36px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: #fff;
+}
 
 .ncco-pbanner__bg {
   position: relative;
-  margin: 0 16px;
-  border-radius: 32px;
+  width: 100%;
+  border-radius: 28px;
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
 .ncco-pbanner__overlay {
-  position: absolute; inset: 0; pointer-events: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(2,8,17,0.78) 0%,
-    rgba(3,19,44,0.78) 37.146%,
-    rgba(4,30,70,0.06) 100%
+    rgba(2, 8, 17, 0.9) 0%,
+    rgba(3, 19, 44, 0.9) 37.15%,
+    rgba(4, 30, 70, 0.072) 100%
   );
 }
 
 .ncco-pbanner__inner {
-  position: relative; z-index: 1;
+  position: relative;
+  z-index: 1;
   height: 100%;
-  display: flex; align-items: center;
-  padding: 0 224px;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 48px 36px;
+  box-sizing: border-box;
 }
 
 .ncco-pbanner__stack {
-  display: flex; flex-direction: column; gap: 160px;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 620px;
+}
+
+.ncco-pbanner__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.ncco-pbanner__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 16px;
+  letter-spacing: -0.2px;
 }
 
 .ncco-pbanner__title {
   font-family: 'Geist', sans-serif;
-  font-weight: 600; font-size: 70px; line-height: 1.05; letter-spacing: -4.2px;
-  color: #fff; margin: 0;
-  display: flex; flex-direction: column; gap: 24px;
+  font-weight: 700;
+  font-size: clamp(38px, 4.2vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: #FFFFFF;
+  margin: 0;
 }
-/* <em> = gold-to-transparent gradient text (Figma line 2 effect) */
-.ncco-pbanner__title em {
+
+.ncco-pbanner__title em,
+.ncco-pbanner__title .highlight {
   font-style: normal;
-  background-image: linear-gradient(90deg, {{ accent }} 0%, rgba(254,203,7,0) 54.5%),
-                    linear-gradient(90deg, #fff 0%, #fff 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-          color: transparent;
+  color: var(--ncco-accent, #FECB07);
+  -webkit-text-fill-color: var(--ncco-accent, #FECB07);
 }
 
 .ncco-pbanner__sub {
   font-family: 'Geist', sans-serif;
-  font-weight: 500; font-size: 20px; line-height: 1.4; letter-spacing: -0.4px;
-  color: #fff; margin: 0; max-width: 705px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.2px;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 520px;
 }
 
-@media (max-width: 1440px) {
-  .ncco-pbanner__inner { padding: 0 120px; }
-  .ncco-pbanner__stack { gap: 80px; }
-}
 @media (max-width: 1024px) {
-  .ncco-pbanner__bg { height: auto !important; padding: 120px 0; }
-  .ncco-pbanner__inner { padding: 0 40px; }
-  .ncco-pbanner__stack { gap: 40px; }
-  .ncco-pbanner__title { font-size: 48px; letter-spacing: -2px; }
-  .ncco-pbanner__sub { font-size: 18px; }
+  .ncco-pbanner__inner { padding: 40px 40px; }
+  .ncco-pbanner__title { font-size: 40px; }
 }
-@media (max-width: 600px) {
-  .ncco-pbanner__bg { margin: 0; border-radius: 0; padding: 80px 0; }
-  .ncco-pbanner__inner { padding: 0 16px; }
-  .ncco-pbanner__stack { gap: 24px; }
-  .ncco-pbanner__title { font-size: 32px; letter-spacing: -0.8px; }
-  .ncco-pbanner__sub { font-size: 15px; }
+@media (max-width: 768px) {
+  .ncco-pbanner-wrap { padding: 0 12px; margin: 8px auto 24px; }
+  .ncco-pbanner__bg { height: auto !important; min-height: 440px; border-radius: 28px; }
+  .ncco-pbanner__inner { padding: 36px 20px; }
+  .ncco-pbanner__stack { gap: 36px; }
+  .ncco-pbanner__title { font-size: 30px; letter-spacing: -0.8px; }
+  .ncco-pbanner__sub { font-size: 14px; }
 }
 </style>
 
@@ -106,10 +141,11 @@
   "name": "NCCO Page Banner",
   "tag": "section",
   "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow subtitle"},
     {"type": "richtext", "id": "headline", "label": "Headline (wrap accent line in <em>)"},
     {"type": "textarea", "id": "subtext", "label": "Subtext"},
     {"type": "text", "id": "accent_color", "label": "Accent color (hex, default #FECB07)"},
-    {"type": "number", "id": "height", "label": "Banner height (px, default 588)"},
+    {"type": "number", "id": "height", "label": "Banner height (px, default 440)"},
     {"type": "header", "content": "Background"},
     {"type": "image_picker", "id": "background_image", "label": "Background image"},
     {"type": "text", "id": "background_asset", "label": "Background asset filename (overrides image picker)"}

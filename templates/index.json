@@ -35,13 +35,6 @@
     "ncco-trust-logos": {
       "type": "ncco-trust-logos",
       "blocks": {
-        "logo_QAmmWq": {
-          "type": "logo",
-          "settings": {
-            "asset": "",
-            "alt": ""
-          }
-        },
         "tl_01": {
           "type": "logo",
           "settings": {
@@ -219,7 +212,6 @@
         }
       },
       "block_order": [
-        "logo_QAmmWq",
         "tl_01",
         "tl_02",
         "tl_03",
@@ -295,7 +287,7 @@
         "item_4"
       ],
       "settings": {
-        "eyebrow": "About",
+        "eyebrow": "About Us",
         "heading": "Pioneering Clean Air for a Healthier World",
         "subtext": "With decades of research and innovation, NCCO is redefining air purification through science, technology, and global impact.",
         "cta_label": "Know More About Us",

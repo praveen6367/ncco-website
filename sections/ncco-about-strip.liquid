@@ -1,170 +1,397 @@
-{%- comment -%} Figma About Strip node 1423:25101 {%- endcomment -%}
 <section class="ncco-about-wrap">
   <div class="ncco-about-strip">
+    <div class="ncco-about-strip__inner">
 
-    <div class="ncco-about-strip__left ncco-reveal">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="ncco-about-strip__eyebrow">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
-      {%- if section.settings.heading != blank -%}
-        <h2 class="ncco-about-strip__heading">{{ section.settings.heading }}</h2>
-      {%- endif -%}
-      {%- if section.settings.subtext != blank -%}
-        <p class="ncco-about-strip__sub">{{ section.settings.subtext }}</p>
+      <div class="ncco-about-strip__left">
+        <div class="ncco-about-strip__left-top">
+          {%- if section.settings.eyebrow != blank -%}
+            <div class="ncco-about-strip__eyebrow-wrap">
+              <span class="ncco-about-strip__bar" aria-hidden="true"></span>
+              <p class="ncco-about-strip__eyebrow">{{ section.settings.eyebrow }}</p>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="ncco-about-strip__heading">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.subtext != blank -%}
+            <p class="ncco-about-strip__sub">{{ section.settings.subtext }}</p>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.cta_label != blank -%}
+          <div class="ncco-about-strip__left-bottom">
+            <a href="{{ section.settings.cta_url | default: '/pages/about-us' }}" class="ncco-about-cta">
+              <span>{{ section.settings.cta_label }}</span>
+              <span class="ncco-about-cta__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="ncco-about-strip__grid">
+        <div class="ncco-about-strip__col ncco-about-strip__col--1">
+          {%- for block in section.blocks limit: 2 -%}
+            <div class="ncco-about-card" {{ block.shopify_attributes }}>
+              <span class="ncco-about-card__num">{{ block.settings.number }}</span>
+              {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
+              {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="ncco-about-strip__col ncco-about-strip__col--2">
+          {%- for block in section.blocks offset: 2 -%}
+            <div class="ncco-about-card" {{ block.shopify_attributes }}>
+              <span class="ncco-about-card__num">{{ block.settings.number }}</span>
+              {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
+              {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.settings.cta_label != blank -%}
+        <div class="ncco-about-strip__mobile-cta">
+          <a href="{{ section.settings.cta_url | default: '/pages/about-us' }}" class="ncco-about-cta">
+            <span>{{ section.settings.cta_label }}</span>
+            <span class="ncco-about-cta__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="#081D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
       {%- endif -%}
     </div>
-
-    <div class="ncco-about-strip__grid">
-      {%- comment -%} Col 1 = items 1,2 (pt:74) — Col 2 = items 3,4 (pb:74) {%- endcomment -%}
-      <div class="ncco-about-strip__col ncco-about-strip__col--1">
-        {%- for block in section.blocks limit: 2 -%}
-          <div class="ncco-about-card ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
-            <span class="ncco-about-card__num">{{ block.settings.number }}</span>
-            {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
-            {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
-          </div>
-        {%- endfor -%}
-      </div>
-      <div class="ncco-about-strip__col ncco-about-strip__col--2">
-        {%- for block in section.blocks offset: 2 -%}
-          {%- assign _d = forloop.index | plus: 2 -%}
-          <div class="ncco-about-card ncco-reveal ncco-reveal--d{{ _d }}" {{ block.shopify_attributes }}>
-            <span class="ncco-about-card__num">{{ block.settings.number }}</span>
-            {%- if block.settings.title != blank -%}<h3 class="ncco-about-card__title">{{ block.settings.title }}</h3>{%- endif -%}
-            {%- if block.settings.body != blank  -%}<p class="ncco-about-card__body">{{ block.settings.body }}</p>{%- endif -%}
-          </div>
-        {%- endfor -%}
-      </div>
-    </div>
-
-    {%- if section.settings.cta_label != blank -%}
-      {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue', class: 'ncco-about-strip__cta' -%}
-    {%- endif -%}
-
   </div>
 </section>
 
 <style>
-/* ── Figma About Strip (1423:25101, 1920×802) ── */
-.ncco-about-wrap { background: #fff; padding: 0 16px; }
-.ncco-about-strip {
-  display: grid;
-  grid-template-columns: 583px 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: "left grid" "cta grid";
-  column-gap: 152px;
-  row-gap: 40px;
-  max-width: 1888px; margin: 0 auto;
-  padding: 120px 224px; box-sizing: border-box;
-  border-radius: 32px;
+/* ── About Strip Section ── */
+.ncco-about-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 12px auto 44px;
+  box-sizing: border-box;
+  background: #fff;
 }
 
-/* Left column */
-.ncco-about-strip__left { grid-area: left; display: flex; flex-direction: column; }
+.ncco-about-strip {
+  background: #F9F9FA;
+  border-radius: 28px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60px 40px;
+}
+
+.ncco-about-strip__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+/* Left column stretches to match grid height with space-between */
+.ncco-about-strip__left {
+  flex: 0 1 500px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ncco-about-strip__left-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.ncco-about-strip__eyebrow-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.ncco-about-strip__bar {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #FECB07;
+  border-radius: 2px;
+}
 .ncco-about-strip__eyebrow {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
-  color: #647082; text-transform: uppercase; margin: 0 0 40px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #647082;
+  text-transform: uppercase;
+  margin: 0;
 }
-.ncco-about-strip__eyebrow::before {
-  content: ''; display: block; width: 28px; height: 2px; background: #FECB07; margin-bottom: 8px;
-}
+
 .ncco-about-strip__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
-  color: #081D3A; margin: 0 0 35px;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  color: #081D3A;
+  margin: 0 0 18px;
 }
+
 .ncco-about-strip__sub {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
-  color: #647082; margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #647082;
+  margin: 0;
+  max-width: 480px;
 }
 
-/* CTA — grid area below left text */
-.ncco-about-strip__cta { grid-area: cta; align-self: start; }
+/* CTA at bottom of left column */
+.ncco-about-strip__left-bottom {
+  margin-top: 48px;
+}
+.ncco-about-strip__mobile-cta {
+  display: none;
+}
+.ncco-about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #003DA5;
+  color: #fff;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  padding: 3px 3px 3px 22px;
+  border-radius: 40px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 61, 165, 0.22);
+  transition: filter 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+.ncco-about-cta:hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+  color: #fff;
+}
+.ncco-about-cta__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #FECB07;
+  flex-shrink: 0;
+}
+.ncco-about-cta__icon svg { display: block; }
 
-/* Right grid — 2 staggered cols 338px each, 30px gap */
+/* Right Grid: 2 staggered columns */
 .ncco-about-strip__grid {
-  grid-area: grid; align-self: center;
-  display: flex; gap: 30px;
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  align-items: flex-start;
 }
 .ncco-about-strip__col {
-  display: flex; flex-direction: column; gap: 30px; width: 338px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 270px;
 }
-.ncco-about-strip__col--1 { padding-top: 74px; }
-.ncco-about-strip__col--2 { padding-bottom: 74px; }
+.ncco-about-strip__col--1 {
+  margin-top: 44px;
+}
+.ncco-about-strip__col--2 {
+  margin-top: 0;
+}
 
-/* Card */
+/* Cards */
 .ncco-about-card {
-  background: #fff;
-  border: 1px solid rgba(100,112,130,0.12);
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 16px 24px rgba(8,29,58,0.04);
-  display: flex; flex-direction: column; gap: 28px;
-  width: 338px; box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid rgba(100, 112, 130, 0.12);
+  border-radius: 20px;
+  padding: 24px 24px;
+  box-shadow: 0 4px 20px rgba(8, 29, 58, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ncco-about-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 29, 58, 0.08);
 }
 .ncco-about-card__num {
   font-family: 'Geist', sans-serif;
-  font-size: 32px; font-weight: 500; line-height: 1; letter-spacing: -1.28px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
   color: #D7D9DC;
+  letter-spacing: -1px;
+  margin: 0 0 6px;
 }
 .ncco-about-card__title {
   font-family: 'Geist', sans-serif;
-  font-size: 20px; font-weight: 500; letter-spacing: -0.4px; line-height: 1.2;
-  color: #081D3A; text-transform: uppercase; margin: -8px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+  color: #081D3A;
+  text-transform: uppercase;
+  margin: 0 0 8px;
 }
 .ncco-about-card__body {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
-  color: #647082; margin: 0;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #647082;
+  margin: 0;
 }
 
-@media (max-width: 1600px) {
-  .ncco-about-strip { padding: 100px 80px; column-gap: 80px; }
-}
+/* Responsive */
 @media (max-width: 1200px) {
-  .ncco-about-strip {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "left" "grid" "cta";
-    row-gap: 60px;
-    padding: 80px 40px;
-    border-radius: 24px;
-  }
-  .ncco-about-strip__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
-  .ncco-about-strip__grid { justify-content: center; }
+  .ncco-about-strip { padding: 48px 24px; }
+  .ncco-about-strip__inner { gap: 36px; }
+  .ncco-about-strip__heading { font-size: 36px; }
+  .ncco-about-strip__col { width: 240px; }
 }
+
 @media (max-width: 989px) {
-  .ncco-about-strip { padding: 60px 24px; row-gap: 40px; }
-  .ncco-about-strip__heading { font-size: 36px; line-height: 44px; letter-spacing: -1.2px; }
-  .ncco-about-strip__grid { flex-wrap: wrap; }
-  .ncco-about-strip__col { width: calc(50% - 15px); }
-  .ncco-about-card { width: 100%; }
+  .ncco-about-wrap { padding: 0 12px; margin: 12px auto 36px; }
+  .ncco-about-strip { padding: 40px 20px; border-radius: 24px; }
+  .ncco-about-strip__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+  .ncco-about-strip__left {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  .ncco-about-strip__left-bottom {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .ncco-about-strip__bar { margin: 0 auto; }
+  .ncco-about-strip__heading { font-size: 32px; }
+  .ncco-about-strip__sub { margin: 0 auto 20px; }
+  .ncco-about-cta { align-self: center; margin: 0 auto; }
+  .ncco-about-strip__col--1 { margin-top: 0; }
+  .ncco-about-strip__grid { justify-content: center; width: 100%; gap: 16px; margin-top: 0; }
+  .ncco-about-strip__col { width: calc(50% - 8px); max-width: 280px; }
 }
-@media (max-width: 600px) {
-  /* Figma mobile: centered text → 1-col cards → full-width CTA */
-  .ncco-about-strip { padding: 40px 16px; border-radius: 16px; row-gap: 24px; }
 
-  /* Center heading area */
-  .ncco-about-strip__left { align-items: center; text-align: center; }
-  .ncco-about-strip__eyebrow { text-align: center; }
-  .ncco-about-strip__eyebrow::before { margin: 0 auto 8px; }
-  .ncco-about-strip__heading { font-size: 28px; line-height: 36px; letter-spacing: -0.8px; text-align: center; }
-  .ncco-about-strip__sub { font-size: 15px; line-height: 1.6; text-align: center; }
+@media (max-width: 749px) {
+  .ncco-about-wrap { padding: 0 12px; margin: 10px auto 28px; }
+  .ncco-about-strip { padding: 38px 16px 30px; border-radius: 28px; }
+  .ncco-about-strip__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+  .ncco-about-strip__left {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  .ncco-about-strip__left-top {
+    width: 100%;
+    align-items: center;
+  }
+  .ncco-about-strip__left-bottom {
+    display: none !important;
+  }
+  .ncco-about-strip__mobile-cta {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .ncco-about-strip__eyebrow-wrap {
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .ncco-about-strip__bar { margin: 0 auto 6px; }
+  .ncco-about-strip__eyebrow { font-size: 13px; }
+  .ncco-about-strip__heading {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    max-width: 320px;
+    margin: 0 auto 12px;
+  }
+  .ncco-about-strip__sub {
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .ncco-about-cta {
+    align-self: center;
+    margin: 0 auto;
+    font-size: 13px;
+    padding: 3px 3px 3px 18px;
+    gap: 12px;
+  }
+  .ncco-about-cta__icon { width: 34px; height: 34px; min-width: 34px; }
+  .ncco-about-cta__icon svg { width: 13px; height: 13px; }
 
-  /* Cards: single column, full-width */
-  .ncco-about-strip__grid { flex-direction: column; gap: 12px; }
-  .ncco-about-strip__col { width: 100%; padding: 0; gap: 12px; }
-  .ncco-about-strip__col--1, .ncco-about-strip__col--2 { padding: 0; }
-  .ncco-about-card { width: 100%; gap: 12px; padding: 20px; border-radius: 16px; }
-  .ncco-about-card__num { font-size: 24px; letter-spacing: -0.8px; }
-  .ncco-about-card__title { font-size: 14px; margin: 0; }
-  .ncco-about-card__body { font-size: 13px; line-height: 1.5; }
-
-  /* Full-width CTA */
-  .ncco-about-strip__cta { width: 100% !important; justify-content: center !important; }
-  .ncco-about-strip .ncco-cta { width: 100%; justify-content: space-between; }
+  /* Stack cards into single column directly below subtext */
+  .ncco-about-strip__grid {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .ncco-about-strip__col {
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+  }
+  .ncco-about-strip__col--1,
+  .ncco-about-strip__col--2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .ncco-about-card {
+    padding: 20px 20px;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 2px 12px rgba(8, 29, 58, 0.04);
+  }
+  .ncco-about-card__num { font-size: 28px; margin-bottom: 4px; }
+  .ncco-about-card__title { font-size: 15px; margin-bottom: 8px; }
+  .ncco-about-card__body { font-size: 13.5px; line-height: 1.5; }
 }
 </style>
 

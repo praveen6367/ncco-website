@@ -12,131 +12,278 @@
   {%- if section.settings.static_grid -%}
     <div class="ncco-trust-logos__grid">
       {%- for block in section.blocks -%}
-        <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
-          {%- if block.settings.logo != blank -%}
-            <img src="{{ block.settings.logo | image_url: width: 320 }}" alt="{{ block.settings.alt | default: 'Partner logo' }}" loading="lazy">
-          {%- elsif block.settings.asset != blank -%}
-            <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.alt | default: 'Partner logo' }}" loading="lazy">
-          {%- else -%}
-            <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
-          {%- endif -%}
-        </div>
+        {%- if block.settings.logo != blank or block.settings.asset != blank or block.settings.alt != blank -%}
+          <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.logo != blank -%}
+              <img src="{{ block.settings.logo | image_url: width: 320 }}" alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+            {%- elsif block.settings.asset != blank -%}
+              <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+            {%- else -%}
+              <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       {%- endfor -%}
     </div>
   {%- else -%}
     <div class="ncco-trust-logos__ticker-wrap">
-      <div class="ncco-trust-logos__track">
-        {%- comment -%} Duplicate blocks twice for seamless infinite loop {%- endcomment -%}
+      {%- comment -%} Desktop single track marquee {%- endcomment -%}
+      <div class="ncco-trust-logos__track ncco-trust-logos__track--desktop">
         {%- for n in (1..2) -%}
           {%- for block in section.blocks -%}
-            <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
-              {%- if block.settings.logo != blank -%}
-                <img src="{{ block.settings.logo | image_url: width: 320 }}"
-                     alt="{{ block.settings.alt | default: 'Partner logo' }}" loading="lazy">
-              {%- elsif block.settings.asset != blank -%}
-                <img src="{{ block.settings.asset | asset_url }}"
-                     alt="{{ block.settings.alt | default: 'Partner logo' }}" loading="lazy">
-              {%- else -%}
-                <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
-              {%- endif -%}
-            </div>
+            {%- if block.settings.logo != blank or block.settings.asset != blank or block.settings.alt != blank -%}
+              <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
+                {%- if block.settings.logo != blank -%}
+                  <img src="{{ block.settings.logo | image_url: width: 320 }}"
+                       alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                {%- elsif block.settings.asset != blank -%}
+                  <img src="{{ block.settings.asset | asset_url }}"
+                       alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                {%- else -%}
+                  <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
           {%- endfor -%}
         {%- endfor -%}
+      </div>
+
+      {%- comment -%} Mobile two-row marquee {%- endcomment -%}
+      {%- assign half = section.blocks.size | divided_by: 2 | plus: 1 -%}
+      <div class="ncco-trust-logos__mobile-rows">
+        <div class="ncco-trust-logos__track ncco-trust-logos__track--row1">
+          {%- for n in (1..2) -%}
+            {%- for block in section.blocks limit: half -%}
+              {%- if block.settings.logo != blank or block.settings.asset != blank or block.settings.alt != blank -%}
+                <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
+                  {%- if block.settings.logo != blank -%}
+                    <img src="{{ block.settings.logo | image_url: width: 320 }}"
+                         alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                  {%- elsif block.settings.asset != blank -%}
+                    <img src="{{ block.settings.asset | asset_url }}"
+                         alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                  {%- else -%}
+                    <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="ncco-trust-logos__track ncco-trust-logos__track--row2">
+          {%- for n in (1..2) -%}
+            {%- for block in section.blocks offset: half -%}
+              {%- if block.settings.logo != blank or block.settings.asset != blank or block.settings.alt != blank -%}
+                <div class="ncco-trust-logos__card" {{ block.shopify_attributes }}>
+                  {%- if block.settings.logo != blank -%}
+                    <img src="{{ block.settings.logo | image_url: width: 320 }}"
+                         alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                  {%- elsif block.settings.asset != blank -%}
+                    <img src="{{ block.settings.asset | asset_url }}"
+                         alt="{{ block.settings.alt | default: 'Partner logo' }}" width="180" height="64" loading="lazy">
+                  {%- else -%}
+                    <span class="ncco-trust-logos__text">{{ block.settings.alt }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   {%- endif -%}
 </section>
 
 <style>
-/* ── Figma Trust Logos (node 1423:25063) ── */
-.ncco-trust-logos { padding: 120px 0 80px; background: #fff; overflow: hidden; }
+/* ── Client Trust Logos ── */
+.ncco-trust-logos {
+  padding: 36px 0 60px;
+  background: #fff;
+  overflow: hidden;
+}
 
 .ncco-trust-logos__label-wrap {
-  max-width: 1920px; margin: 0 auto 38px; padding: 0 240px;
-  text-align: center; box-sizing: border-box;
+  max-width: 1360px;
+  margin: 0 auto 36px;
+  padding: 0 24px;
+  text-align: center;
+  box-sizing: border-box;
 }
 .ncco-trust-logos__label {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 500; line-height: 1.4;
-  color: #081D3A; text-transform: uppercase; letter-spacing: -0.02em; margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #081D3A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
-.ncco-trust-logos__highlight { color: #003DA5; }
+.ncco-trust-logos__highlight {
+  color: #0038FF;
+}
 
-.ncco-trust-logos__ticker-wrap { overflow: hidden; position: relative; }
+.ncco-trust-logos__ticker-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 .ncco-trust-logos__ticker-wrap::before,
 .ncco-trust-logos__ticker-wrap::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 253px; z-index: 2; pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 2;
+  pointer-events: none;
 }
-.ncco-trust-logos__ticker-wrap::before { left: 0;  background: linear-gradient(to right, #fff 35%, transparent 100%); }
-.ncco-trust-logos__ticker-wrap::after  { right: 0; background: linear-gradient(to left,  #fff 35%, transparent 100%); }
+.ncco-trust-logos__ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 25%, transparent 100%);
+}
+.ncco-trust-logos__ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 25%, transparent 100%);
+}
+
+.ncco-trust-logos__mobile-rows {
+  display: none;
+}
 
 .ncco-trust-logos__track {
-  display: flex; align-items: center; gap: 48px; width: max-content;
-  animation: ncco-marquee 65s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: ncco-marquee 55s linear infinite;
 }
-.ncco-trust-logos__track:hover { animation-play-state: paused; }
-@keyframes ncco-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ncco-trust-logos__track:hover {
+  animation-play-state: paused;
+}
+@keyframes ncco-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 .ncco-trust-logos__card {
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  width: 200px; height: 100px;
-  background: #fff; border: 1px solid rgba(100,112,130,0.12);
-  border-radius: 10px; box-shadow: 0 16px 48px rgba(8,29,58,0.04);
-  padding: 20px; box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 220px;
+  height: 104px;
+  background: #fff;
+  border: 1px solid rgba(100, 112, 130, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(8, 29, 58, 0.04);
+  padding: 8px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ncco-trust-logos__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 29, 58, 0.08);
 }
 .ncco-trust-logos__card img {
-  max-height: 60px; max-width: 100%; width: auto; object-fit: contain;
+  max-height: 80px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform: scale(1.18);
+  transform-origin: center center;
 }
 .ncco-trust-logos__text {
-  font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; color: #97A0AC;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #97A0AC;
+  text-align: center;
 }
 
 /* Static grid mode */
 .ncco-trust-logos__grid {
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-  gap: 24px; padding: 0 120px 60px; box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0 40px 36px;
+  box-sizing: border-box;
 }
 .ncco-trust-logos--static .ncco-trust-logos__card {
-  width: 280px; height: 120px; border-radius: 16px;
-  border: 1px solid rgba(100,112,130,0.15);
-  box-shadow: 0 4px 24px rgba(8,29,58,0.06);
-  padding: 24px 32px;
+  width: 220px;
+  height: 104px;
+  border-radius: 16px;
+  border: 1px solid rgba(100, 112, 130, 0.14);
+  box-shadow: 0 4px 16px rgba(8, 29, 58, 0.04);
+  padding: 8px 14px;
+  overflow: hidden;
 }
-.ncco-trust-logos--static .ncco-trust-logos__card img { max-height: 72px; max-width: 100%; width: auto; object-fit: contain; }
+.ncco-trust-logos--static .ncco-trust-logos__card img {
+  max-height: 80px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transform: scale(1.18);
+  transform-origin: center center;
+}
 
-@media (max-width: 1440px) { .ncco-trust-logos__label-wrap { padding: 0 80px; } .ncco-trust-logos__grid { padding: 0 80px 60px; } }
 @media (max-width: 989px) {
-  .ncco-trust-logos { padding: 60px 0 48px; }
-  .ncco-trust-logos__label-wrap { padding: 0 24px; margin-bottom: 28px; }
-  .ncco-trust-logos__label { font-size: 15px; }
-  .ncco-trust-logos__grid { padding: 0 40px 48px; }
-}
-@media (max-width: 600px) {
-  .ncco-trust-logos { padding: 48px 0 40px; }
-  .ncco-trust-logos__label-wrap { padding: 0 16px; margin-bottom: 20px; }
+  .ncco-trust-logos { padding: 32px 0 44px; }
+  .ncco-trust-logos__label-wrap { margin-bottom: 28px; }
   .ncco-trust-logos__label { font-size: 13px; }
-  /* Figma mobile: ticker becomes a static 4-per-row wrap grid */
-  .ncco-trust-logos__ticker-wrap { overflow: hidden; }
-  .ncco-trust-logos__ticker-wrap::before,
-  .ncco-trust-logos__ticker-wrap::after { display: none; }
-  .ncco-trust-logos__track {
-    animation: none;
-    transform: none !important;
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: center;
+  .ncco-trust-logos__track { gap: 40px; }
+  .ncco-trust-logos__card { width: 180px; height: 88px; padding: 6px 10px; border-radius: 14px; }
+  .ncco-trust-logos__card img { max-height: 68px; transform: scale(1.18); }
+  .ncco-trust-logos__grid { padding: 0 24px 32px; gap: 24px; }
+}
+
+@media (max-width: 749px) {
+  .ncco-trust-logos { padding: 30px 0 38px; }
+  .ncco-trust-logos__label-wrap { padding: 0 20px; margin: 0 auto 24px; max-width: 320px; }
+  .ncco-trust-logos__label { font-size: 13px; line-height: 1.4; letter-spacing: 0.03em; }
+  .ncco-trust-logos__track--desktop { display: none !important; }
+  .ncco-trust-logos__mobile-rows {
+    display: flex !important;
+    flex-direction: column;
     gap: 12px;
-    padding: 0 16px;
-    /* 2 rows × 56px + 1 gap × 12px = 124px — hides duplicated ticker items */
-    max-height: 124px;
+    width: 100%;
     overflow: hidden;
-    align-content: flex-start;
   }
-  .ncco-trust-logos__card { width: calc(25% - 9px); min-width: 60px; height: 56px; padding: 10px 8px; flex-shrink: 0; }
-  .ncco-trust-logos__card img { max-height: 32px; }
-  /* Static grid mobile */
-  .ncco-trust-logos__grid { padding: 0 16px 40px; gap: 12px; }
-  .ncco-trust-logos--static .ncco-trust-logos__card { width: calc(25% - 9px); min-width: 60px; height: 56px; }
+  .ncco-trust-logos__track--row1,
+  .ncco-trust-logos__track--row2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: max-content;
+  }
+  .ncco-trust-logos__track--row1 {
+    animation: ncco-marquee 32s linear infinite;
+  }
+  .ncco-trust-logos__track--row2 {
+    animation: ncco-marquee 36s linear infinite;
+  }
+  .ncco-trust-logos__card {
+    width: 142px;
+    height: 72px;
+    padding: 6px 10px;
+    border-radius: 12px;
+  }
+  .ncco-trust-logos__card img {
+    max-height: 54px;
+    transform: scale(1.18);
+  }
+  .ncco-trust-logos__ticker-wrap::before,
+  .ncco-trust-logos__ticker-wrap::after {
+    width: 50px;
+  }
+  .ncco-trust-logos__grid { padding: 0 16px 28px; gap: 14px; }
 }
 </style>
 

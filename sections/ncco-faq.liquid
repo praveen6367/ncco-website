@@ -1,32 +1,73 @@
-{%- assign _flat = false -%}
-{%- if section.settings.bg_image == blank -%}{%- assign _flat = true -%}{%- endif -%}
+{%- assign _has_bg = false -%}
+{%- if section.settings.bg_image != blank -%}{%- assign _has_bg = true -%}{%- endif -%}
 {%- assign faq_accent = section.settings.accent_color | default: '#FECB07' -%}
-<section class="ncco-faq{% if _flat %} ncco-faq--flat{% if section.settings.three_col %} ncco-faq--3col{% endif %}{% endif %}" style="--ncco-accent:{{ faq_accent }}{% if section.settings.bg_image != blank %};background-image:url('{{ section.settings.bg_image | asset_url }}'){% endif %}">
 
-  <div class="ncco-faq__card">
-    {% if section.settings.eyebrow != blank %}
-      <p class="ncco-faq__eyebrow">{{ section.settings.eyebrow }}</p>
-    {% endif %}
-    <h2 class="ncco-faq__heading">{{ section.settings.heading | default: 'All You Need To Know' }}</h2>
+<section class="ncco-faq-wrap{% if _has_bg %} ncco-faq-wrap--hero{% endif %}" style="--ncco-accent:{{ faq_accent }}">
+  {% if _has_bg %}
+    <div class="ncco-faq" style="background-image:url('{{ section.settings.bg_image | asset_url }}');">
+      <div class="ncco-faq__card">
+        {% if section.settings.eyebrow != blank %}
+          <p class="ncco-faq__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2 class="ncco-faq__heading">{{ section.settings.heading | default: 'All You Need To Know' }}</h2>
 
-    <div class="ncco-faq__accordion">
-      {% for block in section.blocks %}
-        <div class="ncco-faq__item{% if forloop.first %} is-open{% endif %}" {{ block.shopify_attributes }}>
-          <button class="ncco-faq__trigger" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
-            <span class="ncco-faq__question">{{ block.settings.heading }}</span>
-            <span class="ncco-faq__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="ncco-faq__answer">
-            <div class="ncco-faq__answer-inner">{{ block.settings.answer }}</div>
-          </div>
+        <div class="ncco-faq__accordion">
+          {% for block in section.blocks %}
+            <div class="ncco-faq__item{% if forloop.first %} is-open{% endif %}" {{ block.shopify_attributes }}>
+              <button type="button" class="ncco-faq__trigger" onclick="window.toggleFaq(this, event)" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                <span class="ncco-faq__question">{{ block.settings.heading }}</span>
+                <span class="ncco-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="ncco-faq__answer">
+                <div class="ncco-faq__answer-inner">{{ block.settings.answer }}</div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      </div>
     </div>
-  </div>
+  {% else %}
+    <div class="ncco-faq-white">
+      <div class="ncco-faq__header">
+        <span class="ncco-faq__dash" aria-hidden="true" style="display:block;width:38px;height:3px;background:#FECB07;border-radius:2px;margin:0 auto 12px auto;"></span>
+        {% if section.settings.eyebrow != blank %}
+          <p class="ncco-faq__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2 class="ncco-faq__heading">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+      </div>
+      <div class="ncco-faq__grid">
+        {% for block in section.blocks %}
+          <div class="ncco-faq__item{% if forloop.first %} is-open{% endif %}" {{ block.shopify_attributes }}>
+            <button type="button" class="ncco-faq__trigger" onclick="window.toggleFaq(this, event)" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+              <span class="ncco-faq__question">{{ block.settings.heading }}</span>
+              <span class="ncco-faq__icon" aria-hidden="true">{% if forloop.first %}−{% else %}+{% endif %}</span>
+            </button>
+            <div class="ncco-faq__answer">
+              <div class="ncco-faq__answer-inner">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 </section>
 
 <style>
-/* ── Figma FAQ (1545:13358, 1920×951) — outer 16px gutter + 32px radius ── */
+.ncco-faq-wrap {
+  width: 100%;
+  max-width: 1360px;
+  margin: 36px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.ncco-faq-wrap--hero {
+  max-width: 100%;
+  padding: 0;
+  margin: 12px 0 44px;
+}
+
+/* ── Hero FAQ variant (homepage with background image) ── */
 .ncco-faq {
   position: relative;
   min-height: 780px;
@@ -47,14 +88,155 @@
 .ncco-faq__card {
   position: relative;
   z-index: 1;
-  width: min(880px, 100%);
+  width: min(616px, 100%);
   background: #081D3A;
   border-radius: 32px;
-  padding: 56px;
+  padding: 48px;
   box-sizing: border-box;
 }
 
-.ncco-faq__heading {
+/* ── White 3-Column FAQ variant (About Us page matching reference UI) ── */
+.ncco-faq-white {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.ncco-faq__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.ncco-faq__dash {
+  width: 32px;
+  height: 3px;
+  background: #FECB07;
+  border-radius: 2px;
+  margin: 0 auto 12px auto;
+  display: block;
+}
+
+.ncco-faq-white .ncco-faq__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #647082;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.ncco-faq-white .ncco-faq__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: #081D3A;
+  margin: 0;
+  text-align: center;
+}
+
+.ncco-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 56px;
+  row-gap: 0;
+  align-items: start;
+}
+
+.ncco-faq-white .ncco-faq__item {
+  border-top: 1px solid #ECEEF0;
+  border-bottom: 1px solid #ECEEF0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: -1px;
+}
+
+.ncco-faq-white .ncco-faq__trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 24px 0 20px;
+  cursor: pointer !important;
+  text-align: left;
+}
+
+.ncco-faq-white .ncco-faq__trigger * {
+  pointer-events: none;
+}
+
+.ncco-faq-white .ncco-faq__question {
+  font-family: 'Geist', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #081D3A;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  flex: 1;
+  margin: 0;
+}
+
+.ncco-faq-white .ncco-faq__icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #EEF0F3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: -2px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #081D3A;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ncco-faq-white .ncco-faq__trigger:hover .ncco-faq__icon {
+  background: #E2E5EA;
+}
+
+.ncco-faq-white .ncco-faq__answer,
+.ncco-faq__card .ncco-faq__answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.ncco-faq__item.is-open > .ncco-faq__answer {
+  max-height: 800px !important;
+  opacity: 1 !important;
+}
+
+.ncco-faq-white .ncco-faq__answer-inner {
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #647082;
+  line-height: 1.6;
+  padding: 0 0 24px 0;
+}
+
+.ncco-faq-white .ncco-faq__answer-inner p {
+  margin: 0 0 10px;
+}
+.ncco-faq-white .ncco-faq__answer-inner p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Hero FAQ variant styles ── */
+.ncco-faq .ncco-faq__heading {
   font-family: 'Geist', sans-serif;
   font-size: 42px;
   font-weight: 500;
@@ -65,19 +247,24 @@
   margin: 0 0 40px;
 }
 
-.ncco-faq__accordion {
-  display: flex;
-  flex-direction: column;
+.ncco-faq .ncco-faq__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FECB07;
+  margin: 0 0 12px;
 }
 
-.ncco-faq__item {
-  border-top: 1px solid rgba(255,255,255,0.1);
+.ncco-faq__card .ncco-faq__item {
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
-.ncco-faq__item:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+.ncco-faq__card .ncco-faq__item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
-.ncco-faq__trigger {
+.ncco-faq__card .ncco-faq__trigger {
   width: 100%;
   display: flex;
   align-items: center;
@@ -90,86 +277,57 @@
   text-align: left;
 }
 
-.ncco-faq__question {
+.ncco-faq__card .ncco-faq__question {
   font-family: 'Geist', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.36px;
+  font-size: 17.5px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
   color: #ffffff;
   line-height: 1.4;
   flex: 1;
 }
 
-.ncco-faq__icon {
+.ncco-faq__card .ncco-faq__icon {
   flex-shrink: 0;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   line-height: 1;
-  width: 20px;
-  text-align: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
 }
 
-.ncco-faq__answer {
+.ncco-faq__card .ncco-faq__answer {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.35s ease;
 }
 
-.ncco-faq__item.is-open .ncco-faq__answer {
+.ncco-faq__card .ncco-faq__item.is-open .ncco-faq__answer {
   max-height: 400px;
 }
 
-.ncco-faq__answer-inner {
+.ncco-faq__card .ncco-faq__answer-inner {
   font-family: 'Geist', sans-serif;
-  font-size: 16px;
-  color: #647082;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.6;
   padding: 0 0 22px;
 }
-.ncco-faq__answer-inner p { margin: 0; }
+.ncco-faq__card .ncco-faq__answer-inner p { margin: 0; }
 
-/* ── Flat 2-col variant (About Us "Frequently Asked Questions") ── */
-.ncco-faq--flat {
-  background: #fff; background-color: #fff;
-  margin: 0; border-radius: 0; padding: 100px 240px;
-  min-height: 0; display: block; justify-content: initial; align-items: initial;
-  background-attachment: initial;
-}
-.ncco-faq--flat .ncco-faq__card {
-  background: transparent; border-radius: 0; padding: 0; width: 100%;
-}
-.ncco-faq__eyebrow {
-  font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500;
-  letter-spacing: 0.5px; text-transform: uppercase; color: var(--ncco-accent, #FECB07);
-  margin: 0 0 16px; text-align: center;
-}
-.ncco-faq--flat .ncco-faq__eyebrow { color: var(--ncco-accent, #FECB07); }
-.ncco-faq--flat .ncco-faq__heading {
-  color: #081D3A; text-align: center; margin: 0 0 56px;
-}
-.ncco-faq--flat .ncco-faq__accordion {
-  display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 0;
-}
-.ncco-faq--flat.ncco-faq--3col .ncco-faq__accordion {
-  grid-template-columns: 1fr 1fr 1fr; column-gap: 30px;
-}
-.ncco-faq--flat .ncco-faq__item { border-top-color: rgba(8,29,58,0.1); }
-.ncco-faq--flat .ncco-faq__item:last-child { border-bottom-color: rgba(8,29,58,0.1); }
-.ncco-faq--flat .ncco-faq__question { color: #081D3A; }
-.ncco-faq--flat .ncco-faq__icon { color: #081D3A; }
-.ncco-faq--flat .ncco-faq__answer-inner { color: #647082; }
-@media (max-width: 1600px) {
-  .ncco-faq--flat { padding: 80px 80px; }
-  .ncco-faq--flat.ncco-faq--3col .ncco-faq__accordion { column-gap: 24px; }
-}
-@media (max-width: 1200px) {
-  .ncco-faq--flat.ncco-faq--3col .ncco-faq__accordion { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 989px) {
-  .ncco-faq--flat { padding: 60px 24px; }
-  .ncco-faq--flat .ncco-faq__accordion { grid-template-columns: 1fr; column-gap: 0; }
-  .ncco-faq--flat .ncco-faq__heading { font-size: 34px; letter-spacing: -0.8px; }
+@media (max-width: 1024px) {
+  .ncco-faq__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 36px;
+  }
+  .ncco-faq-white .ncco-faq__heading {
+    font-size: 36px;
+  }
   .ncco-faq {
     padding: 48px 24px;
     margin: 0 8px;
@@ -183,13 +341,20 @@
     border-radius: 20px;
     padding: 40px 32px;
   }
-  .ncco-faq__heading { font-size: 30px; letter-spacing: -0.6px; }
-  .ncco-faq__question { font-size: 16px; }
-  .ncco-faq__answer-inner { font-size: 14px; }
 }
-@media (max-width: 600px) {
-  .ncco-faq--flat { padding: 40px 16px; }
-  .ncco-faq--flat .ncco-faq__heading { font-size: 26px; }
+
+@media (max-width: 680px) {
+  .ncco-faq__grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .ncco-faq-white .ncco-faq__heading {
+    font-size: 28px;
+  }
+  .ncco-faq-wrap {
+    padding: 0 12px;
+    margin: 32px auto;
+  }
   .ncco-faq {
     padding: 32px 16px;
     margin: 0 8px;
@@ -200,44 +365,40 @@
     border-radius: 16px;
     padding: 24px 16px;
   }
-  .ncco-faq__heading { font-size: 28px; letter-spacing: -0.6px; }
-  .ncco-faq__question { font-size: 15px; }
 }
 </style>
 
 <script>
-(function() {
-  function initFaq() {
-    var items = document.querySelectorAll('.ncco-faq__item');
-    items.forEach(function(item) {
-      var btn = item.querySelector('.ncco-faq__trigger');
-      var icon = item.querySelector('.ncco-faq__icon');
-      if (!btn) return;
-      btn.addEventListener('click', function() {
-        var isOpen = item.classList.contains('is-open');
-        items.forEach(function(i) {
-          i.classList.remove('is-open');
-          var b = i.querySelector('[aria-expanded]');
-          var ic = i.querySelector('.ncco-faq__icon');
-          if (b) b.setAttribute('aria-expanded', 'false');
-          if (ic) ic.textContent = '+';
-        });
-        if (!isOpen) {
-          item.classList.add('is-open');
-          btn.setAttribute('aria-expanded', 'true');
-          if (icon) icon.textContent = '−';
-        }
-      });
-      if (item.classList.contains('is-open') && icon) icon.textContent = '−';
-    });
+window.toggleFaq = function(btn, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
   }
+  var now = Date.now();
+  if (btn._lastFaqClick && (now - btn._lastFaqClick) < 80) return;
+  btn._lastFaqClick = now;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFaq);
+  var item = btn.closest('.ncco-faq__item');
+  if (!item) return;
+  var isOpen = item.classList.contains('is-open');
+  var icon = item.querySelector('.ncco-faq__icon');
+  if (isOpen) {
+    item.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    if (icon) icon.textContent = '+';
   } else {
-    initFaq();
+    item.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    if (icon) icon.textContent = '−';
   }
-})();
+};
+
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.ncco-faq__trigger');
+  if (btn && !btn.getAttribute('onclick')) {
+    window.toggleFaq(btn, e);
+  }
+});
 </script>
 
 {% schema %}

@@ -1,6 +1,7 @@
-<section class="ncco-tech">
-  <div class="ncco-container">
-    <div class="ncco-tech__wrap">
+<section class="ncco-tech-wrap">
+  <div class="ncco-tech">
+    <div class="ncco-container">
+      <div class="ncco-tech__wrap">
 
       <div class="ncco-tech__header">
         {% if section.settings.eyebrow != blank %}
@@ -69,12 +70,34 @@
 
     </div>
   </div>
+  </div>
 </section>
 
 <style>
 /* ── Figma Capture + Breakdown (1423:25548, 1920×1154) ── */
-.ncco-tech { padding: 120px 240px; background: #fff; }
-.ncco-tech .ncco-container { max-width: 100%; padding: 0; }
+.ncco-tech-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 12px auto 44px;
+  box-sizing: border-box;
+  background: #fff;
+}
+.ncco-tech {
+  border-radius: 28px;
+  background: #6470820A;
+  padding: 64px 40px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.ncco-tech .ncco-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Desktop: header left, CTA right, steps + explainer full-width below */
 .ncco-tech__wrap {
@@ -83,7 +106,7 @@
   grid-template-rows: auto auto auto;
   grid-template-areas: "header cta" "steps steps" "explainer explainer";
   column-gap: 48px;
-  row-gap: 70px;
+  row-gap: 56px;
   align-items: start;
 }
 .ncco-tech__header   { grid-area: header; max-width: 900px; }
@@ -93,20 +116,20 @@
 
 .ncco-tech__eyebrow {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
-  color: #647082; text-transform: uppercase; margin: 0 0 40px;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.05em;
+  color: #647082; text-transform: uppercase; margin: 0 0 20px;
 }
 .ncco-tech__eyebrow::before {
   content: ''; display: block; width: 28px; height: 2px; background: #FECB07; margin-bottom: 8px;
 }
 .ncco-tech__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
-  color: #081D3A; margin: 0 0 20px;
+  font-size: 48px; font-weight: 500; line-height: 1.15; letter-spacing: -1.8px;
+  color: #081D3A; margin: 0 0 16px;
 }
 .ncco-tech__sub {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
   color: #647082; margin: 0;
 }
 
@@ -146,10 +169,10 @@
 /* Simplified explanation white card */
 .ncco-tech__explainer {
   background: #fff;
-  border-radius: 24px;
-  border: 1px solid rgba(100,112,130,0.12);
-  box-shadow: 0 16px 24px rgba(8,29,58,0.04);
-  padding: 32px 40px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: none;
+  padding: 28px 36px;
 }
 .ncco-tech__explainer-label {
   font-family: 'Geist', sans-serif;
@@ -170,10 +193,9 @@
   color: #647082; margin: 0;
 }
 
-@media (max-width: 1600px) { .ncco-tech { padding: 100px 80px; } }
 @media (max-width: 1200px) {
-  .ncco-tech { padding: 80px 40px; }
-  .ncco-tech__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
+  .ncco-tech { padding: 48px 24px; }
+  .ncco-tech__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
 }
 @media (max-width: 989px) {
   .ncco-tech { padding: 60px 24px; }

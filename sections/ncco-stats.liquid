@@ -1,5 +1,5 @@
-<section class="ncco-stats ncco-section">
-  <div class="ncco-container">
+<section class="ncco-stats-wrap">
+  <div class="ncco-stats-card">
     {% if section.settings.heading != blank %}
       <h2 class="ncco-stats__heading">{{ section.settings.heading }}</h2>
     {% endif %}
@@ -18,62 +18,97 @@
 </section>
 
 <style>
-/* Figma-match: bumped to match About Us stats row */
-.ncco-stats { padding: 48px 240px; background: #f9f9fa; }
-.ncco-stats .ncco-container { max-width: 100%; padding: 0; }
+.ncco-stats-wrap {
+  width: 100%;
+  max-width: 1360px;
+  margin: 36px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.ncco-stats-card {
+  background: {{ section.settings.bg_color | default: '#6470820A' }};
+  border-radius: 28px;
+  padding: 56px 48px;
+  box-sizing: border-box;
+}
+
 .ncco-stats__heading {
-  text-align: center; margin: 0 0 48px;
+  text-align: center;
+  margin: 0 0 44px;
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
   color: #081D3A;
 }
+
 .ncco-stats__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); text-align: left;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: left;
 }
+
 .ncco-stats__item {
-  padding: 0 40px;
+  padding: 0 36px;
 }
-.ncco-stats__item:first-child { padding-left: 0; }
-.ncco-stats__item:last-child { padding-right: 0; }
+.ncco-stats__item:first-child {
+  padding-left: 0;
+}
+.ncco-stats__item:last-child {
+  padding-right: 0;
+}
 .ncco-stats__item + .ncco-stats__item {
-  border-left: 1px solid rgba(8,29,58,0.15);
+  border-left: 1px solid rgba(8, 29, 58, 0.12);
 }
+
 .ncco-stats__number {
   display: block;
   font-family: 'Geist', sans-serif;
-  font-size: 64px; font-weight: 700; letter-spacing: -2.56px; line-height: 1;
-  color: #081D3A; margin-bottom: 12px;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: #081D3A;
+  margin-bottom: 12px;
 }
+
 .ncco-stats__label {
   display: block;
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 400; line-height: 22px; letter-spacing: -0.32px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.2px;
   color: #647082;
 }
-.ncco-stats__sub { display: block; font-size: 13px; color: #97A0AC; margin-top: 6px; }
 
-@media (max-width: 1600px) { .ncco-stats { padding: 48px 80px; } }
-@media (max-width: 1024px) { .ncco-stats { padding: 60px 40px; } .ncco-stats__number { font-size: 48px; letter-spacing: -1.5px; } .ncco-stats__heading { font-size: 40px; line-height: 48px; } }
+.ncco-stats__sub {
+  display: block;
+  font-size: 13px;
+  color: #97A0AC;
+  margin-top: 6px;
+}
+
 @media (max-width: 989px) {
-  .ncco-stats { padding: 48px 24px; }
+  .ncco-stats-card { padding: 40px 24px; }
   .ncco-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .ncco-stats__item { padding: 24px 16px; }
   .ncco-stats__item:first-child { padding-left: 16px; }
   .ncco-stats__item:last-child { padding-right: 16px; }
-  .ncco-stats__item + .ncco-stats__item { border-left: none; border-top: 1px solid rgba(8,29,58,0.15); }
-  .ncco-stats__item:nth-child(even) { border-left: 1px solid rgba(8,29,58,0.15); border-top: none; }
-  .ncco-stats__item:nth-child(n+3) { border-top: 1px solid rgba(8,29,58,0.15); }
-  .ncco-stats__item:nth-child(3) { border-left: none; }
+  .ncco-stats__item + .ncco-stats__item { border-left: none; }
+  .ncco-stats__item:nth-child(even) { border-left: 1px solid rgba(8, 29, 58, 0.12); }
+  .ncco-stats__item:nth-child(n+3) { border-top: 1px solid rgba(8, 29, 58, 0.12); }
   .ncco-stats__number { font-size: 40px; }
-  .ncco-stats__heading { font-size: 30px; line-height: 38px; margin-bottom: 32px; }
 }
+
 @media (max-width: 600px) {
-  .ncco-stats { padding: 40px 16px; }
-  .ncco-stats__item { padding: 20px 12px; }
-  .ncco-stats__item:first-child { padding-left: 12px; }
-  .ncco-stats__item:last-child { padding-right: 12px; }
-  .ncco-stats__number { font-size: 40px; letter-spacing: -1.2px; }
-  .ncco-stats__heading { font-size: 26px; line-height: 34px; }
+  .ncco-stats-wrap { padding: 0 12px; margin: 24px auto; }
+  .ncco-stats-card { padding: 32px 16px; border-radius: 20px; }
+  .ncco-stats__grid { grid-template-columns: 1fr; }
+  .ncco-stats__item { padding: 20px 12px; border-left: none !important; }
+  .ncco-stats__item + .ncco-stats__item { border-top: 1px solid rgba(8, 29, 58, 0.12); }
+  .ncco-stats__number { font-size: 36px; }
 }
 </style>
 
@@ -82,7 +117,8 @@
   "name": "NCCO Stats Row",
   "tag": "section",
   "settings": [
-    {"type": "text", "id": "heading", "label": "Section heading"}
+    {"type": "text", "id": "heading", "label": "Section heading"},
+    {"type": "text", "id": "bg_color", "label": "Background color (hex, default #6470820A)", "default": "#6470820A"}
   ],
   "blocks": [
     {

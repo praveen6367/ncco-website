@@ -1,12 +1,19 @@
 {%- assign contact_accent = section.settings.accent_color | default: '#FECB07' -%}
-<section class="ncco-contact ncco-section" style="--ncco-accent:{{ contact_accent }}">
-  <div class="ncco-container ncco-contact__inner">
+{%- if contact_accent == blank -%}{%- assign contact_accent = '#FECB07' -%}{%- endif -%}
+<section class="ncco-contact-wrap" style="--ncco-accent:{{ contact_accent }};">
+  <div class="ncco-contact ncco-section">
+    <div class="ncco-container ncco-contact__inner">
 
     <!-- Left: heading + contact info -->
     <div class="ncco-contact__left ncco-reveal">
-      <p class="ncco-contact__eyebrow">{{ section.settings.eyebrow | default: 'Get In Touch' }}</p>
-      <h2 class="ncco-contact__heading">{{ section.settings.heading | default: "We're Here to Help" }}</h2>
-      <p class="ncco-contact__subtext">{{ section.settings.subtext | default: "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you." }}</p>
+      <div class="ncco-contact__left-top">
+        <div class="ncco-contact__eyebrow-wrap">
+          <span class="ncco-contact__bar" style="background:#FECB07;"></span>
+          <p class="ncco-contact__eyebrow">{{ section.settings.eyebrow | default: 'Get In Touch' }}</p>
+        </div>
+        <h2 class="ncco-contact__heading">{{ section.settings.heading | default: "We're Here to Help" }}</h2>
+        <p class="ncco-contact__subtext">{{ section.settings.subtext | default: "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you." }}</p>
+      </div>
 
       <div class="ncco-contact__info-list">
 
@@ -78,13 +85,13 @@
           </div>
 
           <div class="ncco-contact__field">
-            <label for="ncco-contact-email" class="ncco-contact__label">EMAIL</label>
-            <input id="ncco-contact-email" type="email" name="contact[email]" placeholder="Enter Email" autocomplete="email" required class="ncco-contact__input">
+            <label for="ncco-contact-email" class="ncco-contact__label">EMAIL ADDRESS</label>
+            <input id="ncco-contact-email" type="email" name="contact[email]" placeholder="Enter Email Address" autocomplete="email" required class="ncco-contact__input">
           </div>
 
           <div class="ncco-contact__field">
             <label for="ncco-contact-phone" class="ncco-contact__label">MOBILE NUMBER</label>
-            <input id="ncco-contact-phone" type="tel" name="contact[phone]" placeholder="Enter Mobile Numbers" autocomplete="tel" class="ncco-contact__input">
+            <input id="ncco-contact-phone" type="tel" name="contact[phone]" placeholder="Enter Mobile Number" autocomplete="tel" class="ncco-contact__input">
           </div>
 
           <div class="ncco-contact__field">
@@ -94,99 +101,156 @@
 
           <button type="submit" class="ncco-contact__submit">
             <span>{{ section.settings.submit_label | default: 'SUBMIT' }}</span>
-            <span class="ncco-contact__submit-icon" aria-hidden="true">↗</span>
+            <span class="ncco-contact__submit-icon" aria-hidden="true">
+              <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="19" cy="19" r="19" fill="#FECB07"/>
+                <path d="M14 24L24 14M24 20.6667V14H17.3333" stroke="#003DA5" stroke-width="1.66667" stroke-linecap="square" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
 
         {% endif %}
 
       {%- endform -%}
     </div>
-
+  </div>
   </div>
 </section>
 
 <style>
 /* ── Figma Contact (1423:25743, 1920×835) ── */
-.ncco-contact { background: #fff; padding: 120px 240px; }
+.ncco-contact-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 64px 0 0;
+  background: #6470820A;
+  box-sizing: border-box;
+}
+.ncco-contact {
+  border-radius: 0;
+  background: transparent;
+  padding: 96px 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 .ncco-contact__inner {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: start;
-  max-width: 100%; padding: 0;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: stretch;
+  max-width: 1360px !important;
+  margin: 0 auto !important;
+  padding: 0 36px !important;
+  box-sizing: border-box;
 }
 
+.ncco-contact__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.ncco-contact__left-top {
+  display: flex;
+  flex-direction: column;
+}
+.ncco-contact__bar {
+  display: block !important;
+  width: 28px !important;
+  height: 3px !important;
+  background: #FECB07 !important;
+  border-radius: 2px !important;
+  margin-bottom: 12px !important;
+}
 .ncco-contact__eyebrow {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
-  color: #647082; text-transform: uppercase; margin: 0 0 40px;
-}
-.ncco-contact__eyebrow::before {
-  content: ''; display: block; width: 28px; height: 2px; background: var(--ncco-accent, #FECB07); margin-bottom: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  color: #647082; text-transform: uppercase; margin: 0 0 16px;
 }
 .ncco-contact__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 58px; font-weight: 500; line-height: 68px; letter-spacing: -2.32px;
-  color: #081D3A; margin: 0 0 35px;
+  font-size: 48px; font-weight: 500; line-height: 1.15; letter-spacing: -1.8px;
+  color: #081D3A; margin: 0 0 16px;
 }
 .ncco-contact__subtext {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 24px; letter-spacing: -0.36px;
-  color: #647082; max-width: 520px; margin: 0 0 100px;
+  font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;
+  color: #647082; max-width: 480px; margin: 0;
 }
 
-.ncco-contact__info-list { display: flex; flex-direction: column; gap: 28px; }
+.ncco-contact__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
 .ncco-contact__info-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 .ncco-contact__icon-wrap {
   flex-shrink: 0;
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #EEF3FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ncco-contact__icon-wrap svg {
+  width: 24px;
+  height: 24px;
 }
 .ncco-contact__info-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-top: 10px;
+  padding-top: 0;
 }
 .ncco-contact__info-label {
   font-family: 'Geist', sans-serif;
-  font-size: 14px; font-weight: 500; letter-spacing: -0.28px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
   text-transform: uppercase; color: #647082;
 }
 .ncco-contact__info-value {
   font-family: 'Geist', sans-serif;
-  font-size: 16px; font-weight: 500; letter-spacing: -0.32px;
-  color: #081D3A; text-decoration: none; line-height: 1.5;
+  font-size: 15px; font-weight: 500; letter-spacing: -0.2px;
+  color: #081D3A; text-decoration: none; line-height: 1.4;
 }
 a.ncco-contact__info-value:hover { color: #003DA5; }
 
-/* Right col — form card */
+/* Right col — form card with subtle elevation */
 .ncco-contact__right {
   background: #fff;
-  border: 1px solid rgba(100,112,130,0.12);
+  border: 1px solid rgba(100, 112, 130, 0.12);
   border-radius: 24px;
-  padding: 48px 40px;
-  box-shadow: 0 16px 48px rgba(8,29,58,0.04);
+  padding: 44px 40px;
+  box-shadow: 0 12px 36px rgba(8, 29, 58, 0.05), 0 2px 8px rgba(8, 29, 58, 0.02);
+  box-sizing: border-box;
 }
-.ncco-contact__field { display: flex; flex-direction: column; margin-bottom: 24px; }
+.ncco-contact__field { display: flex; flex-direction: column; margin-bottom: 20px; }
 .ncco-contact__label {
   font-family: 'Geist', sans-serif;
-  font-size: 14px; font-weight: 500; letter-spacing: -0.28px;
-  text-transform: uppercase; color: #647082; margin-bottom: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; color: #081D3A; margin-bottom: 8px;
 }
 .ncco-contact .ncco-contact__input,
 .ncco-contact .ncco-contact__textarea {
   width: 100% !important;
-  padding: 16px 24px !important;
+  padding: 14px 18px !important;
   background: #fff !important;
   background-color: #fff !important;
-  border: 1px solid rgba(100,112,130,0.16) !important;
-  border-radius: 48px !important;
+  border: 1px solid #E2E6ED !important;
+  border-radius: 14px !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
   font-family: 'Geist', sans-serif !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
   font-weight: 400 !important;
   color: #081D3A !important;
   box-sizing: border-box;
@@ -196,35 +260,40 @@ a.ncco-contact__info-value:hover { color: #003DA5; }
   outline: none !important;
 }
 .ncco-contact__input::placeholder,
-.ncco-contact__textarea::placeholder { color: #97A0AC !important; }
+.ncco-contact__textarea::placeholder { color: #97A0AC !important; font-size: 14px !important; }
 .ncco-contact .ncco-contact__input:focus,
 .ncco-contact .ncco-contact__textarea:focus {
   border-color: #003DA5 !important; outline: none !important;
 }
 .ncco-contact__textarea {
-  resize: vertical; min-height: 140px; border-radius: 24px !important;
+  resize: vertical; min-height: 120px; border-radius: 14px !important;
 }
 
 /* Submit — canonical CTA */
 .ncco-contact .ncco-contact__submit {
-  display: inline-flex !important; align-items: center !important; gap: 24px !important;
-  padding: 8px 8px 8px 28px !important;
+  display: inline-flex !important; align-items: center !important; gap: 16px !important;
+  padding: 6px 6px 6px 24px !important;
   background: #003DA5 !important; color: #fff !important;
-  border: none !important; border-radius: 78px !important;
+  border: none !important; border-radius: 48px !important;
   cursor: pointer;
   font-family: 'Geist', sans-serif !important;
-  font-size: 16px !important; font-weight: 500 !important;
-  text-transform: uppercase !important; letter-spacing: -0.32px !important;
-  box-shadow: 0 8px 14px rgba(0,61,165,0.16) !important;
+  font-size: 15px !important; font-weight: 500 !important;
+  text-transform: uppercase !important; letter-spacing: -0.2px !important;
+  box-shadow: 0 8px 20px rgba(0,61,165,0.2) !important;
   transition: filter .2s ease !important;
-  margin-top: 12px; white-space: nowrap; line-height: 1 !important;
+  margin-top: 8px; white-space: nowrap; line-height: 1 !important;
 }
 .ncco-contact .ncco-contact__submit:hover { filter: brightness(0.95); }
 .ncco-contact .ncco-contact__submit-icon {
   display: inline-flex !important; align-items: center !important; justify-content: center !important;
   width: 38px !important; height: 38px !important; min-width: 38px !important;
-  background: var(--ncco-accent, #FECB07) !important; color: #081D3A !important;
-  border-radius: 50% !important; font-size: 16px !important; font-weight: 500 !important; line-height: 1 !important;
+  background: transparent !important; border-radius: 50% !important;
+  line-height: 1 !important;
+}
+.ncco-contact .ncco-contact__submit-icon svg {
+  display: block !important;
+  width: 38px !important;
+  height: 38px !important;
 }
 
 /* Success / errors */
@@ -242,26 +311,30 @@ a.ncco-contact__info-value:hover { color: #003DA5; }
   margin-bottom: 16px;
 }
 
-@media (max-width: 1600px) { .ncco-contact { padding: 100px 80px; } }
 @media (max-width: 1200px) {
-  .ncco-contact { padding: 80px 40px; }
-  .ncco-contact__inner { gap: 60px; }
-  .ncco-contact__heading { font-size: 44px; line-height: 52px; letter-spacing: -1.5px; }
-  .ncco-contact__subtext { margin-bottom: 60px; }
+  .ncco-contact { padding: 72px 0; }
+  .ncco-contact__inner { gap: 48px; padding: 0 28px !important; }
+  .ncco-contact__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
+  .ncco-contact__subtext { margin-bottom: 36px; }
 }
 @media (max-width: 989px) {
-  .ncco-contact__inner { grid-template-columns: 1fr; gap: 48px; }
-  .ncco-contact__heading { font-size: 36px; line-height: 44px; letter-spacing: -1.2px; }
-  .ncco-contact__subtext { margin-bottom: 40px; max-width: 100%; }
-  .ncco-contact { padding: 60px 24px; }
+  .ncco-contact-wrap { padding: 0; margin: 40px 0 0; }
+  .ncco-contact { padding: 60px 0; border-radius: 0; }
+  .ncco-contact__inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px !important; }
+  .ncco-contact__left { display: block; height: auto; }
+  .ncco-contact__heading { font-size: 32px; line-height: 40px; letter-spacing: -1px; }
+  .ncco-contact__subtext { margin-bottom: 28px; max-width: 100%; }
+  .ncco-contact__info-list { margin-top: 0; margin-bottom: 36px; }
+  .ncco-contact__right { padding: 32px 24px; border-radius: 20px; }
 }
 @media (max-width: 600px) {
-  .ncco-contact { padding: 40px 16px; }
+  .ncco-contact { padding: 48px 0; }
+  .ncco-contact__inner { padding: 0 16px !important; }
   .ncco-contact__heading { font-size: 28px; line-height: 36px; letter-spacing: -0.8px; }
-  .ncco-contact__subtext { font-size: 16px; }
-  .ncco-contact__right { padding: 32px 20px; }
+  .ncco-contact__subtext { font-size: 15px; }
+  .ncco-contact__right { padding: 24px 16px; }
   .ncco-contact .ncco-contact__input,
-  .ncco-contact .ncco-contact__textarea { padding: 14px 18px !important; font-size: 15px !important; }
+  .ncco-contact .ncco-contact__textarea { padding: 12px 16px !important; font-size: 14px !important; }
   .ncco-contact .ncco-contact__submit { width: 100% !important; justify-content: center !important; }
 }
 </style>

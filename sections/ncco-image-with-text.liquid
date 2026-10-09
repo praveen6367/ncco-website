@@ -4,143 +4,156 @@
 {% assign dual = false %}
 {% if img_asset != blank and img_asset2 != blank %}{% assign dual = true %}{% endif %}
 
-<section class="ncco-iwt ncco-section{% if section.settings.dark %} ncco-section--dark{% endif %}">
-  <div class="ncco-container ncco-iwt__inner{% if layout == 'text_first' %} ncco-iwt__inner--reverse{% endif %}">
-    <div class="ncco-iwt__img{% if dual %} ncco-iwt__img--dual{% endif %}">
-      {% if dual %}
-        <img class="ncco-iwt__img-top" src="{{ img_asset | asset_url }}" alt="{{ section.settings.heading }}" loading="lazy">
-        <img class="ncco-iwt__img-bottom" src="{{ img_asset2 | asset_url }}" alt="" loading="lazy">
-        {% if section.settings.overlay_text != blank %}
-          <div class="ncco-iwt__overlay-card">{{ section.settings.overlay_text }}</div>
+{% assign bg_color = section.settings.bg_color | default: '#ffffff' %}
+{% if section.settings.dark %}
+  {% assign bg_color = '#081D3A' %}
+{% endif %}
+
+<section class="ncco-iwt-wrap">
+  <div class="ncco-iwt{% if section.settings.dark %} ncco-section--dark{% endif %}" style="background: {{ bg_color }};">
+    <div class="ncco-iwt__inner{% if layout == 'text_first' %} ncco-iwt__inner--reverse{% endif %}">
+      <div class="ncco-iwt__img{% if dual %} ncco-iwt__img--dual{% endif %}">
+        {% if dual %}
+          <img class="ncco-iwt__img-top" src="{{ img_asset | asset_url }}" alt="{{ section.settings.heading }}" loading="lazy">
+          <img class="ncco-iwt__img-bottom" src="{{ img_asset2 | asset_url }}" alt="" loading="lazy">
+          {% if section.settings.overlay_text != blank %}
+            <div class="ncco-iwt__overlay-card">{{ section.settings.overlay_text }}</div>
+          {% endif %}
+        {% elsif section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 1000 }}"
+               alt="{{ section.settings.heading }}" loading="lazy">
+        {% elsif img_asset != blank %}
+          <img src="{{ img_asset | asset_url }}"
+               alt="{{ section.settings.heading }}" loading="lazy">
+        {% else %}
+          <div class="ncco-iwt__placeholder"></div>
         {% endif %}
-      {% elsif section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 800 }}"
-             alt="{{ section.settings.heading }}" loading="lazy">
-      {% elsif img_asset != blank %}
-        <img src="{{ img_asset | asset_url }}"
-             alt="{{ section.settings.heading }}" loading="lazy">
-      {% else %}
-        <div class="ncco-iwt__placeholder"></div>
-      {% endif %}
-    </div>
-    <div class="ncco-iwt__text">
-      {% if section.settings.eyebrow != blank %}
-        <p class="ncco-eyebrow">{{ section.settings.eyebrow }}</p>
-      {% endif %}
-      {% if section.settings.heading != blank %}
-        <h2 class="ncco-iwt__heading">{{ section.settings.heading }}</h2>
-      {% endif %}
-      {% if section.settings.text != blank %}
-        <div class="ncco-iwt__body">{{ section.settings.text }}</div>
-      {% endif %}
-      {% if section.settings.cta_label != blank %}
-        <div class="ncco-iwt__cta">
-          {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
-        </div>
-      {% endif %}
+      </div>
+      <div class="ncco-iwt__text">
+        <div class="ncco-eyebrow-dash"></div>
+        {% if section.settings.eyebrow != blank %}
+          <p class="ncco-eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-iwt__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="ncco-iwt__body">{{ section.settings.text }}</div>
+        {% endif %}
+        {% if section.settings.cta_label != blank %}
+          <div class="ncco-iwt__cta">
+            {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-/* Figma-match: About Us image-with-text */
-.ncco-iwt { padding: 100px 240px; }
-.ncco-iwt .ncco-container { max-width: 100%; padding: 0; }
+.ncco-iwt-wrap {
+  width: 100%;
+  max-width: 1360px;
+  margin: 36px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.ncco-iwt {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 64px 60px;
+  box-sizing: border-box;
+}
+
 .ncco-iwt__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 64px;
   align-items: center;
 }
+
 .ncco-iwt__inner--reverse .ncco-iwt__img { order: 2; }
 .ncco-iwt__inner--reverse .ncco-iwt__text { order: 1; }
-.ncco-iwt__img:not(.ncco-iwt__img--dual) img {
+
+.ncco-iwt__img img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 24px;
 }
 
-/* Dual stacked layout — flex images, absolute card straddling the seam */
-.ncco-iwt__img--dual {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.ncco-iwt__img-top {
-  width: 62%;
-  aspect-ratio: 4/3;
-  object-fit: cover; border-radius: 16px; display: block;
-}
-.ncco-iwt__img-bottom {
-  width: 100%;
-  aspect-ratio: 5/3;
-  object-fit: cover; border-radius: 16px; display: block;
-}
-.ncco-iwt__overlay-card {
-  position: absolute;
-  right: 0; top: 50%;
-  transform: translateY(-50%);
-  width: 36%;
-  min-height: 160px;
-  background: #081D3A;
-  border-radius: 20px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Geist', sans-serif;
-  font-size: 22px; font-weight: 700; line-height: 1.4;
-  color: #fff; text-align: center;
-  white-space: pre-line;
-  padding: 16px; box-sizing: border-box;
+.ncco-eyebrow-dash {
+  width: 32px;
+  height: 3px;
+  background: #FECB07;
+  border-radius: 2px;
+  margin-bottom: 12px;
 }
 
-.ncco-iwt__placeholder {
-  aspect-ratio: 5/4;
-  background: var(--ncco-grey-bg);
-  border-radius: 24px;
+.ncco-iwt__text .ncco-eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #647082;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px;
 }
-.ncco-section--dark .ncco-iwt__placeholder { background: rgba(255,255,255,0.06); }
-.ncco-iwt__text .ncco-eyebrow { margin-bottom: 40px; }
+
 .ncco-iwt__heading {
   font-family: 'Geist', sans-serif;
-  font-size: 48px; font-weight: 600; line-height: 56px; letter-spacing: -1.5px;
-  margin: 0 0 24px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
   color: #081D3A;
+  margin: 0 0 18px;
 }
-.ncco-section--dark .ncco-iwt__heading { color: #fff; }
+
 .ncco-iwt__body {
   font-family: 'Geist', sans-serif;
-  font-size: 18px; font-weight: 400; line-height: 28px; letter-spacing: -0.36px;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
   color: #647082;
 }
-.ncco-section--dark .ncco-iwt__body { color: #97A0AC; }
-.ncco-iwt__body p { margin: 0 0 16px; }
-.ncco-iwt__body p:last-child { margin-bottom: 0; }
-.ncco-iwt__cta { margin-top: 40px; }
 
-@media (max-width: 1600px) { .ncco-iwt { padding: 80px 80px; } .ncco-iwt__inner { gap: 60px; } }
+.ncco-iwt__body p {
+  margin: 0 0 16px;
+}
+.ncco-iwt__body p:last-child {
+  margin-bottom: 0;
+}
+
+.ncco-iwt__body strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #081D3A;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.ncco-iwt__cta {
+  margin-top: 32px;
+}
+
 @media (max-width: 1024px) {
-  .ncco-iwt { padding: 60px 40px; }
+  .ncco-iwt { padding: 48px 36px; }
   .ncco-iwt__inner { grid-template-columns: 1fr; gap: 40px; }
-  .ncco-iwt__heading { font-size: 40px; line-height: 48px; letter-spacing: -1.5px; }
+  .ncco-iwt__heading { font-size: 34px; line-height: 42px; }
   .ncco-iwt__inner--reverse .ncco-iwt__img { order: unset; }
   .ncco-iwt__inner--reverse .ncco-iwt__text { order: unset; }
 }
-@media (max-width: 989px) {
-  .ncco-iwt { padding: 48px 24px; }
-  .ncco-iwt__heading { font-size: 34px; line-height: 42px; letter-spacing: -1.2px; }
-  .ncco-iwt__body { font-size: 16px; line-height: 24px; }
-  .ncco-iwt__img-top { width: 58%; }
-  .ncco-iwt__overlay-card { font-size: 18px; min-height: 120px; }
-}
+
 @media (max-width: 600px) {
-  .ncco-iwt { padding: 40px 16px; }
-  .ncco-iwt__heading { font-size: 26px; line-height: 34px; letter-spacing: -0.8px; }
-  .ncco-iwt__body { font-size: 15px; }
-  /* Collapse dual layout: stack images, hide overlay card */
-  .ncco-iwt__img-top { width: 100%; }
-  .ncco-iwt__overlay-card { display: none; }
-  .ncco-iwt__cta { margin-top: 28px; }
+  .ncco-iwt-wrap { padding: 0 12px; margin: 24px auto; }
+  .ncco-iwt { padding: 36px 20px; border-radius: 20px; }
+  .ncco-iwt__heading { font-size: 28px; line-height: 34px; letter-spacing: -0.8px; }
+  .ncco-iwt__body { font-size: 14px; }
 }
 </style>
 
@@ -162,7 +175,8 @@
     ], "default": "image_first"},
     {"type": "text", "id": "cta_label", "label": "Button text"},
     {"type": "url", "id": "cta_url", "label": "Button URL"},
-    {"type": "checkbox", "id": "dark", "label": "Dark background", "default": false}
+    {"type": "checkbox", "id": "dark", "label": "Dark background", "default": false},
+    {"type": "color", "id": "bg_color", "label": "Card background color", "default": "#ffffff"}
   ],
   "presets": [{"name": "NCCO Image + Text"}]
 }
