@@ -176,7 +176,7 @@
               <path d="M2 4L6 8L10 4" stroke="#081D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <input type="hidden" name="locale_code" id="lang-locale-input" value="{{ localization.language.iso_code }}">
+          <input type="hidden" name="language_code" id="lang-locale-input" value="{{ localization.language.iso_code }}">
           <div class="ncco-hdr__lang-drop" role="listbox" hidden>
             {%- for lang in localization.available_languages -%}
               <button type="button" role="option" data-locale="{{ lang.iso_code }}"
@@ -1037,7 +1037,7 @@
   if (langBtn) {
     var langWrap = langBtn.closest('.ncco-hdr__lang-wrap');
     var langDrop = langWrap.querySelector('.ncco-hdr__lang-drop');
-    var langInput = langWrap.querySelector('input[name="locale_code"]');
+    var langInput = langWrap.querySelector('input[name="language_code"]');
     var langForm = langInput && langInput.closest('form');
 
     langBtn.addEventListener('click', function(e) {
