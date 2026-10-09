@@ -13,16 +13,16 @@
       "type": "ncco-hero",
       "custom_css": [],
       "settings": {
-        "eyebrow": "Trusted by 500+ institutions worldwide",
+        "eyebrow": "全球超過500個商業及機構客戶信賴的空氣淨化方案",
         "logo_asset": "",
         "brand_color": "",
         "cta_text_color": "",
-        "headline": "<p>Advanced Air Purification <em>Begins with NCCO</em></p>",
-        "subtext": "Advanced air purification technology for healthier homes, safer hospitals, and cleaner workplaces powered by patented NCCO innovation.",
-        "bullet_1": "99.9% purification efficiency",
-        "bullet_2": "Safe for kids, pets, and hospitals",
-        "bullet_3": "Proven by 20+ years of research",
-        "cta_label": "Get a Free Consultation",
+        "headline": "<p>NCCO專利創新技術 <em>引領先進空氣淨化</em></p>",
+        "subtext": "NCCO 氧聚解空氣處理技術是一項突破性的環保創新科技，用於有效應對空氣污染問題。此項專利技術於 2003 年成功研發，並由香港科技大學創業計劃團隊合作開發而成。",
+        "bullet_1": "高效淨化分解力",
+        "bullet_2": "適用於特殊群體及環境",
+        "bullet_3": "經長期科研實踐驗證",
+        "cta_label": "了解更多",
         "cta_url": "/pages/contact-us",
         "card_image_asset": "ncco-hero-card-img.png",
         "background_asset": "",
@@ -239,8 +239,8 @@
         "tl_25"
       ],
       "settings": {
-        "heading": "Trusted by industry leaders for",
-        "heading_highlight": "Quality and Reliability",
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠性",
         "static_grid": false
       }
     },
@@ -251,32 +251,32 @@
           "type": "item",
           "settings": {
             "number": "01",
-            "title": "Founded on Scientific Research",
-            "body": "Backed by Hong Kong University of Science and Technology, our patented NCCO technology is trusted in hospitals, labs, and homes across the globe."
+            "title": "科研立基",
+            "body": "NCCO專利技術依托香港科技大學創業計劃，已在全球醫院、實驗室及家居中被廣泛信賴。"
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
             "number": "02",
-            "title": "Driven by Purpose",
-            "body": "From allergy relief to environmental protection, our mission is to deliver breathable, pollutant-free air for everyone, everywhere."
+            "title": "以使命驅動",
+            "body": "從過敏緩解到環境保護，我們致力為每個人、每個地方，提供可自由呼吸的無污染空氣。"
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
             "number": "03",
-            "title": "Trusted Worldwide",
-            "body": "Deployed in over 200+ institutions, NCCO products are used by government bodies, healthcare providers, and industries with critical air quality needs."
+            "title": "全球信賴",
+            "body": "NCCO產品已在200多間機構部署，被政府機構、醫療服務提供者及各行業廣泛採用。"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
             "number": "04",
-            "title": "Innovation Across Brands",
-            "body": "With five distinct sub-brands, we bring tailored air purification solutions for personal, professional, and industrial spaces."
+            "title": "多元品牌創新",
+            "body": "旗下五個獨立子品牌，為個人、專業及工業空間，提供度身訂造的空氣淨化解決方案。"
           }
         }
       },
@@ -287,10 +287,10 @@
         "item_4"
       ],
       "settings": {
-        "eyebrow": "About Us",
-        "heading": "Pioneering Clean Air for a Healthier World",
-        "subtext": "With decades of research and innovation, NCCO is redefining air purification through science, technology, and global impact.",
-        "cta_label": "Know More About Us",
+        "eyebrow": "關於我們",
+        "heading": "以先進科技，守護全球潔淨空氣",
+        "subtext": "NCCO擁有數十年研究與創新經驗，透過專利技術重新定義空氣淨化，為家居、醫療及工業環境提供更潔淨、更健康的空氣解決方案。",
+        "cta_label": "了解更多",
         "cta_url": "/pages/about-us"
       }
     },
@@ -303,8 +303,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-1.png",
             "eyebrow": "",
-            "title": "Eliminates Harmful Pollutants",
-            "body": "<p>Removes VOCs, allergens, bacteria, and viruses — not just captures them.</p>",
+            "title": "消除有害污染物",
+            "body": "<p>移除揮發性有機化合物、過敏原、細菌及病毒，而非僅僅捕捉。</p>",
             "featured": false,
             "link_label": "",
             "link_url": ""
@@ -316,8 +316,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-2.png",
             "eyebrow": "",
-            "title": "24/7 Continuous Purification",
-            "body": "<p>Unlike traditional purifiers, NCCO technology runs non-stop without harmful by-products.</p>",
+            "title": "全天候持續淨化",
+            "body": "<p>與傳統淨化器不同，NCCO技術持續運作，不產生任何有害副產品。</p>",
             "featured": true,
             "link_label": "",
             "link_url": ""
@@ -329,8 +329,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-3.png",
             "eyebrow": "",
-            "title": "Safe for Pets, Babies & Seniors",
-            "body": "<p>Ozone-free and non-toxic — ideal for sensitive living environments.</p>",
+            "title": "對寵物、嬰兒及長者安全",
+            "body": "<p>無臭氧、無毒——適合敏感生活環境。</p>",
             "featured": false,
             "link_label": "",
             "link_url": ""
@@ -342,8 +342,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-4.png",
             "eyebrow": "",
-            "title": "Reduces Allergic Reactions",
-            "body": "<p>Clinically shown to improve respiratory comfort for asthma and allergy sufferers.</p>",
+            "title": "減少過敏反應",
+            "body": "<p>臨床證實可改善哮喘及過敏患者的呼吸舒適度。</p>",
             "featured": true,
             "link_label": "",
             "link_url": ""
@@ -355,8 +355,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-5.png",
             "eyebrow": "",
-            "title": "Patented Scientific Process",
-            "body": "<p>Developed through decades of research with real-world testing and international certifications.</p>",
+            "title": "經專利認證的科學工藝",
+            "body": "<p>歷經數十年研究，經真實環境測試及國際認證。</p>",
             "featured": false,
             "link_label": "",
             "link_url": ""
@@ -368,8 +368,8 @@
             "icon_emoji": "",
             "icon_asset": "benefit-icon-6.png",
             "eyebrow": "",
-            "title": "Eco-Friendly & Reusable System",
-            "body": "<p>NCCO filters are long-lasting and recyclable, minimising environmental impact.</p>",
+            "title": "環保可重用系統",
+            "body": "<p>NCCO濾芯耐用且可回收，將對環境的影響降至最低。</p>",
             "featured": true,
             "link_label": "",
             "link_url": ""
@@ -385,14 +385,14 @@
         "card_6"
       ],
       "settings": {
-        "eyebrow": "Benefits of Using NCCO",
-        "heading": "Why Choose NCCO for Safer, Cleaner Air",
-        "subtext": "Patented technology trusted worldwide to protect your health and environment.",
+        "eyebrow": "NCCO的核心優勢",
+        "heading": "為何選擇NCCO<br>打造更安全、更潔淨的空氣",
+        "subtext": "經全球信賴的專利技術，保護您的健康與環境。",
         "columns": "3",
         "align": "center",
         "numbered": false,
         "flat": false,
-        "cta_label": "Explore Our Impact",
+        "cta_label": "探索我們的影響力",
         "cta_url": "/pages/ncco",
         "dark": true,
         "split_header": false,
@@ -406,15 +406,15 @@
     "ncco-steps": {
       "type": "ncco-steps",
       "settings": {
-        "eyebrow": "NCCO MEANING",
-        "heading": "Every Letter, Breakthrough. The Technology Behind NCCO",
-        "body": "Each letter in NCCO reflects the scientific thinking that powers our innovation from nanotech structures to safe molecular oxidation. It’s not just a name — it’s our entire process, defined.",
-        "cta_label": "Explore NCCO Technology",
+        "eyebrow": "NCCO的意義",
+        "heading": "每個字母，皆是突破。NCCO背後的技術",
+        "body": "NCCO的每個字母，都反映了驅動我們創新的科學思維——從納米技術結構到安全分子氧化。這不僅是一個名稱，更是我們完整的研究過程。",
+        "cta_label": "探索NCCO技術",
         "cta_url": "/pages/ncco",
-        "body_nano": "The catalytic material is a synthetic mineral featuring nanoscale pores. It is non-toxic and fully reusable.",
-        "body_confined": "The nanoporous structure effectively adsorbs airborne pollutants, thereby reducing their concentration in the air.",
-        "body_catalytic": "The nanopores contain abundant transition metals that efficiently catalyze gaseous pollutants.",
-        "body_oxidation": "Only clean air, water vapor, and CO₂ are released filter lasts up to 12 years."
+        "body_nano": "催化材料是一種具有納米級氣孔的合成礦物，無毒且可完全重複使用。",
+        "body_confined": "納米多孔結構能有效吸附空氣中的污染物，從而降低其在空氣中的濃度。",
+        "body_catalytic": "納米氣孔中含有豐富的過渡金屬，能有效催化分解氣態污染物。",
+        "body_oxidation": "釋放出的僅有潔淨空氣、水蒸氣和二氧化碳——濾芯使用壽命長達12年。"
       }
     },
     "ncco-tech-explainer": {
@@ -423,19 +423,19 @@
         "step_01": {
           "type": "step",
           "settings": {
-            "caption": "Pollutants enter the NCCO channel."
+            "caption": "污染物進入NCCO通道。"
           }
         },
         "step_02": {
           "type": "step",
           "settings": {
-            "caption": "Chemical reaction occurs with active oxygen."
+            "caption": "與活性氧發生化學反應。"
           }
         },
         "step_03": {
           "type": "step",
           "settings": {
-            "caption": "Pollutants are broken down into water molecules and carbon dioxide."
+            "caption": "污染物被分解為水分子和二氧化碳。"
           }
         }
       },
@@ -445,13 +445,13 @@
         "step_03"
       ],
       "settings": {
-        "eyebrow": "HOW IT WORK",
-        "heading": "Capture + Breakdown",
-        "subtext": "Oxygen Polymerization Decomposition Technology",
-        "cta_label": "Explore NCCO Technology",
+        "eyebrow": "工作原理",
+        "heading": "捕捉 + 分解",
+        "subtext": "氧聚解空氣處理技術",
+        "cta_label": "探索NCCO技術",
         "cta_url": "/pages/ncco",
-        "explain_1": "The NCCO layer reacts with active oxygen to break down harmful pollutants into water and carbon dioxide.",
-        "explain_2": "This enables continuous filter regeneration and ensures high-efficiency air purification."
+        "explain_1": "NCCO層與活性氧反應，將有害污染物分解為水和二氧化碳。",
+        "explain_2": "這使濾芯能夠持續再生，確保高效率的空氣淨化。"
       }
     },
     "ncco-faq": {
@@ -460,29 +460,29 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "heading": "Is there any oxygen consumed during the NCCO process?",
-            "answer": "<p>No. The NCCO process is a catalytic reaction — the catalyst facilitates the oxidation of pollutants without being consumed itself. Oxygen acts as the oxidising agent, but the catalyst remains intact for up to 12 years under normal use.</p>"
+            "heading": "NCCO過程中會消耗氧氣嗎？",
+            "answer": "<p>不會。NCCO過程是一種催化反應——催化劑在不被消耗的情況下，促進污染物的氧化。氧氣作為氧化劑，而催化劑在正常使用下可保持完好達12年。</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "heading": "What contaminants can NCCO technology break down?",
-            "answer": "<p>NCCO technology effectively breaks down VOCs (volatile organic compounds), formaldehyde, benzene, toluene, bacteria, viruses, mould spores, and odours at the molecular level — converting them into harmless water vapour and CO₂.</p>"
+            "heading": "NCCO技術能分解哪些污染物？",
+            "answer": "<p>NCCO技術能在分子層面有效分解揮發性有機化合物（VOCs）、甲醛、苯、甲苯、細菌、病毒、黴菌孢子及異味，將其轉化為無害的水蒸氣和二氧化碳。</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "heading": "How long does the NCCO catalyst last?",
-            "answer": "<p>The NCCO catalyst has a lifespan of up to 12 years under normal maintenance conditions. Unlike HEPA filters which require frequent replacement, the catalyst does not degrade during the purification process.</p>"
+            "heading": "NCCO催化劑能使用多久？",
+            "answer": "<p>在正常維護條件下，NCCO催化劑的使用壽命長達12年。與需要頻繁更換的HEPA濾網不同，催化劑在淨化過程中不會降解。</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "heading": "Does NCCO technology produce any harmful by-products?",
-            "answer": "<p>No. The catalytic oxidation process converts pollutants exclusively into water vapour and carbon dioxide — both harmless and naturally occurring. There is no secondary pollution, ozone generation, or toxic residue.</p>"
+            "heading": "NCCO技術會產生任何有害副產品嗎？",
+            "answer": "<p>不會。催化氧化過程僅將污染物轉化為水蒸氣和二氧化碳——兩者均為無害的天然物質。沒有二次污染、臭氧產生或有毒殘留。</p>"
           }
         }
       },
@@ -495,7 +495,7 @@
       "settings": {
         "eyebrow": "",
         "accent_color": "",
-        "heading": "All You Need To Know",
+        "heading": "常見問題解答",
         "bg_image": "ncco-faq-bg.png",
         "three_col": false
       }
@@ -508,7 +508,7 @@
           "settings": {
             "name": "NCCO",
             "logo_asset": "brand-ncco-sm-logo.png",
-            "description": "Our core technology brand powering advanced air purification with nano-catalyst oxidation for long-lasting protection."
+            "description": "我們的核心技術品牌，以納米催化氧化技術驅動先進空氣淨化，提供持久保護。"
           }
         },
         "brand_2": {
@@ -516,7 +516,7 @@
           "settings": {
             "name": "RHT",
             "logo_asset": "brand-rht-logo.png",
-            "description": "A technology-led environmental enterprise, translating patented HKUST innovation into real-world products that improve quality of life."
+            "description": "以技術為主導的環保企業，將香港科技大學的專利創新轉化為改善生活質素的實際產品。"
           }
         },
         "brand_3": {
@@ -524,7 +524,7 @@
           "settings": {
             "name": "B-mola",
             "logo_asset": "brand-bmola-logo.png",
-            "description": "Our consumer electronics line, integrating NCCO tech into stylish, portable, and high-performance devices for homes, cars, and travel."
+            "description": "消費電子產品線，將NCCO技術整合至設計時尚、便攜高效的設備，適用於家居、汽車及旅行。"
           }
         },
         "brand_4": {
@@ -532,7 +532,7 @@
           "settings": {
             "name": "05+",
             "logo_asset": "brand-05plus-logo.png",
-            "description": "Our premium lifestyle brand, offering design-forward air purifiers that blend aesthetics with performance for modern interiors."
+            "description": "高端生活品牌，提供設計前衛的空氣淨化器，將美學與性能融為一體，適合現代室內空間。"
           }
         },
         "brand_5": {
@@ -540,7 +540,7 @@
           "settings": {
             "name": "NCCO-IG",
             "logo_asset": "brand-nccoig-logo.png",
-            "description": "Focused on industrial-grade applications, NCCO-IG delivers powerful purification systems for factories, healthcare, and large-scale operations."
+            "description": "專注於工業級應用，NCCO-IG為工廠、醫療機構及大型設施提供強效淨化系統。"
           }
         }
       },
@@ -552,10 +552,10 @@
         "brand_5"
       ],
       "settings": {
-        "eyebrow": "Our Brands",
-        "heading": "One Technology. Many Solutions.",
-        "subtext": "From home to industry, explore how each of our brands brings NCCO purification to life.",
-        "cta_label": "Explore All Brands",
+        "eyebrow": "我們的品牌",
+        "heading": "一項技術，多元解決方案。",
+        "subtext": "從家居到工業，探索我們各品牌如何將NCCO淨化技術帶入生活。",
+        "cta_label": "探索所有品牌",
         "cta_url": "/pages/brands"
       }
     },
@@ -565,41 +565,41 @@
         "case_1": {
           "type": "case",
           "settings": {
-            "title": "HSBC Data Centre",
+            "title": "匯豐數據中心",
             "image_asset": "case-hsbc-datacenter.png",
-            "excerpt": "Resolved indoor air quality issues caused by high humidity. After installing the purification system, TVOC removal rate reached 93.4%."
+            "excerpt": "解決高濕度引起的室內空氣質量問題。安裝淨化系統後，TVOC去除率達93.4%。"
           }
         },
         "case_2": {
           "type": "case",
           "settings": {
-            "title": "Hong Kong International Airport",
+            "title": "香港國際機場",
             "image_asset": "case-hkia.png",
-            "excerpt": "Nearly 300 NCCO air purifiers installed across 108 public washrooms in the passenger terminal, eliminating odours and reducing operational costs."
+            "excerpt": "在客運大樓108個公共洗手間安裝近300台NCCO空氣淨化器，消除異味，降低運營成本。"
           }
         },
         "case_3": {
           "type": "case",
           "settings": {
-            "title": "Grand Marais Residential",
+            "title": "Grand Marais住宅",
             "image_asset": "case-grand-marais.png",
-            "excerpt": "Henderson Land installed NCCO ceiling purifiers in residential lobbies and clubhouses to remove post-renovation VOCs and improve air quality."
+            "excerpt": "Henderson Land在住宅大堂及會所安裝NCCO天花淨化器，去除裝修後VOCs，改善空氣品質。"
           }
         },
         "case_4": {
           "type": "case",
           "settings": {
-            "title": "HKJC Sha Tin Racecourse",
+            "title": "香港賽馬會沙田馬場",
             "image_asset": "case-hkjc-shatin.png",
-            "excerpt": "NCCO system reduced indoor VOC concentration from 130 ppb to below 50 ppb, far exceeding client expectations for large-scale gatherings."
+            "excerpt": "NCCO系統將室內VOC濃度從130 ppb降至50 ppb以下，大幅超越客戶期望。"
           }
         },
         "case_5": {
           "type": "case",
           "settings": {
-            "title": "HK Alliance Academy International",
+            "title": "香港協同國際學校",
             "image_asset": "case-hk-alliance-academy.png",
-            "excerpt": "NCCO ceiling purifiers installed to remove harmful chemical residues post-renovation. Indoor air quality achieved the HKEPD Good Grade standard."
+            "excerpt": "安裝NCCO天花淨化器去除裝修後化學殘留，室內空氣達到香港環保署「良好」標準。"
           }
         }
       },
@@ -611,22 +611,22 @@
         "case_5"
       ],
       "settings": {
-        "eyebrow": "Proven Results",
-        "heading": "Trusted by Thousands. Recognized Worldwide.",
-        "subtext": "Real people. Real results. Backed by global recognition."
+        "eyebrow": "實證成效",
+        "heading": "數千客戶的信賴，全球的認可。",
+        "subtext": "真實案例，真實成效，獲全球認可。"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "eyebrow": "Get In Touch",
+        "eyebrow": "聯絡我們",
         "accent_color": "",
-        "heading": "We're Here to Help",
-        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
         "email": "info@ncco-tech.com",
         "phone": "(852) 2417 0075",
         "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
-        "submit_label": "SUBMIT"
+        "submit_label": "提交"
       }
     }
   },

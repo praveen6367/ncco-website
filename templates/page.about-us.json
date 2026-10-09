@@ -3,9 +3,9 @@
     "ncco-hero": {
       "type": "ncco-page-banner",
       "settings": {
-        "eyebrow": "Trusted by 500+ institutions worldwide",
-        "headline": "<p>Driving the Future <br><em>of Clean Air</em></p>",
-        "subtext": "NCCO is a global leader in advanced air purification, shaping healthier environments through patented technology and purpose-driven innovation.",
+        "eyebrow": "全球超過500個客戶信賴的空氣解決方案",
+        "headline": "<p>國際專利科技<br><em>領航潔淨空氣的未來</em></p>",
+        "subtext": "NCCO氧聚解空氣處理技術是一項具備國際發明專利的革命性技術，由信山實業與香港科技大學創業計畫成員共同研發。此技術致力於塑造更健康的環境，它能夠將空氣中的有害污染物（如 VOCs、甲醛）徹底分解為水和二氧化碳。",
         "accent_color": "#FECB07",
         "height": 440,
         "background_asset": "aboutusbanner.png"
@@ -218,8 +218,8 @@
         "tl_25"
       ],
       "settings": {
-        "heading": "Trusted by industry leaders for",
-        "heading_highlight": "Quality and Reliability",
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠性",
         "static_grid": false
       }
     },
@@ -234,28 +234,28 @@
           "type": "stat",
           "settings": {
             "number": "10+",
-            "label": "Years of Expertise in Air Purification Technology"
+            "label": "空氣淨化技術專業年資"
           }
         },
         "stat_2": {
           "type": "stat",
           "settings": {
             "number": "99%",
-            "label": "Air Purification Efficiency with NCCO Solutions"
+            "label": "NCCO方案的空氣淨化效率"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
             "number": "500+",
-            "label": "Successful Projects Across Homes, Hospitals & Industries"
+            "label": "家居、醫院及工業的成功項目"
           }
         },
         "stat_4": {
           "type": "stat",
           "settings": {
             "number": "600+",
-            "label": "Global Partners Trust Our Clean Air Innovation"
+            "label": "全球合作夥伴信賴我們的潔淨空氣創新"
           }
         }
       },
@@ -269,9 +269,9 @@
     "ncco-iwt-mission": {
       "type": "ncco-image-with-text",
       "settings": {
-        "eyebrow": "Our Mission & Vision",
-        "heading": "Driven by purpose. Powered by science.",
-        "text": "<p>We're shaping a future where clean air is accessible to everyone through science, sustainability, and innovation.</p><p><strong>OUR MISSION</strong><br>To make clean, healthy air accessible to all by delivering sustainable air purification solutions powered by cutting-edge nano-catalytic technology. We are committed to eliminating indoor air pollution not just filtering it, but breaking it down at the molecular level for safer, long-term protection.</p><p><strong>OUR VISION</strong><br>A world where every space from homes to hospitals, schools to factories is protected by intelligent, science-backed air purification. We envision a future where clean air is not a luxury, but a basic right supported by innovation and responsibility.</p>",
+        "eyebrow": "我們的使命與願景",
+        "heading": "目標驅動，科學賦能。",
+        "text": "<p><strong>我們的使命</strong><br/>透過尖端納米催化技術提供可持續的空氣淨化方案，讓每個人都能呼吸到潔淨健康的空氣。我們致力於消除室內空氣污染——不只是過濾，而是在分子層面將污染物徹底分解，提供更安全、更長效的保護。</p><p><strong>我們的願景</strong><br/>讓每個空間——從家居到醫院、從學校到工廠——都受到智能、科學支撐的空氣淨化系統保護。我們期望實現一個潔淨空氣不再是奢侈品，而是每個人基本權利的未來，以創新與責任為本。</p>",
         "asset": "ncco-about-mission-collage.png",
         "asset_secondary": "",
         "overlay_text": "",
@@ -283,9 +283,9 @@
     "ncco-iwt-science": {
       "type": "ncco-feature-split",
       "settings": {
-        "eyebrow": "Our Story",
-        "heading": "Rooted in Science. Expanding Globally",
-        "body": "<p>Showcase the company's roots, scale, and technology leadership.</p><p>NCCO, short for Nano Confined Catalytic Oxidation, is at the heart of our patented air purification system.</p><p>Founded by leading researchers, we've evolved into a globally recognized brand with five specialized sub-brands, trusted across over 30 countries. Our technology focuses not just on trapping pollutants but breaking them down for good.</p>",
+        "eyebrow": "我們的故事",
+        "heading": "科學為根，走向全球。",
+        "body": "<p>NCCO（氧聚解，Nano Confined Catalytic Oxidation）是我們專利空氣淨化系統的核心技術。</p><p>由頂尖科研專家創立，我們已發展為享譽全球的專業品牌，旗下擁有五個專屬子品牌，深受超過30個國家的信賴。我們的技術不僅是捕捉污染物，而是在分子層面將其徹底分解消除。</p>",
         "dark": false,
         "bg_color": "#6470820A"
       },
@@ -294,32 +294,32 @@
           "type": "feature",
           "settings": {
             "icon_asset": "patendedtech.png",
-            "title": "Patented Technology",
-            "body": "Scientifically developed and patented to break down pollutants at the molecular level for long-term air purification."
+            "title": "國際專利技術",
+            "body": "經科學實證並獲專利認證，能在分子層面分解污染物，實現長效空氣淨化。"
           }
         },
         "feat_2": {
           "type": "feature",
           "settings": {
             "icon_asset": "secondarypollution.png",
-            "title": "No Secondary Pollution",
-            "body": "NCCO purifies air without releasing harmful byproducts, ensuring clean air stays clean safe for all environments."
+            "title": "零二次污染",
+            "body": "NCCO淨化空氣時不會釋放任何有害副產品，確保潔淨空氣持久純淨，適用於各類環境。"
           }
         },
         "feat_3": {
           "type": "feature",
           "settings": {
             "icon_asset": "12year.png",
-            "title": "12-Year Filter Life",
-            "body": "Durable filters designed for longevity and efficiency, reducing waste while maintaining peak performance for over a decade."
+            "title": "12年長效濾芯",
+            "body": "耐用濾芯專為長效高效設計，在維持十多年卓越性能的同時，大幅減少耗材浪費。"
           }
         },
         "feat_4": {
           "type": "feature",
           "settings": {
             "icon_asset": "multibrand.png",
-            "title": "Multi-Brand System",
-            "body": "One core technology, five global sub-brands trusted in hospitals, homes, factories, and public spaces in 30+ countries."
+            "title": "多品牌體系",
+            "body": "一項核心技術，五個全球子品牌，深獲超過30個國家的醫院、家居、工廠及公共場所信賴。"
           }
         }
       },
@@ -339,20 +339,20 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "eyebrow": "VISION",
-            "title": "Where We're Headed",
-            "point_1": "At RHT, we are harnessing the power of our unique NCCO (Nano-Confined Catalytic Oxidation) technology to redefine air purification.",
-            "point_2": "Our systems are not just effective and long-lasting, they are also energy-saving, sustainable, and eco-friendly.",
-            "point_3": "We are on a mission to make the world a better place to breathe."
+            "eyebrow": "願景",
+            "title": "我們的未來方向",
+            "point_1": "在RHT，我們善用獨創的NCCO（氧聚解）技術優勢，重新定義空氣淨化標準。",
+            "point_2": "我們的系統不僅高效且長效耐用，更兼具節能、可持續發展與環保效益。",
+            "point_3": "我們的使命是讓世界成為更安心呼吸的美好環境。"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "eyebrow": "MISSION",
-            "title": "What Drives Us",
-            "point_1": "RHT stands for Regeneration, Hope, and Trust. Through relentless innovation and dedication, we are raising the bar in air purification.",
-            "point_2": "Our passion for engineering and NCCO technology drives us to deliver reliable, well-designed, and technically superior products and services."
+            "eyebrow": "使命",
+            "title": "驅動我們的力量",
+            "point_1": "RHT代表再生（Regeneration）、希望（Hope）與信任（Trust）。透過堅持不懈的創新與專注，我們不斷提升空氣淨化的業界標竿。",
+            "point_2": "我們對工程技術與NCCO專利的熱忱，推動我們提供可靠、設計卓越且技術領先的產品與服務。"
           }
         }
       },
@@ -364,51 +364,51 @@
     "ncco-faq": {
       "type": "ncco-faq",
       "settings": {
-        "eyebrow": "YOU ASK",
-        "heading": "Frequently Asked Questions",
+        "eyebrow": "常見問題",
+        "heading": "常見問題解答",
         "bg_image": ""
       },
       "blocks": {
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "heading": "What does NCCO stand for?",
-            "answer": "<p>NCCO stands for Nano-Confined Catalytic Oxidation a patented air purification technology that breaks down harmful gases, VOCs, viruses, and bacteria at the molecular level.</p>"
+            "heading": "什麼是NCCO技術？",
+            "answer": "<p>NCCO代表氧聚解（Nano Confined Catalytic Oxidation）。這是一項獲得專利的空氣淨化技術，能在分子層面將有害污染物——包括揮發性有機物、甲醛、細菌及病毒——分解為無害的水和二氧化碳。</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "heading": "How is NCCO different from traditional HEPA or carbon filters?",
-            "answer": "<p>Unlike traditional filters that only trap pollutants, NCCO breaks them down into harmless water and carbon dioxide, preventing filter saturation and secondary pollution.</p>"
+            "heading": "NCCO與傳統HEPA或活性炭濾網有何不同？",
+            "answer": "<p>傳統濾網僅能吸附或攔截污染物，而NCCO技術則能在分子層面將其分解為無害的水和二氧化碳，從根本上防止濾網飽和與二次污染。</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "heading": "Is NCCO safe for use around children and pets?",
-            "answer": "<p>Yes, NCCO is safe for continuous operation around families, children, and pets without producing harmful secondary byproducts.</p>"
+            "heading": "NCCO對兒童和寵物安全嗎？",
+            "answer": "<p>安全。NCCO技術在運作過程中不會產生任何有害副產品，適合全天候持續運行，為家庭、兒童及寵物提供安全的呼吸環境。</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "heading": "Where is NCCO technology currently used?",
-            "answer": "<p>NCCO is widely deployed across hospitals, medical facilities, airports, office buildings, and residential homes in over 30 countries.</p>"
+            "heading": "NCCO技術目前應用於哪些領域？",
+            "answer": "<p>NCCO技術已廣泛應用於全球超過30個國家的醫院、醫療機構、機場、商業辦公大樓及住宅家居。</p>"
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "heading": "Do NCCO filters need frequent replacement?",
-            "answer": "<p>The NCCO catalyst is durable and designed for longevity, lasting up to 12 years under normal maintenance conditions.</p>"
+            "heading": "NCCO濾芯需要頻繁更換嗎？",
+            "answer": "<p>NCCO催化劑極為耐用且專為長效設計，在正常保養條件下使用壽命長達12年。</p>"
           }
         },
         "faq_6": {
           "type": "faq_item",
           "settings": {
-            "heading": "Can I use NCCO in small spaces like bedrooms or vehicles?",
-            "answer": "<p>Yes, NCCO purifiers are available in compact and desktop formats specifically designed for bedrooms, personal workstations, and vehicles.</p>"
+            "heading": "我可以在臥室或車廂等小型空間使用NCCO嗎？",
+            "answer": "<p>可以。NCCO空氣淨化器備有便攜及桌面款式，專為臥室、個人工作空間及車廂環境設計。</p>"
           }
         }
       },
@@ -424,13 +424,13 @@
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "eyebrow": "Get In Touch",
-        "heading": "We're Here to Help",
-        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
         "email": "info@ncco-tech.com",
         "phone": "(852) 2417 0075",
         "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
-        "submit_label": "SUBMIT"
+        "submit_label": "提交"
       }
     }
   },
