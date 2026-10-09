@@ -1,6 +1,10 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 {%- assign nav_menu = linklists[section.settings.menu] -%}
+{%- assign root_path = routes.root_url -%}
+{%- if root_path == '/' -%}
+  {%- assign root_path = '' -%}
+{%- endif -%}
 
 <header class="ncco-hdr" id="ncco-hdr">
   <div class="ncco-hdr__inner">
@@ -11,7 +15,7 @@
     </a>
 
     <!-- Desktop nav -->
-    <nav class="ncco-hdr__nav" aria-label="Main navigation">
+    <nav class="ncco-hdr__nav" aria-label="{{ 'ncco.header.main_navigation' | t }}">
       {%- for link in nav_menu.links -%}
         {%- assign title_down = link.title | downcase -%}
         {%- assign url_down = link.url | downcase -%}
@@ -28,7 +32,7 @@
         {%- if link.links.size > 0 or is_brand_menu or is_impact_menu -%}
           <div class="ncco-hdr__item ncco-hdr__item--drop">
             {%- if is_brand_menu -%}
-              <a href="{{ link.url | default: '/pages/our-brands' }}" class="ncco-hdr__link" aria-haspopup="true">
+              <a href="{{ link.url | default: root_path | append: '/pages/our-brands' }}" class="ncco-hdr__link" aria-haspopup="true">
                 {{- link.title -}}
                 <svg class="ncco-hdr__chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -46,50 +50,50 @@
             {%- if is_brand_menu -%}
             <!-- Mega: Our Brands -->
             <div class="ncco-hdr__dropdown ncco-drop--brands" role="menu">
-              <a href="/pages/our-brands" class="ncco-drop-brands__hero">
+              <a href="{{ root_path }}/pages/our-brands" class="ncco-drop-brands__hero">
                 <div class="ncco-drop-brands__logo-wrap">
                   <img src="{{ 'nccomenu.png' | asset_url }}" alt="NCCO" class="ncco-drop-brands__logo" loading="lazy">
                 </div>
                 <div class="ncco-drop-brands__text">
                   <p class="ncco-drop-brands__name">NCCO</p>
-                  <p class="ncco-drop-brands__desc">Core technology powering all air purification.</p>
+                  <p class="ncco-drop-brands__desc">{{ 'ncco.header.brands.ncco_desc' | t }}</p>
                 </div>
               </a>
               <div class="ncco-drop-brands__grid">
-                <a href="/pages/rht" class="ncco-drop-brands__card ncco-drop-brands__card--rht">
+                <a href="{{ root_path }}/pages/rht" class="ncco-drop-brands__card ncco-drop-brands__card--rht">
                   <div class="ncco-drop-brands__logo-wrap">
                     <img src="{{ 'rhtmenu.png' | asset_url }}" alt="RHT" class="ncco-drop-brands__logo" loading="lazy">
                   </div>
                   <div class="ncco-drop-brands__text">
                     <p class="ncco-drop-brands__name">RHT</p>
-                    <p class="ncco-drop-brands__desc">Industrial air solutions for large facilities.</p>
+                    <p class="ncco-drop-brands__desc">{{ 'ncco.header.brands.rht_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/b-mola" class="ncco-drop-brands__card ncco-drop-brands__card--bmola">
+                <a href="{{ root_path }}/pages/b-mola" class="ncco-drop-brands__card ncco-drop-brands__card--bmola">
                   <div class="ncco-drop-brands__logo-wrap">
                     <img src="{{ 'b-mollamenu.png' | asset_url }}" alt="b-MOLA" class="ncco-drop-brands__logo" loading="lazy">
                   </div>
                   <div class="ncco-drop-brands__text">
                     <p class="ncco-drop-brands__name">b-MOLA</p>
-                    <p class="ncco-drop-brands__desc">Smart purifiers for home and personal use.</p>
+                    <p class="ncco-drop-brands__desc">{{ 'ncco.header.brands.bmola_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/ncco-ig" class="ncco-drop-brands__card ncco-drop-brands__card--nccoig">
+                <a href="{{ root_path }}/pages/ncco-ig" class="ncco-drop-brands__card ncco-drop-brands__card--nccoig">
                   <div class="ncco-drop-brands__logo-wrap">
                     <img src="{{ 'nccoigmenu.png' | asset_url }}" alt="NCCO-IG" class="ncco-drop-brands__logo" loading="lazy">
                   </div>
                   <div class="ncco-drop-brands__text">
                     <p class="ncco-drop-brands__name">NCCO-IG</p>
-                    <p class="ncco-drop-brands__desc">Sterilization systems for clinical environments.</p>
+                    <p class="ncco-drop-brands__desc">{{ 'ncco.header.brands.nccoig_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/05" class="ncco-drop-brands__card ncco-drop-brands__card--05">
+                <a href="{{ root_path }}/pages/05" class="ncco-drop-brands__card ncco-drop-brands__card--05">
                   <div class="ncco-drop-brands__logo-wrap">
                     <img src="{{ 'o5menu.png' | asset_url }}" alt="05+" class="ncco-drop-brands__logo" loading="lazy">
                   </div>
                   <div class="ncco-drop-brands__text">
                     <p class="ncco-drop-brands__name">05+</p>
-                    <p class="ncco-drop-brands__desc">Lifestyle purifiers with elegant design.</p>
+                    <p class="ncco-drop-brands__desc">{{ 'ncco.header.brands.o5_desc' | t }}</p>
                   </div>
                 </a>
               </div>
@@ -99,32 +103,32 @@
             <!-- Mega: Our Impact -->
             <div class="ncco-hdr__dropdown ncco-drop--impact" role="menu">
               <div class="ncco-drop-impact__grid">
-                <a href="/pages/residential" class="ncco-drop-impact__card ncco-drop-impact__card--res">
+                <a href="{{ root_path }}/pages/residential" class="ncco-drop-impact__card ncco-drop-impact__card--res">
                   <img src="{{ 'residentialmenu.png' | asset_url }}" alt="Residential Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
-                    <p class="ncco-drop-impact__name">Residential Use</p>
-                    <p class="ncco-drop-impact__desc">Best seller in Hong Kong.</p>
+                    <p class="ncco-drop-impact__name">{{ 'ncco.header.impact.residential_title' | t }}</p>
+                    <p class="ncco-drop-impact__desc">{{ 'ncco.header.impact.residential_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/medical" class="ncco-drop-impact__card ncco-drop-impact__card--med">
+                <a href="{{ root_path }}/pages/medical" class="ncco-drop-impact__card ncco-drop-impact__card--med">
                   <img src="{{ 'medicalmenu.png' | asset_url }}" alt="Medical Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
-                    <p class="ncco-drop-impact__name">Medical Use</p>
-                    <p class="ncco-drop-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                    <p class="ncco-drop-impact__name">{{ 'ncco.header.impact.medical_title' | t }}</p>
+                    <p class="ncco-drop-impact__desc">{{ 'ncco.header.impact.medical_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/industrial" class="ncco-drop-impact__card ncco-drop-impact__card--ind">
+                <a href="{{ root_path }}/pages/industrial" class="ncco-drop-impact__card ncco-drop-impact__card--ind">
                   <img src="{{ 'industrialmenu.png' | asset_url }}" alt="Industrial Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
-                    <p class="ncco-drop-impact__name">Industrial Use</p>
-                    <p class="ncco-drop-impact__desc">Deodorize waste stations, Filter exhaust gases for factories.</p>
+                    <p class="ncco-drop-impact__name">{{ 'ncco.header.impact.industrial_title' | t }}</p>
+                    <p class="ncco-drop-impact__desc">{{ 'ncco.header.impact.industrial_desc' | t }}</p>
                   </div>
                 </a>
-                <a href="/pages/commercial" class="ncco-drop-impact__card ncco-drop-impact__card--com">
+                <a href="{{ root_path }}/pages/commercial" class="ncco-drop-impact__card ncco-drop-impact__card--com">
                   <img src="{{ 'commercialmenu.png' | asset_url }}" alt="Commercial Use" class="ncco-drop-impact__img" loading="lazy">
                   <div class="ncco-drop-impact__text">
-                    <p class="ncco-drop-impact__name">Commercial Use</p>
-                    <p class="ncco-drop-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                    <p class="ncco-drop-impact__name">{{ 'ncco.header.impact.commercial_title' | t }}</p>
+                    <p class="ncco-drop-impact__desc">{{ 'ncco.header.impact.commercial_desc' | t }}</p>
                   </div>
                 </a>
               </div>
@@ -185,7 +189,7 @@
       </div>
 
       {%- if section.settings.cta_label != blank -%}
-        <a href="{{ section.settings.cta_url | default: '/pages/contact-us' }}" class="ncco-hdr__cta">
+        <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact-us{% endif %}" class="ncco-hdr__cta">
           <span>{{ section.settings.cta_label }}</span>
           <span class="ncco-hdr__cta-icon" aria-hidden="true">
             <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,7 +200,7 @@
         </a>
       {%- endif -%}
 
-      <button class="ncco-hdr__hamburger" id="ncco-hdr-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="ncco-mobile-nav">
+      <button class="ncco-hdr__hamburger" id="ncco-hdr-toggle" aria-label="{{ 'ncco.header.open_menu' | t }}" aria-expanded="false" aria-controls="ncco-mobile-nav">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="40" height="40" rx="20" fill="#003DA5"/>
           <path d="M12.5 20H27.5M12.5 15H27.5M17.5 25H27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -212,7 +216,7 @@
     <a href="{{ routes.root_url }}">
       <img src="{{ 'newlogo.png' | asset_url }}" alt="{{ shop.name }}" class="ncco-mob-nav__logo" width="99" height="54">
     </a>
-    <button class="ncco-mob-nav__close" id="ncco-mob-close" aria-label="Close menu">
+    <button class="ncco-mob-nav__close" id="ncco-mob-close" aria-label="{{ 'ncco.header.close_menu' | t }}">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M15 5L5 15M5 5L15 15" stroke="#647082" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -243,49 +247,49 @@
           </summary>
           <div class="ncco-mob-nav__group-body">
             <div class="ncco-mob-card">
-              <a href="/pages/our-brands" class="ncco-mob-brand">
+              <a href="{{ root_path }}/pages/our-brands" class="ncco-mob-brand">
                 <div class="ncco-mob-brand__logo-wrap">
                   <img src="{{ 'nccomenu.png' | asset_url }}" alt="NCCO" class="ncco-mob-brand__logo" loading="lazy">
                 </div>
                 <div class="ncco-mob-brand__text">
                   <p class="ncco-mob-brand__name">NCCO</p>
-                  <p class="ncco-mob-brand__desc">Core technology powering all air purification.</p>
+                  <p class="ncco-mob-brand__desc">{{ 'ncco.header.brands.ncco_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/rht" class="ncco-mob-brand">
+              <a href="{{ root_path }}/pages/rht" class="ncco-mob-brand">
                 <div class="ncco-mob-brand__logo-wrap">
                   <img src="{{ 'rhtmenu.png' | asset_url }}" alt="RHT" class="ncco-mob-brand__logo" loading="lazy">
                 </div>
                 <div class="ncco-mob-brand__text">
                   <p class="ncco-mob-brand__name">RHT</p>
-                  <p class="ncco-mob-brand__desc">Industrial air solutions for large facilities.</p>
+                  <p class="ncco-mob-brand__desc">{{ 'ncco.header.brands.rht_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/b-mola" class="ncco-mob-brand">
+              <a href="{{ root_path }}/pages/b-mola" class="ncco-mob-brand">
                 <div class="ncco-mob-brand__logo-wrap">
                   <img src="{{ 'b-mollamenu.png' | asset_url }}" alt="b-MOLA" class="ncco-mob-brand__logo" loading="lazy">
                 </div>
                 <div class="ncco-mob-brand__text">
                   <p class="ncco-mob-brand__name">b-MOLA</p>
-                  <p class="ncco-mob-brand__desc">Smart purifiers for home and personal use.</p>
+                  <p class="ncco-mob-brand__desc">{{ 'ncco.header.brands.bmola_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/ncco-ig" class="ncco-mob-brand">
+              <a href="{{ root_path }}/pages/ncco-ig" class="ncco-mob-brand">
                 <div class="ncco-mob-brand__logo-wrap">
                   <img src="{{ 'nccoigmenu.png' | asset_url }}" alt="NCCO-IG" class="ncco-mob-brand__logo" loading="lazy">
                 </div>
                 <div class="ncco-mob-brand__text">
                   <p class="ncco-mob-brand__name">NCCO-IG</p>
-                  <p class="ncco-mob-brand__desc">Sterilization systems for clinical environments.</p>
+                  <p class="ncco-mob-brand__desc">{{ 'ncco.header.brands.nccoig_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/05" class="ncco-mob-brand">
+              <a href="{{ root_path }}/pages/05" class="ncco-mob-brand">
                 <div class="ncco-mob-brand__logo-wrap">
                   <img src="{{ 'o5menu.png' | asset_url }}" alt="05+" class="ncco-mob-brand__logo" loading="lazy">
                 </div>
                 <div class="ncco-mob-brand__text">
                   <p class="ncco-mob-brand__name">05+</p>
-                  <p class="ncco-mob-brand__desc">Lifestyle purifiers with elegant design.</p>
+                  <p class="ncco-mob-brand__desc">{{ 'ncco.header.brands.o5_desc' | t }}</p>
                 </div>
               </a>
             </div>
@@ -302,32 +306,32 @@
           </summary>
           <div class="ncco-mob-nav__group-body">
             <div class="ncco-mob-card">
-              <a href="/pages/residential" class="ncco-mob-impact">
+              <a href="{{ root_path }}/pages/residential" class="ncco-mob-impact">
                 <img src="{{ 'residentialmenu.png' | asset_url }}" alt="Residential Use" class="ncco-mob-impact__img" loading="lazy">
                 <div class="ncco-mob-impact__text">
-                  <p class="ncco-mob-impact__name">Residential Use</p>
-                  <p class="ncco-mob-impact__desc">Best seller in Hong Kong.</p>
+                  <p class="ncco-mob-impact__name">{{ 'ncco.header.impact.residential_title' | t }}</p>
+                  <p class="ncco-mob-impact__desc">{{ 'ncco.header.impact.residential_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/medical" class="ncco-mob-impact">
+              <a href="{{ root_path }}/pages/medical" class="ncco-mob-impact">
                 <img src="{{ 'medicalmenu.png' | asset_url }}" alt="Medical Use" class="ncco-mob-impact__img" loading="lazy">
                 <div class="ncco-mob-impact__text">
-                  <p class="ncco-mob-impact__name">Medical Use</p>
-                  <p class="ncco-mob-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                  <p class="ncco-mob-impact__name">{{ 'ncco.header.impact.medical_title' | t }}</p>
+                  <p class="ncco-mob-impact__desc">{{ 'ncco.header.impact.medical_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/industrial" class="ncco-mob-impact">
+              <a href="{{ root_path }}/pages/industrial" class="ncco-mob-impact">
                 <img src="{{ 'industrialmenu.png' | asset_url }}" alt="Industrial Use" class="ncco-mob-impact__img" loading="lazy">
                 <div class="ncco-mob-impact__text">
-                  <p class="ncco-mob-impact__name">Industrial Use</p>
-                  <p class="ncco-mob-impact__desc">Deodorize waste stations, Filter exhaust gases for factories.</p>
+                  <p class="ncco-mob-impact__name">{{ 'ncco.header.impact.industrial_title' | t }}</p>
+                  <p class="ncco-mob-impact__desc">{{ 'ncco.header.impact.industrial_desc' | t }}</p>
                 </div>
               </a>
-              <a href="/pages/commercial" class="ncco-mob-impact">
+              <a href="{{ root_path }}/pages/commercial" class="ncco-mob-impact">
                 <img src="{{ 'commercialmenu.png' | asset_url }}" alt="Commercial Use" class="ncco-mob-impact__img" loading="lazy">
                 <div class="ncco-mob-impact__text">
-                  <p class="ncco-mob-impact__name">Commercial Use</p>
-                  <p class="ncco-mob-impact__desc">Provide air purification systems to 300 hospitals.</p>
+                  <p class="ncco-mob-impact__name">{{ 'ncco.header.impact.commercial_title' | t }}</p>
+                  <p class="ncco-mob-impact__desc">{{ 'ncco.header.impact.commercial_desc' | t }}</p>
                 </div>
               </a>
             </div>
@@ -356,8 +360,8 @@
   </div>
 
   <div class="ncco-mob-nav__foot">
-    <a href="{{ section.settings.cta_url | default: '/pages/contact-us' }}" class="ncco-mob-nav__cta">
-      <span>{{ section.settings.cta_label | default: 'CONTACT US' }}</span>
+    <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact-us{% endif %}" class="ncco-mob-nav__cta">
+      <span>{{ section.settings.cta_label | default: ('ncco.header.contact_us' | t) }}</span>
       <span class="ncco-mob-nav__cta-icon" aria-hidden="true">
         <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="19" cy="19" r="19" fill="#FECB07"/>

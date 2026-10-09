@@ -537,5 +537,41 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "ncco": {
+    "header": {
+      "main_navigation": "Main navigation",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu",
+      "contact_us": "CONTACT US",
+      "brands": {
+        "ncco_desc": "Core technology powering all air purification.",
+        "rht_desc": "Industrial air solutions for large facilities.",
+        "bmola_desc": "Smart purifiers for home and personal use.",
+        "nccoig_desc": "Sterilization systems for clinical environments.",
+        "o5_desc": "Lifestyle purifiers with elegant design."
+      },
+      "impact": {
+        "residential_title": "Residential Use",
+        "residential_desc": "Best seller in Hong Kong.",
+        "medical_title": "Medical Use",
+        "medical_desc": "Provide air purification systems to 300 hospitals.",
+        "industrial_title": "Industrial Use",
+        "industrial_desc": "Deodorize waste stations, Filter exhaust gases for factories.",
+        "commercial_title": "Commercial Use",
+        "commercial_desc": "Provide air purification systems to 300 hospitals."
+      }
+    },
+    "footer": {
+      "quick_links": "QUICK LINKS",
+      "follow_us": "FOLLOW US",
+      "our_brands": "OUR BRANDS",
+      "tagline_default_html": "Pioneering clean air technology through advanced nano-catalyst solutions.<br>Trusted worldwide for safe, sustainable, and effective air purification.",
+      "copyright": "© 2025 NCCO. All rights reserved.",
+      "social_instagram": "Instagram",
+      "social_twitter": "X / Twitter",
+      "social_linkedin": "LinkedIn",
+      "social_facebook": "Facebook"
+    }
   }
 }
