@@ -23,11 +23,13 @@
               {% assign link_url = section.settings[url_key] %}
               {% if link_url == '/' %}
                 {% assign link_url = routes.root_url %}
-              {% elsif link_url != blank and link_url contains '://' == false and link_url contains '#' == false %}
-                {% assign first_char = link_url | slice: 0 %}
-                {% if first_char == '/' %}
-                  {% assign link_url = root_path | append: link_url %}
-                {% endif %}
+              {% elsif link_url != blank %}
+                {% unless link_url contains '://' or link_url contains '#' %}
+                  {% assign first_char = link_url | slice: 0 %}
+                  {% if first_char == '/' %}
+                    {% assign link_url = root_path | append: link_url %}
+                  {% endif %}
+                {% endunless %}
               {% endif %}
               <li><a href="{{ link_url }}">{{ section.settings[label_key] }}</a></li>
             {% endif %}
@@ -97,11 +99,13 @@
               {% assign link_url = section.settings[url_key] %}
               {% if link_url == '/' %}
                 {% assign link_url = routes.root_url %}
-              {% elsif link_url != blank and link_url contains '://' == false and link_url contains '#' == false %}
-                {% assign first_char = link_url | slice: 0 %}
-                {% if first_char == '/' %}
-                  {% assign link_url = root_path | append: link_url %}
-                {% endif %}
+              {% elsif link_url != blank %}
+                {% unless link_url contains '://' or link_url contains '#' %}
+                  {% assign first_char = link_url | slice: 0 %}
+                  {% if first_char == '/' %}
+                    {% assign link_url = root_path | append: link_url %}
+                  {% endif %}
+                {% endunless %}
               {% endif %}
               <li><a href="{{ link_url }}">{{ section.settings[label_key] }}</a></li>
             {% endif %}

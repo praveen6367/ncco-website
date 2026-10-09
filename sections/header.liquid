@@ -361,7 +361,8 @@
 
   <div class="ncco-mob-nav__foot">
     <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact-us{% endif %}" class="ncco-mob-nav__cta">
-      <span>{{ section.settings.cta_label | default: ('ncco.header.contact_us' | t) }}</span>
+      {%- assign default_cta = 'ncco.header.contact_us' | t -%}
+      <span>{{ section.settings.cta_label | default: default_cta }}</span>
       <span class="ncco-mob-nav__cta-icon" aria-hidden="true">
         <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="19" cy="19" r="19" fill="#FECB07"/>
