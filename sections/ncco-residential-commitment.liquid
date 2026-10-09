@@ -1,0 +1,182 @@
+<section class="ncco-rescommit">
+  <div class="ncco-rescommit__inner">
+    <div class="ncco-rescommit__collage">
+      <div class="ncco-rescommit__row ncco-rescommit__row--1">
+        {%- if section.settings.image_1 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--narrow">
+            <img src="{{ section.settings.image_1 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+        {%- if section.settings.image_2 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--wide">
+            <img src="{{ section.settings.image_2 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="ncco-rescommit__row ncco-rescommit__row--2">
+        {%- if section.settings.image_3 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--narrow">
+            <img src="{{ section.settings.image_3 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+        {%- if section.settings.stat_number != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--narrow ncco-rescommit__stat">
+            <p class="ncco-rescommit__stat-number">{{ section.settings.stat_number }}</p>
+            {%- if section.settings.stat_label != blank -%}
+              <p class="ncco-rescommit__stat-label">{{ section.settings.stat_label }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.image_4 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--narrow">
+            <img src="{{ section.settings.image_4 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="ncco-rescommit__row ncco-rescommit__row--3">
+        {%- if section.settings.image_5 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--wide">
+            <img src="{{ section.settings.image_5 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+        {%- if section.settings.image_6 != blank -%}
+          <div class="ncco-rescommit__cell ncco-rescommit__cell--narrow">
+            <img src="{{ section.settings.image_6 | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="ncco-rescommit__content">
+      <div class="ncco-rescommit__top">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="ncco-rescommit__eyebrow-wrap">
+            <span class="ncco-rescommit__eyebrow-bar"></span>
+            <p class="ncco-rescommit__eyebrow-text">{{ section.settings.eyebrow }}</p>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ncco-rescommit__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <div class="ncco-rescommit__body">{{ section.settings.body }}</div>
+        {%- endif -%}
+      </div>
+      <div class="ncco-rescommit__points">
+        {%- if section.settings.point_1_title != blank -%}
+          <div class="ncco-rescommit__point">
+            <p class="ncco-rescommit__point-title">{{ section.settings.point_1_title }}</p>
+            <div class="ncco-rescommit__point-body">{{ section.settings.point_1_body }}</div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.point_2_title != blank -%}
+          <div class="ncco-rescommit__point">
+            <p class="ncco-rescommit__point-title">{{ section.settings.point_2_title }}</p>
+            <div class="ncco-rescommit__point-body">{{ section.settings.point_2_body }}</div>
+          </div>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="ncco-rescommit__cta">
+          <span>{{ section.settings.cta_label }}</span>
+          <span class="ncco-rescommit__cta-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="#081D3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+.ncco-rescommit{ padding:120px clamp(24px,12.5vw,240px); background:#fff; box-sizing:border-box; }
+.ncco-rescommit__inner{ display:grid; grid-template-columns:minmax(0,460px) 1fr; gap:100px; align-items:center; }
+
+/* ---- Collage ---- */
+.ncco-rescommit__collage{ display:flex; flex-direction:column; gap:16px; }
+.ncco-rescommit__row{ display:flex; gap:16px; }
+.ncco-rescommit__row--2 .ncco-rescommit__cell{ flex:1 1 0; }
+.ncco-rescommit__cell{ border-radius:20px; overflow:hidden; aspect-ratio:1/1; }
+.ncco-rescommit__row--1 .ncco-rescommit__cell,
+.ncco-rescommit__row--3 .ncco-rescommit__cell{ aspect-ratio:auto; height:clamp(120px,14.5vw,180px); }
+.ncco-rescommit__cell--narrow{ flex:1 1 0; min-width:0; }
+.ncco-rescommit__cell--wide{ flex:2 1 0; min-width:0; }
+.ncco-rescommit__cell img{ display:block; width:100%; height:100%; object-fit:cover; }
+.ncco-rescommit__stat{
+  background:#fff; border:1px solid rgba(100,112,130,0.12); box-shadow:0 16px 48px rgba(8,29,58,0.08);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px;
+  padding:16px; box-sizing:border-box;
+}
+.ncco-rescommit__stat-number{ margin:0; font-family:'Geist',sans-serif; font-weight:600; font-size:clamp(28px,3.5vw,40px); line-height:1; letter-spacing:-1.6px; color:#081D3A; }
+.ncco-rescommit__stat-label{ margin:0; font-family:'Geist',sans-serif; font-size:13px; line-height:1.3; letter-spacing:-0.26px; color:#647082; }
+
+/* ---- Content ---- */
+.ncco-rescommit__content{ display:flex; flex-direction:column; gap:70px; }
+.ncco-rescommit__top{ display:flex; flex-direction:column; gap:40px; }
+
+.ncco-rescommit__eyebrow-wrap{ display:flex; flex-direction:column; gap:8px; }
+.ncco-rescommit__eyebrow-bar{ width:28px; height:2px; background:#FECB07; display:block; }
+.ncco-rescommit__eyebrow-text{ margin:0; font-family:'Geist',sans-serif; font-size:16px; font-weight:500; letter-spacing:-0.32px; text-transform:uppercase; color:#647082; }
+
+.ncco-rescommit__heading{ margin:0; font-family:'Geist',sans-serif; font-weight:500; font-size:48px; line-height:61px; letter-spacing:-2px; color:#081D3A; }
+.ncco-rescommit__body{ font-family:'Geist',sans-serif; font-size:18px; font-weight:400; line-height:1.55; letter-spacing:-0.36px; color:#647082; }
+.ncco-rescommit__body p{ margin:0; }
+
+.ncco-rescommit__points{ display:flex; flex-direction:column; gap:38px; }
+.ncco-rescommit__point-title{ margin:0 0 20px; font-family:'Geist',sans-serif; font-weight:500; font-size:18px; letter-spacing:-0.4px; text-transform:uppercase; color:#081D3A; }
+.ncco-rescommit__point-body{ font-family:'Geist',sans-serif; font-size:15px; font-weight:400; line-height:1.5; letter-spacing:-0.3px; color:#647082; }
+.ncco-rescommit__point-body p{ margin:0; }
+
+.ncco-rescommit__cta{
+  align-self:flex-start; display:inline-flex; align-items:center; gap:24px;
+  background:#003DA5; color:#fff; padding:8px 8px 8px 28px; border-radius:78px;
+  font-family:'Geist',sans-serif; font-size:16px; font-weight:500; text-transform:uppercase; letter-spacing:-0.32px;
+  text-decoration:none; box-shadow:0 8px 14px rgba(0,61,165,0.16); transition:filter .2s ease,transform .2s ease;
+}
+.ncco-rescommit__cta:hover{ filter:brightness(.95); color:#fff; transform:translateY(-1px); }
+.ncco-rescommit__cta-icon{ width:38px; height:38px; min-width:38px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#FECB07; }
+
+@media(max-width:1100px){
+  .ncco-rescommit__inner{ grid-template-columns:1fr; gap:48px; }
+  .ncco-rescommit__content{ gap:48px; }
+  .ncco-rescommit__collage{ max-width:460px; margin:0 auto; }
+}
+@media(max-width:600px){
+  .ncco-rescommit{ padding:64px 20px; }
+  .ncco-rescommit__heading{ font-size:30px; line-height:1.2; letter-spacing:-1px; }
+  .ncco-rescommit__body{ font-size:16px; }
+  .ncco-rescommit__top{ gap:28px; }
+  .ncco-rescommit__content{ gap:40px; }
+  .ncco-rescommit__row--1 .ncco-rescommit__cell,
+  .ncco-rescommit__row--3 .ncco-rescommit__cell{ height:100px; }
+  .ncco-rescommit__stat-number{ font-size:26px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "NCCO Home Commitment",
+  "tag": "section",
+  "settings": [
+    {"type": "header", "content": "Collage images"},
+    {"type": "text", "id": "image_1", "label": "Image 1 (row1, narrow)", "default": "ncco-res-collage-1.jpg"},
+    {"type": "text", "id": "image_2", "label": "Image 2 (row1, wide)", "default": "ncco-res-collage-2.jpg"},
+    {"type": "text", "id": "image_3", "label": "Image 3 (row2, narrow)", "default": "ncco-res-collage-3.jpg"},
+    {"type": "text", "id": "image_4", "label": "Image 4 (row2, narrow)", "default": "ncco-res-collage-4.jpg"},
+    {"type": "text", "id": "image_5", "label": "Image 5 (row3, wide)", "default": "ncco-res-collage-5.jpg"},
+    {"type": "text", "id": "image_6", "label": "Image 6 (row3, narrow)", "default": "ncco-res-collage-6.jpg"},
+    {"type": "text", "id": "stat_number", "label": "Stat number", "default": "99%"},
+    {"type": "text", "id": "stat_label", "label": "Stat label", "default": "Air Purification Efficiency"},
+    {"type": "header", "content": "Content"},
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "OUR COMMITMENT TO HOMES"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Cleaner Air, Trusted by Hong Kong Homes"},
+    {"type": "richtext", "id": "body", "label": "Body text"},
+    {"type": "text", "id": "point_1_title", "label": "Point 1 title", "default": "WHY IT MATTERS"},
+    {"type": "richtext", "id": "point_1_body", "label": "Point 1 body"},
+    {"type": "text", "id": "point_2_title", "label": "Point 2 title", "default": "WHAT WE SOLVE"},
+    {"type": "richtext", "id": "point_2_body", "label": "Point 2 body"},
+    {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Get a Free Consultation"},
+    {"type": "url", "id": "cta_url", "label": "CTA URL"}
+  ],
+  "presets": [{"name": "NCCO Home Commitment"}]
+}
+{% endschema %}

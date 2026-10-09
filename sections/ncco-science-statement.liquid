@@ -1,0 +1,672 @@
+<section class="ncco-science-statement">
+
+  <div class="ncco-science-statement__inner">
+
+    <!-- TOP RIGHT CARD -->
+    <div class="ncco-science-statement__card ncco-science-statement__card--top-right">
+
+      <div class="ncco-science-statement__icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3C12 3 6 9.2 6 13.2C6 16.5 8.7 19 12 19C15.3 19 18 16.5 18 13.2C18 9.2 12 3 12 3Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+          <path
+            d="M9.5 14.5C9.8 16 10.8 17 12.5 17"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <h3>
+        {{ section.settings.card_1_title }}
+      </h3>
+
+      <p>
+        {{ section.settings.card_1_text }}
+      </p>
+
+    </div>
+
+
+    <!-- BOTTOM LEFT CARD -->
+    <div class="ncco-science-statement__card ncco-science-statement__card--bottom-left">
+
+      <div class="ncco-science-statement__icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3L14 9L21 12L14 15L12 21L10 15L3 12L10 9L12 3Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <h3>
+        {{ section.settings.card_2_title }}
+      </h3>
+
+      <p>
+        {{ section.settings.card_2_text }}
+      </p>
+
+    </div>
+
+
+    <!-- BOTTOM RIGHT CARD -->
+    <div class="ncco-science-statement__card ncco-science-statement__card--bottom-right">
+
+      <div class="ncco-science-statement__icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="7"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+          <path
+            d="M10 9.5C11.2 9.5 12 10.5 12 12C12 13.5 11.2 14.5 10 14.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <h3>
+        {{ section.settings.card_3_title }}
+      </h3>
+
+      <p>
+        {{ section.settings.card_3_text }}
+      </p>
+
+    </div>
+
+
+    <!-- CENTER CONTENT -->
+    <div class="ncco-science-statement__content">
+
+      <span class="ncco-science-statement__eyebrow">
+        {{ section.settings.eyebrow }}
+      </span>
+
+      <h2 class="ncco-science-statement__heading">
+
+        <span>
+          {{ section.settings.text_before_image_1 }}
+        </span>
+
+        {% if section.settings.inline_image_1 != blank %}
+          <span class="ncco-science-statement__inline-image">
+            {{
+              section.settings.inline_image_1
+              | image_url: width: 500
+              | image_tag:
+                loading: 'lazy',
+                widths: '200, 300, 400, 500'
+            }}
+          </span>
+        {% endif %}
+
+        <span>
+          {{ section.settings.text_between }}
+        </span>
+
+        {% if section.settings.inline_image_2 != blank %}
+          <span class="ncco-science-statement__inline-image">
+            {{
+              section.settings.inline_image_2
+              | image_url: width: 500
+              | image_tag:
+                loading: 'lazy',
+                widths: '200, 300, 400, 500'
+            }}
+          </span>
+        {% endif %}
+
+        <span>
+          {{ section.settings.text_after_image_2 }}
+        </span>
+
+      </h2>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+.ncco-science-statement {
+  position: relative;
+
+  width: 100%;
+  min-height: 665px;
+
+  padding: 40px 32px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   INNER
+========================= */
+
+.ncco-science-statement__inner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1280px;
+
+  min-height: 585px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   CENTER CONTENT
+========================= */
+
+.ncco-science-statement__content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(1100px, 90%);
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.ncco-science-statement__eyebrow {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+
+  color: #647082;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+.ncco-science-statement__heading {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 43px;
+  line-height: 1.48;
+
+  font-weight: 400;
+
+  letter-spacing: -2px;
+
+  color: #0D3B60;
+}
+
+
+/* =========================
+   INLINE IMAGES
+========================= */
+
+.ncco-science-statement__inline-image {
+  display: inline-flex;
+
+  width: 125px;
+  height: 70px;
+
+  margin: 0 8px;
+
+  vertical-align: middle;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 50px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 20px rgba(8, 29, 58, 0.12);
+
+  transform: translateY(-2px);
+}
+
+.ncco-science-statement__inline-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.ncco-science-statement__card {
+  position: absolute;
+
+  width: 205px;
+  min-height: 138px;
+
+  padding: 17px 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #E5EAF0;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 12px 35px rgba(8, 29, 58, 0.06);
+
+  z-index: 3;
+}
+
+
+/* =========================
+   CARD POSITIONS
+========================= */
+
+.ncco-science-statement__card--top-right {
+  top: 32px;
+  right: 165px;
+}
+
+.ncco-science-statement__card--bottom-left {
+  left: 45px;
+  bottom: 108px;
+}
+
+.ncco-science-statement__card--bottom-right {
+  right: 205px;
+  bottom: 25px;
+}
+
+
+/* =========================
+   CARD ICON
+========================= */
+
+.ncco-science-statement__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 11px;
+
+  border-radius: 50%;
+
+  background: #4CB9D8;
+
+  color: #ffffff;
+}
+
+.ncco-science-statement__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.ncco-science-statement__card h3 {
+  margin: 0 0 10px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  font-weight: 500;
+
+  color: #0D3B60;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.ncco-science-statement__card p {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 11px;
+  line-height: 16px;
+
+  font-weight: 400;
+
+  color: #647082;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .ncco-science-statement {
+    min-height: 620px;
+  }
+
+  .ncco-science-statement__heading {
+    font-size: 36px;
+    line-height: 1.45;
+  }
+
+  .ncco-science-statement__inline-image {
+    width: 105px;
+    height: 60px;
+  }
+
+  .ncco-science-statement__card--top-right {
+    right: 50px;
+  }
+
+  .ncco-science-statement__card--bottom-right {
+    right: 80px;
+  }
+
+}
+
+
+/* =========================
+   TABLET / SMALL
+========================= */
+
+@media (max-width: 800px) {
+
+  .ncco-science-statement {
+    min-height: auto;
+
+    padding: 80px 20px 60px;
+  }
+
+  .ncco-science-statement__inner {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .ncco-science-statement__content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+
+    transform: none;
+
+    order: 1;
+  }
+
+  .ncco-science-statement__heading {
+    font-size: 32px;
+    line-height: 1.4;
+
+    letter-spacing: -1.2px;
+  }
+
+  .ncco-science-statement__inline-image {
+    width: 90px;
+    height: 52px;
+
+    margin: 0 4px;
+  }
+
+  .ncco-science-statement__card {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: 300px;
+
+    min-height: auto;
+
+    margin: 0 auto;
+  }
+
+  .ncco-science-statement__card--top-right {
+    order: 2;
+  }
+
+  .ncco-science-statement__card--bottom-left {
+    order: 3;
+  }
+
+  .ncco-science-statement__card--bottom-right {
+    order: 4;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .ncco-science-statement {
+    padding: 60px 16px 50px;
+  }
+
+  .ncco-science-statement__eyebrow {
+    font-size: 9px;
+    line-height: 12px;
+
+    margin-bottom: 15px;
+  }
+
+  .ncco-science-statement__heading {
+    font-size: 27px;
+    line-height: 1.45;
+
+    letter-spacing: -0.8px;
+  }
+
+  .ncco-science-statement__inline-image {
+    width: 72px;
+    height: 44px;
+
+    border-width: 2px;
+
+    margin: 0 3px;
+  }
+
+  .ncco-science-statement__card {
+    max-width: 280px;
+
+    padding: 16px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Science Statement",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Main Statement"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "About Us"
+    },
+
+    {
+      "type": "text",
+      "id": "text_before_image_1",
+      "label": "Text before first image",
+      "default": "NCCO-IG"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "inline_image_1",
+      "label": "First inline image"
+    },
+
+    {
+      "type": "text",
+      "id": "text_between",
+      "label": "Text between images",
+      "default": "is powered by science-backed skincare that protects like a glove and heals like a"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "inline_image_2",
+      "label": "Second inline image"
+    },
+
+    {
+      "type": "text",
+      "id": "text_after_image_2",
+      "label": "Text after second image",
+      "default": "treatment all without harsh chemicals."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Proven Protection"
+    },
+
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card title",
+      "default": "Proven Protection"
+    },
+
+    {
+      "type": "text",
+      "id": "card_1_text",
+      "label": "Card description",
+      "default": "Clinically tested to kill 99.9% of germs & viruses."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Clean Formula"
+    },
+
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card title",
+      "default": "Clean Formula"
+    },
+
+    {
+      "type": "text",
+      "id": "card_2_text",
+      "label": "Card description",
+      "default": "Non-toxic, alcohol-free, and safe for sensitive skin."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Skin First"
+    },
+
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card title",
+      "default": "Skin First"
+    },
+
+    {
+      "type": "text",
+      "id": "card_3_text",
+      "label": "Card description",
+      "default": "Hydrates, repairs, and soothes even for allergy-prone skin."
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Science Statement"
+    }
+  ]
+
+}
+
+{% endschema %}

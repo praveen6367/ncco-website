@@ -1,0 +1,420 @@
+<section class="ncco-industrial-solutions">
+  <div class="ncco-industrial-solutions__background">
+    {% if section.settings.background_image != blank %}
+      {{ section.settings.background_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1200, 1600, 2000, 2400', sizes: '100vw', class: 'ncco-industrial-solutions__background-image' }}
+    {% endif %}
+    <div class="ncco-industrial-solutions__overlay"></div>
+    <div class="ncco-industrial-solutions__container">
+      <div class="ncco-industrial-solutions__header">
+        <div class="ncco-industrial-solutions__header-left">
+          {% if section.settings.eyebrow != blank %}
+            <div class="ncco-industrial-solutions__eyebrow">
+              <span></span>
+              {{ section.settings.eyebrow }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="ncco-industrial-solutions__header-right">
+          {% if section.settings.heading != blank %}
+            <h2 class="ncco-industrial-solutions__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+          {% if section.settings.button_text != blank %}
+            <a
+              href="{{ section.settings.button_url | default: '#' }}"
+              class="ncco-industrial-solutions__button"
+            >
+              <span>{{ section.settings.button_text }}</span>
+              <span class="ncco-industrial-solutions__button-icon">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="ncco-industrial-solutions__grid">
+        {% for block in section.blocks %}
+          <div class="ncco-industrial-solutions__card" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <h3 class="ncco-industrial-solutions__card-title">
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <div class="ncco-industrial-solutions__card-description">
+                {{ block.settings.description }}
+              </div>
+            {% endif %}
+            {% if block.settings.link_text != blank %}
+              <a
+                href="{{ block.settings.link_url | default: '#' }}"
+                class="ncco-industrial-solutions__card-link"
+              >
+                {{ block.settings.link_text }}
+                <span>↗</span>
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ncco-industrial-solutions{
+  width:100%;
+  padding:24px 10px;
+  box-sizing:border-box;
+  background:#fff;
+}
+.ncco-industrial-solutions__background{
+  position:relative;
+  width:100%;
+  min-height:500px;
+  overflow:hidden;
+  border-radius:18px;
+  background:#0D1C2E;
+  box-sizing:border-box;
+}
+.ncco-industrial-solutions__background-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+.ncco-industrial-solutions__overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(5,18,31,.84) 0%,rgba(7,20,34,.72) 48%,rgba(5,16,29,.76) 100%);
+}
+.ncco-industrial-solutions__container{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1060px;
+  min-height:500px;
+  margin:0 auto;
+  padding:50px 30px 54px;
+  box-sizing:border-box;
+}
+.ncco-industrial-solutions__header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:start;
+  margin-bottom:30px;
+}
+.ncco-industrial-solutions__header-left{
+  padding-top:5px;
+}
+.ncco-industrial-solutions__eyebrow{
+  display:flex;
+  align-items:center;
+  gap:0;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:400;
+  color:#C4CED8;
+  text-transform:uppercase;
+}
+.ncco-industrial-solutions__eyebrow span{
+  width:14px;
+  height:1px;
+  margin-right:0;
+  background:#21B9A8;
+}
+.ncco-industrial-solutions__header-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.ncco-industrial-solutions__heading{
+  max-width:390px;
+  margin:0;
+  font-family:'Geist',sans-serif;
+  font-size:44px;
+  line-height:52px;
+  font-weight:500;
+  letter-spacing:-1.2px;
+  color:#fff;
+}
+.ncco-industrial-solutions__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:13px;
+  min-width:138px;
+  margin-top:18px;
+  padding:5px 5px 5px 14px;
+  border-radius:50px;
+  background:#21B9A8;
+  color:#fff;
+  text-decoration:none;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:500;
+  text-transform:uppercase;
+  box-sizing:border-box;
+  box-shadow:0 7px 18px rgba(33,185,168,.22);
+  transition:filter .2s ease,transform .2s ease;
+}
+.ncco-industrial-solutions__button:hover{
+  color:#fff;
+  filter:brightness(.95);
+  transform:translateY(-1px);
+}
+.ncco-industrial-solutions__button-icon{
+  width:24px;
+  height:24px;
+  min-width:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+  color:#21B9A8;
+}
+.ncco-industrial-solutions__button-icon svg{
+  display:block;
+}
+.ncco-industrial-solutions__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.ncco-industrial-solutions__card{
+  position:relative;
+  min-height:135px;
+  display:flex;
+  flex-direction:column;
+  padding:15px 16px 14px;
+  border:1px solid rgba(181,198,214,.20);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(51,65,82,.72),rgba(20,32,47,.78));
+  box-sizing:border-box;
+}
+.ncco-industrial-solutions__card-title{
+  margin:0 0 9px;
+  font-family:'Geist',sans-serif;
+  font-size:16px;
+  line-height:21px;
+  font-weight:500;
+  color:#fff;
+  text-transform:uppercase;
+}
+.ncco-industrial-solutions__card-description{
+  max-width:100%;
+  font-family:'Geist',sans-serif;
+  font-size:14px;
+  line-height:21px;
+  font-weight:400;
+  color:#AEBBC8;
+}
+.ncco-industrial-solutions__card-description p{
+  margin:0;
+}
+.ncco-industrial-solutions__card-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  margin-top:auto;
+  padding-top:12px;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:400;
+  color:#21B9A8;
+  text-decoration:none;
+}
+.ncco-industrial-solutions__card-link:hover{
+  color:#5BD3C5;
+}
+.ncco-industrial-solutions__card-link span{
+  font-size:13px;
+  line-height:1;
+}
+@media(max-width:900px){
+  .ncco-industrial-solutions__container{
+    padding:42px 25px 45px;
+  }
+  .ncco-industrial-solutions__header{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .ncco-industrial-solutions__header-right{
+    align-items:flex-start;
+  }
+  .ncco-industrial-solutions__grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:600px){
+  .ncco-industrial-solutions{
+    padding:15px 10px;
+  }
+  .ncco-industrial-solutions__background{
+    min-height:auto;
+    border-radius:14px;
+  }
+  .ncco-industrial-solutions__container{
+    min-height:auto;
+    padding:36px 18px 40px;
+  }
+  .ncco-industrial-solutions__header{
+    margin-bottom:25px;
+  }
+  .ncco-industrial-solutions__heading{
+    font-size:34px;
+    line-height:41px;
+  }
+  .ncco-industrial-solutions__grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .ncco-industrial-solutions__card{
+    min-height:130px;
+  }
+  .ncco-industrial-solutions__card-title{
+    font-size:15px;
+    line-height:20px;
+  }
+  .ncco-industrial-solutions__card-description{
+    font-size:14px;
+    line-height:21px;
+  }
+  .ncco-industrial-solutions__card-link{
+    font-size:11px;
+    line-height:15px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name":"NCCO Industrial Solutions",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"image_picker",
+      "id":"background_image",
+      "label":"Background Image"
+    },
+    {
+      "type":"text",
+      "id":"eyebrow",
+      "label":"Eyebrow",
+      "default":"INDUSTRIAL BENEFITS"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"Invented in Hong Kong"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text",
+      "default":"REQUEST PRODUCT SPECS"
+    },
+    {
+      "type":"url",
+      "id":"button_url",
+      "label":"Button URL"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"solution",
+      "name":"Solution Card",
+      "settings":[
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title",
+          "default":"NCCO-AIR"
+        },
+        {
+          "type":"richtext",
+          "id":"description",
+          "label":"Description",
+          "default":"<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air-purification and is also widely used in commercial, industrial, and medical institutions.</p>"
+        },
+        {
+          "type":"text",
+          "id":"link_text",
+          "label":"Link text",
+          "default":"Learn More"
+        },
+        {
+          "type":"url",
+          "id":"link_url",
+          "label":"Link URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks":6,
+  "presets":[
+    {
+      "name":"NCCO Industrial Solutions",
+      "blocks":[
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-AIR",
+            "description":"<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air-purification and is also widely used in commercial, industrial, and medical institutions.</p>",
+            "link_text":"Learn More"
+          }
+        },
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-INVISIBLE GLOVE",
+            "description":"<p>The NCCO technology uses nanotechnology to form a layer of film on the surface of the skin that disinfects, moisturizes, and protects against damaged skin infections.</p>",
+            "link_text":"Learn More"
+          }
+        },
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-ZRD",
+            "description":"<p>ZRD (Zeolite Radioactive Dust Removal System) belongs to one of RHT's patented technologies. The ZRD system effectively removes radioactive materials and toxic gases from the air and can be used as an emergency system.</p>",
+            "link_text":"Learn More"
+          }
+        },
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-PIS",
+            "description":"<p>Industrial production releases a lot of pollutants into its daily manufacturing, causing severe pollution to nearby buildings. Pollutants Isolation System (PIS) creates an indoor air barrier to prevent outdoor contaminants from entering the room.</p>",
+            "link_text":"Learn More"
+          }
+        },
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-MASKS",
+            "description":"<p>Many toxic compounds are often used during industrial production, seriously endangering employees' health. RHT research team successfully utilized the NCCO technology to develop an NCCO mask.</p>",
+            "link_text":"Learn More"
+          }
+        },
+        {
+          "type":"solution",
+          "settings":{
+            "title":"NCCO-MDS",
+            "description":"<p>The Sewage Treatment Plant has been emitting a foul odor for an extended period. Currently, it mainly employs an active charcoal air purification system to remove the odor.</p>",
+            "link_text":"Learn More"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

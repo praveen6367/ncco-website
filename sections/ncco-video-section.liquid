@@ -1,0 +1,382 @@
+<section class="ncco-video-section">
+  <div class="ncco-video-section__container">
+    <div class="ncco-video-section__top">
+      <div class="ncco-video-section__heading-wrap">
+        {% if section.settings.eyebrow != blank %}
+          <div class="ncco-video-section__eyebrow">
+            <span></span>
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="ncco-video-section__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+      </div>
+      <div class="ncco-video-section__right">
+        {% if section.settings.description != blank %}
+          <div class="ncco-video-section__description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_url | default: '#' }}"
+            class="ncco-video-section__button"
+          >
+            <span>{{ section.settings.button_text }}</span>
+            <span class="ncco-video-section__button-icon">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="ncco-video-section__video-wrap">
+      <div
+        class="ncco-video-section__video"
+        {% if section.settings.poster != blank %}
+          style="background-image:url('{{ section.settings.poster | image_url: width: 1800 }}')"
+        {% endif %}
+      >
+        {% if section.settings.poster == blank %}
+          <div class="ncco-video-section__video-placeholder">
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+        <div class="ncco-video-section__video-overlay"></div>
+        {% if section.settings.video_url != blank %}
+          <a
+            href="{{ section.settings.video_url }}"
+            class="ncco-video-section__play"
+            target="_blank"
+            rel="noopener"
+            aria-label="Play video"
+          >
+            <svg width="22" height="25" viewBox="0 0 22 25" fill="none">
+              <path d="M20.5 10.9019C21.8333 11.6717 21.8333 13.5962 20.5 14.366L3.25 24.3253C1.91667 25.0951 0.25 24.1328 0.25 22.5932L0.25 2.67468C0.25 1.13508 1.91667 0.172829 3.25 0.942629L20.5 10.9019Z" fill="white"/>
+            </svg>
+          </a>
+        {% else %}
+          <div class="ncco-video-section__play">
+            <svg width="22" height="25" viewBox="0 0 22 25" fill="none">
+              <path d="M20.5 10.9019C21.8333 11.6717 21.8333 13.5962 20.5 14.366L3.25 24.3253C1.91667 25.0951 0.25 24.1328 0.25 22.5932L0.25 2.67468C0.25 1.13508 1.91667 0.172829 3.25 0.942629L20.5 10.9019Z" fill="white"/>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ncco-video-section{
+  width:100%;
+  background:#F4FBFC;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.ncco-video-section__container{
+  width:100%;
+  max-width:1280px;
+  margin:0 auto;
+  padding:52px 40px 62px;
+  box-sizing:border-box;
+}
+.ncco-video-section__top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:start;
+  margin-bottom:27px;
+}
+.ncco-video-section__heading-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.ncco-video-section__eyebrow{
+  display:flex;
+  align-items:center;
+  gap:0;
+  margin:0 0 16px;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:400;
+  color:#71838A;
+  text-transform:uppercase;
+}
+.ncco-video-section__eyebrow span{
+  display:block;
+  width:15px;
+  height:1px;
+  margin-right:0;
+  background:#08B8D4;
+}
+.ncco-video-section__heading{
+  max-width:520px;
+  margin:0;
+  font-family:'Geist',sans-serif;
+  font-size:44px;
+  line-height:52px;
+  font-weight:500;
+  letter-spacing:-1.4px;
+  color:#071A20;
+}
+.ncco-video-section__right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  text-align:right;
+  padding-top:30px;
+}
+.ncco-video-section__description{
+  max-width:390px;
+  margin:0 0 12px;
+  font-family:'Geist',sans-serif;
+  font-size:16px;
+  line-height:24px;
+  font-weight:400;
+  color:#71838A;
+}
+.ncco-video-section__description p{
+  margin:0;
+}
+.ncco-video-section__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  min-width:147px;
+  padding:5px 5px 5px 15px;
+  box-sizing:border-box;
+  border-radius:50px;
+  background:#08B8D4;
+  color:#fff;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:500;
+  text-transform:uppercase;
+  text-decoration:none;
+  box-shadow:0 8px 16px rgba(8,184,212,.22);
+  transition:filter .2s ease,transform .2s ease;
+}
+.ncco-video-section__button:hover{
+  color:#fff;
+  filter:brightness(.95);
+  transform:translateY(-1px);
+}
+.ncco-video-section__button-icon{
+  width:27px;
+  height:27px;
+  min-width:27px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+  color:#071A20;
+}
+.ncco-video-section__button-icon svg{
+  display:block;
+}
+.ncco-video-section__video-wrap{
+  width:84%;
+  margin:0 auto;
+  padding:6px;
+  border:1px solid #DDE5E7;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 5px 15px rgba(7,26,32,.06);
+  box-sizing:border-box;
+}
+.ncco-video-section__video{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 7.2;
+  min-height:300px;
+  border-radius:11px;
+  overflow:hidden;
+  background-color:#08121B;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.ncco-video-section__video-placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.ncco-video-section__video-placeholder svg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.ncco-video-section__video-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(3,13,22,.08);
+  pointer-events:none;
+}
+.ncco-video-section__play{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:38px;
+  height:27px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  background:#FF0000;
+  color:#fff;
+  text-decoration:none;
+  z-index:2;
+  transition:transform .2s ease,filter .2s ease;
+}
+.ncco-video-section__play:hover{
+  color:#fff;
+  transform:translate(-50%,-50%) scale(1.08);
+  filter:brightness(.92);
+}
+.ncco-video-section__play svg{
+  width:11px;
+  height:13px;
+  margin-left:1px;
+}
+@media(max-width:1100px){
+  .ncco-video-section__container{
+    padding-left:30px;
+    padding-right:30px;
+  }
+  .ncco-video-section__top{
+    gap:40px;
+  }
+  .ncco-video-section__video-wrap{
+    width:90%;
+  }
+}
+@media(max-width:900px){
+  .ncco-video-section__top{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .ncco-video-section__right{
+    align-items:flex-start;
+    text-align:left;
+    padding-top:0;
+  }
+  .ncco-video-section__description{
+    max-width:500px;
+  }
+  .ncco-video-section__video-wrap{
+    width:100%;
+  }
+}
+@media(max-width:600px){
+  .ncco-video-section__container{
+    padding:40px 20px 45px;
+  }
+  .ncco-video-section__top{
+    margin-bottom:24px;
+  }
+  .ncco-video-section__eyebrow{
+    font-size:11px;
+    line-height:15px;
+    margin-bottom:14px;
+  }
+  .ncco-video-section__heading{
+    max-width:100%;
+    font-size:34px;
+    line-height:41px;
+    letter-spacing:-1px;
+  }
+  .ncco-video-section__right{
+    gap:0;
+  }
+  .ncco-video-section__description{
+    max-width:100%;
+    margin-bottom:14px;
+    font-size:15px;
+    line-height:23px;
+  }
+  .ncco-video-section__button{
+    font-size:11px;
+    line-height:15px;
+  }
+  .ncco-video-section__video-wrap{
+    width:100%;
+    padding:5px;
+    border-radius:13px;
+  }
+  .ncco-video-section__video{
+    min-height:210px;
+    aspect-ratio:16 / 9;
+    border-radius:9px;
+  }
+  .ncco-video-section__play{
+    width:36px;
+    height:25px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name":"NCCO Video Section",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"text",
+      "id":"eyebrow",
+      "label":"Eyebrow",
+      "default":"SEE IT IN ACTION"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"How b-MOLA Protects Your Space"
+    },
+    {
+      "type":"richtext",
+      "id":"description",
+      "label":"Description",
+      "default":"<p>Dive into our short video and see how b-MOLA’s NCCO technology purifies the air, neutralizes harmful particles, and enhances indoor environments backed by real science, not just promises.</p>"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text",
+      "default":"DOWNLOAD BROCHURE"
+    },
+    {
+      "type":"url",
+      "id":"button_url",
+      "label":"Button URL"
+    },
+    {
+      "type":"image_picker",
+      "id":"poster",
+      "label":"Video thumbnail"
+    },
+    {
+      "type":"url",
+      "id":"video_url",
+      "label":"Video URL"
+    }
+  ],
+  "presets":[
+    {
+      "name":"NCCO Video Section"
+    }
+  ]
+}
+{% endschema %}

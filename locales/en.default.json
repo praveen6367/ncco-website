@@ -283,7 +283,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -385,6 +384,51 @@
       "min_error": "This item has a minimum of {{ min }}",
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
+    },
+    "ncco_contact_cta": {
+      "email_label": "Email Us",
+      "phone_label": "Call Us",
+      "office_label": "Head Office",
+      "form_name": "Name",
+      "form_email": "Email",
+      "form_phone": "Mobile Number",
+      "form_message": "Message",
+      "placeholder_name": "Enter Name",
+      "placeholder_email": "Enter Email",
+      "placeholder_phone": "Enter Mobile Numbers",
+      "placeholder_message": "Enter Message",
+      "success": "Message sent — we'll be in touch soon.",
+      "submit_default": "SUBMIT"
+    },
+    "ncco_footer": {
+      "quick_links": "Quick Links",
+      "our_brands": "Our Brands",
+      "follow_us": "Follow Us",
+      "copyright": "© 2025 NCCO. All rights reserved."
+    },
+    "ncco_header": {
+      "brands": {
+        "ncco_desc": "The core technology behind all NCCO air purification products.",
+        "ncco_mob_desc": "Core air purification technology",
+        "rht_desc": "Industrial air solutions for large-scale facilities.",
+        "bmola_desc": "Smart home and personal air purifiers.",
+        "nccoig_desc": "Clinical-grade sterilization systems.",
+        "osplus_desc": "Elegantly designed lifestyle purifiers."
+      },
+      "impact": {
+        "residential_name": "Residential",
+        "residential_desc": "Hong Kong's best-selling purification solution.",
+        "residential_mob_desc": "Hong Kong's best-selling purification solution",
+        "medical_name": "Medical",
+        "medical_desc": "Air purification systems for 300+ hospitals.",
+        "medical_mob_desc": "Partnering with 300+ hospitals",
+        "industrial_name": "Industrial",
+        "industrial_desc": "Odour control for waste sites and emission filtration for factories.",
+        "industrial_mob_desc": "Large-scale heavy-duty purification",
+        "commercial_name": "Commercial",
+        "commercial_desc": "Air purification systems for commercial buildings.",
+        "commercial_mob_desc": "Smart air quality for offices and retail"
+      }
     }
   },
   "localization": {

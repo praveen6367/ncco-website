@@ -1,0 +1,894 @@
+<section class="ncco-blog-showcase">
+
+  <!-- =========================
+       POPULAR ARTICLES
+  ========================== -->
+  <div class="ncco-blog-showcase__popular">
+
+    <div class="ncco-blog-showcase__section-head">
+      <div>
+        <span class="ncco-blog-showcase__eyebrow">
+          {{ section.settings.popular_eyebrow }}
+        </span>
+
+        <h2 class="ncco-blog-showcase__heading">
+          {{ section.settings.popular_heading }}
+        </h2>
+      </div>
+
+      {% if section.settings.popular_description != blank %}
+        <p class="ncco-blog-showcase__intro">
+          {{ section.settings.popular_description }}
+        </p>
+      {% endif %}
+    </div>
+
+
+    <div class="ncco-blog-showcase__popular-grid">
+
+      <!-- FEATURED ARTICLE -->
+      {% assign featured = section.settings.popular_featured %}
+
+      {% if featured != blank %}
+        <a
+          href="{{ featured.url }}"
+          class="ncco-blog-showcase__featured"
+        >
+
+          {% if featured.image %}
+            <div class="ncco-blog-showcase__featured-image">
+              {{
+                featured.image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '500, 700, 900, 1000'
+              }}
+            </div>
+          {% endif %}
+
+          <div class="ncco-blog-showcase__featured-content">
+
+            {% if featured.tags.first != blank %}
+              <span class="ncco-blog-showcase__tag">
+                {{ featured.tags.first }}
+              </span>
+            {% endif %}
+
+            <h3>
+              {{ featured.title }}
+            </h3>
+
+            {% if featured.excerpt_or_content != blank %}
+              <p>
+                {{
+                  featured.excerpt_or_content
+                  | strip_html
+                  | truncate: 130
+                }}
+              </p>
+            {% endif %}
+
+            <div class="ncco-blog-showcase__meta">
+              <span>
+                {{ featured.author }}
+              </span>
+
+              <span>•</span>
+
+              <span>
+                {{ featured.published_at | date: "%B %-d, %Y" }}
+              </span>
+            </div>
+
+          </div>
+
+          <span class="ncco-blog-showcase__arrow">
+            ↗
+          </span>
+
+        </a>
+      {% endif %}
+
+
+      <!-- RIGHT ARTICLES -->
+      <div class="ncco-blog-showcase__side">
+
+        {% assign side_articles = "side_1|side_2|side_3" | split: "|" %}
+
+        {% for setting_id in side_articles %}
+
+          {% assign article = section.settings[setting_id] %}
+
+          {% if article != blank %}
+
+            <a
+              href="{{ article.url }}"
+              class="ncco-blog-showcase__side-card"
+            >
+
+              {% if article.image %}
+                <div class="ncco-blog-showcase__side-image">
+                  {{
+                    article.image
+                    | image_url: width: 400
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '200, 300, 400'
+                  }}
+                </div>
+              {% endif %}
+
+              <div class="ncco-blog-showcase__side-content">
+
+                {% if article.tags.first != blank %}
+                  <span class="ncco-blog-showcase__tag">
+                    {{ article.tags.first }}
+                  </span>
+                {% endif %}
+
+                <h3>
+                  {{ article.title }}
+                </h3>
+
+                <p>
+                  {{
+                    article.excerpt_or_content
+                    | strip_html
+                    | truncate: 90
+                  }}
+                </p>
+
+                <div class="ncco-blog-showcase__meta">
+                  <span>{{ article.author }}</span>
+                  <span>•</span>
+                  <span>
+                    {{ article.published_at | date: "%B %-d, %Y" }}
+                  </span>
+                </div>
+
+              </div>
+
+              <span class="ncco-blog-showcase__arrow">
+                ↗
+              </span>
+
+            </a>
+
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       DIVIDER
+  ========================== -->
+
+  <div class="ncco-blog-showcase__divider">
+    <span></span>
+  </div>
+
+
+  <!-- =========================
+       LATEST ARTICLES
+  ========================== -->
+
+  <div class="ncco-blog-showcase__latest">
+
+    <div class="ncco-blog-showcase__section-head">
+
+      <div>
+        <span class="ncco-blog-showcase__eyebrow">
+          {{ section.settings.latest_eyebrow }}
+        </span>
+
+        <h2 class="ncco-blog-showcase__heading">
+          {{ section.settings.latest_heading }}
+        </h2>
+      </div>
+
+      {% if section.settings.latest_description != blank %}
+        <p class="ncco-blog-showcase__intro">
+          {{ section.settings.latest_description }}
+        </p>
+      {% endif %}
+
+    </div>
+
+
+    <div class="ncco-blog-showcase__latest-grid">
+
+      {% assign latest_articles = "latest_1|latest_2|latest_3" | split: "|" %}
+
+      {% for setting_id in latest_articles %}
+
+        {% assign article = section.settings[setting_id] %}
+
+        {% if article != blank %}
+
+          <a
+            href="{{ article.url }}"
+            class="ncco-blog-showcase__latest-card"
+          >
+
+            {% if article.image %}
+              <div class="ncco-blog-showcase__latest-image">
+                {{
+                  article.image
+                  | image_url: width: 700
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '350, 500, 700'
+                }}
+              </div>
+            {% endif %}
+
+
+            <div class="ncco-blog-showcase__latest-content">
+
+              {% if article.tags.first != blank %}
+                <span class="ncco-blog-showcase__tag">
+                  {{ article.tags.first }}
+                </span>
+              {% endif %}
+
+              <h3>
+                {{ article.title }}
+              </h3>
+
+              <p>
+                {{
+                  article.excerpt_or_content
+                  | strip_html
+                  | truncate: 110
+                }}
+              </p>
+
+              <div class="ncco-blog-showcase__meta">
+
+                <span>
+                  {{ article.author }}
+                </span>
+
+                <span>•</span>
+
+                <span>
+                  {{ article.published_at | date: "%B %-d, %Y" }}
+                </span>
+
+              </div>
+
+            </div>
+
+            <span class="ncco-blog-showcase__arrow">
+              ↗
+            </span>
+
+          </a>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+.ncco-blog-showcase {
+  width: 100%;
+  padding: 72px 32px 90px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.ncco-blog-showcase__popular,
+.ncco-blog-showcase__latest {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.ncco-blog-showcase__section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.ncco-blog-showcase__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+
+  color: #647082;
+  text-transform: uppercase;
+}
+
+.ncco-blog-showcase__heading {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 500;
+  letter-spacing: -1px;
+
+  color: #081D3A;
+}
+
+.ncco-blog-showcase__intro {
+  max-width: 330px;
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+
+  color: #647082;
+  text-align: right;
+}
+
+
+/* =========================
+   POPULAR GRID
+========================= */
+
+.ncco-blog-showcase__popular-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+
+/* =========================
+   FEATURED ARTICLE
+========================= */
+
+.ncco-blog-showcase__featured {
+  position: relative;
+
+  display: block;
+
+  border: 1px solid #E7EAF0;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ncco-blog-showcase__featured:hover,
+.ncco-blog-showcase__side-card:hover,
+.ncco-blog-showcase__latest-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(8,29,58,0.08);
+}
+
+.ncco-blog-showcase__featured-image {
+  width: 100%;
+  height: 195px;
+  overflow: hidden;
+}
+
+.ncco-blog-showcase__featured-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.ncco-blog-showcase__featured-content {
+  position: relative;
+  padding: 12px 14px 14px;
+}
+
+.ncco-blog-showcase__featured-content h3 {
+  margin: 8px 0 6px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+
+  color: #081D3A;
+}
+
+.ncco-blog-showcase__featured-content p {
+  margin: 0 0 10px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 16px;
+
+  color: #647082;
+}
+
+
+/* =========================
+   TAG
+========================= */
+
+.ncco-blog-showcase__tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 7px;
+
+  border: 1px solid #E7EAF0;
+  border-radius: 20px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 9px;
+  line-height: 11px;
+
+  color: #081D3A;
+  background: #fff;
+}
+
+
+/* =========================
+   META
+========================= */
+
+.ncco-blog-showcase__meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 9px;
+  line-height: 12px;
+
+  color: #647082;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.ncco-blog-showcase__arrow {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+
+  color: #081D3A;
+}
+
+
+/* =========================
+   SIDE ARTICLES
+========================= */
+
+.ncco-blog-showcase__side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ncco-blog-showcase__side-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 82px 1fr;
+
+  gap: 12px;
+
+  min-height: 86px;
+
+  padding: 6px;
+
+  border: 1px solid #E7EAF0;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ncco-blog-showcase__side-image {
+  width: 82px;
+  height: 74px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.ncco-blog-showcase__side-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.ncco-blog-showcase__side-content {
+  min-width: 0;
+  padding: 4px 24px 4px 0;
+}
+
+.ncco-blog-showcase__side-content h3 {
+  margin: 6px 0 4px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 500;
+
+  color: #081D3A;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ncco-blog-showcase__side-content p {
+  margin: 0 0 5px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+
+  color: #647082;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.ncco-blog-showcase__divider {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 34px auto 34px;
+}
+
+.ncco-blog-showcase__divider span {
+  width: 14px;
+  height: 1px;
+
+  background: #FECB07;
+}
+
+
+/* =========================
+   LATEST ARTICLES
+========================= */
+
+.ncco-blog-showcase__latest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ncco-blog-showcase__latest-card {
+  position: relative;
+
+  display: block;
+
+  border: 1px solid #E7EAF0;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ncco-blog-showcase__latest-image {
+  width: 100%;
+  height: 145px;
+
+  overflow: hidden;
+}
+
+.ncco-blog-showcase__latest-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.ncco-blog-showcase__latest-content {
+  position: relative;
+
+  padding: 10px 12px 14px;
+}
+
+.ncco-blog-showcase__latest-content h3 {
+  margin: 7px 0 5px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 500;
+
+  color: #081D3A;
+}
+
+.ncco-blog-showcase__latest-content p {
+  margin: 0 0 9px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+
+  color: #647082;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  .ncco-blog-showcase {
+    padding: 60px 24px 70px;
+  }
+
+  .ncco-blog-showcase__popular-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .ncco-blog-showcase {
+    padding: 48px 16px 60px;
+  }
+
+  .ncco-blog-showcase__section-head {
+    display: block;
+    margin-bottom: 22px;
+  }
+
+  .ncco-blog-showcase__heading {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .ncco-blog-showcase__intro {
+    max-width: 100%;
+    margin-top: 12px;
+
+    text-align: left;
+
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+
+  /* POPULAR */
+
+  .ncco-blog-showcase__popular-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ncco-blog-showcase__featured-image {
+    height: 210px;
+  }
+
+  .ncco-blog-showcase__side {
+    gap: 10px;
+  }
+
+
+  /* LATEST */
+
+  .ncco-blog-showcase__latest-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ncco-blog-showcase__latest-image {
+    height: 190px;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 480px) {
+
+  .ncco-blog-showcase__heading {
+    font-size: 27px;
+    line-height: 33px;
+  }
+
+  .ncco-blog-showcase__featured-image {
+    height: 190px;
+  }
+
+  .ncco-blog-showcase__side-card {
+    grid-template-columns: 76px 1fr;
+  }
+
+  .ncco-blog-showcase__side-image {
+    width: 76px;
+    height: 70px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Blog Showcase",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Popular Articles"
+    },
+
+    {
+      "type": "text",
+      "id": "popular_eyebrow",
+      "label": "Eyebrow",
+      "default": "Reader Favorites"
+    },
+
+    {
+      "type": "text",
+      "id": "popular_heading",
+      "label": "Heading",
+      "default": "Popular Articles"
+    },
+
+    {
+      "type": "text",
+      "id": "popular_description",
+      "label": "Description",
+      "default": "Explore our most-read and impactful articles, handpicked to help you discover practical tips and insights that people are loving right now."
+    },
+
+    {
+      "type": "article",
+      "id": "popular_featured",
+      "label": "Featured article"
+    },
+
+    {
+      "type": "article",
+      "id": "side_1",
+      "label": "Popular article 1"
+    },
+
+    {
+      "type": "article",
+      "id": "side_2",
+      "label": "Popular article 2"
+    },
+
+    {
+      "type": "article",
+      "id": "side_3",
+      "label": "Popular article 3"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Latest Articles"
+    },
+
+    {
+      "type": "text",
+      "id": "latest_eyebrow",
+      "label": "Eyebrow",
+      "default": "Just Published"
+    },
+
+    {
+      "type": "text",
+      "id": "latest_heading",
+      "label": "Heading",
+      "default": "Latest Articles"
+    },
+
+    {
+      "type": "text",
+      "id": "latest_description",
+      "label": "Description",
+      "default": "Stay up to date with the freshest research, expert opinions, and science-backed guides designed to keep you informed and inspired."
+    },
+
+    {
+      "type": "article",
+      "id": "latest_1",
+      "label": "Latest article 1"
+    },
+
+    {
+      "type": "article",
+      "id": "latest_2",
+      "label": "Latest article 2"
+    },
+
+    {
+      "type": "article",
+      "id": "latest_3",
+      "label": "Latest article 3"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Blog Showcase"
+    }
+  ]
+
+}
+
+{% endschema %}

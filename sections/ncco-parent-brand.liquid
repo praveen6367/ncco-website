@@ -1,0 +1,253 @@
+<section class="ncco-parent-brand">
+
+  <div class="ncco-parent-brand__inner">
+
+    {% if section.settings.label != blank %}
+      <div class="ncco-parent-brand__label">
+        {{ section.settings.label }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.logo != blank %}
+      <div class="ncco-parent-brand__logo">
+        {{
+          section.settings.logo
+          | image_url: width: 700
+          | image_tag:
+            loading: 'lazy',
+            widths: '300, 500, 700',
+            alt: section.settings.logo_alt
+        }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="ncco-parent-brand__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    <div class="ncco-parent-brand__divider"></div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+.ncco-parent-brand {
+  width: 100%;
+  padding: 70px 24px 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.ncco-parent-brand__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* LABEL */
+
+.ncco-parent-brand__label {
+  margin-bottom: 24px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+
+  color: #647082;
+
+  text-transform: uppercase;
+}
+
+
+/* LOGO */
+
+.ncco-parent-brand__logo {
+  width: 180px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+}
+
+.ncco-parent-brand__logo img {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+
+  object-fit: contain;
+}
+
+
+/* DESCRIPTION */
+
+.ncco-parent-brand__description {
+  width: 100%;
+  max-width: 900px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #647082;
+}
+
+.ncco-parent-brand__description p {
+  margin: 0;
+}
+
+
+/* DIVIDER */
+
+.ncco-parent-brand__divider {
+  width: 28px;
+  height: 2px;
+
+  margin-top: 38px;
+
+  background: #FECB07;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .ncco-parent-brand {
+    padding: 60px 24px 0;
+  }
+
+  .ncco-parent-brand__label {
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .ncco-parent-brand__logo {
+    width: 160px;
+    height: 90px;
+  }
+
+  .ncco-parent-brand__logo img {
+    max-height: 90px;
+  }
+
+  .ncco-parent-brand__description {
+    max-width: 750px;
+
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+  .ncco-parent-brand {
+    padding: 52px 20px 0;
+  }
+
+  .ncco-parent-brand__label {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .ncco-parent-brand__logo {
+    width: 150px;
+    height: 82px;
+
+    margin-bottom: 18px;
+  }
+
+  .ncco-parent-brand__logo img {
+    max-height: 82px;
+  }
+
+  .ncco-parent-brand__description {
+    max-width: 100%;
+
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .ncco-parent-brand__divider {
+    width: 24px;
+    height: 2px;
+
+    margin-top: 32px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Parent Brand",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Parent Brand"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Brand logo"
+    },
+
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "NCCO"
+    },
+
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>As the foundation of our group, NCCO leads with breakthrough nanotechnology, setting the standard for long-lasting and effective air purification across all applications.</p>"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Parent Brand"
+    }
+  ]
+
+}
+
+{% endschema %}

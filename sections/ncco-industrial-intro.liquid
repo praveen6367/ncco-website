@@ -1,0 +1,522 @@
+<section class="ncco-industrial-intro">
+
+  <div class="ncco-industrial-intro__container">
+
+    <!-- LEFT SIDE -->
+    <div class="ncco-industrial-intro__left">
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="ncco-industrial-intro__eyebrow">
+          <span></span>
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="ncco-industrial-intro__right">
+
+      {% if section.settings.heading != blank %}
+        <h2 class="ncco-industrial-intro__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+
+      <!-- CTA -->
+      {% if section.settings.button_label != blank %}
+
+        <div class="ncco-industrial-intro__cta-wrap">
+
+          <a
+            href="{{ section.settings.button_url }}"
+            class="ncco-industrial-intro__cta"
+          >
+
+            <span>
+              {{ section.settings.button_label }}
+            </span>
+
+            <span class="ncco-industrial-intro__arrow">
+              ↗
+            </span>
+
+          </a>
+
+        </div>
+
+      {% endif %}
+
+
+      <!-- FEATURES -->
+      <div class="ncco-industrial-intro__features">
+
+        {% for block in section.blocks %}
+
+          <div
+            class="ncco-industrial-intro__feature"
+            {{ block.shopify_attributes }}
+          >
+
+            {% if block.settings.title != blank %}
+              <h3 class="ncco-industrial-intro__feature-title">
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="ncco-industrial-intro__feature-text">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* =========================================
+   SECTION
+========================================= */
+
+.ncco-industrial-intro {
+  width: 100%;
+  background: #ffffff;
+  padding: 55px 80px 30px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.ncco-industrial-intro__container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 29% 71%;
+  column-gap: 0;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.ncco-industrial-intro__left {
+  padding-top: 8px;
+}
+
+
+.ncco-industrial-intro__eyebrow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+
+  color: #52677C;
+
+  text-transform: uppercase;
+}
+
+
+.ncco-industrial-intro__eyebrow span {
+  width: 17px;
+  height: 2px;
+
+  display: block;
+
+  background: #F2C500;
+}
+
+
+/* =========================================
+   RIGHT
+========================================= */
+
+.ncco-industrial-intro__right {
+  width: 100%;
+  text-align: right;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.ncco-industrial-intro__heading {
+  max-width: 700px;
+
+  margin: 0 0 24px auto;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 500;
+
+  letter-spacing: -1.4px;
+
+  color: #172235;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.ncco-industrial-intro__cta-wrap {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 31px;
+}
+
+
+.ncco-industrial-intro__cta {
+  min-width: 174px;
+  height: 34px;
+
+  padding: 0 5px 0 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  box-sizing: border-box;
+
+  background: #0B4DB8;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.ncco-industrial-intro__cta:hover {
+  background: #083F98;
+  transform: translateY(-1px);
+}
+
+
+.ncco-industrial-intro__arrow {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #F2C500;
+
+  border-radius: 50%;
+
+  color: #172235;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.ncco-industrial-intro__features {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  column-gap: 18px;
+
+  text-align: left;
+}
+
+
+.ncco-industrial-intro__feature {
+  border-top: 1px solid #E1E6EA;
+
+  padding-top: 24px;
+}
+
+
+.ncco-industrial-intro__feature-title {
+  margin: 0 0 8px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+
+  color: #172235;
+
+  text-transform: uppercase;
+}
+
+
+.ncco-industrial-intro__feature-text {
+  max-width: 320px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 9px;
+  line-height: 14px;
+  font-weight: 400;
+
+  color: #718397;
+}
+
+
+.ncco-industrial-intro__feature-text p {
+  margin: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .ncco-industrial-intro {
+    padding: 60px 40px 40px;
+  }
+
+  .ncco-industrial-intro__container {
+    grid-template-columns: 25% 75%;
+  }
+
+  .ncco-industrial-intro__heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .ncco-industrial-intro {
+    padding: 50px 20px 40px;
+  }
+
+
+  .ncco-industrial-intro__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /* LEFT */
+
+  .ncco-industrial-intro__left {
+    padding-top: 0;
+    margin-bottom: 28px;
+  }
+
+
+  /* RIGHT */
+
+  .ncco-industrial-intro__right {
+    text-align: left;
+  }
+
+
+  /* HEADING */
+
+  .ncco-industrial-intro__heading {
+    max-width: 100%;
+
+    margin: 0 0 24px;
+
+    font-size: 30px;
+    line-height: 36px;
+
+    letter-spacing: -1px;
+
+    text-align: left;
+  }
+
+
+  /* CTA */
+
+  .ncco-industrial-intro__cta-wrap {
+    justify-content: flex-start;
+
+    margin-bottom: 38px;
+  }
+
+
+  /* FEATURES */
+
+  .ncco-industrial-intro__features {
+    grid-template-columns: 1fr;
+
+    row-gap: 28px;
+  }
+
+
+  .ncco-industrial-intro__feature {
+    padding-top: 20px;
+  }
+
+
+  .ncco-industrial-intro__feature-title {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+
+  .ncco-industrial-intro__feature-text {
+    max-width: 100%;
+
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Industrial Intro",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "JUST AN INTRO"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "An Industrial Air Purification Brand Built for Performance"
+    },
+
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "KNOW MORE ABOUT US"
+    },
+
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "feature",
+      "name": "Feature",
+
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "BRINGING CLEAN AIR TO SCALE"
+        },
+
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>We develop industrial-grade air purification systems for hospitals, transit, and factories built to run continuously and reliably.</p>"
+        }
+
+      ]
+
+    }
+
+  ],
+
+  "presets": [
+
+    {
+      "name": "NCCO Industrial Intro",
+
+      "blocks": [
+
+        {
+          "type": "feature",
+          "settings": {
+            "title": "BRINGING CLEAN AIR TO SCALE",
+            "text": "<p>We develop industrial-grade air purification systems for hospitals, transit, and factories built to run continuously and reliably.</p>"
+          }
+        },
+
+        {
+          "type": "feature",
+          "settings": {
+            "title": "BUILT FOR CRITICAL INFRASTRUCTURE",
+            "text": "<p>05+ units use NCCO technology and are designed for high-demand spaces efficient, adaptable, and trusted by professionals.</p>"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+
+{% endschema %}

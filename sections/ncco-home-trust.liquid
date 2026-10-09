@@ -1,0 +1,658 @@
+<section class="ncco-home-trust">
+  <div class="ncco-home-trust__inner">
+
+    <!-- IMAGE COLLAGE -->
+    <div class="ncco-home-trust__collage">
+
+      {% if section.settings.image_1 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-1">
+          <img
+            src="{{ section.settings.image_1 | image_url: width: 800 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_2 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-2">
+          <img
+            src="{{ section.settings.image_2 | image_url: width: 1000 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_3 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-3">
+          <img
+            src="{{ section.settings.image_3 | image_url: width: 800 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+      <!-- 99% STAT CARD -->
+      <div class="ncco-home-trust__stat">
+        <div class="ncco-home-trust__stat-number">
+          {{ section.settings.stat_number }}<span>{{ section.settings.stat_symbol }}</span>
+        </div>
+
+        <div class="ncco-home-trust__stat-label">
+          {{ section.settings.stat_label }}
+        </div>
+      </div>
+
+      {% if section.settings.image_4 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-4">
+          <img
+            src="{{ section.settings.image_4 | image_url: width: 800 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_5 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-5">
+          <img
+            src="{{ section.settings.image_5 | image_url: width: 1000 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_6 != blank %}
+        <div class="ncco-home-trust__item ncco-home-trust__image-6">
+          <img
+            src="{{ section.settings.image_6 | image_url: width: 800 }}"
+            alt=""
+            loading="lazy">
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- TEXT CONTENT -->
+    <div class="ncco-home-trust__content">
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="ncco-home-trust__eyebrow">
+          <span></span>
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="ncco-home-trust__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.intro != blank %}
+        <div class="ncco-home-trust__intro">
+          {{ section.settings.intro }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.matter_heading != blank %}
+        <div class="ncco-home-trust__block">
+          <h3>{{ section.settings.matter_heading }}</h3>
+
+          {% if section.settings.matter_text != blank %}
+            <p>{{ section.settings.matter_text }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.solve_heading != blank %}
+        <div class="ncco-home-trust__block">
+          <h3>{{ section.settings.solve_heading }}</h3>
+
+          {% if section.settings.solve_text != blank %}
+            <p>{{ section.settings.solve_text }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.cta_label != blank %}
+        <a
+          href="{{ section.settings.cta_url | default: '#' }}"
+          class="ncco-home-trust__cta">
+
+          <span>{{ section.settings.cta_label }}</span>
+
+          <span class="ncco-home-trust__cta-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 13L13 3M13 3H6M13 3V10"
+                stroke="#081D3A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+        </a>
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+.ncco-home-trust {
+  background: #fff;
+  padding: 70px 0 90px;
+}
+
+.ncco-home-trust__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 82px;
+  align-items: center;
+}
+
+
+/* =========================
+   IMAGE COLLAGE
+========================= */
+
+.ncco-home-trust__collage {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 136px 136px 136px;
+
+  gap: 10px;
+}
+
+.ncco-home-trust__item {
+  overflow: hidden;
+  border-radius: 15px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.ncco-home-trust__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* TOP ROW */
+
+.ncco-home-trust__image-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ncco-home-trust__image-2 {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}
+
+
+/* MIDDLE ROW */
+
+.ncco-home-trust__image-3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+/* 99% CARD */
+
+.ncco-home-trust__stat {
+  grid-column: 2;
+  grid-row: 2;
+
+  border-radius: 15px;
+  background: #f4f5f7;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.ncco-home-trust__stat-number {
+  font-family: 'Geist', sans-serif;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+  color: #081D3A;
+}
+
+.ncco-home-trust__stat-number span {
+  font-size: 22px;
+  vertical-align: 10px;
+}
+
+.ncco-home-trust__stat-label {
+  margin-top: 10px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 15px;
+  color: #647082;
+
+  max-width: 90px;
+}
+
+
+/* MIDDLE RIGHT */
+
+.ncco-home-trust__image-4 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+
+/* BOTTOM ROW */
+
+.ncco-home-trust__image-5 {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+.ncco-home-trust__image-6 {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+
+/* =========================
+   TEXT CONTENT
+========================= */
+
+.ncco-home-trust__content {
+  max-width: 560px;
+}
+
+.ncco-home-trust__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+
+  color: #647082;
+  text-transform: uppercase;
+}
+
+.ncco-home-trust__eyebrow span {
+  width: 15px;
+  height: 2px;
+
+  display: block;
+
+  background: #FECB07;
+}
+
+
+.ncco-home-trust__heading {
+  margin: 0 0 12px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+
+  color: #081D3A;
+}
+
+
+.ncco-home-trust__intro {
+  margin-bottom: 30px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 400;
+
+  color: #647082;
+}
+
+.ncco-home-trust__intro p {
+  margin: 0 0 10px;
+}
+
+.ncco-home-trust__intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* CONTENT BLOCKS */
+
+.ncco-home-trust__block {
+  margin-bottom: 22px;
+}
+
+.ncco-home-trust__block h3 {
+  margin: 0 0 10px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+
+  color: #081D3A;
+  text-transform: uppercase;
+}
+
+.ncco-home-trust__block p {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 400;
+
+  color: #647082;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.ncco-home-trust__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-top: 28px;
+  padding: 7px 7px 7px 20px;
+
+  background: #0047BB;
+  color: #fff;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  box-shadow: 0 8px 18px rgba(0, 71, 187, .22);
+
+  transition: .2s ease;
+}
+
+.ncco-home-trust__cta:hover {
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.ncco-home-trust__cta-icon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #FECB07;
+  border-radius: 50%;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  .ncco-home-trust {
+    padding: 60px 0;
+  }
+
+  .ncco-home-trust__inner {
+    gap: 45px;
+  }
+
+  .ncco-home-trust__heading {
+    font-size: 30px;
+  }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 768px) {
+
+  .ncco-home-trust {
+    padding: 48px 0;
+  }
+
+  .ncco-home-trust__inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 0 24px;
+  }
+
+  .ncco-home-trust__collage {
+    grid-template-rows: repeat(3, 110px);
+    gap: 8px;
+  }
+
+  .ncco-home-trust__heading {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .ncco-home-trust__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .ncco-home-trust__eyebrow {
+    justify-content: center;
+  }
+
+  .ncco-home-trust__eyebrow span {
+    display: none;
+  }
+
+  .ncco-home-trust__cta {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 480px) {
+
+  .ncco-home-trust__collage {
+    grid-template-rows: repeat(3, 95px);
+  }
+
+  .ncco-home-trust__stat-number {
+    font-size: 32px;
+  }
+
+  .ncco-home-trust__stat-number span {
+    font-size: 17px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "NCCO Home Trust",
+  "tag": "section",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Collage Images"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1 - Top Left"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2 - Top Right"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3 - Middle Left"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image 4 - Middle Right"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image 5 - Bottom Left"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Image 6 - Bottom Right"
+    },
+
+    {
+      "type": "header",
+      "content": "Statistic"
+    },
+
+    {
+      "type": "text",
+      "id": "stat_number",
+      "label": "Number",
+      "default": "99"
+    },
+
+    {
+      "type": "text",
+      "id": "stat_symbol",
+      "label": "Symbol",
+      "default": "%"
+    },
+
+    {
+      "type": "text",
+      "id": "stat_label",
+      "label": "Label",
+      "default": "Air Purification Efficiency"
+    },
+
+    {
+      "type": "header",
+      "content": "Content"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "OUR COMMITMENT TO HOMES"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Cleaner Air, Trusted by Hong Kong Homes"
+    },
+
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro"
+    },
+
+    {
+      "type": "text",
+      "id": "matter_heading",
+      "label": "First heading",
+      "default": "WHY IT MATTERS"
+    },
+
+    {
+      "type": "text",
+      "id": "matter_text",
+      "label": "First text"
+    },
+
+    {
+      "type": "text",
+      "id": "solve_heading",
+      "label": "Second heading",
+      "default": "WHAT WE SOLVE"
+    },
+
+    {
+      "type": "text",
+      "id": "solve_text",
+      "label": "Second text"
+    },
+
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "GET A FREE CONSULTATION"
+    },
+
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Home Trust"
+    }
+  ]
+}
+{% endschema %}

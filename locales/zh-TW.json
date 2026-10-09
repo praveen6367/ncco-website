@@ -384,6 +384,51 @@
       "min_error": "此品項下限為 {{ min }}",
       "max_error": "此品項上限為 {{ max }}",
       "step_error": "只能以 {{ step }} 為增量新增此品項"
+    },
+    "ncco_contact_cta": {
+      "email_label": "電郵我們",
+      "phone_label": "致電我們",
+      "office_label": "總辦事處",
+      "form_name": "姓名",
+      "form_email": "電郵地址",
+      "form_phone": "手機號碼",
+      "form_message": "訊息",
+      "placeholder_name": "輸入姓名",
+      "placeholder_email": "輸入電郵地址",
+      "placeholder_phone": "輸入手機號碼",
+      "placeholder_message": "輸入訊息",
+      "success": "訊息已發送——我們將盡快與你聯繫。",
+      "submit_default": "提交"
+    },
+    "ncco_footer": {
+      "quick_links": "快速連結",
+      "our_brands": "我們的品牌",
+      "follow_us": "關注我們",
+      "copyright": "© 2025 NCCO。版權所有。"
+    },
+    "ncco_header": {
+      "brands": {
+        "ncco_desc": "所有空氣淨化產品的核心技術。",
+        "ncco_mob_desc": "核心空氣淨化技術",
+        "rht_desc": "大型設施工業空氣解決方案。",
+        "bmola_desc": "家居及個人智能淨化器。",
+        "nccoig_desc": "臨床環境殺菌系統。",
+        "osplus_desc": "優雅設計生活淨化器。"
+      },
+      "impact": {
+        "residential_name": "住宅應用",
+        "residential_desc": "香港最暢銷淨化方案。",
+        "residential_mob_desc": "香港最暢銷淨化方案",
+        "medical_name": "醫療應用",
+        "medical_desc": "為300家醫院提供空氣淨化系統。",
+        "medical_mob_desc": "與300+家醫院合作",
+        "industrial_name": "工業應用",
+        "industrial_desc": "為廢物站除臭，為工廠過濾廢氣。",
+        "industrial_mob_desc": "大規模重型淨化",
+        "commercial_name": "商業應用",
+        "commercial_desc": "為商業大厦提供空氣淨化系統。",
+        "commercial_mob_desc": "辦公室及零售智能空氣質量"
+      }
     }
   },
   "localization": {

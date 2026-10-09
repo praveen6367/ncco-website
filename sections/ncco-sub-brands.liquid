@@ -1,0 +1,628 @@
+<section class="ncco-sub-brands">
+
+  <div class="ncco-sub-brands__header">
+
+    <div class="ncco-sub-brands__eyebrow">
+      <span></span>
+      {{ section.settings.eyebrow }}
+    </div>
+
+    <h2 class="ncco-sub-brands__heading">
+      {{ section.settings.heading }}
+    </h2>
+
+    {% if section.settings.subheading != blank %}
+      <p class="ncco-sub-brands__subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
+
+  </div>
+
+
+  <div class="ncco-sub-brands__grid">
+
+    <!-- BRAND 1 -->
+    <div class="ncco-sub-brands__card">
+
+      <div class="ncco-sub-brands__logo">
+        {% if section.settings.brand_1_logo != blank %}
+          <img
+            src="{{ section.settings.brand_1_logo | image_url: width: 400 }}"
+            alt="{{ section.settings.brand_1_name }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <div class="ncco-sub-brands__content">
+        <h3>{{ section.settings.brand_1_name }}</h3>
+        <p>{{ section.settings.brand_1_description }}</p>
+      </div>
+
+    </div>
+
+
+    <!-- BRAND 2 -->
+    <div class="ncco-sub-brands__card">
+
+      <div class="ncco-sub-brands__logo">
+        {% if section.settings.brand_2_logo != blank %}
+          <img
+            src="{{ section.settings.brand_2_logo | image_url: width: 400 }}"
+            alt="{{ section.settings.brand_2_name }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <div class="ncco-sub-brands__content">
+        <h3>{{ section.settings.brand_2_name }}</h3>
+        <p>{{ section.settings.brand_2_description }}</p>
+      </div>
+
+    </div>
+
+
+    <!-- BRAND 3 -->
+    <div class="ncco-sub-brands__card">
+
+      <div class="ncco-sub-brands__logo">
+        {% if section.settings.brand_3_logo != blank %}
+          <img
+            src="{{ section.settings.brand_3_logo | image_url: width: 400 }}"
+            alt="{{ section.settings.brand_3_name }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <div class="ncco-sub-brands__content">
+        <h3>{{ section.settings.brand_3_name }}</h3>
+        <p>{{ section.settings.brand_3_description }}</p>
+      </div>
+
+    </div>
+
+
+    <!-- BRAND 4 -->
+    <div class="ncco-sub-brands__card">
+
+      <div class="ncco-sub-brands__logo">
+        {% if section.settings.brand_4_logo != blank %}
+          <img
+            src="{{ section.settings.brand_4_logo | image_url: width: 400 }}"
+            alt="{{ section.settings.brand_4_name }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <div class="ncco-sub-brands__content">
+        <h3>{{ section.settings.brand_4_name }}</h3>
+        <p>{{ section.settings.brand_4_description }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {% if section.settings.button_text != blank %}
+
+    <div class="ncco-sub-brands__button-wrap">
+
+      <a
+        href="{{ section.settings.button_url }}"
+        class="ncco-sub-brands__button"
+      >
+        <span>{{ section.settings.button_text }}</span>
+
+        <span class="ncco-sub-brands__button-icon">
+          ↗
+        </span>
+      </a>
+
+    </div>
+
+  {% endif %}
+
+</section>
+
+
+<style>
+
+.ncco-sub-brands {
+  width: 100%;
+  padding: 90px 40px 90px;
+  box-sizing: border-box;
+  background: #f7f9fc;
+}
+
+
+/* HEADER */
+
+.ncco-sub-brands__header {
+  max-width: 1100px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+
+/* EYEBROW */
+
+.ncco-sub-brands__eyebrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+
+  color: #647082;
+
+  text-transform: uppercase;
+}
+
+.ncco-sub-brands__eyebrow span {
+  width: 18px;
+  height: 2px;
+
+  margin-bottom: 8px;
+
+  background: #FECB07;
+}
+
+
+/* HEADING */
+
+.ncco-sub-brands__heading {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.5px;
+
+  color: #081D3A;
+}
+
+
+/* SUBHEADING */
+
+.ncco-sub-brands__subheading {
+  max-width: 850px;
+
+  margin: 14px auto 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+
+  color: #647082;
+}
+
+
+/* GRID */
+
+.ncco-sub-brands__grid {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+/* CARD */
+
+.ncco-sub-brands__card {
+  min-height: 125px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  background: #fff;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 18px;
+}
+
+
+/* LOGO */
+
+.ncco-sub-brands__logo {
+  width: 105px;
+  min-width: 105px;
+
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.ncco-sub-brands__logo img {
+  display: block;
+
+  width: auto;
+
+  max-width: 100px;
+  max-height: 70px;
+
+  object-fit: contain;
+}
+
+
+/* CONTENT */
+
+.ncco-sub-brands__content {
+  flex: 1;
+
+  min-height: 95px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #eaf5f6;
+
+  border-radius: 14px;
+}
+
+.ncco-sub-brands__card:nth-child(3) .ncco-sub-brands__content {
+  background: #f0f8f1;
+}
+
+.ncco-sub-brands__card:nth-child(4) .ncco-sub-brands__content {
+  background: #eaf5f6;
+}
+
+
+/* BRAND NAME */
+
+.ncco-sub-brands__content h3 {
+  margin: 0 0 7px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+
+  color: #081D3A;
+}
+
+
+/* DESCRIPTION */
+
+.ncco-sub-brands__content p {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+
+  color: #647082;
+}
+
+
+/* BUTTON */
+
+.ncco-sub-brands__button-wrap {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 34px;
+}
+
+.ncco-sub-brands__button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 7px 8px 7px 22px;
+
+  background: #0648b8;
+
+  border-radius: 30px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 20px;
+
+  box-shadow: 0 7px 16px rgba(8, 29, 58, 0.18);
+}
+
+.ncco-sub-brands__button-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #FECB07;
+
+  color: #081D3A;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .ncco-sub-brands {
+    padding: 70px 28px 75px;
+  }
+
+  .ncco-sub-brands__heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .ncco-sub-brands__grid {
+    max-width: 900px;
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+  .ncco-sub-brands {
+    padding: 60px 20px 65px;
+  }
+
+  .ncco-sub-brands__header {
+    margin-bottom: 32px;
+  }
+
+  .ncco-sub-brands__heading {
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .ncco-sub-brands__subheading {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .ncco-sub-brands__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ncco-sub-brands__card {
+    min-height: 125px;
+    padding: 14px;
+  }
+
+  .ncco-sub-brands__logo {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+  }
+
+  .ncco-sub-brands__logo img {
+    max-width: 85px;
+    max-height: 65px;
+  }
+
+  .ncco-sub-brands__content {
+    min-height: 95px;
+    padding: 16px;
+  }
+
+  .ncco-sub-brands__content h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .ncco-sub-brands__content p {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Sub Brands",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "SUB-BRANDS"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One Technology. Many Solutions."
+    },
+
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "From home to industry, explore how each of our Sub-Brands brings NCCO purification to life."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Brand 1"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "brand_1_logo",
+      "label": "Brand 1 logo"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_1_name",
+      "label": "Brand 1 name",
+      "default": "RHT"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_1_description",
+      "label": "Brand 1 description",
+      "default": "Our core technology brand powering advanced air purification with nano-catalyst oxidation for long-lasting protection."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Brand 2"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "brand_2_logo",
+      "label": "Brand 2 logo"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_2_name",
+      "label": "Brand 2 name",
+      "default": "B-MOLA"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_2_description",
+      "label": "Brand 2 description",
+      "default": "Our consumer electronics line, integrating NCCO tech into stylish, portable, and high-performance devices for homes, cars, and travel."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Brand 3"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "brand_3_logo",
+      "label": "Brand 3 logo"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_3_name",
+      "label": "Brand 3 name",
+      "default": "O5+"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_3_description",
+      "label": "Brand 3 description",
+      "default": "Our premium lifestyle brand, offering design-forward air purifiers that blend aesthetics with performance for modern interiors."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Brand 4"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "brand_4_logo",
+      "label": "Brand 4 logo"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_4_name",
+      "label": "Brand 4 name",
+      "default": "NCCO-IG"
+    },
+
+    {
+      "type": "text",
+      "id": "brand_4_description",
+      "label": "Brand 4 description",
+      "default": "Focused on industrial-grade applications, NCCO-IG delivers powerful purification systems for factories, healthcare, and large-scale operations."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Button"
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "EXPLORE ALL BRANDS"
+    },
+
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Sub Brands"
+    }
+  ]
+}
+
+{% endschema %}

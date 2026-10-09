@@ -1,0 +1,423 @@
+{%- comment -%}
+  NCCO Unique Benefits
+  8-card feature / benefits section
+{%- endcomment -%}
+<section class="ncco-benefits" id="ncco-benefits-{{ section.id }}">
+  <div class="ncco-benefits__inner">
+    <div class="ncco-benefits__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="ncco-benefits__eyebrow">
+          {{ section.settings.eyebrow }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ncco-benefits__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="ncco-benefits__description">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="ncco-benefits__grid">
+      {%- for block in section.blocks -%}
+        <article class="ncco-benefit-card" {{ block.shopify_attributes }}>
+          <div class="ncco-benefit-card__icon">
+            {%- if block.settings.icon != blank -%}
+              {{
+                block.settings.icon
+                | image_url: width: 120
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '60, 90, 120',
+                  class: 'ncco-benefit-card__icon-image'
+              }}
+            {%- else -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 3L19 6V11C19 15.5 16.1 19.3 12 21C7.9 19.3 5 15.5 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path d="M9.5 12L11.2 13.7L14.8 10.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- when 2 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 3H15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M10 3V8L5 15.5C4 17 5.1 19 7 19H17C18.9 19 20 17 19 15.5L14 8V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 15H17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                {%- when 3 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 3C12 3 6.5 9.2 6.5 13.5C6.5 16.8 8.9 19 12 19C15.1 19 17.5 16.8 17.5 13.5C17.5 9.2 12 3 12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  </svg>
+                {%- when 4 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 16L9 11L12 14L20 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 6H20V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- when 5 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- when 6 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 5L10 3L14 5L20 3V19L14 21L10 19L4 21V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path d="M10 3V19" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M14 5V21" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                {%- when 7 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 3L13.7 9.3L20 11L13.7 12.7L12 19L10.3 12.7L4 11L10.3 9.3L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  </svg>
+                {%- when 8 -%}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M9 4V2H15V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M9 8H15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M9 12H15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+              {%- endcase -%}
+            {%- endif -%}
+          </div>
+          <div class="ncco-benefit-card__content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="ncco-benefit-card__title">
+                {{ block.settings.title }}
+              </h3>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="ncco-benefit-card__description">
+                {{ block.settings.description }}
+              </p>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<style>
+#ncco-benefits-{{ section.id }}{
+  --benefits-background:#031519;
+  --benefits-heading:#FFFFFF;
+  --benefits-eyebrow:#FFFFFF;
+  --benefits-description:#797979;
+  --benefits-card-title:#FFFFFF;
+  --benefits-card-description:#797979;
+  --benefits-icon-background:#031519;
+  --benefits-icon-color:#53BDD8;
+  --benefits-icon-border:rgba(83,189,216,.32);
+  --benefits-border:rgba(83,189,216,.10);
+  --benefits-accent:#53BDD8;
+  --benefits-radius:0px;
+  --benefits-card-radius:0px;
+  background:var(--benefits-background);
+  border-radius:var(--benefits-radius);
+  overflow:hidden;
+  width:100%;
+  box-sizing:border-box;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__inner{
+  max-width:1600px;
+  margin:0 auto;
+  padding:85px 30px 30px;
+  box-sizing:border-box;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__header{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 70px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__eyebrow{
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:500;
+  letter-spacing:.2px;
+  text-transform:uppercase;
+  color:var(--benefits-eyebrow);
+  margin-bottom:20px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__eyebrow::before{
+  content:'';
+  display:block;
+  width:20px;
+  height:2px;
+  background:var(--benefits-accent);
+  margin:0 auto 8px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__heading{
+  margin:0;
+  color:var(--benefits-heading);
+  font-family:'Geist',sans-serif;
+  font-size:58px;
+  line-height:1.05;
+  font-weight:500;
+  letter-spacing:-2px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__description{
+  max-width:600px;
+  margin:18px auto 0;
+  color:var(--benefits-description);
+  font-family:'Geist',sans-serif;
+  font-size:13px;
+  line-height:1.5;
+  font-weight:400;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__description p{
+  margin:0;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefits__grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--benefits-border);
+  border-left:1px solid var(--benefits-border);
+  margin:0 auto;
+  max-width:1040px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card{
+  position:relative;
+  min-height:215px;
+  padding:25px 34px 25px;
+  box-sizing:border-box;
+  border-right:1px solid var(--benefits-border);
+  border-bottom:1px solid var(--benefits-border);
+  background:transparent;
+  border-radius:var(--benefits-card-radius);
+  transition:background .25s ease;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card:hover{
+  background:rgba(83,189,216,.025);
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:55px;
+  width:2px;
+  height:28px;
+  background:var(--benefits-accent);
+  opacity:.9;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__icon{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:25px;
+  background:var(--benefits-icon-background);
+  border:1px solid var(--benefits-icon-border);
+  color:var(--benefits-icon-color);
+  box-shadow:0 0 18px rgba(83,189,216,.12),inset 0 0 15px rgba(83,189,216,.04);
+  box-sizing:border-box;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__icon svg{
+  width:22px;
+  height:22px;
+  display:block;
+  color:var(--benefits-icon-color);
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__icon-image{
+  width:22px;
+  height:22px;
+  object-fit:contain;
+  display:block;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__content{
+  max-width:260px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__title{
+  margin:0 0 9px;
+  color:var(--benefits-card-title);
+  font-family:'Geist',sans-serif;
+  font-size:14px;
+  line-height:1.25;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:-.2px;
+}
+#ncco-benefits-{{ section.id }} .ncco-benefit-card__description{
+  margin:0;
+  color:var(--benefits-card-description);
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:1.5;
+  font-weight:400;
+}
+@media screen and (max-width:1100px){
+  #ncco-benefits-{{ section.id }} .ncco-benefits__grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__heading{
+    font-size:48px;
+  }
+}
+@media screen and (max-width:700px){
+  #ncco-benefits-{{ section.id }} .ncco-benefits__inner{
+    padding:60px 20px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__header{
+    margin-bottom:45px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__eyebrow{
+    font-size:10px;
+    margin-bottom:15px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__heading{
+    font-size:36px;
+    line-height:1.08;
+    letter-spacing:-1.2px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__description{
+    font-size:13px;
+    line-height:1.5;
+    margin-top:16px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__grid{
+    grid-template-columns:1fr;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefit-card{
+    min-height:auto;
+    padding:35px 25px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefit-card::before{
+    top:38px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefit-card__icon{
+    margin-bottom:20px;
+  }
+}
+@media screen and (max-width:480px){
+  #ncco-benefits-{{ section.id }} .ncco-benefits__inner{
+    padding:50px 15px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefits__heading{
+    font-size:32px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefit-card__title{
+    font-size:14px;
+  }
+  #ncco-benefits-{{ section.id }} .ncco-benefit-card__description{
+    font-size:12px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name":"NCCO Unique Benefits",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"text",
+      "id":"eyebrow",
+      "label":"Eyebrow",
+      "default":"Unique Benefits"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"Experience Skin Protection Like Never Before"
+    },
+    {
+      "type":"text",
+      "id":"description",
+      "label":"Description",
+      "default":"NCCO-IG blends advanced skincare science with daily practicality delivering invisible, long-lasting protection that's gentle, powerful, and proven effective."
+    }
+  ],
+  "blocks":[
+    {
+      "type":"benefit",
+      "name":"Benefit",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"icon",
+          "label":"Custom icon"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title",
+          "default":"Invisible Shield"
+        },
+        {
+          "type":"text",
+          "id":"description",
+          "label":"Description",
+          "default":"Creates a breathable, protective barrier that shields skin from germs, irritants, and pollutants."
+        }
+      ]
+    }
+  ],
+  "max_blocks":8,
+  "presets":[
+    {
+      "name":"NCCO Unique Benefits",
+      "blocks":[
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Invisible Shield",
+            "description":"Creates a breathable, protective barrier that shields skin from germs, irritants, and pollutants."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Clinically Proven",
+            "description":"Clinically tested to kill 99.9% of viruses and germs, including human coronavirus."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Deep Hydration",
+            "description":"Hydrates and repairs dry, cracked, or eczema-prone skin without stickiness or residue."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Safe & Clean",
+            "description":"Safe for all skin types, including sensitive and allergy-prone skin. No harsh chemicals."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Long-Lasting Effect",
+            "description":"Stays effective for hours, providing continuous protection throughout your day."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Travel-Friendly",
+            "description":"Compact and lightweight tube perfect for pockets, bags, or desks."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Non-Sticky Feel",
+            "description":"Smooth, clean finish that feels natural on your hands or skin."
+          }
+        },
+        {
+          "type":"benefit",
+          "settings":{
+            "title":"Science-Backed",
+            "description":"Developed with advanced skincare technology and dermatological research."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

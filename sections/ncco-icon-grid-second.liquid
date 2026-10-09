@@ -1,0 +1,376 @@
+<section class="ncco-vision-mission">
+  <div class="ncco-vision-mission__inner">
+
+    <!-- VISION CARD -->
+    <div class="ncco-vision-mission__card">
+
+      <div class="ncco-vision-mission__eyebrow">
+        <span></span>
+        {{ section.settings.vision_label }}
+      </div>
+
+      <h2 class="ncco-vision-mission__heading">
+        {{ section.settings.vision_heading }}
+      </h2>
+
+      <div class="ncco-vision-mission__points">
+
+        {% if section.settings.vision_point_1 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.vision_point_1 }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.vision_point_2 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.vision_point_2 }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.vision_point_3 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.vision_point_3 }}</p>
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+
+    <!-- MISSION CARD -->
+    <div class="ncco-vision-mission__card">
+
+      <div class="ncco-vision-mission__eyebrow">
+        <span></span>
+        {{ section.settings.mission_label }}
+      </div>
+
+      <h2 class="ncco-vision-mission__heading">
+        {{ section.settings.mission_heading }}
+      </h2>
+
+      <div class="ncco-vision-mission__points">
+
+        {% if section.settings.mission_point_1 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.mission_point_1 }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.mission_point_2 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.mission_point_2 }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.mission_point_3 != blank %}
+          <div class="ncco-vision-mission__point">
+            <span class="ncco-vision-mission__icon">+</span>
+            <p>{{ section.settings.mission_point_3 }}</p>
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+.ncco-vision-mission {
+  width: 100%;
+  padding: 0 16px 80px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.ncco-vision-mission__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+
+/* CARD */
+
+.ncco-vision-mission__card {
+  min-height: 225px;
+  padding: 40px 40px;
+
+  box-sizing: border-box;
+
+  background: #081D3A;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* EYEBROW */
+
+.ncco-vision-mission__eyebrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 16px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.ncco-vision-mission__eyebrow span {
+  width: 16px;
+  height: 2px;
+
+  margin-bottom: 7px;
+
+  background: #FECB07;
+}
+
+
+/* HEADING */
+
+.ncco-vision-mission__heading {
+  margin: 0 0 24px;
+
+  text-align: center;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: -0.7px;
+
+  color: #fff;
+}
+
+
+/* POINTS */
+
+.ncco-vision-mission__points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ncco-vision-mission__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ncco-vision-mission__icon {
+  flex: 0 0 22px;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background: rgba(254, 203, 7, 0.16);
+
+  color: #FECB07;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.ncco-vision-mission__point p {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 17px;
+
+  color: #D5DCE6;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .ncco-vision-mission__inner {
+    gap: 14px;
+  }
+
+  .ncco-vision-mission__card {
+    padding: 32px 26px;
+  }
+
+  .ncco-vision-mission__heading {
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  .ncco-vision-mission__point p {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+  .ncco-vision-mission {
+    padding: 0 16px 48px;
+  }
+
+  .ncco-vision-mission__inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ncco-vision-mission__card {
+    min-height: auto;
+    padding: 32px 24px;
+  }
+
+  .ncco-vision-mission__eyebrow {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .ncco-vision-mission__heading {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .ncco-vision-mission__point p {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "NCCO Vision Mission",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Vision"
+    },
+
+    {
+      "type": "text",
+      "id": "vision_label",
+      "label": "Vision label",
+      "default": "VISION"
+    },
+
+    {
+      "type": "text",
+      "id": "vision_heading",
+      "label": "Vision heading",
+      "default": "Where We're Headed"
+    },
+
+    {
+      "type": "text",
+      "id": "vision_point_1",
+      "label": "Vision point 1",
+      "default": "RHI: We are harnessing the power of our unique NCCO Nano-Confined Catalytic Oxidation technology to redefine air purification."
+    },
+
+    {
+      "type": "text",
+      "id": "vision_point_2",
+      "label": "Vision point 2",
+      "default": "Our systems are not just effective and long-lasting, they are also energy-saving, sustainable, and eco-friendly."
+    },
+
+    {
+      "type": "text",
+      "id": "vision_point_3",
+      "label": "Vision point 3",
+      "default": "We are on a mission to make the world a better place to breathe."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Mission"
+    },
+
+    {
+      "type": "text",
+      "id": "mission_label",
+      "label": "Mission label",
+      "default": "MISSION"
+    },
+
+    {
+      "type": "text",
+      "id": "mission_heading",
+      "label": "Mission heading",
+      "default": "What Drives Us"
+    },
+
+    {
+      "type": "text",
+      "id": "mission_point_1",
+      "label": "Mission point 1",
+      "default": "RHI stands for Regeneration, Hope, and Trust. Through relentless innovation and dedication, we are raising the bar in air purification."
+    },
+
+    {
+      "type": "text",
+      "id": "mission_point_2",
+      "label": "Mission point 2",
+      "default": "Our passion for engineering and NCCO technology drives us to deliver reliable, well-designed, and technically superior products and services."
+    },
+
+    {
+      "type": "text",
+      "id": "mission_point_3",
+      "label": "Mission point 3"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO Vision Mission"
+    }
+  ]
+}
+{% endschema %}

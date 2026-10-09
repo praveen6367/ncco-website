@@ -1,0 +1,618 @@
+<section class="ncco-ig-showcase">
+  <div class="ncco-ig-showcase__inner">
+
+    <!-- HEADER -->
+    <div class="ncco-ig-showcase__header">
+
+      <div class="ncco-ig-showcase__line"></div>
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="ncco-ig-showcase__eyebrow">
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.logo != blank %}
+        <img
+          class="ncco-ig-showcase__logo"
+          src="{{ section.settings.logo | image_url: width: 300 }}"
+          alt="{{ section.settings.logo_alt | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="ncco-ig-showcase__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- FEATURES -->
+    <div class="ncco-ig-showcase__features">
+
+      {% if section.settings.point_1 != blank %}
+        <div class="ncco-ig-showcase__feature">
+          <span class="ncco-ig-showcase__feature-icon">+</span>
+          <p>{{ section.settings.point_1 }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.point_2 != blank %}
+        <div class="ncco-ig-showcase__feature">
+          <span class="ncco-ig-showcase__feature-icon">+</span>
+          <p>{{ section.settings.point_2 }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.point_3 != blank %}
+        <div class="ncco-ig-showcase__feature">
+          <span class="ncco-ig-showcase__feature-icon">+</span>
+          <p>{{ section.settings.point_3 }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.point_4 != blank %}
+        <div class="ncco-ig-showcase__feature">
+          <span class="ncco-ig-showcase__feature-icon">+</span>
+          <p>{{ section.settings.point_4 }}</p>
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+    <div class="ncco-ig-showcase__products">
+
+      {% if section.settings.image_1 != blank %}
+        <div class="ncco-ig-showcase__product">
+          <img
+            src="{{ section.settings.image_1 | image_url: width: 1000 }}"
+            alt="{{ section.settings.image_1_alt | escape }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_2 != blank %}
+        <div class="ncco-ig-showcase__product ncco-ig-showcase__product--middle">
+          <img
+            src="{{ section.settings.image_2 | image_url: width: 1200 }}"
+            alt="{{ section.settings.image_2_alt | escape }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      {% if section.settings.image_3 != blank %}
+        <div class="ncco-ig-showcase__product">
+          <img
+            src="{{ section.settings.image_3 | image_url: width: 1000 }}"
+            alt="{{ section.settings.image_3_alt | escape }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- BUTTON -->
+    {% if section.settings.button_text != blank %}
+      <div class="ncco-ig-showcase__button-wrap">
+        <a
+          class="ncco-ig-showcase__button"
+          href="{{ section.settings.button_url }}"
+        >
+          <span>{{ section.settings.button_text }}</span>
+          <span class="ncco-ig-showcase__button-icon">↗</span>
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+
+<style>
+
+/* =========================================================
+   NCCO IG SHOWCASE
+========================================================= */
+
+.ncco-ig-showcase {
+  width: 100%;
+  background: #fff;
+  padding: 64px 32px 72px;
+  box-sizing: border-box;
+}
+
+.ncco-ig-showcase__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ncco-ig-showcase__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ncco-ig-showcase__line {
+  width: 18px;
+  height: 2px;
+  background: #FECB07;
+  margin-bottom: 12px;
+}
+
+.ncco-ig-showcase__eyebrow {
+  margin-bottom: 22px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+
+  color: #647082;
+  text-transform: uppercase;
+}
+
+.ncco-ig-showcase__logo {
+  display: block;
+
+  width: auto;
+  max-width: 150px;
+  max-height: 55px;
+
+  object-fit: contain;
+
+  margin-bottom: 22px;
+}
+
+.ncco-ig-showcase__description {
+  width: 100%;
+  max-width: 680px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19px;
+
+  color: #647082;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.ncco-ig-showcase__features {
+  width: 100%;
+
+  margin-top: 38px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.ncco-ig-showcase__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.ncco-ig-showcase__feature-icon {
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(254, 203, 7, 0.14);
+  color: #FECB07;
+
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.ncco-ig-showcase__feature p {
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+
+  color: #081D3A;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGES
+========================================================= */
+
+.ncco-ig-showcase__products {
+  width: 100%;
+
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 16px;
+
+  align-items: stretch;
+}
+
+.ncco-ig-showcase__product {
+  width: 100%;
+  height: 260px;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: #F3F5F8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.ncco-ig-showcase__product--middle {
+  height: 260px;
+}
+
+.ncco-ig-showcase__product img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.ncco-ig-showcase__button-wrap {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 28px;
+}
+
+.ncco-ig-showcase__button {
+  min-width: 145px;
+  height: 42px;
+
+  padding: 0 8px 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  box-sizing: border-box;
+
+  background: #0645B5;
+  color: #fff;
+
+  border-radius: 24px;
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+
+  box-shadow: 0 7px 16px rgba(8, 29, 58, 0.16);
+}
+
+.ncco-ig-showcase__button-icon {
+  width: 28px;
+  height: 28px;
+
+  flex: 0 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #FECB07;
+  color: #081D3A;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .ncco-ig-showcase {
+    padding: 56px 24px 64px;
+  }
+
+  .ncco-ig-showcase__features {
+    gap: 16px;
+  }
+
+  .ncco-ig-showcase__feature {
+    gap: 8px;
+  }
+
+  .ncco-ig-showcase__feature p {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .ncco-ig-showcase__product,
+  .ncco-ig-showcase__product--middle {
+    height: 230px;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .ncco-ig-showcase {
+    padding: 48px 20px 56px;
+  }
+
+  .ncco-ig-showcase__eyebrow {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+
+  .ncco-ig-showcase__logo {
+    max-width: 135px;
+    max-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .ncco-ig-showcase__description {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+
+  /* FEATURES */
+
+  .ncco-ig-showcase__features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .ncco-ig-showcase__feature {
+    align-items: center;
+  }
+
+  .ncco-ig-showcase__feature-icon {
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    line-height: 30px;
+  }
+
+  .ncco-ig-showcase__feature p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+
+  /* PRODUCTS */
+
+  .ncco-ig-showcase__products {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    margin-top: 32px;
+  }
+
+  .ncco-ig-showcase__product,
+  .ncco-ig-showcase__product--middle {
+    width: 100%;
+    height: 260px;
+  }
+
+  .ncco-ig-showcase__product img {
+    padding: 20px;
+  }
+
+
+  /* BUTTON */
+
+  .ncco-ig-showcase__button-wrap {
+    margin-top: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ncco-ig-showcase {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .ncco-ig-showcase__product,
+  .ncco-ig-showcase__product--middle {
+    height: 230px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "NCCO IG Showcase",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "STERILIZATION & HEALTHCARE"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "NCCO-IG"
+    },
+
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Built for critical healthcare and lab environments, NCCO-IG offers robust sterilization systems that deliver continuous protection against airborne pathogens and pollutants."
+    },
+
+    {
+      "type": "text",
+      "id": "point_1",
+      "label": "Feature 1",
+      "default": "Specializes in long-term sterilization systems for healthcare and critical care facilities"
+    },
+
+    {
+      "type": "text",
+      "id": "point_2",
+      "label": "Feature 2",
+      "default": "Effective against airborne viruses, bacteria, and VOCs"
+    },
+
+    {
+      "type": "text",
+      "id": "point_3",
+      "label": "Feature 3",
+      "default": "Designed for continuous, high-safety operation in labs, clinics, and quarantine areas"
+    },
+
+    {
+      "type": "text",
+      "id": "point_4",
+      "label": "Feature 4",
+      "default": "Requires minimal maintenance over time"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Image 1 alt text",
+      "default": "NCCO-IG product"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+
+    {
+      "type": "text",
+      "id": "image_2_alt",
+      "label": "Image 2 alt text",
+      "default": "NCCO-IG product"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+
+    {
+      "type": "text",
+      "id": "image_3_alt",
+      "label": "Image 3 alt text",
+      "default": "NCCO-IG product"
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "VIEW MORE DETAILS"
+    },
+
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "NCCO IG Showcase"
+    }
+  ]
+}
+{% endschema %}

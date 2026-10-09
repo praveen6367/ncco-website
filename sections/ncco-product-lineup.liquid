@@ -1,0 +1,1681 @@
+{%- comment -%}
+  NCCO Product Lineup
+  Product showcase / collection tabs
+{%- endcomment -%}
+
+<section
+  class="ncco-product-lineup"
+  id="ncco-product-lineup-{{ section.id }}"
+>
+
+  <div class="ncco-product-lineup__inner">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <div class="ncco-product-lineup__header">
+
+      <div class="ncco-product-lineup__heading-wrap">
+
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="ncco-product-lineup__eyebrow">
+            <span></span>
+            {{ section.settings.eyebrow }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ncco-product-lineup__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+      </div>
+
+
+      {%- if section.settings.description != blank -%}
+        <div class="ncco-product-lineup__description">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+
+    </div>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <div class="ncco-product-lineup__navigation">
+
+      <div class="ncco-product-lineup__tabs">
+
+        {%- for block in section.blocks -%}
+
+          {%- if block.type == 'collection_tab' -%}
+
+            <button
+              type="button"
+              class="ncco-product-lineup__tab{% if forloop.first %} is-active{% endif %}"
+              data-tab="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.label }}
+            </button>
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
+      </div>
+
+
+      {%- if section.settings.button_label != blank -%}
+
+        <a
+          href="{{ section.settings.button_url | default: routes.all_products_collection_url }}"
+          class="ncco-product-lineup__button"
+        >
+
+          <span>
+            {{ section.settings.button_label }}
+          </span>
+
+          <span class="ncco-product-lineup__button-icon">
+            ↗
+          </span>
+
+        </a>
+
+      {%- endif -%}
+
+    </div>
+
+
+    <!-- =========================================
+         PRODUCT COLLECTIONS
+    ========================================== -->
+
+    <div class="ncco-product-lineup__collections">
+
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'collection_tab' -%}
+
+          <div
+            class="ncco-product-lineup__collection{% if forloop.first %} is-active{% endif %}"
+            data-collection="{{ block.id }}"
+          >
+
+            <div class="ncco-product-lineup__track">
+
+              {%- if block.settings.image_source == 'images' -%}
+
+                <div class="ncco-product-lineup__custom-images">
+
+                  {%- for image_number in (1..4) -%}
+
+                    {%- assign image_key = 'image_' | append: image_number -%}
+                    {%- assign custom_image = block.settings[image_key] -%}
+
+                    {%- if custom_image != blank -%}
+
+                      <article class="ncco-product-card">
+
+                        <div class="ncco-product-card__image-wrap">
+
+                          {{
+                            custom_image
+                            | image_url: width: 900
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '300, 450, 600, 750, 900',
+                              sizes: '(max-width: 768px) 85vw, 340px',
+                              class: 'ncco-product-card__image',
+                              alt: block.settings.image_alt
+                          }}
+
+                        </div>
+
+                      </article>
+
+                    {%- endif -%}
+
+                  {%- endfor -%}
+
+                </div>
+
+              {%- elsif block.settings.collection != blank -%}
+
+                {%- assign lineup_collection = block.settings.collection -%}
+
+                {%- for product in lineup_collection.products limit: section.settings.products_to_show -%}
+
+                  <article class="ncco-product-card">
+
+                    <!-- PRODUCT TOP -->
+                    <div class="ncco-product-card__top">
+
+                      <div class="ncco-product-card__information">
+
+                        <a
+                          href="{{ product.url }}"
+                          class="ncco-product-card__title"
+                        >
+                          {{ product.title }}
+                        </a>
+
+                        <div class="ncco-product-card__price">
+
+                          {%- if product.compare_at_price > product.price -%}
+
+                            <span>
+                              {{ product.price | money }}
+                            </span>
+
+                          {%- else -%}
+
+                            <span>
+                              {{ product.price | money }}
+                            </span>
+
+                          {%- endif -%}
+
+                        </div>
+
+                      </div>
+
+
+                      <a
+                        href="{{ product.url }}"
+                        class="ncco-product-card__quick-view"
+                      >
+                        {{ section.settings.quick_view_text }}
+                        <span>↗</span>
+                      </a>
+
+                    </div>
+
+
+                    <!-- PRODUCT IMAGE -->
+                    <a
+                      href="{{ product.url }}"
+                      class="ncco-product-card__image-wrap"
+                    >
+
+                      {%- if product.featured_image != blank -%}
+
+                        {{
+                          product.featured_image
+                          | image_url: width: 900
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '300, 450, 600, 750, 900',
+                            sizes: '(max-width: 768px) 85vw, 340px',
+                            class: 'ncco-product-card__image'
+                        }}
+
+                      {%- else -%}
+
+                        <div class="ncco-product-card__placeholder">
+                          No image
+                        </div>
+
+                      {%- endif -%}
+
+                    </a>
+
+                  </article>
+
+                {%- else -%}
+
+                  <div class="ncco-product-lineup__empty">
+                    No products found in this collection.
+                  </div>
+
+                {%- endfor -%}
+
+              {%- else -%}
+
+                <div class="ncco-product-lineup__empty">
+                  Select a collection for this tab.
+                </div>
+
+              {%- endif -%}
+
+            </div>
+
+          </div>
+
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* =========================================================
+   NCCO PRODUCT LINEUP
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} {
+
+  --lineup-background: {{ section.settings.background_color }};
+  --lineup-heading: {{ section.settings.heading_color }};
+  --lineup-eyebrow: {{ section.settings.eyebrow_color }};
+  --lineup-accent: {{ section.settings.accent_color }};
+  --lineup-description: {{ section.settings.description_color }};
+
+  --lineup-tabs-background: {{ section.settings.tabs_background }};
+  --lineup-tab-text: {{ section.settings.tab_text_color }};
+  --lineup-tab-active-background: {{ section.settings.active_tab_background }};
+  --lineup-tab-active-text: {{ section.settings.active_tab_text }};
+
+  --lineup-card-background: {{ section.settings.card_background }};
+  --lineup-card-title: {{ section.settings.card_title_color }};
+  --lineup-price: {{ section.settings.price_color }};
+  --lineup-quick-view: {{ section.settings.quick_view_color }};
+
+  --lineup-button-background: {{ section.settings.button_background }};
+  --lineup-button-text: {{ section.settings.button_text_color }};
+  --lineup-button-icon-background: {{ section.settings.button_icon_background }};
+  --lineup-button-icon-color: {{ section.settings.button_icon_color }};
+
+  --lineup-card-radius: {{ section.settings.card_radius }}px;
+  --lineup-section-radius: {{ section.settings.section_radius }}px;
+
+  background: var(--lineup-background);
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
+
+  max-width: {{ section.settings.max_width }}px;
+
+  margin: 0 auto;
+
+  padding:
+    {{ section.settings.padding_top }}px
+    {{ section.settings.padding_horizontal }}px
+    {{ section.settings.padding_bottom }}px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 80px;
+
+  margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   HEADING WRAP
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading-wrap {
+
+  flex: 0 0 auto;
+
+  max-width: 620px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 5px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 12px;
+
+  line-height: 16px;
+
+  font-weight: 400;
+
+  color: var(--lineup-eyebrow);
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow span {
+
+  display: block;
+
+  width: 20px;
+
+  height: 2px;
+
+  background: var(--lineup-accent);
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
+
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: {{ section.settings.heading_size }}px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  letter-spacing: -2.2px;
+
+  color: var(--lineup-heading);
+
+  max-width: 570px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
+
+  max-width: 470px;
+
+  padding-top: 43px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: {{ section.settings.description_size }}px;
+
+  line-height: 1.45;
+
+  font-weight: 400;
+
+  color: var(--lineup-description);
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__navigation {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 36px;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs {
+
+  display: flex;
+
+  align-items: center;
+
+  background: var(--lineup-tabs-background);
+
+  border-radius: 999px;
+
+  padding: 4px;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+
+  max-width: 100%;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs::-webkit-scrollbar {
+
+  display: none;
+}
+
+
+/* =========================================================
+   TAB
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab {
+
+  appearance: none;
+
+  border: 0;
+
+  background: transparent;
+
+  border-radius: 999px;
+
+  padding:
+    10px
+    24px;
+
+  min-height: 36px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 13px;
+
+  line-height: 16px;
+
+  font-weight: 400;
+
+  color: var(--lineup-tab-text);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab:hover {
+
+  color: var(--lineup-tab-active-text);
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab.is-active {
+
+  background: var(--lineup-tab-active-background);
+
+  color: var(--lineup-tab-active-text);
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+
+  min-height: 42px;
+
+  padding:
+    5px
+    5px
+    5px
+    22px;
+
+  border-radius: 999px;
+
+  background: var(--lineup-button-background);
+
+  color: var(--lineup-button-text);
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.92;
+}
+
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button-icon {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: var(--lineup-button-icon-background);
+
+  color: var(--lineup-button-icon-color);
+
+  font-size: 19px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   COLLECTIONS
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collections {
+
+  width: 100%;
+
+  overflow: visible;
+}
+
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collection {
+
+  display: none;
+
+  width: 100%;
+}
+
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collection.is-active {
+
+  display: block;
+}
+
+
+/* =========================================================
+   PRODUCT TRACK
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__custom-images {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: {{ section.settings.card_gap }}px;
+  width: 100%;
+}
+
+.ncco-product-lineup__custom-images .ncco-product-card {
+  flex: 0 0 auto;
+  width: 100%;
+  width: 100%;
+}
+
+.ncco-product-lineup__track {
+
+  display: flex;
+
+  gap: {{ section.settings.card_gap }}px;
+
+  width: max-content;
+
+  min-width: 100%;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track::-webkit-scrollbar {
+
+  display: none;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card {
+
+  position: relative;
+
+  flex: 0 0 {{ section.settings.card_width }}px;
+
+  width: {{ section.settings.card_width }}px;
+
+  height: {{ section.settings.card_height }}px;
+
+  background: var(--lineup-card-background);
+
+  border-radius: var(--lineup-card-radius);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card:hover {
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PRODUCT TOP
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__top {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding:
+    17px
+    14px
+    0;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__information {
+
+  min-width: 0;
+
+  max-width: 215px;
+}
+
+
+/* =========================================================
+   PRODUCT TITLE
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__title {
+
+  display: block;
+
+  color: var(--lineup-card-title);
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  margin: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__title:hover {
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__price {
+
+  margin-top: 5px;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  color: var(--lineup-price);
+}
+
+
+/* =========================================================
+   QUICK VIEW
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+
+  padding-top: 2px;
+
+  color: var(--lineup-quick-view);
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 12px;
+
+  line-height: 16px;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+
+  transition: opacity 0.2s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view:hover {
+
+  opacity: 0.65;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view span {
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__image-wrap {
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  top: 85px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  padding:
+    10px
+    25px
+    22px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__image {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center bottom;
+
+  transition: transform 0.4s ease;
+}
+
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card:hover .ncco-product-card__image {
+
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__placeholder {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  height: 100%;
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 13px;
+
+  color: var(--lineup-description);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__empty {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  min-height: 250px;
+
+  background: var(--lineup-card-background);
+
+  border-radius: var(--lineup-card-radius);
+
+  font-family: 'Geist', sans-serif;
+
+  font-size: 14px;
+
+  color: var(--lineup-description);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1200px) {
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
+
+    padding:
+      80px
+      40px
+      80px;
+  }
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
+
+    gap: 40px;
+  }
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
+
+    font-size: 48px;
+
+    letter-spacing: -1.8px;
+  }
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
+
+    max-width: 390px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
+
+    padding:
+      55px
+      16px
+      55px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
+
+    display: block;
+
+    margin-bottom: 28px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading-wrap {
+
+    max-width: 100%;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow {
+
+    margin-bottom: 15px;
+
+    font-size: 10px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
+
+    font-size: 38px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.4px;
+
+    max-width: 100%;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
+
+    max-width: 100%;
+
+    padding-top: 20px;
+
+    text-align: left;
+
+    font-size: 13px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__navigation {
+
+    display: block;
+
+    margin-bottom: 25px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs {
+
+    width: 100%;
+
+    margin-bottom: 18px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab {
+
+    padding:
+      9px
+      16px;
+
+    font-size: 11px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button {
+
+    display: inline-flex;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-card {
+
+    flex-basis: 82vw;
+
+    width: 82vw;
+
+    height: 430px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-card__title {
+
+    font-size: 14px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-card__price {
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
+
+    padding:
+      45px
+      12px
+      45px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
+
+    font-size: 34px;
+  }
+
+
+  #ncco-product-lineup-{{ section.id }} .ncco-product-card {
+
+    flex-basis: 86vw;
+
+    width: 86vw;
+
+    height: 410px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .ncco-product-lineup__custom-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .ncco-product-lineup__custom-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+
+<script>
+
+(function () {
+
+  const section = document.getElementById(
+    'ncco-product-lineup-{{ section.id }}'
+  );
+
+  if (!section) return;
+
+
+  const tabs = section.querySelectorAll(
+    '.ncco-product-lineup__tab'
+  );
+
+  const collections = section.querySelectorAll(
+    '.ncco-product-lineup__collection'
+  );
+
+
+  tabs.forEach(function (tab) {
+
+    tab.addEventListener('click', function () {
+
+      const target = tab.getAttribute('data-tab');
+
+
+      tabs.forEach(function (item) {
+
+        item.classList.remove('is-active');
+
+      });
+
+
+      collections.forEach(function (collection) {
+
+        collection.classList.remove('is-active');
+
+      });
+
+
+      tab.classList.add('is-active');
+
+
+      const targetCollection = section.querySelector(
+        '.ncco-product-lineup__collection[data-collection="' +
+        target +
+        '"]'
+      );
+
+
+      if (targetCollection) {
+
+        targetCollection.classList.add('is-active');
+
+      }
+
+    });
+
+  });
+
+})();
+
+</script>
+
+
+{% schema %}
+
+{
+  "name": "NCCO Product Lineup",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Content"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Product Lineup"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "NCCO-IG Skin Recovery Essence"
+    },
+
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "A clinically-tested skin recovery formula that hydrates, heals, and protects. Kills 99.9% of viruses and germs while soothing dry, sensitive, and allergy-prone skin all without toxins or alcohol."
+    },
+
+    {
+      "type": "text",
+      "id": "quick_view_text",
+      "label": "Quick view text",
+      "default": "Quick View"
+    },
+
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "View All Products"
+    },
+
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Product Settings"
+    },
+
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products per collection",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 2000,
+      "step": 20,
+      "default": 1600
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "default": 70
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "default": 70
+    },
+
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 150,
+      "step": 5,
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 30,
+      "max": 80,
+      "step": 1,
+      "default": 58
+    },
+
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 13
+    },
+
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "Product card width",
+      "min": 250,
+      "max": 500,
+      "step": 5,
+      "default": 340
+    },
+
+    {
+      "type": "range",
+      "id": "card_height",
+      "label": "Product card height",
+      "min": 300,
+      "max": 600,
+      "step": 5,
+      "default": 420
+    },
+
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Product card gap",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "default": 26
+    },
+
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Product card radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Section radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+
+
+    {
+      "type": "header",
+      "content": "Main Colors"
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0D3B60"
+    },
+
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#8295A8"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent line color",
+      "default": "#55C2DF"
+    },
+
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#8295A8"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Category Tabs"
+    },
+
+    {
+      "type": "color",
+      "id": "tabs_background",
+      "label": "Tabs background",
+      "default": "#F3F5F6"
+    },
+
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text",
+      "default": "#8295A8"
+    },
+
+    {
+      "type": "color",
+      "id": "active_tab_background",
+      "label": "Active tab background",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "active_tab_text",
+      "label": "Active tab text",
+      "default": "#0D3B60"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Product Cards"
+    },
+
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#F5F7F8"
+    },
+
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Product title",
+      "default": "#0D3B60"
+    },
+
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price",
+      "default": "#55C2DF"
+    },
+
+    {
+      "type": "color",
+      "id": "quick_view_color",
+      "label": "Quick View",
+      "default": "#55C2DF"
+    },
+
+
+    {
+      "type": "header",
+      "content": "View All Button"
+    },
+
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#55C2DF"
+    },
+
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "button_icon_background",
+      "label": "Button icon background",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "button_icon_color",
+      "label": "Button icon",
+      "default": "#0D3B60"
+    }
+
+  ],
+
+
+  "blocks": [
+
+    {
+      "type": "collection_tab",
+
+      "name": "Product Category",
+
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Tab label",
+          "default": "All Products"
+        },
+
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+
+        {
+          "type": "select",
+          "id": "image_source",
+          "label": "Display source",
+          "options": [
+            {
+              "value": "products",
+              "label": "Products from collection"
+            },
+            {
+              "value": "images",
+              "label": "Custom images"
+            }
+          ],
+          "default": "products"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Custom image 1"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Custom image 2"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Custom image 3"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Custom image 4"
+        },
+
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Custom image alt text"
+        }
+
+      ]
+
+    }
+
+  ],
+
+
+  "max_blocks": 4,
+
+
+  "presets": [
+
+    {
+      "name": "NCCO Product Lineup",
+
+      "blocks": [
+
+        {
+          "type": "collection_tab",
+          "settings": {
+            "label": "All Products"
+          }
+        },
+
+        {
+          "type": "collection_tab",
+          "settings": {
+            "label": "B.Duck x NCCO-IG"
+          }
+        },
+
+        {
+          "type": "collection_tab",
+          "settings": {
+            "label": "Combo set"
+          }
+        },
+
+        {
+          "type": "collection_tab",
+          "settings": {
+            "label": "Recovery Essence"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+
+{% endschema %}

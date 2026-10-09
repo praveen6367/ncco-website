@@ -1,0 +1,761 @@
+<section class="ncco-rht-solutions{% if section.settings.light_theme %} ncco-rht-solutions--light{% endif %}">
+
+  <div class="ncco-rht-solutions__top">
+
+    <div class="ncco-rht-solutions__eyebrow">
+      <span></span>
+      {{ section.settings.eyebrow }}
+    </div>
+
+    <div class="ncco-rht-solutions__logo">
+      {% if section.settings.logo != blank %}
+        {{
+          section.settings.logo
+          | image_url: width: 400
+          | image_tag:
+            loading: 'lazy',
+            alt: section.settings.logo_alt
+        }}
+{% else %}
+  {% if section.settings.logo_text != blank %}
+    <span>{{ section.settings.logo_text }}</span>
+  {% endif %}
+{% endif %}
+    </div>
+
+    {% if section.settings.description != blank %}
+      <p class="ncco-rht-solutions__description">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+
+
+    <div class="ncco-rht-solutions__points">
+
+      {% for block in section.blocks %}
+        {% if block.type == 'point' %}
+          <div class="ncco-rht-solutions__point" {{ block.shopify_attributes }}>
+            <span class="ncco-rht-solutions__point-icon">+</span>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+
+  <!-- PRODUCTS -->
+
+  <div class="ncco-rht-solutions__products">
+
+    {% for block in section.blocks %}
+      {% if block.type == 'product' %}
+
+        <div class="ncco-rht-solutions__product" {{ block.shopify_attributes }}>
+
+          {% if block.settings.image_source == 'product' %}
+            {% if block.settings.product != blank %}
+              {% assign product_image = block.settings.product.featured_image %}
+              {% if product_image != blank %}
+                {{
+                  product_image
+                  | image_url: width: 700
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '350, 500, 700',
+                    alt: block.settings.product.title
+                }}
+              {% endif %}
+            {% endif %}
+          {% elsif block.settings.image_source == 'image' %}
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 700
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '350, 500, 700',
+                  alt: block.settings.title
+              }}
+            {% endif %}
+          {% endif %}
+
+        </div>
+
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+
+  <!-- BUTTON -->
+
+  <div class="ncco-rht-solutions__bottom">
+
+    {% if section.settings.button_text != blank %}
+
+      <a
+        href="{{ section.settings.button_url }}"
+        class="ncco-rht-solutions__button"
+      >
+        <span>{{ section.settings.button_text }}</span>
+        <span class="ncco-rht-solutions__button-arrow">↗</span>
+      </a>
+
+    {% endif %}
+
+  </div>
+
+</section>
+
+
+<style>
+
+.ncco-rht-solutions {
+  width: 100%;
+  margin: 0 auto;
+
+  background: #081D3A;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TOP CONTENT
+========================= */
+
+.ncco-rht-solutions__top {
+  padding: 58px 40px 38px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* EYEBROW */
+
+.ncco-rht-solutions__eyebrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 400;
+
+  color: #fff;
+
+  text-transform: uppercase;
+}
+
+
+.ncco-rht-solutions__eyebrow span {
+  width: 14px;
+  height: 1px;
+
+  margin-bottom: 8px;
+
+  background: #FECB07;
+}
+
+
+/* LOGO */
+
+.ncco-rht-solutions__logo {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+}
+
+.ncco-rht-solutions__logo img {
+  display: block;
+
+  width: auto;
+  max-width: 160px;
+  max-height: 58px;
+
+  object-fit: contain;
+}
+
+.ncco-rht-solutions__logo span {
+  font-family: 'Geist', sans-serif;
+
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 600;
+  font-style: normal;
+
+  color: #fff;
+}
+
+
+/* DESCRIPTION */
+
+.ncco-rht-solutions__description {
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+
+  color: #97A0AC;
+}
+
+
+/* =========================
+   POINTS
+========================= */
+
+.ncco-rht-solutions__points {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 38px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+.ncco-rht-solutions__point {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  text-align: left;
+}
+
+.ncco-rht-solutions__point-icon {
+  flex: 0 0 22px;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(254, 203, 7, 0.16);
+
+  color: #FECB07;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.ncco-rht-solutions__point p {
+  margin: 1px 0 0;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+
+  color: #D5DCE6;
+}
+
+
+/* =========================
+   PRODUCT IMAGES
+========================= */
+
+.ncco-rht-solutions__products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.ncco-rht-solutions__product {
+  height: 235px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ncco-rht-solutions__product img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .ncco-rht-solutions__products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 4px;
+  }
+
+  .ncco-rht-solutions__product {
+    height: 170px;
+    border-radius: 14px;
+  }
+
+  .ncco-rht-solutions__product img {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ncco-rht-solutions__products {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .ncco-rht-solutions__product {
+    height: 210px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.ncco-rht-solutions__bottom {
+  display: flex;
+  justify-content: center;
+
+  padding: 28px 24px 66px;
+}
+
+
+/* BUTTON */
+
+.ncco-rht-solutions__button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 6px 8px 6px 20px;
+
+  border-radius: 30px;
+
+  background: #FECB07;
+
+  color: #081D3A;
+
+  text-decoration: none;
+
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 500;
+
+  box-shadow: 0 6px 14px rgba(254,203,7,0.22);
+
+  transition: transform 0.2s ease;
+}
+
+.ncco-rht-solutions__button:hover {
+  transform: translateY(-2px);
+}
+
+.ncco-rht-solutions__button-arrow {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #0B4DB3;
+
+  color: #fff;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+.ncco-rht-solutions--light {
+  background: #F8F9FB;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__eyebrow {
+  color: #52677C;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__logo span {
+  color: #0D2745;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__description {
+  color: #657A8F;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__point p {
+  color: #172B43;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__point-icon {
+  background: #FFF7D9;
+  color: #F4C400;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__product {
+  background: #fff;
+  border: 1px solid #E8EBF0;
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__button {
+  background: #064FBE;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(6,79,190,0.20);
+}
+
+.ncco-rht-solutions--light .ncco-rht-solutions__button-arrow {
+  background: #FECB07;
+  color: #081D3A;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  .ncco-rht-solutions__top {
+    padding: 50px 30px 34px;
+  }
+
+  .ncco-rht-solutions__description {
+    max-width: 620px;
+
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .ncco-rht-solutions__points {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+
+  .ncco-rht-solutions__point p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .ncco-rht-solutions__product {
+    height: 200px;
+  }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 768px) {
+
+  .ncco-rht-solutions {
+    border-radius: 14px;
+  }
+
+  .ncco-rht-solutions__top {
+    padding: 42px 24px 30px;
+  }
+
+  .ncco-rht-solutions__eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .ncco-rht-solutions__logo {
+    height: 48px;
+
+    margin-bottom: 12px;
+  }
+
+  .ncco-rht-solutions__logo img {
+    max-width: 135px;
+    max-height: 48px;
+  }
+
+  .ncco-rht-solutions__description {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .ncco-rht-solutions__points {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    margin-top: 30px;
+  }
+
+  .ncco-rht-solutions__point p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+
+  .ncco-rht-solutions__products {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+
+    padding: 0;
+  }
+
+  .ncco-rht-solutions__product {
+    height: 170px;
+
+    border-radius: 0;
+  }
+
+  .ncco-rht-solutions__product img {
+    padding: 0;
+  }
+
+  .ncco-rht-solutions__bottom {
+    padding: 24px 20px 42px;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 480px) {
+
+  .ncco-rht-solutions__eyebrow {
+    font-size: 9px;
+    line-height: 13px;
+  }
+
+  .ncco-rht-solutions__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .ncco-rht-solutions__point p {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .ncco-rht-solutions__products {
+    grid-template-columns: 1fr;
+  }
+
+  .ncco-rht-solutions__product {
+    height: 210px;
+  }
+
+}
+
+</style>
+
+
+{% schema %}
+
+{
+  "name": "NCCO RHT Solutions",
+  "tag": "section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Commercial & Industrial Solutions"
+    },
+
+{
+  "type": "image_picker",
+  "id": "logo",
+  "label": "RHT logo"
+},
+{
+  "type": "text",
+  "id": "logo_text",
+  "label": "Logo text",
+  "default": "RHT"
+},
+
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "RHT"
+    },
+
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Engineered for hospitals, transport, and industries, RHT delivers high-capacity air purification systems for demanding environments."
+    },
+
+    {
+      "type": "checkbox",
+      "id": "light_theme",
+      "label": "Light theme",
+      "default": false
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "VIEW MORE DETAILS"
+    },
+
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "point",
+      "name": "Feature point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Trusted worldwide in demanding operational settings."
+        }
+      ]
+    },
+
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_source",
+          "label": "Image Source",
+          "options": [
+            {
+              "value": "product",
+              "label": "Shopify Product"
+            },
+            {
+              "value": "image",
+              "label": "Custom Image"
+            }
+          ],
+          "default": "product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Custom Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Image alt text"
+        }
+      ]
+    }
+
+  ],
+
+  "max_blocks": 8,
+
+  "presets": [
+    {
+      "name": "NCCO RHT Solutions",
+
+      "blocks": [
+        {
+          "type": "point",
+          "settings": {
+            "text": "Trusted worldwide in demanding operational settings."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Engineered for durability in high-traffic or industrial environments."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Ideal for subways, cleanrooms, and government facilities."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Features modular installation and energy-efficient designs."
+          }
+        },
+
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+
+}
+
+{% endschema %}

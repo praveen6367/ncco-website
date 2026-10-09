@@ -1,0 +1,454 @@
+<section class="ncco-industrial-brand">
+  <div class="ncco-industrial-brand__intro">
+    <div class="ncco-industrial-brand__eyebrow">
+      {{ section.settings.eyebrow }}
+    </div>
+    <div class="ncco-industrial-brand__heading-wrap">
+      <h2 class="ncco-industrial-brand__heading">
+        {{ section.settings.heading }}
+      </h2>
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_url | default: '#' }}" class="ncco-industrial-brand__button">
+          <span>{{ section.settings.button_text }}</span>
+          <span class="ncco-industrial-brand__button-icon">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      {% endif %}
+    </div>
+    <div class="ncco-industrial-brand__feature-row">
+      {% for block in section.blocks %}
+        {% if block.type == 'feature' %}
+          <div class="ncco-industrial-brand__feature" {{ block.shopify_attributes }}>
+            <div class="ncco-industrial-brand__feature-title">
+              {{ block.settings.title }}
+            </div>
+            {% if block.settings.text != blank %}
+              <div class="ncco-industrial-brand__feature-text">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="ncco-industrial-brand__cards">
+    {% for block in section.blocks %}
+      {% if block.type == 'case' %}
+        <div class="ncco-industrial-brand__card" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{
+              block.settings.image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800, 1000, 1200',
+                sizes: '(max-width: 650px) 100vw, 25vw',
+                alt: block.settings.image_alt
+            }}
+          {% else %}
+            <div class="ncco-industrial-brand__placeholder"></div>
+          {% endif %}
+          <div class="ncco-industrial-brand__overlay"></div>
+          {% if block.settings.label != blank %}
+            <div class="ncco-industrial-brand__label">
+              <span class="ncco-industrial-brand__label-left">▶</span>
+              <span>{{ block.settings.label }}</span>
+              <span class="ncco-industrial-brand__label-right">◀</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<style>
+.ncco-industrial-brand{
+  width:100%;
+  background:#F4FBFC;
+  box-sizing:border-box;
+}
+.ncco-industrial-brand__intro{
+  position:relative;
+  width:100%;
+  max-width:1280px;
+  min-height:300px;
+  margin:0 auto;
+  padding:0 32px 32px;
+  box-sizing:border-box;
+}
+.ncco-industrial-brand__eyebrow{
+  position:absolute;
+  top:0;
+  left:32px;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:400;
+  color:#52677C;
+  text-transform:uppercase;
+}
+.ncco-industrial-brand__heading-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  padding-top:48px;
+}
+.ncco-industrial-brand__heading{
+  width:100%;
+  max-width:650px;
+  margin:0;
+  text-align:right;
+  font-family:'Geist',sans-serif;
+  font-size:42px;
+  line-height:48px;
+  font-weight:500;
+  letter-spacing:-1.5px;
+  color:#0D1F35;
+}
+.ncco-industrial-brand__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  min-width:155px;
+  margin-top:20px;
+  padding:6px 6px 6px 18px;
+  border-radius:50px;
+  background:#21B9A8;
+  color:#fff;
+  text-decoration:none;
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:16px;
+  font-weight:500;
+  text-transform:uppercase;
+  box-sizing:border-box;
+  box-shadow:0 6px 14px rgba(33,185,168,.18);
+}
+.ncco-industrial-brand__button:hover{
+  color:#fff;
+  filter:brightness(.96);
+}
+.ncco-industrial-brand__button-icon{
+  width:28px;
+  height:28px;
+  min-width:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+  color:#21B9A8;
+}
+.ncco-industrial-brand__button-icon svg{
+  display:block;
+}
+.ncco-industrial-brand__feature-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  max-width:500px;
+  margin:26px 0 0 auto;
+  padding-top:20px;
+  border-top:1px solid #E1EAED;
+}
+.ncco-industrial-brand__feature{
+  min-width:0;
+}
+.ncco-industrial-brand__feature-title{
+  margin-bottom:8px;
+  font-family:'Geist',sans-serif;
+  font-size:14px;
+  line-height:19px;
+  font-weight:500;
+  color:#172B43;
+  text-transform:uppercase;
+}
+.ncco-industrial-brand__feature-text{
+  font-family:'Geist',sans-serif;
+  font-size:12px;
+  line-height:18px;
+  font-weight:400;
+  color:#8295A8;
+}
+.ncco-industrial-brand__cards{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  box-sizing:border-box;
+}
+.ncco-industrial-brand__card{
+  position:relative;
+  width:100%;
+  height:210px;
+  overflow:hidden;
+  background:#E7EFF0;
+}
+.ncco-industrial-brand__card:first-child{
+  border-radius:12px 0 0 0;
+}
+.ncco-industrial-brand__card:last-child{
+  border-radius:0 12px 0 0;
+}
+.ncco-industrial-brand__card img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.ncco-industrial-brand__placeholder{
+  width:100%;
+  height:100%;
+  background:#DDE8EA;
+}
+.ncco-industrial-brand__overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,25,45,.28),transparent 45%);
+  pointer-events:none;
+}
+.ncco-industrial-brand__label{
+  position:absolute;
+  left:12px;
+  bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-family:'Geist',sans-serif;
+  font-size:11px;
+  line-height:15px;
+  font-weight:400;
+  color:#fff;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.ncco-industrial-brand__label-left,
+.ncco-industrial-brand__label-right{
+  color:#21B9A8;
+  font-size:8px;
+}
+@media(max-width:900px){
+  .ncco-industrial-brand__intro{
+    min-height:320px;
+    padding:0 28px 28px;
+  }
+  .ncco-industrial-brand__eyebrow{
+    left:28px;
+  }
+  .ncco-industrial-brand__heading{
+    font-size:38px;
+    line-height:44px;
+  }
+  .ncco-industrial-brand__feature-title{
+    font-size:13px;
+    line-height:18px;
+  }
+  .ncco-industrial-brand__feature-text{
+    font-size:11px;
+    line-height:16px;
+  }
+  .ncco-industrial-brand__cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .ncco-industrial-brand__card{
+    height:230px;
+  }
+  .ncco-industrial-brand__card:first-child{
+    border-radius:12px 0 0 0;
+  }
+  .ncco-industrial-brand__card:nth-child(2){
+    border-radius:0 12px 0 0;
+  }
+  .ncco-industrial-brand__card:nth-child(3),
+  .ncco-industrial-brand__card:nth-child(4){
+    border-radius:0;
+  }
+}
+@media(max-width:600px){
+  .ncco-industrial-brand__intro{
+    min-height:auto;
+    padding:0 20px 30px;
+  }
+  .ncco-industrial-brand__eyebrow{
+    position:static;
+    padding-top:20px;
+    margin-bottom:20px;
+    font-size:11px;
+    line-height:15px;
+  }
+  .ncco-industrial-brand__heading-wrap{
+    padding-top:0;
+    align-items:flex-start;
+  }
+  .ncco-industrial-brand__heading{
+    max-width:100%;
+    text-align:left;
+    font-size:32px;
+    line-height:38px;
+  }
+  .ncco-industrial-brand__button{
+    margin-top:18px;
+    font-size:11px;
+    line-height:15px;
+  }
+  .ncco-industrial-brand__feature-row{
+    max-width:100%;
+    margin:25px 0 0;
+  }
+  .ncco-industrial-brand__feature-title{
+    font-size:13px;
+    line-height:18px;
+  }
+  .ncco-industrial-brand__feature-text{
+    font-size:11px;
+    line-height:16px;
+  }
+  .ncco-industrial-brand__cards{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+  .ncco-industrial-brand__card,
+  .ncco-industrial-brand__card:first-child,
+  .ncco-industrial-brand__card:nth-child(2),
+  .ncco-industrial-brand__card:nth-child(3),
+  .ncco-industrial-brand__card:nth-child(4){
+    height:220px;
+    border-radius:0;
+  }
+  .ncco-industrial-brand__card:first-child{
+    border-radius:10px 10px 0 0;
+  }
+  .ncco-industrial-brand__card:last-child{
+    border-radius:0 0 10px 10px;
+  }
+  .ncco-industrial-brand__label{
+    font-size:10px;
+    line-height:14px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name":"NCCO Industrial Brand",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"text",
+      "id":"eyebrow",
+      "label":"Eyebrow",
+      "default":"JUST AN INTRO"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"An Industrial Air Purification Brand Built for Performance"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text",
+      "default":"KNOW MORE ABOUT US"
+    },
+    {
+      "type":"url",
+      "id":"button_url",
+      "label":"Button URL"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"feature",
+      "name":"Feature",
+      "settings":[
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Feature title",
+          "default":"BRINGING CLEAN AIR TO SCALE"
+        },
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Feature text",
+          "default":"We develop industrial-grade air purification systems for hospitals, transit, and factories built to run continuously and reliably."
+        }
+      ]
+    },
+    {
+      "type":"case",
+      "name":"Case Study Image",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Image label",
+          "default":"ASIA PACIFIC DATA CENTRE"
+        },
+        {
+          "type":"text",
+          "id":"image_alt",
+          "label":"Image alt text"
+        }
+      ]
+    }
+  ],
+  "max_blocks":6,
+  "presets":[
+    {
+      "name":"NCCO Industrial Brand",
+      "blocks":[
+        {
+          "type":"feature",
+          "settings":{
+            "title":"BRINGING CLEAN AIR TO SCALE",
+            "text":"We develop industrial-grade air purification systems for hospitals, transit, and factories built to run continuously and reliably."
+          }
+        },
+        {
+          "type":"feature",
+          "settings":{
+            "title":"BUILT FOR CRITICAL INFRASTRUCTURE",
+            "text":"RHT units use NCCO technology and are designed for high-demand spaces efficient, adaptable, and trusted by professionals."
+          }
+        },
+        {
+          "type":"case",
+          "settings":{
+            "label":"ASIA PACIFIC DATA CENTRE"
+          }
+        },
+        {
+          "type":"case",
+          "settings":{
+            "label":"YAN OI TONG KINDERGARTEN"
+          }
+        },
+        {
+          "type":"case",
+          "settings":{
+            "label":"HONG KONG BAPTIST HOSPITAL"
+          }
+        },
+        {
+          "type":"case",
+          "settings":{
+            "label":"SINGAPORE AIRPORT AND"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
