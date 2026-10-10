@@ -1,40 +1,62 @@
-<section class="ncco-industrial-solutions">
+<section class="ncco-industrial-solutions" id="ncco-industrial-solutions-{{ section.id }}">
   <div class="ncco-industrial-solutions__background">
     {% if section.settings.background_image != blank %}
-      {{ section.settings.background_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1200, 1600, 2000, 2400', sizes: '100vw', class: 'ncco-industrial-solutions__background-image' }}
+      {{
+        section.settings.background_image
+        | image_url: width: 2400
+        | image_tag:
+          loading: 'lazy',
+          widths: '1200, 1600, 2000, 2400',
+          sizes: '100vw',
+          class: 'ncco-industrial-solutions__background-image'
+      }}
+    {% else %}
+      <img
+        src="{{ 'beautiful-shot-tall-city-buildings-cloudy-sky-night_1.png' | asset_url }}"
+        alt="Hong Kong Night Skyline"
+        loading="lazy"
+        class="ncco-industrial-solutions__background-image"
+      >
     {% endif %}
-    <div class="ncco-industrial-solutions__overlay"></div>
+    <div
+      class="ncco-industrial-solutions__overlay"
+      style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(180deg, rgba(18, 25, 36, 0.88) 0%, rgba(18, 25, 36, 0.5984) 70.11%); pointer-events: none;"
+    ></div>
+
     <div class="ncco-industrial-solutions__container">
       <div class="ncco-industrial-solutions__header">
         <div class="ncco-industrial-solutions__header-left">
           {% if section.settings.eyebrow != blank %}
-            <div class="ncco-industrial-solutions__eyebrow">
-              <span></span>
-              {{ section.settings.eyebrow }}
+            <div class="ncco-industrial-solutions__eyebrow-wrap">
+              <span class="ncco-industrial-solutions__dash"></span>
+              <span class="ncco-industrial-solutions__eyebrow">{{ section.settings.eyebrow }}</span>
             </div>
           {% endif %}
         </div>
+
         <div class="ncco-industrial-solutions__header-right">
           {% if section.settings.heading != blank %}
             <h2 class="ncco-industrial-solutions__heading">
               {{ section.settings.heading }}
             </h2>
           {% endif %}
+
           {% if section.settings.button_text != blank %}
             <a
               href="{{ section.settings.button_url | default: '#' }}"
               class="ncco-industrial-solutions__button"
             >
-              <span>{{ section.settings.button_text }}</span>
+              <span class="ncco-industrial-solutions__button-text">{{ section.settings.button_text }}</span>
               <span class="ncco-industrial-solutions__button-icon">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
             </a>
           {% endif %}
         </div>
       </div>
+
       <div class="ncco-industrial-solutions__grid">
         {% for block in section.blocks %}
           <div class="ncco-industrial-solutions__card" {{ block.shopify_attributes }}>
@@ -43,18 +65,20 @@
                 {{ block.settings.title }}
               </h3>
             {% endif %}
+
             {% if block.settings.description != blank %}
               <div class="ncco-industrial-solutions__card-description">
                 {{ block.settings.description }}
               </div>
             {% endif %}
+
             {% if block.settings.link_text != blank %}
               <a
                 href="{{ block.settings.link_url | default: '#' }}"
                 class="ncco-industrial-solutions__card-link"
               >
-                {{ block.settings.link_text }}
-                <span>↗</span>
+                <span>{{ block.settings.link_text }}</span>
+                <span class="ncco-industrial-solutions__card-link-arrow">↗</span>
               </a>
             {% endif %}
           </div>
@@ -63,354 +87,435 @@
     </div>
   </div>
 </section>
+
 <style>
-.ncco-industrial-solutions{
-  width:100%;
-  padding:24px 10px;
-  box-sizing:border-box;
-  background:#fff;
+.ncco-industrial-solutions {
+  width: 100%;
+  padding: 0 32px 36px !important;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
 }
-.ncco-industrial-solutions__background{
-  position:relative;
-  width:100%;
-  min-height:500px;
-  overflow:hidden;
-  border-radius:18px;
-  background:#0D1C2E;
-  box-sizing:border-box;
+
+div:has(> .ncco-industrial-solutions),
+section:has(> .ncco-industrial-solutions) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
-.ncco-industrial-solutions__background-image{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
+
+.ncco-industrial-solutions__background {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  background-color: #0D1C2E;
+  box-sizing: border-box;
 }
-.ncco-industrial-solutions__overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(5,18,31,.84) 0%,rgba(7,20,34,.72) 48%,rgba(5,16,29,.76) 100%);
+
+.ncco-industrial-solutions__background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
-.ncco-industrial-solutions__container{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-width:1060px;
-  min-height:500px;
-  margin:0 auto;
-  padding:50px 30px 54px;
-  box-sizing:border-box;
+
+/* MAIN BOX BACKGROUND OVERLAY AS SPECIFIED */
+.ncco-industrial-solutions__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(18, 25, 36, 0.88) 0%, rgba(18, 25, 36, 0.5984) 70.11%) !important;
+  pointer-events: none;
 }
-.ncco-industrial-solutions__header{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:start;
-  margin-bottom:30px;
+
+/* INNER CONTAINER FOLLOWING BOXED LAYOUT */
+.ncco-industrial-solutions__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 76px 40px 84px;
+  box-sizing: border-box;
 }
-.ncco-industrial-solutions__header-left{
-  padding-top:5px;
+
+/* HEADER */
+.ncco-industrial-solutions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 52px;
 }
-.ncco-industrial-solutions__eyebrow{
-  display:flex;
-  align-items:center;
-  gap:0;
-  font-family:'Geist',sans-serif;
-  font-size:12px;
-  line-height:16px;
-  font-weight:400;
-  color:#C4CED8;
-  text-transform:uppercase;
+
+.ncco-industrial-solutions__header-left {
+  flex: 1;
+  padding-top: 10px;
 }
-.ncco-industrial-solutions__eyebrow span{
-  width:14px;
-  height:1px;
-  margin-right:0;
-  background:#21B9A8;
+
+.ncco-industrial-solutions__eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
-.ncco-industrial-solutions__header-right{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+
+.ncco-industrial-solutions__dash {
+  display: inline-block;
+  width: 28px;
+  height: 2.5px;
+  background-color: #22B39F;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
-.ncco-industrial-solutions__heading{
-  max-width:390px;
-  margin:0;
-  font-family:'Geist',sans-serif;
-  font-size:44px;
-  line-height:52px;
-  font-weight:500;
-  letter-spacing:-1.2px;
-  color:#fff;
+
+.ncco-industrial-solutions__eyebrow {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13.5px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #FFFFFF;
 }
-.ncco-industrial-solutions__button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:13px;
-  min-width:138px;
-  margin-top:18px;
-  padding:5px 5px 5px 14px;
-  border-radius:50px;
-  background:#21B9A8;
-  color:#fff;
-  text-decoration:none;
-  font-family:'Geist',sans-serif;
-  font-size:12px;
-  line-height:16px;
-  font-weight:500;
-  text-transform:uppercase;
-  box-sizing:border-box;
-  box-shadow:0 7px 18px rgba(33,185,168,.22);
-  transition:filter .2s ease,transform .2s ease;
+
+.ncco-industrial-solutions__header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
-.ncco-industrial-solutions__button:hover{
-  color:#fff;
-  filter:brightness(.95);
-  transform:translateY(-1px);
+
+.ncco-industrial-solutions__heading {
+  margin: 0 0 18px 0;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(38px, 4.2vw, 48px);
+  line-height: 1.18;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  color: #FFFFFF;
+  text-align: right;
 }
-.ncco-industrial-solutions__button-icon{
-  width:24px;
-  height:24px;
-  min-width:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#fff;
-  color:#21B9A8;
+
+.ncco-industrial-solutions__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background-color: #22B39F;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 6px 6px 6px 20px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(34, 179, 159, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
-.ncco-industrial-solutions__button-icon svg{
-  display:block;
+
+.ncco-industrial-solutions__button:hover {
+  background-color: #1CA290;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(34, 179, 159, 0.35);
 }
-.ncco-industrial-solutions__grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+
+.ncco-industrial-solutions__button-text {
+  color: #FFFFFF;
+  white-space: nowrap;
 }
-.ncco-industrial-solutions__card{
-  position:relative;
-  min-height:135px;
-  display:flex;
-  flex-direction:column;
-  padding:15px 16px 14px;
-  border:1px solid rgba(181,198,214,.20);
-  border-radius:9px;
-  background:linear-gradient(145deg,rgba(51,65,82,.72),rgba(20,32,47,.78));
-  box-sizing:border-box;
+
+.ncco-industrial-solutions__button-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #22B39F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
-.ncco-industrial-solutions__card-title{
-  margin:0 0 9px;
-  font-family:'Geist',sans-serif;
-  font-size:16px;
-  line-height:21px;
-  font-weight:500;
-  color:#fff;
-  text-transform:uppercase;
+
+.ncco-industrial-solutions__button:hover .ncco-industrial-solutions__button-icon {
+  transform: scale(1.05);
 }
-.ncco-industrial-solutions__card-description{
-  max-width:100%;
-  font-family:'Geist',sans-serif;
-  font-size:14px;
-  line-height:21px;
-  font-weight:400;
-  color:#AEBBC8;
+
+.ncco-industrial-solutions__button-icon svg {
+  display: block;
 }
-.ncco-industrial-solutions__card-description p{
-  margin:0;
+
+/* 6-CARD GRID */
+.ncco-industrial-solutions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  box-sizing: border-box;
 }
-.ncco-industrial-solutions__card-link{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  margin-top:auto;
-  padding-top:12px;
-  font-family:'Geist',sans-serif;
-  font-size:12px;
-  line-height:16px;
-  font-weight:400;
-  color:#21B9A8;
-  text-decoration:none;
+
+/* GLASS CARD PROPERTIES EXACTLY AS SPECIFIED */
+.ncco-industrial-solutions__card {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 30px 28px;
+  border-radius: 16px;
+  background: linear-gradient(0deg, rgba(16, 27, 43, 0.48), rgba(16, 27, 43, 0.48)),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #FFFFFF29;
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.ncco-industrial-solutions__card-link:hover{
-  color:#5BD3C5;
+
+.ncco-industrial-solutions__card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 179, 159, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
-.ncco-industrial-solutions__card-link span{
-  font-size:13px;
-  line-height:1;
+
+.ncco-industrial-solutions__card-title {
+  margin: 0 0 16px 0;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
 }
-@media(max-width:900px){
-  .ncco-industrial-solutions__container{
-    padding:42px 25px 45px;
+
+.ncco-industrial-solutions__card-description {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.78;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.74);
+  margin-bottom: 26px;
+}
+
+.ncco-industrial-solutions__card-description p {
+  margin: 0;
+}
+
+.ncco-industrial-solutions__card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13.5px;
+  line-height: 1;
+  font-weight: 500;
+  color: #22B39F;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ncco-industrial-solutions__card-link:hover {
+  color: #5ce3d1;
+  transform: translateX(2px);
+}
+
+.ncco-industrial-solutions__card-link-arrow {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .ncco-industrial-solutions {
+    padding: 0 20px 24px;
   }
-  .ncco-industrial-solutions__header{
-    grid-template-columns:1fr;
-    gap:20px;
+
+  .ncco-industrial-solutions__container {
+    padding: 56px 24px 60px;
   }
-  .ncco-industrial-solutions__header-right{
-    align-items:flex-start;
-  }
-  .ncco-industrial-solutions__grid{
-    grid-template-columns:repeat(2,1fr);
+
+  .ncco-industrial-solutions__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 }
-@media(max-width:600px){
-  .ncco-industrial-solutions{
-    padding:15px 10px;
+
+@media (max-width: 768px) {
+  .ncco-industrial-solutions {
+    padding: 0 14px 20px;
   }
-  .ncco-industrial-solutions__background{
-    min-height:auto;
-    border-radius:14px;
+
+  .ncco-industrial-solutions__background {
+    border-radius: 20px;
   }
-  .ncco-industrial-solutions__container{
-    min-height:auto;
-    padding:36px 18px 40px;
+
+  .ncco-industrial-solutions__container {
+    padding: 44px 18px 48px;
   }
-  .ncco-industrial-solutions__header{
-    margin-bottom:25px;
+
+  .ncco-industrial-solutions__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 36px;
   }
-  .ncco-industrial-solutions__heading{
-    font-size:34px;
-    line-height:41px;
+
+  .ncco-industrial-solutions__header-right {
+    align-items: flex-start;
+    text-align: left;
   }
-  .ncco-industrial-solutions__grid{
-    grid-template-columns:1fr;
-    gap:10px;
+
+  .ncco-industrial-solutions__heading {
+    text-align: left;
+    font-size: 32px;
   }
-  .ncco-industrial-solutions__card{
-    min-height:130px;
+
+  .ncco-industrial-solutions__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .ncco-industrial-solutions__card-title{
-    font-size:15px;
-    line-height:20px;
-  }
-  .ncco-industrial-solutions__card-description{
-    font-size:14px;
-    line-height:21px;
-  }
-  .ncco-industrial-solutions__card-link{
-    font-size:11px;
-    line-height:15px;
+
+  .ncco-industrial-solutions__card {
+    padding: 26px 22px 24px;
+    min-height: auto;
   }
 }
 </style>
+
 {% schema %}
 {
-  "name":"NCCO Industrial Solutions",
-  "tag":"section",
-  "settings":[
+  "name": "NCCO Industrial Solutions",
+  "tag": "section",
+  "settings": [
     {
-      "type":"image_picker",
-      "id":"background_image",
-      "label":"Background Image"
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
     },
     {
-      "type":"text",
-      "id":"eyebrow",
-      "label":"Eyebrow",
-      "default":"INDUSTRIAL BENEFITS"
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "工業優勢"
     },
     {
-      "type":"text",
-      "id":"heading",
-      "label":"Heading",
-      "default":"Invented in Hong Kong"
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "香港發明"
     },
     {
-      "type":"text",
-      "id":"button_text",
-      "label":"Button text",
-      "default":"REQUEST PRODUCT SPECS"
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "了解更多"
     },
     {
-      "type":"url",
-      "id":"button_url",
-      "label":"Button URL"
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
     }
   ],
-  "blocks":[
+  "blocks": [
     {
-      "type":"solution",
-      "name":"Solution Card",
-      "settings":[
+      "type": "solution",
+      "name": "Solution Card",
+      "settings": [
         {
-          "type":"text",
-          "id":"title",
-          "label":"Title",
-          "default":"NCCO-AIR"
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "NCCO氧聚解技術的起源"
         },
         {
-          "type":"richtext",
-          "id":"description",
-          "label":"Description",
-          "default":"<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air-purification and is also widely used in commercial, industrial, and medical institutions.</p>"
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>NCCO 氧聚解空氣處理技術是 100% 香港本土發明和本地科研成果。</p>"
         },
         {
-          "type":"text",
-          "id":"link_text",
-          "label":"Link text",
-          "default":"Learn More"
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "了解更多"
         },
         {
-          "type":"url",
-          "id":"link_url",
-          "label":"Link URL"
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
         }
       ]
     }
   ],
-  "max_blocks":6,
-  "presets":[
+  "max_blocks": 6,
+  "presets": [
     {
-      "name":"NCCO Industrial Solutions",
-      "blocks":[
+      "name": "NCCO Industrial Solutions",
+      "blocks": [
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-AIR",
-            "description":"<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air-purification and is also widely used in commercial, industrial, and medical institutions.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "NCCO氧聚解技術的起源",
+            "description": "<p>NCCO 氧聚解空氣處理技術是 100% 香港本土發明和本地科研成果。這項技術由香港科技大學創業計畫成員夥同信山實業 (RHT) 共同研發。信山實業於 1998 年在香港正式成立，並在 1999 年便開始參與香港科技大學創業計畫。經過持續研發，NCCO 技術最終於 2003 年成功研發，並隨即得到國際性發明專利。</p>",
+            "link_text": "了解更多"
           }
         },
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-INVISIBLE GLOVE",
-            "description":"<p>The NCCO technology uses nanotechnology to form a layer of film on the surface of the skin that disinfects, moisturizes, and protects against damaged skin infections.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "專利納米分解技術",
+            "description": "<p>NCCO 技術的核心突破是它採用 納米限域催化氧化 (Nano Confined Catalytic Oxidation) 原理。與傳統的活性碳只能吸附污染物不同，NCCO 能夠在分子層面上將污染物分解。系統利用活氧的氧化作用 和納米孔道中的過渡金屬催化物，將有害氣態污染物、細菌和病毒，最終轉化為對人體無害的水和二氧化碳。</p>",
+            "link_text": "了解更多"
           }
         },
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-ZRD",
-            "description":"<p>ZRD (Zeolite Radioactive Dust Removal System) belongs to one of RHT's patented technologies. The ZRD system effectively removes radioactive materials and toxic gases from the air and can be used as an emergency system.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "納米框架技術的醫療應用",
+            "description": "<p>香港的科研團隊也將創新的納米框架技術應用於皮膚護理領域，開發出 NCCO-IG 醫療級皮膚抗敏修護液。該產品由香港科技公司信山實業牽頭的專業科研團隊研發，旨在完全代替酒精搓手液。NCCO-IG 不含酒精且完全沒有毒性，但對新型冠狀病毒 (COVID-19) 的殺滅率仍超過 99.97%。此外，它能形成納米保養膜以持續保濕，並經加拿大英屬哥倫比亞大學研究證實，能有效改善皮膚發炎、乾燥及修復主婦手症狀。</p>",
+            "link_text": "了解更多"
           }
         },
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-PIS",
-            "description":"<p>Industrial production releases a lot of pollutants into its daily manufacturing, causing severe pollution to nearby buildings. Pollutants Isolation System (PIS) creates an indoor air barrier to prevent outdoor contaminants from entering the room.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "本地品牌在零售市場的成就",
+            "description": "<p>這項香港發明成功地將技術商業化。旗下的家用品牌 b-MOLA 將 NCCO 技術引入香港零售市場，並且在 2018 年榮膺香港本地空氣淨化機品牌銷量首位。NCCO 技術的可靠性亦獲國際品牌認可，例如 Philips 在 2007 年便獲得專利授權生產 NCCO 空氣淨化機，並在全球售出超過 42 萬部。其他曾使用 NCCO 技術的品牌包括 Oregon Scientific 和 Yamasa Tokei。</p>",
+            "link_text": "了解更多"
           }
         },
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-MASKS",
-            "description":"<p>Many toxic compounds are often used during industrial production, seriously endangering employees' health. RHT research team successfully utilized the NCCO technology to develop an NCCO mask.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "關鍵基礎設施的信賴與節能效益",
+            "description": "<p>NCCO 專利技術獲得香港政府部門和公私營機構的廣泛使用。在香港的國際金融中心 (IFC Mall) 應用 NCCO 系統後，成功去除了 92% 的揮發性有機化合物 (VOCs)，並獲得香港環保署頒發的卓越級室內空氣品質 (IAQ) 檢定證書。NCCO 系統也被安裝於香港國際機場的公眾洗手間，不僅減少了氨氣、VOCs 及細菌濃度，同時因無需加大冷氣及抽風，從而降低營運成本，達到節能效果。</p>",
+            "link_text": "了解更多"
           }
         },
         {
-          "type":"solution",
-          "settings":{
-            "title":"NCCO-MDS",
-            "description":"<p>The Sewage Treatment Plant has been emitting a foul odor for an extended period. Currently, it mainly employs an active charcoal air purification system to remove the odor.</p>",
-            "link_text":"Learn More"
+          "type": "solution",
+          "settings": {
+            "title": "創新生活用品的多元化發展",
+            "description": "<p>除了空氣淨化，香港科研團隊也致力於開發其他創新的生活用品。05+ 植頻超聲波驅蚊機及驅蟲機是香港科技大學創業計劃成員研發的純物理創新技術，其設計特色是純物理驅蟲、全無化學成分，適用於孕婦、嬰兒、幼童及寵物家庭。此外，05+ 寵物低敏護理系列，如沖涼液和美容噴霧，其成分的 EWG 等級均為綠色，配方溫和不刺激，有助於防止毛孔堵塞和有效抑制寵物異味的產生。</p>",
+            "link_text": "了解更多"
           }
         }
       ]

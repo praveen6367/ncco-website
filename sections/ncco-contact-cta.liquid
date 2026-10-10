@@ -1,6 +1,10 @@
-{%- assign contact_accent = section.settings.accent_color | default: '#FECB07' -%}
-{%- if contact_accent == blank -%}{%- assign contact_accent = '#FECB07' -%}{%- endif -%}
-<section class="ncco-contact-wrap" style="--ncco-accent:{{ contact_accent }};">
+{%- assign contact_accent = section.settings.accent_color | default: '#22B39F' -%}
+{%- if contact_accent == blank -%}{%- assign contact_accent = '#22B39F' -%}{%- endif -%}
+{%- assign contact_bg = section.settings.bg_color | default: 'rgba(34, 179, 159, 0.078)' -%}
+{%- assign contact_btn = section.settings.btn_color | default: '#22B39F' -%}
+{%- assign contact_icon = section.settings.icon_color | default: '#22B39F' -%}
+{%- assign contact_icon_bg = section.settings.icon_bg_color | default: 'rgba(34, 179, 159, 0.06)' -%}
+<section class="ncco-contact-wrap" style="--ncco-accent:{{ contact_accent }};--contact-bg:{{ contact_bg }};--contact-btn:{{ contact_btn }};--contact-icon:{{ contact_icon }};--contact-icon-bg:{{ contact_icon_bg }};background:{{ contact_bg }};">
   <div class="ncco-contact ncco-section">
     <div class="ncco-container ncco-contact__inner">
 
@@ -23,7 +27,7 @@
           {%- assign subtext_val = default_subtext -%}
         {%- endif -%}
         <div class="ncco-contact__eyebrow-wrap">
-          <span class="ncco-contact__bar" style="background:#FECB07;"></span>
+          <span class="ncco-contact__bar" style="background:{{ contact_accent }};"></span>
           <p class="ncco-contact__eyebrow">{{ eyebrow_val }}</p>
         </div>
         <h2 class="ncco-contact__heading">{{ heading_val }}</h2>
@@ -36,8 +40,8 @@
         <div class="ncco-contact__info-item">
           <div class="ncco-contact__icon-wrap">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle opacity="0.06" cx="29" cy="29" r="29" fill="#003DA5"/>
-              <path d="M19 24L27.1649 29.7154C27.8261 30.1783 28.1567 30.4097 28.5163 30.4993C28.8339 30.5785 29.1661 30.5785 29.4837 30.4993C29.8433 30.4097 30.1739 30.1783 30.8351 29.7154L39 24M23.8 37H34.2C35.8802 37 36.7202 37 37.362 36.673C37.9265 36.3854 38.3854 35.9265 38.673 35.362C39 34.7202 39 33.8802 39 32.2V25.8C39 24.1198 39 23.2798 38.673 22.638C38.3854 22.0735 37.9265 21.6146 37.362 21.327C36.7202 21 35.8802 21 34.2 21H23.8C22.1198 21 21.2798 21 20.638 21.327C20.0735 21.6146 19.6146 22.0735 19.327 22.638C19 23.2798 19 24.1198 19 25.8V32.2C19 33.8802 19 34.7202 19.327 35.362C19.6146 35.9265 20.0735 36.3854 20.638 36.673C21.2798 37 22.1198 37 23.8 37Z" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="29" cy="29" r="29" fill="{{ contact_icon_bg }}"/>
+              <path d="M19 24L27.1649 29.7154C27.8261 30.1783 28.1567 30.4097 28.5163 30.4993C28.8339 30.5785 29.1661 30.5785 29.4837 30.4993C29.8433 30.4097 30.1739 30.1783 30.8351 29.7154L39 24M23.8 37H34.2C35.8802 37 36.7202 37 37.362 36.673C37.9265 36.3854 38.3854 35.9265 38.673 35.362C39 34.7202 39 33.8802 39 32.2V25.8C39 24.1198 39 23.2798 38.673 22.638C38.3854 22.0735 37.9265 21.6146 37.362 21.327C36.7202 21 35.8802 21 34.2 21H23.8C22.1198 21 21.2798 21 20.638 21.327C20.0735 21.6146 19.6146 22.0735 19.327 22.638C19 23.2798 19 24.1198 19 25.8V32.2C19 33.8802 19 34.7202 19.327 35.362C19.6146 35.9265 20.0735 36.3854 20.638 36.673C21.2798 37 22.1198 37 23.8 37Z" stroke="{{ contact_icon }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div class="ncco-contact__info-text">
@@ -51,9 +55,9 @@
         <div class="ncco-contact__info-item">
           <div class="ncco-contact__icon-wrap">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle opacity="0.06" cx="29" cy="29" r="29" fill="#003DA5"/>
-              <path d="M27.2266 30.8631C26.0251 29.6615 25.0763 28.3028 24.3803 26.8532C24.3204 26.7285 24.2905 26.6662 24.2675 26.5873C24.1858 26.3069 24.2445 25.9627 24.4145 25.7253C24.4623 25.6584 24.5183 25.6024 24.6302 25.4905L25.5358 24.5849C26.1757 23.945 26.1757 22.9327 25.5358 22.2928L24.1216 20.8786C23.4816 20.2386 22.4693 20.2386 21.8294 20.8786L21.1027 21.6052C20.4669 22.2411 20.1952 23.1553 20.3411 24.0494C20.7167 26.3546 21.8714 28.9929 23.8731 30.9946C25.8748 32.9963 28.5131 34.151 30.8183 34.5266C31.7124 34.6725 32.6266 34.4008 33.2625 33.765L33.9891 33.0383C34.629 32.3984 34.629 31.3861 33.9891 30.7461L32.5749 29.332C31.935 28.692 30.9226 28.692 30.2827 29.332L29.3771 30.2376C29.2652 30.3495 29.2092 30.4055 29.1423 30.4533C28.9049 30.6233 28.5607 30.682 28.2803 30.6003C28.2014 30.5773 28.1391 30.5474 28.0144 30.4875C27.7249 30.3421 27.4434 30.1723 27.2266 30.8631Z" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M31.0497 23C32.0264 23.1906 32.924 23.6683 33.6277 24.3719C34.3314 25.0756 34.8091 25.9733 34.9997 26.95M31.0497 19C33.0789 19.2254 34.9713 20.1342 36.4159 21.577C37.8606 23.0198 38.7717 24.911 38.9997 26.94" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="29" cy="29" r="29" fill="{{ contact_icon_bg }}"/>
+              <path d="M27.2266 30.8631C26.0251 29.6615 25.0763 28.3028 24.3803 26.8532C24.3204 26.7285 24.2905 26.6662 24.2675 26.5873C24.1858 26.3069 24.2445 25.9627 24.4145 25.7253C24.4623 25.6584 24.5183 25.6024 24.6302 25.4905L25.5358 24.5849C26.1757 23.945 26.1757 22.9327 25.5358 22.2928L24.1216 20.8786C23.4816 20.2386 22.4693 20.2386 21.8294 20.8786L21.1027 21.6052C20.4669 22.2411 20.1952 23.1553 20.3411 24.0494C20.7167 26.3546 21.8714 28.9929 23.8731 30.9946C25.8748 32.9963 28.5131 34.151 30.8183 34.5266C31.7124 34.6725 32.6266 34.4008 33.2625 33.765L33.9891 33.0383C34.629 32.3984 34.629 31.3861 33.9891 30.7461L32.5749 29.332C31.935 28.692 30.9226 28.692 30.2827 29.332L29.3771 30.2376C29.2652 30.3495 29.2092 30.4055 29.1423 30.4533C28.9049 30.6233 28.5607 30.682 28.2803 30.6003C28.2014 30.5773 28.1391 30.5474 28.0144 30.4875C27.7249 30.3421 27.4434 30.1723 27.2266 30.8631Z" stroke="{{ contact_icon }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M31.0497 23C32.0264 23.1906 32.924 23.6683 33.6277 24.3719C34.3314 25.0756 34.8091 25.9733 34.9997 26.95M31.0497 19C33.0789 19.2254 34.9713 20.1342 36.4159 21.577C37.8606 23.0198 38.7717 24.911 38.9997 26.94" stroke="{{ contact_icon }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div class="ncco-contact__info-text">
@@ -67,9 +71,9 @@
         <div class="ncco-contact__info-item">
           <div class="ncco-contact__icon-wrap">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle opacity="0.06" cx="29" cy="29" r="29" fill="#003DA5"/>
-              <path d="M29 31C31.2091 31 33 29.2091 33 27C33 24.7909 31.2091 23 29 23C26.7909 23 25 24.7909 25 27C25 29.2091 26.7909 31 29 31Z" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M29 39C34 34 39 29.4183 39 27C39 21.4772 34.5228 17 29 17C23.4772 17 19 21.4772 19 27C19 29.4183 24 34 29 39Z" stroke="#003DA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="29" cy="29" r="29" fill="{{ contact_icon_bg }}"/>
+              <path d="M29 31C31.2091 31 33 29.2091 33 27C33 24.7909 31.2091 23 29 23C26.7909 23 25 24.7909 25 27C25 29.2091 26.7909 31 29 31Z" stroke="{{ contact_icon }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M29 39C34 34 39 29.4183 39 27C39 21.4772 34.5228 17 29 17C23.4772 17 19 21.4772 19 27C19 29.4183 24 34 29 39Z" stroke="{{ contact_icon }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div class="ncco-contact__info-text">
@@ -124,7 +128,7 @@
             <span class="ncco-contact__submit-icon" aria-hidden="true">
               <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="19" cy="19" r="19" fill="#FECB07"/>
-                <path d="M14 24L24 14M24 20.6667V14H17.3333" stroke="#003DA5" stroke-width="1.66667" stroke-linecap="square" stroke-linejoin="round"/>
+                <path d="M14 24L24 14M24 20.6667V14H17.3333" stroke="{{ contact_icon }}" stroke-width="1.66667" stroke-linecap="square" stroke-linejoin="round"/>
               </svg>
             </span>
           </button>
@@ -138,13 +142,13 @@
 </section>
 
 <style>
-/* ── Figma Contact (1423:25743, 1920×835) ── */
+/* ── Contact CTA (Full-width background with boxed layout inner) ── */
 .ncco-contact-wrap {
   width: 100%;
   max-width: 100%;
   padding: 0;
   margin: 64px 0 0;
-  background: #6470820A;
+  background: var(--contact-bg, rgba(34, 179, 159, 0.078));
   box-sizing: border-box;
 }
 .ncco-contact {
@@ -161,9 +165,9 @@
   grid-template-columns: 1.05fr 0.95fr;
   gap: 70px;
   align-items: stretch;
-  max-width: 1360px !important;
+  max-width: 1280px !important;
   margin: 0 auto !important;
-  padding: 0 36px !important;
+  padding: 0 40px !important;
   box-sizing: border-box;
 }
 
@@ -181,7 +185,7 @@
   display: block !important;
   width: 28px !important;
   height: 3px !important;
-  background: #FECB07 !important;
+  background: var(--ncco-accent, #22B39F) !important;
   border-radius: 2px !important;
   margin-bottom: 12px !important;
 }
@@ -217,7 +221,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #EEF3FA;
+  background: var(--contact-icon-bg, rgba(34, 179, 159, 0.06));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +246,7 @@
   font-size: 15px; font-weight: 500; letter-spacing: -0.2px;
   color: #081D3A; text-decoration: none; line-height: 1.4;
 }
-a.ncco-contact__info-value:hover { color: #003DA5; }
+a.ncco-contact__info-value:hover { color: var(--ncco-accent, #22B39F); }
 
 /* Right col — form card with subtle elevation */
 .ncco-contact__right {
@@ -283,7 +287,7 @@ a.ncco-contact__info-value:hover { color: #003DA5; }
 .ncco-contact__textarea::placeholder { color: #97A0AC !important; font-size: 14px !important; }
 .ncco-contact .ncco-contact__input:focus,
 .ncco-contact .ncco-contact__textarea:focus {
-  border-color: #003DA5 !important; outline: none !important;
+  border-color: var(--ncco-accent, #22B39F) !important; outline: none !important;
 }
 .ncco-contact__textarea {
   resize: vertical; min-height: 120px; border-radius: 14px !important;
@@ -293,13 +297,13 @@ a.ncco-contact__info-value:hover { color: #003DA5; }
 .ncco-contact .ncco-contact__submit {
   display: inline-flex !important; align-items: center !important; gap: 16px !important;
   padding: 6px 6px 6px 24px !important;
-  background: #003DA5 !important; color: #fff !important;
+  background: var(--contact-btn, #22B39F) !important; color: #fff !important;
   border: none !important; border-radius: 48px !important;
   cursor: pointer;
   font-family: 'Geist', sans-serif !important;
   font-size: 15px !important; font-weight: 500 !important;
   text-transform: uppercase !important; letter-spacing: -0.2px !important;
-  box-shadow: 0 8px 20px rgba(0,61,165,0.2) !important;
+  box-shadow: 0 4px 14px rgba(34, 179, 159, 0.25) !important;
   transition: filter .2s ease !important;
   margin-top: 8px; white-space: nowrap; line-height: 1 !important;
 }
@@ -365,7 +369,11 @@ a.ncco-contact__info-value:hover { color: #003DA5; }
   "tag": "section",
   "settings": [
     {"type": "text",     "id": "eyebrow",      "label": "Eyebrow label",  "default": "Get In Touch"},
-    {"type": "text",     "id": "accent_color", "label": "Accent color (hex, default #FECB07 yellow)"},
+    {"type": "text",     "id": "accent_color", "label": "Accent color (hex, default #22B39F)"},
+    {"type": "text",     "id": "bg_color",     "label": "Full width background color (hex, default #22B39F14)"},
+    {"type": "text",     "id": "btn_color",    "label": "Button background color (hex, default #22B39F)"},
+    {"type": "text",     "id": "icon_color",   "label": "Icon stroke color (hex, default #22B39F)"},
+    {"type": "text",     "id": "icon_bg_color", "label": "Icon circle background (e.g. rgba(34, 179, 159, 0.06))"},
     {"type": "text",     "id": "heading",       "label": "Heading",        "default": "We're Here to Help"},
     {"type": "textarea", "id": "subtext",       "label": "Subtext",        "default": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you."},
     {"type": "text",     "id": "email",         "label": "Email address",  "default": "info@ncco-tech.com"},

@@ -16,7 +16,7 @@
             <div class="ncco-faq__item{% if forloop.first %} is-open{% endif %}" {{ block.shopify_attributes }}>
               <button type="button" class="ncco-faq__trigger" onclick="window.toggleFaq(this, event)" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
                 <span class="ncco-faq__question">{{ block.settings.heading }}</span>
-                <span class="ncco-faq__icon" aria-hidden="true">+</span>
+                <span class="ncco-faq__icon" aria-hidden="true">{% if forloop.first %}−{% else %}+{% endif %}</span>
               </button>
               <div class="ncco-faq__answer">
                 <div class="ncco-faq__answer-inner">{{ block.settings.answer }}</div>
@@ -29,7 +29,7 @@
   {% else %}
     <div class="ncco-faq-white">
       <div class="ncco-faq__header">
-        <span class="ncco-faq__dash" aria-hidden="true" style="display:block;width:38px;height:3px;background:#FECB07;border-radius:2px;margin:0 auto 12px auto;"></span>
+        <span class="ncco-faq__dash" aria-hidden="true" style="display:block;width:38px;height:3px;background:{{ faq_accent }};border-radius:2px;margin:0 auto 12px auto;"></span>
         {% if section.settings.eyebrow != blank %}
           <p class="ncco-faq__eyebrow">{{ section.settings.eyebrow }}</p>
         {% endif %}
@@ -37,10 +37,14 @@
       </div>
       <div class="ncco-faq__grid">
         {% for block in section.blocks %}
-          <div class="ncco-faq__item{% if forloop.first %} is-open{% endif %}" {{ block.shopify_attributes }}>
-            <button type="button" class="ncco-faq__trigger" onclick="window.toggleFaq(this, event)" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+          {%- assign is_item_open = false -%}
+          {%- if forloop.first -%}
+            {%- assign is_item_open = true -%}
+          {%- endif -%}
+          <div class="ncco-faq__item{% if is_item_open %} is-open{% endif %}" {{ block.shopify_attributes }}>
+            <button type="button" class="ncco-faq__trigger" onclick="window.toggleFaq(this, event)" aria-expanded="{% if is_item_open %}true{% else %}false{% endif %}">
               <span class="ncco-faq__question">{{ block.settings.heading }}</span>
-              <span class="ncco-faq__icon" aria-hidden="true">{% if forloop.first %}−{% else %}+{% endif %}</span>
+              <span class="ncco-faq__icon" aria-hidden="true">{% if is_item_open %}−{% else %}+{% endif %}</span>
             </button>
             <div class="ncco-faq__answer">
               <div class="ncco-faq__answer-inner">{{ block.settings.answer }}</div>
@@ -382,11 +386,25 @@ window.toggleFaq = function(btn, event) {
   if (!item) return;
   var isOpen = item.classList.contains('is-open');
   var icon = item.querySelector('.ncco-faq__icon');
+  var container = item.closest('.ncco-faq-wrap') || item.closest('.ncco-faq-white') || item.closest('.ncco-faq') || document;
+
   if (isOpen) {
     item.classList.remove('is-open');
     btn.setAttribute('aria-expanded', 'false');
     if (icon) icon.textContent = '+';
   } else {
+    // Only one at a time should be expandable: close all other open items in this FAQ section
+    var allOpen = container.querySelectorAll('.ncco-faq__item.is-open');
+    allOpen.forEach(function(otherItem) {
+      if (otherItem !== item) {
+        otherItem.classList.remove('is-open');
+        var otherBtn = otherItem.querySelector('.ncco-faq__trigger');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        var otherIcon = otherItem.querySelector('.ncco-faq__icon');
+        if (otherIcon) otherIcon.textContent = '+';
+      }
+    });
+
     item.classList.add('is-open');
     btn.setAttribute('aria-expanded', 'true');
     if (icon) icon.textContent = '−';

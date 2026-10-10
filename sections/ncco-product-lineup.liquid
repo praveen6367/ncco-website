@@ -1,27 +1,22 @@
 {%- comment -%}
   NCCO Product Lineup
-  Product showcase / collection tabs
+  Product showcase / collection tabs / draggable edge-to-edge carousel
 {%- endcomment -%}
 
 <section
   class="ncco-product-lineup"
   id="ncco-product-lineup-{{ section.id }}"
 >
-
   <div class="ncco-product-lineup__inner">
-
     <!-- =========================================
          HEADER
     ========================================== -->
-
     <div class="ncco-product-lineup__header">
-
-      <div class="ncco-product-lineup__heading-wrap">
-
+      <div class="ncco-product-lineup__header-left">
         {%- if section.settings.eyebrow != blank -%}
-          <div class="ncco-product-lineup__eyebrow">
-            <span></span>
-            {{ section.settings.eyebrow }}
+          <div class="ncco-product-lineup__eyebrow-wrap">
+            <span class="ncco-product-lineup__dash"></span>
+            <span class="ncco-product-lineup__eyebrow">{{ section.settings.eyebrow }}</span>
           </div>
         {%- endif -%}
 
@@ -30,31 +25,38 @@
             {{ section.settings.heading }}
           </h2>
         {%- endif -%}
-
       </div>
 
+      <div class="ncco-product-lineup__header-right">
+        {%- if section.settings.description != blank -%}
+          <div class="ncco-product-lineup__description">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
 
-      {%- if section.settings.description != blank -%}
-        <div class="ncco-product-lineup__description">
-          {{ section.settings.description }}
-        </div>
-      {%- endif -%}
-
+        {%- if section.settings.button_label != blank -%}
+          <a
+            href="{{ section.settings.button_url | default: '#' }}"
+            class="ncco-product-lineup__button"
+          >
+            <span>{{ section.settings.button_label }}</span>
+            <span class="ncco-product-lineup__button-icon">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        {%- endif -%}
+      </div>
     </div>
 
-
     <!-- =========================================
-         NAVIGATION
+         NAVIGATION / TABS
     ========================================== -->
-
     <div class="ncco-product-lineup__navigation">
-
       <div class="ncco-product-lineup__tabs">
-
         {%- for block in section.blocks -%}
-
           {%- if block.type == 'collection_tab' -%}
-
             <button
               type="button"
               class="ncco-product-lineup__tab{% if forloop.first %} is-active{% endif %}"
@@ -63,1166 +65,598 @@
             >
               {{ block.settings.label }}
             </button>
-
           {%- endif -%}
-
         {%- endfor -%}
-
       </div>
-
-
-      {%- if section.settings.button_label != blank -%}
-
-        <a
-          href="{{ section.settings.button_url | default: routes.all_products_collection_url }}"
-          class="ncco-product-lineup__button"
-        >
-
-          <span>
-            {{ section.settings.button_label }}
-          </span>
-
-          <span class="ncco-product-lineup__button-icon">
-            ↗
-          </span>
-
-        </a>
-
-      {%- endif -%}
-
     </div>
-
-
-    <!-- =========================================
-         PRODUCT COLLECTIONS
-    ========================================== -->
-
-    <div class="ncco-product-lineup__collections">
-
-      {%- for block in section.blocks -%}
-
-        {%- if block.type == 'collection_tab' -%}
-
-          <div
-            class="ncco-product-lineup__collection{% if forloop.first %} is-active{% endif %}"
-            data-collection="{{ block.id }}"
-          >
-
-            <div class="ncco-product-lineup__track">
-
-              {%- if block.settings.image_source == 'images' -%}
-
-                <div class="ncco-product-lineup__custom-images">
-
-                  {%- for image_number in (1..4) -%}
-
-                    {%- assign image_key = 'image_' | append: image_number -%}
-                    {%- assign custom_image = block.settings[image_key] -%}
-
-                    {%- if custom_image != blank -%}
-
-                      <article class="ncco-product-card">
-
-                        <div class="ncco-product-card__image-wrap">
-
-                          {{
-                            custom_image
-                            | image_url: width: 900
-                            | image_tag:
-                              loading: 'lazy',
-                              widths: '300, 450, 600, 750, 900',
-                              sizes: '(max-width: 768px) 85vw, 340px',
-                              class: 'ncco-product-card__image',
-                              alt: block.settings.image_alt
-                          }}
-
-                        </div>
-
-                      </article>
-
-                    {%- endif -%}
-
-                  {%- endfor -%}
-
-                </div>
-
-              {%- elsif block.settings.collection != blank -%}
-
-                {%- assign lineup_collection = block.settings.collection -%}
-
-                {%- for product in lineup_collection.products limit: section.settings.products_to_show -%}
-
-                  <article class="ncco-product-card">
-
-                    <!-- PRODUCT TOP -->
-                    <div class="ncco-product-card__top">
-
-                      <div class="ncco-product-card__information">
-
-                        <a
-                          href="{{ product.url }}"
-                          class="ncco-product-card__title"
-                        >
-                          {{ product.title }}
-                        </a>
-
-                        <div class="ncco-product-card__price">
-
-                          {%- if product.compare_at_price > product.price -%}
-
-                            <span>
-                              {{ product.price | money }}
-                            </span>
-
-                          {%- else -%}
-
-                            <span>
-                              {{ product.price | money }}
-                            </span>
-
-                          {%- endif -%}
-
-                        </div>
-
-                      </div>
-
-
-                      <a
-                        href="{{ product.url }}"
-                        class="ncco-product-card__quick-view"
-                      >
-                        {{ section.settings.quick_view_text }}
-                        <span>↗</span>
-                      </a>
-
-                    </div>
-
-
-                    <!-- PRODUCT IMAGE -->
-                    <a
-                      href="{{ product.url }}"
-                      class="ncco-product-card__image-wrap"
-                    >
-
-                      {%- if product.featured_image != blank -%}
-
-                        {{
-                          product.featured_image
-                          | image_url: width: 900
-                          | image_tag:
-                            loading: 'lazy',
-                            widths: '300, 450, 600, 750, 900',
-                            sizes: '(max-width: 768px) 85vw, 340px',
-                            class: 'ncco-product-card__image'
-                        }}
-
-                      {%- else -%}
-
-                        <div class="ncco-product-card__placeholder">
-                          No image
-                        </div>
-
-                      {%- endif -%}
-
-                    </a>
-
-                  </article>
-
-                {%- else -%}
-
-                  <div class="ncco-product-lineup__empty">
-                    {{ 'sections.ncco_product_lineup.empty' | t }}
-                  </div>
-
-                {%- endfor -%}
-
-              {%- else -%}
-
-                <div class="ncco-product-lineup__empty">
-                  {{ 'sections.ncco_product_lineup.select_collection' | t }}
-                </div>
-
-              {%- endif -%}
-
-            </div>
-
-          </div>
-
-        {%- endif -%}
-
-      {%- endfor -%}
-
-    </div>
-
   </div>
 
+  <!-- =========================================
+       PRODUCT COLLECTIONS (EDGE TO EDGE CAROUSEL)
+  ========================================== -->
+  <div class="ncco-product-lineup__collections">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'collection_tab' -%}
+        <div
+          class="ncco-product-lineup__collection{% if forloop.first %} is-active{% endif %}"
+          data-collection="{{ block.id }}"
+        >
+          <div class="ncco-product-lineup__track" id="track-{{ block.id }}">
+            {%- if block.settings.image_source == 'images' -%}
+              {%- for image_number in (1..4) -%}
+                {%- assign image_key = 'image_' | append: image_number -%}
+                {%- assign custom_image = block.settings[image_key] -%}
+                {%- if custom_image != blank -%}
+                  <article class="ncco-product-card">
+                    <div class="ncco-product-card__image-wrap">
+                      {{
+                        custom_image
+                        | image_url: width: 900
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '300, 450, 600, 750, 900',
+                          sizes: '(max-width: 768px) 85vw, 340px',
+                          class: 'ncco-product-card__image',
+                          alt: block.settings.image_alt
+                      }}
+                    </div>
+                  </article>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- elsif block.settings.collection != blank and block.settings.collection.products_count > 0 -%}
+              {%- assign lineup_collection = block.settings.collection -%}
+              {%- for product in lineup_collection.products limit: section.settings.products_to_show -%}
+                <article class="ncco-product-card">
+                  <div class="ncco-product-card__top">
+                    <div class="ncco-product-card__meta">
+                      <span class="ncco-product-card__model">{{ product.type | default: product.vendor | default: 'RHT' }}</span>
+                      <a href="{{ product.url }}" class="ncco-product-card__title">{{ product.title }}</a>
+                    </div>
+                    <a href="{{ product.url }}" class="ncco-product-card__quick-view">
+                      <span>{{ section.settings.quick_view_text | default: 'Quick View' }}</span>
+                      <span class="ncco-product-card__arrow">↗</span>
+                    </a>
+                  </div>
+                  <a href="{{ product.url }}" class="ncco-product-card__image-wrap">
+                    {%- if product.featured_image != blank -%}
+                      {{
+                        product.featured_image
+                        | image_url: width: 900
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '300, 450, 600, 750, 900',
+                          sizes: '(max-width: 768px) 85vw, 340px',
+                          class: 'ncco-product-card__image'
+                      }}
+                    {%- else -%}
+                      <div class="ncco-product-card__placeholder">No image</div>
+                    {%- endif -%}
+                  </a>
+                </article>
+              {%- endfor -%}
+            {%- else -%}
+              <!-- Default / Fallback RHT Products from UI -->
+              <article class="ncco-product-card">
+                <div class="ncco-product-card__top">
+                  <div class="ncco-product-card__meta">
+                    <span class="ncco-product-card__model">RM-480</span>
+                    <h3 class="ncco-product-card__title">Mobile Filtration Unit</h3>
+                  </div>
+                  <a href="{{ section.settings.button_url | default: '#' }}" class="ncco-product-card__quick-view">
+                    <span>{{ section.settings.quick_view_text | default: 'Quick View' }}</span>
+                    <span class="ncco-product-card__arrow">↗</span>
+                  </a>
+                </div>
+                <div class="ncco-product-card__image-wrap">
+                  <img src="{{ 'RM-480.png' | asset_url }}" alt="RM-480 Mobile Filtration Unit" class="ncco-product-card__image" loading="lazy">
+                </div>
+              </article>
+
+              <article class="ncco-product-card">
+                <div class="ncco-product-card__top">
+                  <div class="ncco-product-card__meta">
+                    <span class="ncco-product-card__model">RA-805</span>
+                    <h3 class="ncco-product-card__title">Customised Deodorising System</h3>
+                  </div>
+                  <a href="{{ section.settings.button_url | default: '#' }}" class="ncco-product-card__quick-view">
+                    <span>{{ section.settings.quick_view_text | default: 'Quick View' }}</span>
+                    <span class="ncco-product-card__arrow">↗</span>
+                  </a>
+                </div>
+                <div class="ncco-product-card__image-wrap">
+                  <img src="{{ 'RA-805.png' | asset_url }}" alt="RA-805 Customised Deodorising System" class="ncco-product-card__image" loading="lazy">
+                </div>
+              </article>
+
+              <article class="ncco-product-card">
+                <div class="ncco-product-card__top">
+                  <div class="ncco-product-card__meta">
+                    <span class="ncco-product-card__model">RH-490C</span>
+                    <h3 class="ncco-product-card__title">Ceiling Filtration Unit</h3>
+                  </div>
+                  <a href="{{ section.settings.button_url | default: '#' }}" class="ncco-product-card__quick-view">
+                    <span>{{ section.settings.quick_view_text | default: 'Quick View' }}</span>
+                    <span class="ncco-product-card__arrow">↗</span>
+                  </a>
+                </div>
+                <div class="ncco-product-card__image-wrap">
+                  <img src="{{ 'RH-490C.png' | asset_url }}" alt="RH-490C Ceiling Filtration Unit" class="ncco-product-card__image" loading="lazy">
+                </div>
+              </article>
+
+              <article class="ncco-product-card">
+                <div class="ncco-product-card__top">
+                  <div class="ncco-product-card__meta">
+                    <span class="ncco-product-card__model">RH-220</span>
+                    <h3 class="ncco-product-card__title">Duct mounted mobile Unit</h3>
+                  </div>
+                  <a href="{{ section.settings.button_url | default: '#' }}" class="ncco-product-card__quick-view">
+                    <span>{{ section.settings.quick_view_text | default: 'Quick View' }}</span>
+                    <span class="ncco-product-card__arrow">↗</span>
+                  </a>
+                </div>
+                <div class="ncco-product-card__image-wrap">
+                  <img src="{{ 'RH-220.png' | asset_url }}" alt="RH-220 Duct mounted mobile Unit" class="ncco-product-card__image" loading="lazy">
+                </div>
+              </article>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
 </section>
 
-
 <style>
-
-/* =========================================================
-   NCCO PRODUCT LINEUP
-========================================================= */
-
 #ncco-product-lineup-{{ section.id }} {
-
-  --lineup-background: {{ section.settings.background_color }};
-  --lineup-heading: {{ section.settings.heading_color }};
-  --lineup-eyebrow: {{ section.settings.eyebrow_color }};
-  --lineup-accent: {{ section.settings.accent_color }};
-  --lineup-description: {{ section.settings.description_color }};
-
-  --lineup-tabs-background: {{ section.settings.tabs_background }};
-  --lineup-tab-text: {{ section.settings.tab_text_color }};
-  --lineup-tab-active-background: {{ section.settings.active_tab_background }};
-  --lineup-tab-active-text: {{ section.settings.active_tab_text }};
-
-  --lineup-card-background: {{ section.settings.card_background }};
-  --lineup-card-title: {{ section.settings.card_title_color }};
-  --lineup-price: {{ section.settings.price_color }};
-  --lineup-quick-view: {{ section.settings.quick_view_color }};
-
-  --lineup-button-background: {{ section.settings.button_background }};
-  --lineup-button-text: {{ section.settings.button_text_color }};
-  --lineup-button-icon-background: {{ section.settings.button_icon_background }};
-  --lineup-button-icon-color: {{ section.settings.button_icon_color }};
-
-  --lineup-card-radius: {{ section.settings.card_radius }}px;
-  --lineup-section-radius: {{ section.settings.section_radius }}px;
-
+  --lineup-background: {{ section.settings.background_color | default: '#FFFFFF' }};
+  --lineup-heading: {{ section.settings.heading_color | default: '#0A1C2E' }};
+  --lineup-eyebrow: {{ section.settings.eyebrow_color | default: '#8295A8' }};
+  --lineup-accent: {{ section.settings.accent_color | default: '#22B39F' }};
+  --lineup-description: {{ section.settings.description_color | default: '#63778B' }};
+  --lineup-card-background: {{ section.settings.card_background | default: '#F9F9FA' }};
+  --lineup-card-radius: {{ section.settings.card_radius | default: 18 }}px;
   background: var(--lineup-background);
-
   width: 100%;
-
   box-sizing: border-box;
-
   overflow: hidden;
+  padding: 80px 0 90px;
 }
-
-
-/* =========================================================
-   INNER
-========================================================= */
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
-
-  max-width: {{ section.settings.max_width }}px;
-
+  max-width: 1280px;
   margin: 0 auto;
-
-  padding:
-    {{ section.settings.padding_top }}px
-    {{ section.settings.padding_horizontal }}px
-    {{ section.settings.padding_bottom }}px;
-
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
-
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
-
   display: flex;
-
   align-items: flex-start;
-
   justify-content: space-between;
-
-  gap: 80px;
-
-  margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   HEADING WRAP
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading-wrap {
-
-  flex: 0 0 auto;
-
-  max-width: 620px;
-}
-
-
-/* =========================================================
-   EYEBROW
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  gap: 5px;
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: 12px;
-
-  line-height: 16px;
-
-  font-weight: 400;
-
-  color: var(--lineup-eyebrow);
-
-  text-transform: uppercase;
-
-  margin-bottom: 20px;
-}
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow span {
-
-  display: block;
-
-  width: 20px;
-
-  height: 2px;
-
-  background: var(--lineup-accent);
-}
-
-
-/* =========================================================
-   MAIN HEADING
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
-
-  margin: 0;
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: {{ section.settings.heading_size }}px;
-
-  line-height: 1.05;
-
-  font-weight: 500;
-
-  letter-spacing: -2.2px;
-
-  color: var(--lineup-heading);
-
-  max-width: 570px;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
-
-  max-width: 470px;
-
-  padding-top: 43px;
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: {{ section.settings.description_size }}px;
-
-  line-height: 1.45;
-
-  font-weight: 400;
-
-  color: var(--lineup-description);
-
-  text-align: right;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__navigation {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
+  gap: 48px;
   margin-bottom: 36px;
 }
 
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header-left {
+  flex: 1;
+  max-width: 620px;
+}
 
-/* =========================================================
-   TABS
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs {
-
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow-wrap {
   display: flex;
-
-  align-items: center;
-
-  background: var(--lineup-tabs-background);
-
-  border-radius: 999px;
-
-  padding: 4px;
-
-  overflow-x: auto;
-
-  scrollbar-width: none;
-
-  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
 }
 
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs::-webkit-scrollbar {
-
-  display: none;
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__dash {
+  display: block;
+  width: 28px;
+  height: 2.5px;
+  background: var(--lineup-accent);
+  border-radius: 2px;
+  margin-bottom: 12px;
 }
 
-
-/* =========================================================
-   TAB
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab {
-
-  appearance: none;
-
-  border: 0;
-
-  background: transparent;
-
-  border-radius: 999px;
-
-  padding:
-    10px
-    24px;
-
-  min-height: 36px;
-
-  white-space: nowrap;
-
-  cursor: pointer;
-
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow {
   font-family: 'Geist', sans-serif;
-
   font-size: 13px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--lineup-eyebrow);
+  text-transform: uppercase;
+}
 
-  line-height: 16px;
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(34px, 3.8vw, 44px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  color: var(--lineup-heading);
+}
 
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  max-width: 480px;
+  padding-top: 8px;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 1.68;
   font-weight: 400;
-
-  color: var(--lineup-tab-text);
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+  color: var(--lineup-description);
+  margin-bottom: 24px;
+  text-align: right;
 }
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab:hover {
-
-  color: var(--lineup-tab-active-text);
-}
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab.is-active {
-
-  background: var(--lineup-tab-active-background);
-
-  color: var(--lineup-tab-active-text);
-
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-
-
-/* =========================================================
-   VIEW ALL BUTTON
-========================================================= */
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button {
-
   display: inline-flex;
-
   align-items: center;
-
+  justify-content: space-between;
   gap: 14px;
-
-  flex-shrink: 0;
-
-  min-height: 42px;
-
-  padding:
-    5px
-    5px
-    5px
-    22px;
-
-  border-radius: 999px;
-
-  background: var(--lineup-button-background);
-
-  color: var(--lineup-button-text);
-
+  background-color: var(--lineup-accent);
+  color: #FFFFFF;
   text-decoration: none;
-
   font-family: 'Geist', sans-serif;
-
-  font-size: 12px;
-
+  font-size: 13px;
   line-height: 1;
-
   font-weight: 500;
-
+  letter-spacing: 0.3px;
   text-transform: uppercase;
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  padding: 6px 6px 6px 20px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(34, 179, 159, 0.22);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button:hover {
-
-  transform: translateY(-2px);
-
-  opacity: 0.92;
+  background-color: #1CA290;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(34, 179, 159, 0.32);
 }
-
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button-icon {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 32px;
-
-  height: 32px;
-
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   border-radius: 50%;
-
-  background: var(--lineup-button-icon-background);
-
-  color: var(--lineup-button-icon-color);
-
-  font-size: 19px;
-
-  line-height: 1;
+  background-color: #FFFFFF;
+  color: var(--lineup-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button:hover .ncco-product-lineup__button-icon {
+  transform: scale(1.05);
+}
 
-/* =========================================================
-   COLLECTIONS
-========================================================= */
+/* NAVIGATION / TABS */
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+}
 
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs {
+  display: inline-flex;
+  align-items: center;
+  background: #F1F4F6;
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  padding: 8px 22px;
+  min-height: 34px;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #63778B;
+  transition: all 0.2s ease;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab:hover {
+  color: #0A1C2E;
+}
+
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab.is-active {
+  background: #FFFFFF;
+  color: #0A1C2E;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* CAROUSEL TRACK (EDGE TO EDGE) */
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collections {
-
-  width: 100%;
-
-  overflow: visible;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 }
-
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collection {
-
   display: none;
-
   width: 100%;
 }
 
-
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__collection.is-active {
-
   display: block;
 }
 
-
-/* =========================================================
-   PRODUCT TRACK
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__custom-images {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: {{ section.settings.card_gap }}px;
-  width: 100%;
-}
-
-.ncco-product-lineup__custom-images .ncco-product-card {
-  flex: 0 0 auto;
-  width: 100%;
-  width: 100%;
-}
-
-.ncco-product-lineup__track {
-
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track {
   display: flex;
-
-  gap: {{ section.settings.card_gap }}px;
-
-  width: max-content;
-
-  min-width: 100%;
-
+  gap: 24px;
+  width: 100%;
   overflow-x: auto;
-
-  padding-bottom: 10px;
-
-  scrollbar-width: none;
-
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 8px calc(max(40px, (100vw - 1280px) / 2 + 40px)) 24px;
+  box-sizing: border-box;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track::-webkit-scrollbar {
-
   display: none;
 }
 
+#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
 
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
-
+/* CARDS */
 #ncco-product-lineup-{{ section.id }} .ncco-product-card {
-
   position: relative;
-
-  flex: 0 0 {{ section.settings.card_width }}px;
-
-  width: {{ section.settings.card_width }}px;
-
-  height: {{ section.settings.card_height }}px;
-
-  background: var(--lineup-card-background);
-
-  border-radius: var(--lineup-card-radius);
-
-  overflow: hidden;
-
+  flex: 0 0 340px;
+  width: 340px;
+  min-width: 340px;
+  height: 440px;
+  background: #F9F9FA !important;
+  border-radius: 18px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 26px 26px 22px;
   box-sizing: border-box;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
 }
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card:hover {
-
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
-
-
-/* =========================================================
-   PRODUCT TOP
-========================================================= */
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__top {
-
-  position: relative;
-
-  z-index: 2;
-
   display: flex;
-
   align-items: flex-start;
-
   justify-content: space-between;
-
-  gap: 15px;
-
-  padding:
-    17px
-    14px
-    0;
+  gap: 16px;
+  width: 100%;
 }
 
-
-/* =========================================================
-   INFORMATION
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-card__information {
-
-  min-width: 0;
-
-  max-width: 215px;
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
 }
 
-
-/* =========================================================
-   PRODUCT TITLE
-========================================================= */
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__model {
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--lineup-accent);
+  letter-spacing: 0.2px;
+}
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__title {
-
-  display: block;
-
-  color: var(--lineup-card-title);
-
-  text-decoration: none;
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: 15px;
-
-  line-height: 1.25;
-
-  font-weight: 500;
-
   margin: 0;
-
-  transition: opacity 0.2s ease;
-}
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-card__title:hover {
-
-  opacity: 0.7;
-}
-
-
-/* =========================================================
-   PRICE
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-card__price {
-
-  margin-top: 5px;
-
   font-family: 'Geist', sans-serif;
-
-  font-size: 14px;
-
-  line-height: 1.2;
-
-  font-weight: 400;
-
-  color: var(--lineup-price);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0A1C2E;
+  text-decoration: none;
 }
-
-
-/* =========================================================
-   QUICK VIEW
-========================================================= */
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view {
-
   display: inline-flex;
-
   align-items: center;
-
-  gap: 5px;
-
-  flex-shrink: 0;
-
-  padding-top: 2px;
-
-  color: var(--lineup-quick-view);
-
-  text-decoration: none;
-
+  gap: 4px;
   font-family: 'Geist', sans-serif;
-
-  font-size: 12px;
-
-  line-height: 16px;
-
-  font-weight: 400;
-
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--lineup-accent);
+  text-decoration: none;
   white-space: nowrap;
-
-  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  padding-top: 2px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view:hover {
-
-  opacity: 0.65;
+  opacity: 0.8;
+  transform: translateX(1px);
 }
 
-#ncco-product-lineup-{{ section.id }} .ncco-product-card__quick-view span {
-
+#ncco-product-lineup-{{ section.id }} .ncco-product-card__arrow {
   font-size: 14px;
+  line-height: 1;
 }
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__image-wrap {
-
-  position: absolute;
-
-  left: 0;
-
-  right: 0;
-
-  bottom: 0;
-
-  top: 85px;
-
+  flex: 1;
+  width: 100%;
   display: flex;
-
-  align-items: flex-end;
-
+  align-items: center;
   justify-content: center;
-
-  padding:
-    10px
-    25px
-    22px;
-
+  padding: 16px 0 0;
   box-sizing: border-box;
-
   text-decoration: none;
-
-  overflow: hidden;
 }
-
 
 #ncco-product-lineup-{{ section.id }} .ncco-product-card__image {
-
-  display: block;
-
-  width: 100%;
-
-  height: 100%;
-
+  max-width: 100%;
+  max-height: 240px;
+  width: auto;
+  height: auto;
   object-fit: contain;
-
-  object-position: center bottom;
-
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
-
 #ncco-product-lineup-{{ section.id }} .ncco-product-card:hover .ncco-product-card__image {
-
   transform: scale(1.035);
 }
 
-
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-card__placeholder {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 100%;
-
-  height: 100%;
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: 13px;
-
-  color: var(--lineup-description);
-}
-
-
-/* =========================================================
-   EMPTY
-========================================================= */
-
-#ncco-product-lineup-{{ section.id }} .ncco-product-lineup__empty {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 100%;
-
-  min-height: 250px;
-
-  background: var(--lineup-card-background);
-
-  border-radius: var(--lineup-card-radius);
-
-  font-family: 'Geist', sans-serif;
-
-  font-size: 14px;
-
-  color: var(--lineup-description);
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media screen and (max-width: 1200px) {
-
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  #ncco-product-lineup-{{ section.id }} {
+    padding: 60px 0 70px;
+  }
   #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
-
-    padding:
-      80px
-      40px
-      80px;
+    padding: 0 32px;
   }
-
   #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
-
-    gap: 40px;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
   }
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
-
-    font-size: 48px;
-
-    letter-spacing: -1.8px;
-  }
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
-
-    max-width: 390px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media screen and (max-width: 768px) {
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
-
-    padding:
-      55px
-      16px
-      55px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header {
-
-    display: block;
-
-    margin-bottom: 28px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading-wrap {
-
-    max-width: 100%;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__eyebrow {
-
-    margin-bottom: 15px;
-
-    font-size: 10px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
-
-    font-size: 38px;
-
-    line-height: 1.08;
-
-    letter-spacing: -1.4px;
-
-    max-width: 100%;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
-
-    max-width: 100%;
-
-    padding-top: 20px;
-
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__header-right {
+    align-items: flex-start;
     text-align: left;
-
-    font-size: 13px;
+    max-width: 100%;
+    padding-top: 0;
   }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__navigation {
-
-    display: block;
-
-    margin-bottom: 25px;
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__description {
+    text-align: left;
+    margin-bottom: 20px;
   }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tabs {
-
-    width: 100%;
-
-    margin-bottom: 18px;
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__tab {
-
-    padding:
-      9px
-      16px;
-
-    font-size: 11px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__button {
-
-    display: inline-flex;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-card {
-
-    flex-basis: 82vw;
-
-    width: 82vw;
-
-    height: 430px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-card__title {
-
-    font-size: 14px;
-  }
-
-
-  #ncco-product-lineup-{{ section.id }} .ncco-product-card__price {
-
-    font-size: 13px;
-  }
-
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media screen and (max-width: 480px) {
-
+@media (max-width: 640px) {
+  #ncco-product-lineup-{{ section.id }} {
+    padding: 44px 0 54px;
+  }
   #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__inner {
-
-    padding:
-      45px
-      12px
-      45px;
+    padding: 0 20px;
   }
-
-
   #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__heading {
-
-    font-size: 34px;
+    font-size: 28px;
   }
-
-
+  #ncco-product-lineup-{{ section.id }} .ncco-product-lineup__track {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 16px;
+  }
   #ncco-product-lineup-{{ section.id }} .ncco-product-card {
-
-    flex-basis: 86vw;
-
-    width: 86vw;
-
-    height: 410px;
+    flex: 0 0 280px;
+    width: 280px;
+    min-width: 280px;
+    height: 380px;
+    padding: 20px 20px 18px;
   }
-
-}
-
-@media (max-width: 900px) {
-  .ncco-product-lineup__custom-images {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  #ncco-product-lineup-{{ section.id }} .ncco-product-card__image {
+    max-height: 200px;
   }
 }
-
-@media (max-width: 600px) {
-  .ncco-product-lineup__custom-images {
-    grid-template-columns: 1fr;
-  }
-}
-
 </style>
 
-
 <script>
-
 (function () {
-
-  const section = document.getElementById(
-    'ncco-product-lineup-{{ section.id }}'
-  );
-
+  const section = document.getElementById('ncco-product-lineup-{{ section.id }}');
   if (!section) return;
 
-
-  const tabs = section.querySelectorAll(
-    '.ncco-product-lineup__tab'
-  );
-
-  const collections = section.querySelectorAll(
-    '.ncco-product-lineup__collection'
-  );
-
+  const tabs = section.querySelectorAll('.ncco-product-lineup__tab');
+  const collections = section.querySelectorAll('.ncco-product-lineup__collection');
 
   tabs.forEach(function (tab) {
-
     tab.addEventListener('click', function () {
-
       const target = tab.getAttribute('data-tab');
-
-
-      tabs.forEach(function (item) {
-
-        item.classList.remove('is-active');
-
-      });
-
-
-      collections.forEach(function (collection) {
-
-        collection.classList.remove('is-active');
-
-      });
-
-
+      tabs.forEach(t => t.classList.remove('is-active'));
+      collections.forEach(c => c.classList.remove('is-active'));
       tab.classList.add('is-active');
-
-
       const targetCollection = section.querySelector(
-        '.ncco-product-lineup__collection[data-collection="' +
-        target +
-        '"]'
+        '.ncco-product-lineup__collection[data-collection="' + target + '"]'
       );
-
-
       if (targetCollection) {
-
         targetCollection.classList.add('is-active');
-
       }
-
     });
-
   });
 
+  const tracks = section.querySelectorAll('.ncco-product-lineup__track');
+  tracks.forEach(function (track) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let hasMoved = false;
+
+    track.addEventListener('mousedown', function (e) {
+      isDown = true;
+      hasMoved = false;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track.addEventListener('mouseleave', function () {
+      isDown = false;
+      track.classList.remove('is-dragging');
+    });
+
+    track.addEventListener('mouseup', function () {
+      isDown = false;
+      track.classList.remove('is-dragging');
+    });
+
+    track.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      hasMoved = true;
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    track.addEventListener('click', function (e) {
+      if (hasMoved) {
+        e.preventDefault();
+      }
+    });
+  });
 })();
-
 </script>
-
 
 {% schema %}
 

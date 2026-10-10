@@ -4,22 +4,23 @@
       "type": "ncco-hero",
       "settings": {
         "eyebrow": "RHT 信山實業",
-        "logo_asset": "",
-        "brand_color": "",
-        "cta_text_color": "",
-        "headline": "<p>工業級空氣淨化<br/>解決方案</p>",
+        "logo_asset": "rhtmenu.png",
+        "brand_color": "#22B39F",
+        "cta_text_color": "#FFFFFF",
+        "cta_icon_bg": "#FFFFFF",
+        "headline": "<p>工業級空氣淨化<br/><em>解決方案</em></p>",
+        "headline_gradient": "linear-gradient(90deg, #22B39F 0%, rgba(34, 179, 159, 0) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
         "subtext": "信山實業 (RHT) 系統專為醫院、工廠和高要求環境設計，透過 NCCO 專利技術，提供可靠且大規模的空氣淨化系統。",
         "bullet_1": "對空氣傳播污染物的去除率極高",
         "bullet_2": "具備模組化安裝與持續運作",
         "bullet_3": "由 NCCO 專利技術支持",
-        "cta_label": "探索RHT產品",
+        "cta_label": "探索RHT",
         "cta_url": "#products",
-        "card_image_asset": "",
-        "background_image": "shopify://shop_images/thermal-power-plant_1.png",
-        "background_asset": "",
+        "card_image_asset": "brand-rht-hero-card.png",
+        "background_asset": "brand-rht-hero-bg.jpg",
+        "overlay_solid_color": "#121924AD",
+        "space_between_text": true,
         "compact": false,
-        "overlay_opacity": 55,
-        "overlay_solid_color": "",
         "dark": true
       }
     },
@@ -249,15 +250,15 @@
         "feature_LbzTLz": {
           "type": "feature",
           "settings": {
-            "title": "大規模帶來潔淨空氣",
-            "text": "我們為醫院、交通及工廠開發工業級空氣淨化系統，設計用於持續可靠運作。"
+            "title": "擴大潔淨空氣規模",
+            "text": "我們為醫院、交通設施（如港鐵、香港國際機場）和工廠（如 CPL Aromas、新科磁電製品廠）開發工業級空氣淨化系統，這些系統旨在連續可靠地運行。"
           }
         },
         "feature_rtFdXz": {
           "type": "feature",
           "settings": {
-            "title": "專為關鍵基礎設施而建",
-            "text": "RHT設備採用NCCO技術，專為高需求空間設計——高效、靈活，獲專業人士信賴。"
+            "title": "為關鍵基礎設施而建",
+            "text": "RHT 設備採用 NCCO 專利技術，專為高要求空間設計。這些空間包括需要致癌物控制的醫院病理科實驗室，以及用於隔離的防疫流動方艙。NCCO 系統高效且適應性強，具備模組化安裝能力（可整合到 AHU/PAU 中），因而深受專業人士的信賴。"
           }
         },
         "case_YHU6cP": {
@@ -303,9 +304,9 @@
       ],
       "name": "NCCO Industrial Brand",
       "settings": {
-        "eyebrow": "品牌簡介",
-        "heading": "專為高效能打造的工業空氣淨化品牌",
-        "button_text": "了解更多關於我們",
+        "eyebrow": "RHT 系統專為人流密集、對空氣質素要求高的場所而設，提供持續而穩定的空氣淨化，長時間運作都能保持可靠效能，讓環境更潔淨、更安心。",
+        "heading": "工業級空氣淨化品牌<br/>實現卓越效能",
+        "button_text": "了解更多",
         "button_url": ""
       }
     },
@@ -316,40 +317,40 @@
           "type": "benefit",
           "settings": {
             "icon": "layers",
-            "title": "專為大型空間設計",
-            "text": "淨化醫院、車站及工廠的大量空氣。"
+            "title": "專為大型空間淨化設計",
+            "text": "系統能在醫院、車站和工廠等場所淨化高空氣流量。它能高效分解包括甲醛等一級致癌物、VOCs 以及殺滅病毒。"
           }
         },
         "benefit_JmLr8h": {
           "type": "benefit",
           "settings": {
             "icon": "puzzle",
-            "title": "模組化安裝",
-            "text": "配合多種基礎設施，提供可擴展的安裝選項。"
+            "title": "模組化安裝能力",
+            "text": "RHT設備具備模組化安裝特性，能適應多樣化的基礎設施。NCCO 反應層附加組件可加裝到現有的 PAU/AHU (空氣處理機組) 通風系統中。"
           }
         },
         "benefit_gNBeX3": {
           "type": "benefit",
           "settings": {
             "icon": "clock",
-            "title": "24/7可靠運作",
-            "text": "全天候空氣處理，停機時間及維修需求極少。"
+            "title": "24/7 可靠運作",
+            "text": "NCCO 系統能夠進行不間斷的空氣處理。由於污染物被徹底分解為水和二氧化碳，濾芯不會積存污染物，從而確保無二次污染。"
           }
         },
         "benefit_4WnhnD": {
           "type": "benefit",
           "settings": {
             "icon": "technology",
-            "title": "NCCO技術驅動",
-            "text": "採用專利納米技術淨化，分解污染物。"
+            "title": "專利 NCCO 技術支持",
+            "text": "NCCO 技術由香港科技大學創業計畫成員研發，利用專利納米技術 驅動淨化，在分子層面上分解污染物。"
           }
         },
         "benefit_DckJhc": {
           "type": "benefit",
           "settings": {
             "icon": "energy",
-            "title": "節能設計",
-            "text": "優化氣流減少耗電量，同時不影響淨化效果。"
+            "title": "能源效益設計",
+            "text": "系統能有效去除異味，從而減少換氣次數及冷氣使用量。這設計能直接降低能源消耗和營運成本。"
           }
         },
         "benefit_n9pQK9": {
@@ -357,7 +358,7 @@
           "settings": {
             "icon": "tools",
             "title": "低維護，長壽命",
-            "text": "耐用系統減少濾網更換週期及成本。"
+            "text": "NCCO反應層使用可循環再用的人工礦物作為催化劑，並具備循環再生能力。在正常維護保養下，濾芯壽命長達 12 年，有效減少濾芯更換週期和成本。"
           }
         }
       },
@@ -371,10 +372,10 @@
       ],
       "name": "NCCO Industrial Benefits",
       "settings": {
-        "eyebrow": "工業優勢",
-        "heading": "專為高要求空間而設",
-        "description": "<p>RHT系統專為在高風險、高流量環境中提供強效持續的空氣淨化而建，性能與可靠性不容妥協。</p>",
-        "button_text": "探索產品系列",
+        "eyebrow": "工業與醫療解決方案優勢",
+        "heading": "為高風險、高流量<br/>環境設計",
+        "description": "<p>RHT系統提供強大且持續的空氣淨化，確保效能和可靠性絕不妥協。NCCO是目前唯一同時應用在工業、商業、醫院及家居三大領域的淨化技術。</p>",
+        "button_text": "探索我們的產品範圍",
         "button_url": ""
       }
     },
@@ -384,8 +385,8 @@
         "solution_nXUHnb": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-AIR",
-            "description": "<p>NCCO（氧聚解）適合家居空氣淨化，亦廣泛應用於商業、工業及醫療機構。</p>",
+            "title": "NCCO氧聚解技術的起源",
+            "description": "<p>NCCO 氧聚解空氣處理技術是 100% 香港本土發明和本地科研成果。這項技術由香港科技大學創業計畫成員夥同信山實業 (RHT) 共同研發。信山實業於 1998 年在香港正式成立，並在 1999 年便開始參與香港科技大學創業計畫。經過持續研發，NCCO 技術最終於 2003 年成功研發，並隨即得到國際性發明專利。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -393,8 +394,8 @@
         "solution_jkR36W": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-INVISIBLE GLOVE",
-            "description": "<p>NCCO技術利用納米技術在皮膚表面形成薄膜，具消毒、保濕及保護受損皮膚免受感染的功效。</p>",
+            "title": "專利納米分解技術",
+            "description": "<p>NCCO 技術的核心突破是它採用 納米限域催化氧化 (Nano Confined Catalytic Oxidation) 原理。與傳統的活性碳只能吸附污染物不同，NCCO 能夠在分子層面上將污染物分解。系統利用活氧的氧化作用 和納米孔道中的過渡金屬催化物，將有害氣態污染物、細菌和病毒，最終轉化為對人體無害的水和二氧化碳。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -402,8 +403,8 @@
         "solution_7N4keU": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-ZRD",
-            "description": "<p>ZRD（沸石放射性塵埃清除系統）是RHT的專利技術之一。ZRD系統能有效清除空氣中的放射性物質及有毒氣體，可用作緊急系統。</p>",
+            "title": "納米框架技術的醫療應用",
+            "description": "<p>香港的科研團隊也將創新的納米框架技術應用於皮膚護理領域，開發出 NCCO-IG 醫療級皮膚抗敏修護液。該產品由香港科技公司信山實業牽頭的專業科研團隊研發，旨在完全代替酒精搓手液。NCCO-IG 不含酒精且完全沒有毒性，但對新型冠狀病毒 (COVID-19) 的殺滅率仍超過 99.97%。此外，它能形成納米保養膜以持續保濕，並經加拿大英屬哥倫比亞大學研究證實，能有效改善皮膚發炎、乾燥及修復主婦手症狀。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -411,8 +412,8 @@
         "solution_LY8hcU": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-PIS",
-            "description": "<p>工業生產在日常製造過程中釋放大量污染物，對附近建築物造成嚴重污染。污染物隔離系統（PIS）創建室內空氣屏障，防止室外污染物進入室內。</p>",
+            "title": "本地品牌在零售市場的成就",
+            "description": "<p>這項香港發明成功地將技術商業化。旗下的家用品牌 b-MOLA 將 NCCO 技術引入香港零售市場，並且在 2018 年榮膺香港本地空氣淨化機品牌銷量首位。NCCO 技術的可靠性亦獲國際品牌認可，例如 Philips 在 2007 年便獲得專利授權生產 NCCO 空氣淨化機，並在全球售出超過 42 萬部。其他曾使用 NCCO 技術的品牌包括 Oregon Scientific 和 Yamasa Tokei。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -420,8 +421,8 @@
         "solution_t8ACQ7": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-MASKS",
-            "description": "<p>工業生產中常使用許多有毒化合物，嚴重危害員工健康。RHT研究團隊成功利用NCCO技術開發了NCCO口罩。</p>",
+            "title": "關鍵基礎設施的信賴與節能效益",
+            "description": "<p>NCCO 專利技術獲得香港政府部門和公私營機構的廣泛使用。在香港的國際金融中心 (IFC Mall) 應用 NCCO 系統後，成功去除了 92% 的揮發性有機化合物 (VOCs)，並獲得香港環保署頒發的卓越級室內空氣品質 (IAQ) 檢定證書。NCCO 系統也被安裝於香港國際機場的公眾洗手間，不僅減少了氨氣、VOCs 及細菌濃度，同時因無需加大冷氣及抽風，從而降低營運成本，達到節能效果。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -429,8 +430,8 @@
         "solution_HBj6m6": {
           "type": "solution",
           "settings": {
-            "title": "NCCO-MDS",
-            "description": "<p>污水處理廠長期散發惡臭。目前主要採用活性炭空氣淨化系統去除異味。</p>",
+            "title": "創新生活用品的多元化發展",
+            "description": "<p>除了空氣淨化，香港科研團隊也致力於開發其他創新的生活用品。05+ 植頻超聲波驅蚊機及驅蟲機是香港科技大學創業計劃成員研發的純物理創新技術，其設計特色是純物理驅蟲、全無化學成分，適用於孕婦、嬰兒、幼童及寵物家庭。此外，05+ 寵物低敏護理系列，如沖涼液和美容噴霧，其成分的 EWG 等級均為綠色，配方溫和不刺激，有助於防止毛孔堵塞和有效抑制寵物異味的產生。</p>",
             "link_text": "了解更多",
             "link_url": ""
           }
@@ -447,88 +448,75 @@
       "name": "NCCO Industrial Solutions",
       "settings": {
         "background_image": "shopify://shop_images/beautiful-shot-tall-city-buildings-cloudy-sky-night_1.png",
-        "eyebrow": "工業解決方案",
-        "heading": "香港創新發明",
-        "button_text": "索取產品規格",
+        "eyebrow": "工業優勢",
+        "heading": "香港發明",
+        "button_text": "了解更多",
         "button_url": ""
       }
     },
     "ncco_product_lineup_YYKq8i": {
       "type": "ncco-product-lineup",
       "blocks": {
-        "collection_tab_YAmfng": {
+        "tab_solutions": {
           "type": "collection_tab",
           "settings": {
-            "label": "所有產品",
+            "label": "全面解決方案",
             "collection": "",
-            "image_source": "products",
-            "image_alt": ""
+            "image_source": "products"
           }
         },
-        "collection_tab_Je7NQy": {
+        "tab_industrial": {
           "type": "collection_tab",
           "settings": {
-            "label": "B.Duck x NCCO-IG",
+            "label": "工業方案",
             "collection": "",
-            "image_source": "products",
-            "image_alt": ""
+            "image_source": "products"
           }
         },
-        "collection_tab_wiMQtz": {
+        "tab_domestic": {
           "type": "collection_tab",
           "settings": {
-            "label": "套裝組合",
+            "label": "家居方案",
             "collection": "",
-            "image_source": "products",
-            "image_alt": ""
-          }
-        },
-        "collection_tab_reGBiJ": {
-          "type": "collection_tab",
-          "settings": {
-            "label": "修復精華",
-            "collection": "",
-            "image_source": "products",
-            "image_alt": ""
+            "image_source": "products"
           }
         }
       },
       "block_order": [
-        "collection_tab_YAmfng",
-        "collection_tab_Je7NQy",
-        "collection_tab_wiMQtz",
-        "collection_tab_reGBiJ"
+        "tab_solutions",
+        "tab_industrial",
+        "tab_domestic"
       ],
       "name": "NCCO Product Lineup",
       "settings": {
-        "eyebrow": "產品系列",
-        "heading": "NCCO-IG 肌膚修復精華",
-        "description": "經臨床測試的肌膚修復配方，深層保濕、修復並保護肌膚。殺滅99.9%病毒及細菌，同時舒緩乾燥、敏感及易敏肌膚，完全不含毒素或酒精。",
-        "quick_view_text": "快速預覽",
-        "button_label": "查看所有產品",
-        "button_url": "",
+        "eyebrow": "全面解決方案",
+        "heading": "規模化的工業到<br/>家居應用方案",
+        "description": "信山實業 (RHT) 是一家技術領先的環保科技企業，其業務範疇涵蓋零售、商業和醫療機構三大領域。",
+        "quick_view_text": "Quick View",
+        "button_label": "了解方案",
+        "button_url": "#",
         "products_to_show": 4,
-        "max_width": 1600,
+        "max_width": 1280,
         "padding_top": 70,
         "padding_bottom": 70,
-        "padding_horizontal": 30,
+        "padding_horizontal": 40,
         "heading_size": 58,
         "description_size": 13,
         "card_width": 340,
-        "card_height": 420,
-        "card_gap": 26,
-        "card_radius": 16,
+        "card_height": 440,
+        "card_gap": 24,
+        "card_radius": 18,
         "section_radius": 0,
         "background_color": "#FFFFFF",
-        "heading_color": "#0D3B60",
+        "heading_color": "#0A1C2E",
         "eyebrow_color": "#8295A8",
-        "accent_color": "#55C2DF",
-        "description_color": "#8295A8",
+        "accent_color": "#22B39F",
+        "description_color": "#63778B",
         "tabs_background": "#F3F5F6",
         "tab_text_color": "#8295A8",
         "active_tab_background": "#FFFFFF",
         "active_tab_text": "#0D3B60",
-        "card_background": "#F5F7F8",
+        "card_background": "#F9F9FA",
         "card_title_color": "#0D3B60",
         "price_color": "#55C2DF",
         "quick_view_color": "#55C2DF",
@@ -539,75 +527,82 @@
       }
     },
     "ncco_questions_DyMRbV": {
-      "type": "ncco-questions",
+      "type": "ncco-faq",
+      "name": "常見問題",
       "blocks": {
-        "faq_pP9F7J": {
-          "type": "faq",
+        "faq_1": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "RHT系統與一般的商業空氣淨化機有何不同？",
+            "answer": "<p>RHT 系統的核心技術是 NCCO (氧聚解空氣處理技術)，與市面上普遍採用的活性碳技術相比，NCCO 具有分解污染物而非單純吸附的獨特優勢。活性碳濾芯在使用一段時間後會達到飽和並將吸附的污染物重新釋放到空氣中，造成二次污染。NCCO 則將有害氣體和病毒在分子層面分解為無害的水和二氧化碳，從而確保長期的潔淨空氣且無二次污染。</p>"
           }
         },
-        "faq_rLkHjf": {
-          "type": "faq",
+        "faq_2": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "RHT 設備能否整合到現有的 HVAC (空調通風) 系統中？",
+            "answer": "<p>可以。信山實業 (RHT) 能夠提供專業、客制化的空氣處理方案。NCCO 氧聚解反應層組件 (如 NF1001 或 NF1002) 可以作為附加模組，新增到現有的 PAU/AHU (空氣處理機組/新風機組) 通風系統中，以升級空氣品質。這種模組化整合需要約 660 毫米的空間。此外，RHT 也提供例如 RA-805 這樣的大型度身打造 (Tailor-Made) 空氣處理機組，專為特定的建築基礎設施設計。</p>"
           }
         },
-        "faq_WDQNpe": {
-          "type": "faq",
+        "faq_3": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "RHT 系統的濾芯需要多久更換或維護一次？",
+            "answer": "<p>NCCO 氧聚解反應層可透過其循環再生的過程，達到無損耗淨化的效果。實驗證明，在正常維護保養下，NCCO 濾芯可以長達 12 年無需更換。不過，完整的系統濾網組件需要定期檢驗，例如 HEPA 高效濾網建議每 6 至 18 個月更換一次。如果靜電濾網或高效濾網沒有定期更換或受損，NCCO 反應層可能會被灰塵或油性物質污染，從而降低效用。</p>"
           }
         },
-        "faq_bFJ97k": {
-          "type": "faq",
+        "faq_4": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "RHT 系統可以去除哪些類型的空氣污染物？",
+            "answer": "<p>RHT 系統能有效處理廣泛的污染物：・氣態污染物 (VOCs)：NCCO 技術是氣態污染物淨化專家，能高效分解甲醛 (去除率 >99.16%)、苯 (99.18%)、丙酮 (99.94%)、以及氨氣 (>95.65%)。・病原體：NCCO 可有效殺滅細菌和病毒。對新型冠狀病毒 (COVID-19) 的去除率高達 99.97%，對人類冠狀病毒 (HCoV-229E) 的去除率更高於 99.99%。・微粒：對可吸入懸浮粒子 PM2.5 的去除率高達 99.79%。</p>"
           }
         },
-        "faq_8yBeCh": {
-          "type": "faq",
+        "faq_5": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "是否可以根據我的特定設施需求獲得客制化的 RHT 解決方案？",
+            "answer": "<p>是的。RHT 是一家技術領先的環保科技企業，可以提供專業、客制化的空氣處理方案。例如，RA-805 機組就是一款度身打造的大型空氣處理機組，能夠根據建築物的特定通風系統和空氣處理量進行設計和客制化。</p>"
           }
         },
-        "faq_djTCjE": {
-          "type": "faq",
+        "faq_6": {
+          "type": "faq_item",
           "settings": {
-            "question": "NCCO-IG為何適合醫院及臨床環境？",
-            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+            "heading": "Is it possible to get a customized RHT solution based on my specific facility needs?",
+            "answer": "<p>NCCO stands for Nano-Confined Catalytic Oxidation a patented air purification technology that breaks down harmful gases, VOCs, viruses, and bacteria at the molecular level.</p>"
           }
         }
       },
       "block_order": [
-        "faq_pP9F7J",
-        "faq_rLkHjf",
-        "faq_WDQNpe",
-        "faq_bFJ97k",
-        "faq_8yBeCh",
-        "faq_djTCjE"
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
       ],
-      "name": "NCCO Questions",
       "settings": {
-        "eyebrow": "常見問題",
-        "heading": "常見問題解答"
+        "eyebrow": "你想知道的問題",
+        "heading": "常見問題",
+        "accent_color": "#22B39F",
+        "three_col": true
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "eyebrow": "聯絡我們",
-        "heading": "隨時為你提供專業方案",
-        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
-        "email": "sales@rhtind.com.hk",
-        "phone": "+852 2417 0075",
-        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "提交訊息"
+        "eyebrow": "GET IN TOUCH",
+        "heading": "We're Here to Help",
+        "subtext": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+        "email": "info@ncco-tech.com",
+        "phone": "(852) 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "SUBMIT",
+        "accent_color": "#22B39F",
+        "bg_color": "#22B39F14",
+        "btn_color": "#22B39F",
+        "icon_color": "#22B39F",
+        "icon_bg_color": "rgba(34, 179, 159, 0.06)"
       }
     }
   },

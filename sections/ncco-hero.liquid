@@ -32,7 +32,11 @@
       <div class="ncco-hero__left{% if section.settings.space_between_text or section.settings.overlay_solid_color != blank %} ncco-hero__left--space-between{% endif %}">
         <div class="ncco-hero__left-top">
           {%- if section.settings.logo_asset != blank -%}
-            <img class="ncco-hero__logo" src="{{ section.settings.logo_asset | asset_url }}" alt="{{ section.settings.eyebrow }}" loading="eager">
+            {%- assign hero_logo = section.settings.logo_asset -%}
+            {%- if hero_logo == 'rhtmenu.png' and section.settings.dark -%}
+              {%- assign hero_logo = 'brand-rht-logo.svg' -%}
+            {%- endif -%}
+            <img class="ncco-hero__logo" src="{{ hero_logo | asset_url }}" alt="{{ section.settings.eyebrow }}" loading="eager">
           {%- elsif section.settings.eyebrow != blank -%}
             <p class="ncco-hero__eyebrow">{{ section.settings.eyebrow }}</p>
           {%- endif -%}
@@ -59,9 +63,14 @@
           {%- endif -%}
 
           {%- if section.settings.cta_label != blank -%}
+          {%- assign default_icon_bg = '#081D3A' -%}
+          {%- if brand_color != '#FECB07' and brand_color != blank -%}
+            {%- assign default_icon_bg = '#FFFFFF' -%}
+          {%- endif -%}
+          {%- assign cta_icon_bg = section.settings.cta_icon_bg | default: default_icon_bg -%}
             <a href="{{ section.settings.cta_url | default: '#' }}" class="ncco-hero__cta" style="background:{{ brand_color }};color:{{ cta_text_color }}">
               <span>{{ section.settings.cta_label }}</span>
-              <span class="ncco-hero__cta-icon" aria-hidden="true">
+              <span class="ncco-hero__cta-icon" style="background:{{ cta_icon_bg }}" aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 13L13 3M13 3H6M13 3V10" stroke="{{ brand_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -139,6 +148,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .ncco-hero__left--space-between {
@@ -148,6 +158,7 @@
 .ncco-hero__left--space-between .ncco-hero__left-top {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin: 0;
   padding: 0;
 }
@@ -157,7 +168,14 @@
 }
 
 .ncco-hero__logo {
-  height: 44px; width: auto; object-fit: contain; display: block; margin: 0 0 20px;
+  height: 38px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  align-self: flex-start;
+  margin: 0 0 20px 0;
 }
 .ncco-hero__eyebrow {
   font-family: 'Geist', sans-serif;
@@ -173,8 +191,15 @@
 /* Accent color for <em> — gradient from brand_color (#FECB07) to white */
 .ncco-hero__title em {
   font-style: normal;
+  {%- if section.settings.headline_gradient != blank -%}
+  background: {{ section.settings.headline_gradient }};
+  {%- elsif brand_color == '#22B39F' -%}
+  background: linear-gradient(90deg, #22B39F 0%, rgba(34, 179, 159, 0) 100%),
+              linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  {%- else -%}
   background: linear-gradient(90deg, {{ brand_color }} 0%, rgba(254, 203, 7, 0) 54.5%),
               linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  {%- endif -%}
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -376,6 +401,8 @@
     {"type": "text", "id": "logo_asset", "label": "Logo asset filename (shows instead of eyebrow text)"},
     {"type": "text", "id": "brand_color", "label": "Brand accent color (hex, default #FECB07 yellow)"},
     {"type": "text", "id": "cta_text_color", "label": "CTA text color (hex, default #081D3A dark)"},
+    {"type": "text", "id": "cta_icon_bg", "label": "CTA icon background"},
+    {"type": "text", "id": "headline_gradient", "label": "Headline gradient CSS"},
     {"type": "richtext", "id": "headline", "label": "Headline (use <em> for yellow gradient)"},
     {"type": "textarea", "id": "subtext", "label": "Subtext"},
     {"type": "header", "content": "Right card bullets (optional)"},
