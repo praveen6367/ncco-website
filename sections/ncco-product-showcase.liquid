@@ -1,0 +1,593 @@
+{%- comment -%}
+  NCCO Product Showcase Section
+  Follows the canonical NCCO boxed-width layout, design tokens, reusable heading/eyebrow/cta, and card specs.
+{%- endcomment -%}
+
+<section class="ncco-pshowcase-wrap" id="ncco-pshowcase-{{ section.id }}">
+  <div class="ncco-pshowcase">
+    <div class="ncco-container">
+
+      <!-- Header: 2-column split with canonical elements -->
+      <div class="ncco-pshowcase__header">
+        <div class="ncco-pshowcase__header-left">
+          {%- if section.settings.eyebrow != blank -%}
+            <div class="ncco-pshowcase__eyebrow-wrap">
+              <span class="ncco-pshowcase__accent-bar"></span>
+              <p class="ncco-pshowcase__eyebrow">{{ section.settings.eyebrow }}</p>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.heading != blank -%}
+            <h2 class="ncco-pshowcase__heading">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+
+          {%- if section.settings.cta_label != blank -%}
+            <div class="ncco-pshowcase__cta-wrap">
+              {%- render 'ncco-cta', label: section.settings.cta_label, url: section.settings.cta_url, variant: 'blue' -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div class="ncco-pshowcase__header-right">
+          {%- if section.settings.description != blank -%}
+            <p class="ncco-pshowcase__desc">{{ section.settings.description }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Product Cards Grid / Carousel -->
+      <div class="ncco-pshowcase__grid" id="ncco-pshowcase-track-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign p = block.settings.product
+            if p != blank
+              assign p_title = p.title
+              assign p_price = p.price | money
+              assign p_url = p.url
+              assign p_img = p.featured_image
+              assign p_asset = ''
+            else
+              assign p_title = block.settings.fallback_title
+              assign p_price = block.settings.fallback_price
+              assign p_url = block.settings.fallback_url | default: '#'
+              assign p_img = block.settings.fallback_image
+              assign p_asset = block.settings.fallback_asset
+            endif
+          -%}
+
+          <div class="ncco-pshowcase__card" {{ block.shopify_attributes }} data-card-index="{{ forloop.index0 }}">
+            <div class="ncco-pshowcase__card-head">
+              <div class="ncco-pshowcase__card-meta">
+                <h3 class="ncco-pshowcase__card-title">
+                  <a href="{{ p_url }}">{{ p_title }}</a>
+                </h3>
+                <div class="ncco-pshowcase__card-price">{{ p_price }}</div>
+              </div>
+
+              <a href="{{ p_url }}" class="ncco-pshowcase__card-qv" aria-label="Quick View {{ p_title }}">
+                <span>Quick View</span>
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <a href="{{ p_url }}" class="ncco-pshowcase__card-media" tabindex="-1">
+              {%- if p_img != blank -%}
+                <img
+                  src="{{ p_img | image_url: width: 600 }}"
+                  alt="{{ p_title | escape }}"
+                  loading="lazy"
+                  class="ncco-pshowcase__card-img"
+                >
+              {%- elsif p_asset != blank -%}
+                <img
+                  src="{{ p_asset | asset_url }}"
+                  alt="{{ p_title | escape }}"
+                  loading="lazy"
+                  class="ncco-pshowcase__card-img"
+                >
+              {%- else -%}
+                <div class="ncco-pshowcase__card-placeholder">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {%- endif -%}
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="ncco-pshowcase__dots" id="ncco-pshowcase-dots-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          <button
+            type="button"
+            class="ncco-pshowcase__dot{% if forloop.index == 3 %} is-active{% endif %}"
+            data-index="{{ forloop.index0 }}"
+            aria-label="Go to slide {{ forloop.index }}"
+          ></button>
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Outer Boxed Layout (Consistent with homepage hero, brands, icon grid) */
+.ncco-pshowcase-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 12px auto 44px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.ncco-pshowcase {
+  border-radius: 28px;
+  background: #ffffff;
+  padding: 64px 0 72px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ncco-pshowcase .ncco-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Header: Split Two-Column */
+.ncco-pshowcase__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.ncco-pshowcase__header-left {
+  flex: 1 1 540px;
+  max-width: 600px;
+}
+
+/* Canonical Eyebrow with Yellow Accent Bar */
+.ncco-pshowcase__eyebrow-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ncco-pshowcase__accent-bar {
+  display: block;
+  width: 32px;
+  height: 2.5px;
+  background: #FECB07;
+  border-radius: 2px;
+}
+
+.ncco-pshowcase__eyebrow {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #647082;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Canonical Heading */
+.ncco-pshowcase__heading {
+  font-family: 'Geist', sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -1.8px;
+  color: #081D3A;
+  margin: 0 0 28px;
+}
+
+.ncco-pshowcase__cta-wrap {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* Header Right: Canonical Description */
+.ncco-pshowcase__header-right {
+  flex: 1 1 480px;
+  max-width: 520px;
+  padding-top: 24px;
+}
+
+.ncco-pshowcase__desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.2px;
+  color: #647082;
+  margin: 0;
+}
+
+/* Product Cards Grid: 4 columns desktop */
+.ncco-pshowcase__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Product Card: Background rgb(230 230 230), No border */
+.ncco-pshowcase__card {
+  background: rgb(230, 230, 230);
+  border: none;
+  border-radius: 24px;
+  padding: 26px 24px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ncco-pshowcase__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(8, 29, 58, 0.08);
+}
+
+/* Card Head */
+.ncco-pshowcase__card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ncco-pshowcase__card-meta {
+  flex: 1;
+}
+
+.ncco-pshowcase__card-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #081D3A;
+  margin: 0 0 6px;
+  min-height: 40px;
+}
+
+.ncco-pshowcase__card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ncco-pshowcase__card-title a:hover {
+  color: #003DA5;
+}
+
+.ncco-pshowcase__card-price {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #003DA5;
+}
+
+.ncco-pshowcase__card-qv {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-top: 1px;
+  transition: color 0.2s ease;
+}
+
+.ncco-pshowcase__card-qv:hover {
+  color: #003DA5;
+}
+
+/* Card Image Media */
+.ncco-pshowcase__card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.ncco-pshowcase__card-img {
+  max-width: 88%;
+  max-height: 92%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.ncco-pshowcase__card:hover .ncco-pshowcase__card-img {
+  transform: scale(1.05);
+}
+
+.ncco-pshowcase__card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ncco-pshowcase__card-placeholder svg {
+  width: 55%;
+  height: 55%;
+  opacity: 0.2;
+}
+
+/* Pagination Dots */
+.ncco-pshowcase__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.ncco-pshowcase__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C4C4C4;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ncco-pshowcase__dot.is-active {
+  background: #081D3A;
+  transform: scale(1.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .ncco-pshowcase .ncco-container {
+    padding: 0 24px;
+  }
+  .ncco-pshowcase__grid {
+    grid-template-columns: repeat(4, 270px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ncco-pshowcase__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .ncco-pshowcase__card {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 990px) {
+  .ncco-pshowcase {
+    padding: 52px 0 60px;
+  }
+  .ncco-pshowcase__header {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .ncco-pshowcase__header-right {
+    padding-top: 0;
+    max-width: 100%;
+  }
+  .ncco-pshowcase__heading {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ncco-pshowcase-wrap {
+    padding: 0 10px;
+  }
+  .ncco-pshowcase {
+    border-radius: 20px;
+    padding: 40px 0 48px;
+  }
+  .ncco-pshowcase .ncco-container {
+    padding: 0 16px;
+  }
+  .ncco-pshowcase__heading {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
+  }
+  .ncco-pshowcase__grid {
+    grid-template-columns: repeat(4, 250px);
+    gap: 14px;
+  }
+  .ncco-pshowcase__card {
+    padding: 20px 18px 24px;
+    border-radius: 20px;
+  }
+  .ncco-pshowcase__card-media {
+    height: 180px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var section = document.getElementById('ncco-pshowcase-{{ section.id }}');
+  if (!section) return;
+
+  var track = section.querySelector('#ncco-pshowcase-track-{{ section.id }}');
+  var dots = section.querySelectorAll('.ncco-pshowcase__dot');
+
+  if (dots.length > 0 && track) {
+    dots.forEach(function(dot, idx) {
+      dot.addEventListener('click', function() {
+        var cards = track.querySelectorAll('.ncco-pshowcase__card');
+        if (cards[idx]) {
+          cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+        dots.forEach(function(d) { d.classList.remove('is-active'); });
+        dot.classList.add('is-active');
+      });
+    });
+
+    track.addEventListener('scroll', function() {
+      var scrollLeft = track.scrollLeft;
+      var cards = track.querySelectorAll('.ncco-pshowcase__card');
+      var closestIdx = 0;
+      var minDiff = Infinity;
+      cards.forEach(function(card, idx) {
+        var diff = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('is-active', i === closestIdx);
+      });
+    }, { passive: true });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "NCCO Product Showcase",
+  "tag": "section",
+  "class": "section-ncco-pshowcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "產品系列"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "NCCO 空氣淨化系統"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "NCCO 空氣淨化系統能持續去除細菌、病毒、VOCs、異味及其他有害污染物。與一般只截留污染物的濾網不同，NCCO 技術會進一步分解污染物，帶來更徹底的空氣淨化效果。"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Button Label",
+      "default": "瞭解 NCCO"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Shopify Product (Dynamic)"
+        },
+        {
+          "type": "header",
+          "content": "Fallback Details"
+        },
+        {
+          "type": "text",
+          "id": "fallback_title",
+          "label": "Product Title",
+          "default": "NCCO 空氣淨化機"
+        },
+        {
+          "type": "text",
+          "id": "fallback_price",
+          "label": "Price",
+          "default": "HK $1,388.00"
+        },
+        {
+          "type": "url",
+          "id": "fallback_url",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Asset Image Filename"
+        },
+        {
+          "type": "image_picker",
+          "id": "fallback_image",
+          "label": "Theme Editor Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NCCO Product Showcase",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1902 桌面用空氣淨化機",
+            "fallback_price": "HKD$1,288",
+            "fallback_asset": "bmola-p1.png"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1804 便攜式空氣淨化機",
+            "fallback_price": "HK $1,388.00",
+            "fallback_asset": "ncco-prod-blue-1804.png"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "B.Duck NCCO1804 便攜式空氣淨化機",
+            "fallback_price": "HK $1,388.00",
+            "fallback_asset": "ncco-prod-bduck-1804.png"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1803 座枱式空氣淨化機",
+            "fallback_price": "HK $888.00",
+            "fallback_asset": "bmola-p3.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

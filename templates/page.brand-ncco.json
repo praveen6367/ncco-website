@@ -3,20 +3,63 @@
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "科研創新 · 潔淨呼吸",
-        "headline": "<p>開創空氣淨化領域<br/>的革新時代</p>",
-        "subtext": "NCCO是目前唯一同時應用在工業、商業、醫院及家居三大領域的空氣淨化技術，從全球超過300家醫院到日常家居。NCCO提供長效且經科學驗證的解決方案，徹底改變我們體驗潔淨空氣的方式。",
+        "eyebrow": "科研創新 潔淨呼吸",
+        "headline": "<p>開創空氣淨化領域<br/><em>的革新時代</em></p>",
+        "subtext": "NCCO是目前唯一同時應用在工業、商業、醫院及家居四大領域的空氣淨化技術，從全球超過300家醫院到日常家居，NCCO提供長效且經科學驗證的解決方案，徹底改變我們體驗潔淨空氣的方式。",
+        "bullet_1": "99.9%淨化效率",
+        "bullet_2": "對兒童、寵物及醫療環境安全",
+        "bullet_3": "超過20年科研驗證",
         "cta_label": "探索NCCO技術",
-        "cta_url": "/pages/about-us",
-        "overlay_opacity": 55,
+        "cta_url": "/pages/contact",
+        "card_image_asset": "ncco-hero-card-img.png",
+        "background_asset": "nccobanner.png",
+        "overlay_solid_color": "#081D3AC7",
+        "space_between_text": true,
+        "compact": false,
         "dark": true
       }
     },
-    "ncco-trust-logos": {
-      "type": "ncco-trust-logos",
+    "ncco-tech-overview": {
+      "type": "ncco-tech-overview",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "NCCO 技術通過旗下品牌（如 b-MOLA）應用於家庭，通過消除病毒、細菌、異味和有害氣體來確保家庭安全。"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "NCCO 為辦公室、學校、機場和公共場所提供 24/7 可靠的性能。它能有效對抗異味、VOCs 及細菌。"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "NCCO 技術是氣態污染物淨化專家，在工業應用中控制 VOCs、煙霧和有害氣體，且不會產生有毒副產品。"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "NCCO 系統已被全球超過 300 家醫院採用，在高敏感度環境（如醫院、實驗室）中提供最大的保護和持續保護。"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ],
       "settings": {
-        "heading": "深受業界領袖信賴的",
-        "heading_highlight": "品質與可靠保證"
+        "eyebrow": "為每個環境提供值得信賴的潔淨空氣解決方案",
+        "heading": "隱形保護，無所不在",
+        "intro": "NCCO氧聚解空氣處理技術(Nano Confined Catalytic Oxidation) 是一種革命性的專利催化技術，它超越了傳統過濾的限制。NCCO在分子層面上分解污染物，將污染物（如病毒、VOCs）轉化為無害的水及二氧化碳。",
+        "image_asset": "nccosecondsecrightimage.png",
+        "cta_label": "了解NCCO運作",
+        "cta_url": "/pages/contact"
       }
     },
     "ncco-icon-grid": {
@@ -25,115 +68,244 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "title": "主動分子分解",
-            "body": "<p>與活性炭困住污染物不同，NCCO將其分解為無害的水和二氧化碳——徹底消除二次污染。</p>"
+            "icon_emoji": "",
+            "icon_asset": "endtoend.png",
+            "eyebrow": "",
+            "title": "全面的空氣安全淨化",
+            "body": "<p>NCCO 能淨化空氣品質的每個層面。它在分子層面上分解有害氣態污染物（如甲醛、苯、丙酮），並有效殺滅空氣傳播的病毒和病原體。</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "title": "12年催化劑壽命",
-            "body": "<p>NCCO氧化層可再生且具可持續性。在正常保養下，催化劑可使用長達12年。</p>"
+            "icon_emoji": "",
+            "icon_asset": "sensitivity.png",
+            "eyebrow": "",
+            "title": "專為高敏感度區域而建",
+            "body": "<p>NCCO 專為對空氣純度要求極高的環境而設計。這些環境包括 ICU、實驗室、學校、公共交通設施和護老院。</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
-            "title": "醫院級保護",
-            "body": "<p>全球300+家醫院信賴。NCCO技術達到最嚴苛環境下空氣淨化的最高標準。</p>"
+            "icon_emoji": "",
+            "icon_asset": "integration.png",
+            "eyebrow": "",
+            "title": "無縫的技術整合性",
+            "body": "<p>NCCO 技術具備高度適應性。它可以模組化地加裝到現有的 PAU/AHU等 HVAC 系統中。</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "backedbydata.png",
+            "eyebrow": "",
+            "title": "以數據為證，非誇大宣傳",
+            "body": "<p>NCCO 技術擁有國際公認的認證。其性能通過臨床研究和實地測試得到驗證。</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "humanhealth.png",
+            "eyebrow": "",
+            "title": "以人類健康為核心設計",
+            "body": "<p>NCCO 系統是無毒的，並將污染物分解為對人體無害的水及二氧化碳。系統設計上不會產生二次污染。</p>",
+            "featured": false,
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "icon_emoji": "",
+            "icon_asset": "futureproof.png",
+            "eyebrow": "",
+            "title": "面向未來的潔淨技術",
+            "body": "<p>NCCO 氧聚解反應層具有循環再生能力，正常維護保養下實驗證明可使用長達 12 年。</p>",
+            "featured": true,
+            "link_label": "",
+            "link_url": ""
           }
         }
       },
       "block_order": [
         "card_1",
         "card_2",
-        "card_3"
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
       ],
       "settings": {
-        "eyebrow": "NCCO為何有效",
-        "heading": "一項技術，無限應用。",
-        "subtext": "唯一同時應用於工業、商業、醫院及住宅領域的空氣淨化技術。",
+        "eyebrow": "探索 NCCO",
+        "heading": "設計領導的淨化方案",
+        "subtext": "作為信山實業集團的技術基礎，NCCO 氧聚解空氣處理技術以突破性的納米科技為先導。此技術由香港科技大學創業計畫成員於 2003 年成功研發，為所有應用領域設定了長效且高效能的空氣淨化標準。",
         "columns": "3",
-        "dark": false
+        "align": "center",
+        "numbered": false,
+        "flat": false,
+        "cta_label": "探索NCCO",
+        "cta_url": "/pages/contact",
+        "dark": true,
+        "inline_icon": true,
+        "split_header": false,
+        "table_grid": false,
+        "hero_card": false,
+        "bg_asset": "",
+        "accent_color": "",
+        "cta_variant": "yellow"
       }
     },
-    "ncco-cta-band": {
-      "type": "ncco-cta-band",
+    "ncco-product-showcase": {
+      "type": "ncco-product-showcase",
+      "blocks": {
+        "card_1": {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1902 桌面用空氣淨化機",
+            "fallback_price": "HKD$1,288",
+            "fallback_asset": "bmola-p1.png",
+            "fallback_url": "/pages/contact"
+          }
+        },
+        "card_2": {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1804 便攜式空氣淨化機",
+            "fallback_price": "HK $1,388.00",
+            "fallback_asset": "ncco-prod-blue-1804.png",
+            "fallback_url": "/pages/contact"
+          }
+        },
+        "card_3": {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "B.Duck NCCO1804 便攜式空氣淨化機",
+            "fallback_price": "HK $1,388.00",
+            "fallback_asset": "ncco-prod-bduck-1804.png",
+            "fallback_url": "/pages/contact"
+          }
+        },
+        "card_4": {
+          "type": "product_card",
+          "settings": {
+            "fallback_title": "NCCO1803 座枱式空氣淨化機",
+            "fallback_price": "HK $888.00",
+            "fallback_asset": "bmola-p3.png",
+            "fallback_url": "/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
-        "eyebrow": "應用範疇",
-        "heading": "從家居到醫院，從工廠到辦公室。",
-        "subtext": "NCCO是唯一獲證實可應用於四大領域的技術：住宅、商業、工業及醫療。",
-        "cta_label": "查看所有應用",
-        "cta_url": "/pages/residential-use",
-        "bg_color": "#081d3a"
+        "eyebrow": "產品系列",
+        "heading": "NCCO 空氣淨化系統",
+        "description": "NCCO 空氣淨化系統能持續去除細菌、病毒、VOCs、異味及其他有害污染物。與一般只截留污染物的濾網不同，NCCO 技術會進一步分解污染物，帶來更徹底的空氣淨化效果。",
+        "cta_label": "瞭解 NCCO",
+        "cta_url": "/pages/contact"
       }
     },
-    "collapsible-content": {
-      "type": "collapsible-content",
+    "ncco-faq": {
+      "type": "ncco-faq",
+      "settings": {
+        "eyebrow": "你想知道的問題",
+        "heading": "常見問題",
+        "bg_image": ""
+      },
       "blocks": {
         "faq_1": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "NCCO代表什麼？",
-            "row_content": "<p>NCCO代表氧聚解（Nano Confined Catalytic Oxidation）。每個詞描述淨化過程中的一個步驟：納米級催化劑、受限納米管結構、催化反應，以及將污染物氧化為水和二氧化碳。</p>"
+            "heading": "NCCO 代表甚麼？",
+            "answer": "<p>NCCO 代表 Nano Confined Catalytic Oxidation (氧聚解空氣處理技術)。這是一項專利的空氣淨化技術，能夠在分子層面上分解有害氣體、VOCs、病毒和細菌。</p>"
           }
         },
         "faq_2": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "NCCO與HEPA或活性炭有何不同？",
-            "row_content": "<p>HEPA過濾器困住顆粒。活性炭吸附氣體（飽和時會重新釋放）。NCCO在分子層面分解污染物——無二次污染，無濾網飽和問題。</p>"
+            "heading": "NCCO 與傳統的 HEPA 或活性碳濾網有何不同？",
+            "answer": "<p>NCCO系統的核心優勢是分解污染物，而不僅是像活性碳一樣吸附它們。活性碳在飽和後會重新釋放污染物，造成二次污染。NCCO 技術將污染物分解為無害的水和二氧化碳，從而確保長期的潔淨空氣和無二次污染。</p>"
           }
         },
         "faq_3": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "NCCO技術安全嗎？",
-            "row_content": "<p>安全。催化劑材料為無毒人工礦物。淨化過程中臭氧濃度低於0.03 ppm——遠低於國際UL 867安全標準的0.05 ppm。適合嬰兒、長者及孕婦使用。</p>"
+            "heading": "NCCO 在兒童和寵物身邊使用安全嗎？",
+            "answer": "<p>NCCO 系統對人體無害。NCCO 的催化物料是無毒的人工礦物，且淨化過程中的臭氧水平極低。RHT 旗下 O5+ 品牌的變頻超聲波驅蚊驅蟲機採用純物理原理，全無化學成分，適用於孕婦、嬰兒、幼童及寵物家庭。</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "NCCO 技術目前在哪些地方使用？",
+            "answer": "<p>NCCO 是目前唯一同時應用於工業、商業、醫院及家居四大領域的空氣淨化技術。NCCO 已被全球超過 300 家醫院採用。應用場所還包括香港國際機場、港鐵羅湖站公共洗手間、IFC Mall、學校 以及辦公室和工廠。</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "NCCO 濾芯需要經常更換嗎？",
+            "answer": "<p>不需要頻繁更換。NCCO 氧聚解反應層具有循環再生的能力。在正常維護保養下，實驗證明其壽命可長達 12 年。其長效壽命比一般活性碳濾芯長十倍或更多。</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "我可以在臥室或車輛等小空間使用 NCCO 嗎？",
+            "answer": "<p>可以。NCCO 技術應用於 b-MOLA 品牌的便攜式空氣淨化機系列（如 BM10、NCCO1804）。這些機型設計輕巧（如 BM10 淨重約 0.88 kg），具備內置鋰電池，可以無線使用，並專門設計用於車載或辦公桌等小空間。</p>"
           }
         }
       },
       "block_order": [
         "faq_1",
         "faq_2",
-        "faq_3"
-      ],
-      "settings": {
-        "caption": "常見問題",
-        "heading": "常見問題解答",
-        "heading_size": "h2",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "open_first_collapsible_row": false
-      }
-    },
-    "ncco-certifications": {
-      "type": "ncco-certifications",
-      "settings": {
-        "eyebrow": "品質標準",
-        "heading": "認證安全，全球信賴。",
-        "featured_asset": "ncco-certifications-web.png"
-      }
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ]
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
+        "eyebrow": "聯絡我們",
+        "accent_color": "",
         "heading": "隨時為你提供專業方案",
-        "email": "sales@rhtind.com.hk",
-        "phone": "+852 2417 0075",
-        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "提交訊息"
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
+        "email": "info@ncco-tech.com",
+        "phone": "(852) 2417 0075",
+        "address": "Room 208-209, 2/F, Wireless Centre, 3 Science Park East Avenue, Hong Kong Science Park",
+        "submit_label": "提交"
       }
     }
   },
   "order": [
     "ncco-hero",
-    "ncco-trust-logos",
+    "ncco-tech-overview",
     "ncco-icon-grid",
-    "ncco-cta-band",
-    "collapsible-content",
-    "ncco-certifications",
+    "ncco-product-showcase",
+    "ncco-faq",
     "ncco-contact-cta"
   ]
 }

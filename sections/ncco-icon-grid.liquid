@@ -40,31 +40,55 @@
     <div class="ncco-icon-grid__grid ncco-icon-grid__grid--{{ section.settings.columns }}">
       {% for block in section.blocks %}
         <div class="ncco-icon-grid__card{% if block.settings.featured %} ncco-icon-grid__card--featured{% endif %} ncco-reveal ncco-reveal--d{{ forloop.index }}" {{ block.shopify_attributes }}>
-          {% if block.settings.icon != blank or block.settings.icon_emoji != blank or block.settings.icon_asset != blank %}
-            <div class="ncco-icon-grid__icon-wrap">
-              {% if block.settings.icon_asset != blank %}
-                <img src="{{ block.settings.icon_asset | asset_url }}"
-                     alt="{{ block.settings.title }}" width="58" height="58" loading="lazy">
-              {% elsif block.settings.icon != blank %}
-                <img src="{{ block.settings.icon | image_url: width: 80 }}"
-                     alt="{{ block.settings.title }}" width="48" height="48" loading="lazy">
-              {% else %}
-                <span class="ncco-icon-grid__icon-emoji">{{ block.settings.icon_emoji }}</span>
-              {% endif %}
-            </div>
-          {% endif %}
-          {% if block.settings.eyebrow != blank or block.settings.title != blank or block.settings.body != blank %}
-            <div class="ncco-icon-grid__card-inner-text">
-              {% if block.settings.eyebrow != blank %}
-                <p class="ncco-icon-grid__card-eyebrow">{{ block.settings.eyebrow }}</p>
+          {% if section.settings.inline_icon %}
+            <div class="ncco-icon-grid__card-header">
+              {% if block.settings.icon != blank or block.settings.icon_emoji != blank or block.settings.icon_asset != blank %}
+                <div class="ncco-icon-grid__icon-wrap">
+                  {% if block.settings.icon_asset != blank %}
+                    <img src="{{ block.settings.icon_asset | asset_url }}"
+                         alt="{{ block.settings.title }}" width="44" height="44" loading="lazy">
+                  {% elsif block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url: width: 80 }}"
+                         alt="{{ block.settings.title }}" width="44" height="44" loading="lazy">
+                  {% else %}
+                    <span class="ncco-icon-grid__icon-emoji">{{ block.settings.icon_emoji }}</span>
+                  {% endif %}
+                </div>
               {% endif %}
               {% if block.settings.title != blank %}
                 <h3 class="ncco-icon-grid__card-title">{{ block.settings.title }}</h3>
               {% endif %}
-              {% if block.settings.body != blank %}
-                <div class="ncco-icon-grid__card-body">{{ block.settings.body }}</div>
-              {% endif %}
             </div>
+            {% if block.settings.body != blank %}
+              <div class="ncco-icon-grid__card-body">{{ block.settings.body }}</div>
+            {% endif %}
+          {% else %}
+            {% if block.settings.icon != blank or block.settings.icon_emoji != blank or block.settings.icon_asset != blank %}
+              <div class="ncco-icon-grid__icon-wrap">
+                {% if block.settings.icon_asset != blank %}
+                  <img src="{{ block.settings.icon_asset | asset_url }}"
+                       alt="{{ block.settings.title }}" width="58" height="58" loading="lazy">
+                {% elsif block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | image_url: width: 80 }}"
+                       alt="{{ block.settings.title }}" width="48" height="48" loading="lazy">
+                {% else %}
+                  <span class="ncco-icon-grid__icon-emoji">{{ block.settings.icon_emoji }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.eyebrow != blank or block.settings.title != blank or block.settings.body != blank %}
+              <div class="ncco-icon-grid__card-inner-text">
+                {% if block.settings.eyebrow != blank %}
+                  <p class="ncco-icon-grid__card-eyebrow">{{ block.settings.eyebrow }}</p>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3 class="ncco-icon-grid__card-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.body != blank %}
+                  <div class="ncco-icon-grid__card-body">{{ block.settings.body }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
           {% endif %}
           {% if block.settings.link_label != blank %}
             <a href="{{ block.settings.link_url | default: '#' }}" class="ncco-icon-grid__card-link">
@@ -191,17 +215,47 @@
 }
 .ncco-icon-grid__sub {
   text-align: center;
-  max-width: 580px;
+  max-width: 780px;
   margin: 0 auto 52px;
   font-family: 'Geist', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: -0.2px;
   color: #647082;
 }
 .ncco-section--dark .ncco-icon-grid__sub {
   color: #899CA8;
+}
+
+.ncco-icon-grid__card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2px;
+}
+.ncco-icon-grid__card-header .ncco-icon-grid__icon-wrap {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+.ncco-icon-grid__card-header .ncco-icon-grid__icon-wrap img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.ncco-icon-grid__card-header .ncco-icon-grid__card-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  text-transform: none;
 }
 
 /* Numbered cards */
@@ -567,6 +621,7 @@
     {"type": "text", "id": "cta_label", "label": "CTA label"},
     {"type": "url", "id": "cta_url", "label": "CTA URL"},
     {"type": "checkbox", "id": "dark", "label": "Dark background", "default": false},
+    {"type": "checkbox", "id": "inline_icon", "label": "Inline icon with title", "default": false},
     {"type": "checkbox", "id": "split_header", "label": "Split header (heading+CTA left, subtext right)", "default": false},
     {"type": "checkbox", "id": "table_grid", "label": "Table grid (flat cells with divider lines, centered content)", "default": false},
     {"type": "checkbox", "id": "hero_card", "label": "Hero card (rounded card with 16px gutter, for bg-image sections)", "default": false},

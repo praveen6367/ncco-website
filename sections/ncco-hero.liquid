@@ -17,18 +17,27 @@
 {%- assign cta_text_color = section.settings.cta_text_color | default: '#081D3A' -%}
 {%- if cta_text_color == blank -%}{%- assign cta_text_color = '#081D3A' -%}{%- endif -%}
 
-<section class="ncco-hero-wrap{% if section.settings.compact %} ncco-hero-wrap--compact{% endif %}">
+<section class="ncco-hero-wrap{% if section.settings.compact %} ncco-hero-wrap--compact{% endif %}" id="ncco-hero-{{ section.id }}">
+  {%- if section.settings.overlay_solid_color != blank -%}
+    <style>
+      #ncco-hero-{{ section.id }} .ncco-hero__bg::before {
+        background: rgba(8, 29, 58, 0.78) !important;
+        background: {{ section.settings.overlay_solid_color }} !important;
+        opacity: 1 !important;
+      }
+    </style>
+  {%- endif -%}
   <div class="ncco-hero__bg" style="background-image: url('{{ bg_url }}')">
-    <div class="ncco-hero__overlay"{% if section.settings.overlay_solid_color != blank %} style="background: {{ section.settings.overlay_solid_color }}"{% endif %}></div>
-
     <div class="ncco-hero__inner">
-      <div class="ncco-hero__left">
-        {%- if section.settings.logo_asset != blank -%}
-          <img class="ncco-hero__logo" src="{{ section.settings.logo_asset | asset_url }}" alt="{{ section.settings.eyebrow }}" loading="eager">
-        {%- elsif section.settings.eyebrow != blank -%}
-          <p class="ncco-hero__eyebrow">{{ section.settings.eyebrow }}</p>
-        {%- endif -%}
-        <h1 class="ncco-hero__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+      <div class="ncco-hero__left{% if section.settings.space_between_text or section.settings.overlay_solid_color != blank %} ncco-hero__left--space-between{% endif %}">
+        <div class="ncco-hero__left-top">
+          {%- if section.settings.logo_asset != blank -%}
+            <img class="ncco-hero__logo" src="{{ section.settings.logo_asset | asset_url }}" alt="{{ section.settings.eyebrow }}" loading="eager">
+          {%- elsif section.settings.eyebrow != blank -%}
+            <p class="ncco-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          <h1 class="ncco-hero__title">{{ section.settings.headline | remove: '<p>' | remove: '</p>' }}</h1>
+        </div>
         {%- if section.settings.subtext != blank -%}
           <p class="ncco-hero__sub"{% if section.settings.subtext_gap != blank %} style="margin-top:{{ section.settings.subtext_gap }}px"{% endif %}>{{ section.settings.subtext }}</p>
         {%- endif -%}
@@ -91,22 +100,21 @@
 .ncco-hero__bg::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     180deg,
     rgba(2, 8, 17, 0.68) 0%,
     rgba(3, 19, 44, 0.68) 50%,
     rgba(4, 30, 70, 0.0544) 100%
-  ) !important;
+  );
   z-index: 1;
-}
-
-.ncco-hero__overlay {
-  position: absolute;
-  inset: 0;
   pointer-events: none;
-  z-index: 2;
-  opacity: 1 !important;
 }
 
 /* Inner content — balanced flex row */
@@ -133,6 +141,21 @@
   justify-content: center;
 }
 
+.ncco-hero__left--space-between {
+  height: 380px;
+  justify-content: space-between;
+}
+.ncco-hero__left--space-between .ncco-hero__left-top {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.ncco-hero__left--space-between .ncco-hero__sub {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .ncco-hero__logo {
   height: 44px; width: auto; object-fit: contain; display: block; margin: 0 0 20px;
 }
@@ -150,7 +173,7 @@
 /* Accent color for <em> — gradient from brand_color (#FECB07) to white */
 .ncco-hero__title em {
   font-style: normal;
-  background: linear-gradient(90deg, {{ brand_color }} 0%, rgba(254, 203, 7, 0) 100%),
+  background: linear-gradient(90deg, {{ brand_color }} 0%, rgba(254, 203, 7, 0) 54.5%),
               linear-gradient(0deg, #FFFFFF, #FFFFFF);
   -webkit-background-clip: text;
   background-clip: text;
@@ -258,6 +281,7 @@
   .ncco-hero__inner { padding: 36px 28px; gap: 28px; }
   .ncco-hero__title { font-size: 38px; }
   .ncco-hero__sub { margin-top: 24px; font-size: 14px; }
+  .ncco-hero__left--space-between { height: 340px; }
   .ncco-hero__card { width: 340px; height: 340px; flex: 0 0 340px; padding: 20px; }
   .ncco-hero__bullets p { font-size: 14px; }
 }
@@ -270,6 +294,8 @@
     padding: 40px 20px 28px; gap: 22px;
   }
   .ncco-hero__left { max-width: 100%; align-items: center; text-align: center; }
+  .ncco-hero__left--space-between { height: auto; justify-content: flex-start; }
+  .ncco-hero__left--space-between .ncco-hero__sub { margin-top: 20px; }
   .ncco-hero__title { font-size: 34px; text-align: center; }
   .ncco-hero__sub { text-align: center; margin-left: auto; margin-right: auto; }
   .ncco-hero__card {
@@ -365,6 +391,7 @@
     {"type": "image_picker", "id": "background_image", "label": "Background image"},
     {"type": "text", "id": "background_asset", "label": "Background asset filename (overrides image picker)"},
     {"type": "checkbox", "id": "compact", "label": "Compact hero (shorter height, subtext tight below heading)", "default": false},
+    {"type": "checkbox", "id": "space_between_text", "label": "Space between heading and description (aligns to card top and bottom)", "default": false},
     {"type": "range", "id": "overlay_opacity", "min": 0, "max": 85, "step": 5, "unit": "%", "label": "Overlay opacity (unused — hero uses fixed 3-stop gradient)", "default": 55},
     {"type": "text", "id": "overlay_solid_color", "label": "Solid overlay color (e.g. rgba(8,29,58,0.78)) — overrides gradient"},
     {"type": "checkbox", "id": "dark", "label": "Dark background (unused)", "default": true},
