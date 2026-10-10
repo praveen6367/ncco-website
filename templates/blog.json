@@ -10,34 +10,26 @@
 {
   "sections": {
     "ncco-hero": {
-      "type": "ncco-hero",
+      "type": "ncco-page-banner",
       "settings": {
-        "eyebrow": "",
-        "headline": "<p>Stay Informed. <em>Stay Ahead.</em></p>",
-        "subtext": "Explore the latest insights, stories, and guides around technology, business, and lifestyle. From how-to articles to industry updates: all in one place.",
-        "dark": true,
-        "overlay_opacity": 55
-      }
-    },
-    "ncco-blog-featured": {
-      "type": "ncco-blog-featured",
-      "settings": {
-        "eyebrow": "POPULAR",
-        "heading": "Popular Articles",
-        "subtext": "Follow us to see more from-the-field discoveries, stories, and updates on technology, business, and lifestyle.",
-        "blog": "news"
+        "eyebrow": "全球創新機構共同信賴",
+        "headline": "<p>關於空氣潔淨的一切<br><em>助你緊貼最新發展</em></p>",
+        "subtext": "由室內空氣質素（ IAQ ）、淨化技術，到健康與生活質素提升。<br>我們為你整理最新的洞見、案例故事與實用指南。<br>讓你更容易為家庭、辦公室或商業空間，做出更聰明的空氣方案決定。",
+        "accent_color": "#FECB07",
+        "height": 440,
+        "background_asset": "blogbanner.png"
       }
     },
     "ncco-blog-grid": {
       "type": "ncco-blog-grid",
       "settings": {
-        "eyebrow": "LATEST",
-        "heading": "Latest Articles",
-        "subtext": "Stay up to date with the latest research, product launches, and insights from the NCCO team.",
+        "eyebrow": "最新發布",
+        "heading": "最新文章",
+        "subtext": "讓你隨時掌握「點樣令空氣更安全、更安心」的第一手資訊。",
         "blog": "news",
-        "count": 3
+        "count": 12
       }
     }
   },
-  "order": ["ncco-hero", "ncco-blog-featured", "ncco-blog-grid"]
+  "order": ["ncco-hero", "ncco-blog-grid"]
 }

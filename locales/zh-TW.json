@@ -106,7 +106,9 @@
       "back_to_blog": "返回網誌",
       "share": "分享此文章",
       "success": "您已成功留言！感謝您！",
-      "success_moderated": "您已成功留言。由於我們的網誌有人管理，因此過一段時間後才會進行發布。"
+      "success_moderated": "您已成功留言。由於我們的網誌有人管理，因此過一段時間後才會進行發布。",
+      "table_of_contents": "目錄",
+      "related_blogs": "相關文章"
     }
   },
   "onboarding": {
@@ -339,7 +341,8 @@
       "use_fewer_filters_html": "使用較少篩選條件或<a class=\"{{ class }}\" href=\"{{ link }}\">全部移除</a>"
     },
     "video": {
-      "load_video": "載入影片：{{ description }}"
+      "load_video": "載入影片：{{ description }}",
+      "play": "播放影片"
     },
     "slideshow": {
       "load_slide": "載入投影片",
@@ -385,19 +388,29 @@
       "max_error": "此品項上限為 {{ max }}",
       "step_error": "只能以 {{ step }} 為增量新增此品項"
     },
+    "ncco_product_grid": {
+      "learn_more": "了解更多"
+    },
+    "ncco_product_lineup": {
+      "empty": "此系列暫無產品。",
+      "select_collection": "請為此分頁選擇產品系列。"
+    },
     "ncco_contact_cta": {
-      "email_label": "電郵我們",
+      "eyebrow_default": "聯絡我們",
+      "heading_default": "隨時為你提供專業方案",
+      "subtext_default": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
+      "email_label": "電郵查詢",
       "phone_label": "致電我們",
       "office_label": "總辦事處",
       "form_name": "姓名",
       "form_email": "電郵地址",
-      "form_phone": "手機號碼",
-      "form_message": "訊息",
-      "placeholder_name": "輸入姓名",
-      "placeholder_email": "輸入電郵地址",
-      "placeholder_phone": "輸入手機號碼",
-      "placeholder_message": "輸入訊息",
-      "success": "訊息已發送——我們將盡快與你聯繫。",
+      "form_phone": "聯絡電話",
+      "form_message": "查詢內容",
+      "placeholder_name": "請輸入姓名",
+      "placeholder_email": "請輸入電郵地址",
+      "placeholder_phone": "請輸入聯絡電話",
+      "placeholder_message": "請輸入查詢內容",
+      "success": "訊息已發送 —— 我們將盡快與你聯絡。",
       "submit_default": "提交"
     },
     "ncco_footer": {
@@ -584,34 +597,34 @@
   },
   "ncco": {
     "header": {
-      "main_navigation": "Main navigation",
-      "open_menu": "Open menu",
-      "close_menu": "Close menu",
-      "contact_us": "CONTACT US",
+      "main_navigation": "主選單",
+      "open_menu": "開啟選單",
+      "close_menu": "關閉選單",
+      "contact_us": "聯絡我們",
       "brands": {
-        "ncco_desc": "Core technology powering all air purification.",
-        "rht_desc": "Industrial air solutions for large facilities.",
-        "bmola_desc": "Smart purifiers for home and personal use.",
-        "nccoig_desc": "Sterilization systems for clinical environments.",
-        "o5_desc": "Lifestyle purifiers with elegant design."
+        "ncco_desc": "驅動全系列空氣淨化產品的核心氧聚解專利技術。",
+        "rht_desc": "專為大型設施而設的工業級空氣淨化解決方案。",
+        "bmola_desc": "適合家居及個人空間的智能空氣淨化機。",
+        "nccoig_desc": "專為臨床醫療環境設計的專業消毒殺菌系統。",
+        "o5_desc": "結合優雅美學設計的品味生活空氣淨化機。"
       },
       "impact": {
-        "residential_title": "Residential Use",
-        "residential_desc": "Best seller in Hong Kong.",
-        "medical_title": "Medical Use",
-        "medical_desc": "Provide air purification systems to 300 hospitals.",
-        "industrial_title": "Industrial Use",
-        "industrial_desc": "Deodorize waste stations, Filter exhaust gases for factories.",
-        "commercial_title": "Commercial Use",
-        "commercial_desc": "Provide air purification systems to 300 hospitals."
+        "residential_title": "住宅應用",
+        "residential_desc": "香港最暢銷的空氣淨化方案。",
+        "medical_title": "醫療應用",
+        "medical_desc": "為超過300間醫院提供專業空氣淨化系統。",
+        "industrial_title": "工業應用",
+        "industrial_desc": "為垃圾收集站高效除臭，為廠房全面過濾工業廢氣。",
+        "commercial_title": "商業應用",
+        "commercial_desc": "為各大商業大廈、辦公室及商場提供專業空氣淨化系統。"
       }
     },
     "footer": {
-      "quick_links": "QUICK LINKS",
-      "follow_us": "FOLLOW US",
-      "our_brands": "OUR BRANDS",
-      "tagline_default_html": "Pioneering clean air technology through advanced nano-catalyst solutions.<br>Trusted worldwide for safe, sustainable, and effective air purification.",
-      "copyright": "© 2025 NCCO. All rights reserved.",
+      "quick_links": "快速連結",
+      "follow_us": "關注我們",
+      "our_brands": "我們的品牌",
+      "tagline_default_html": "以先進納米催化氧聚解專利技術，引領潔淨空氣新標準。<br>深獲全球信賴，提供安全、長效且環保的高效空氣淨化方案。",
+      "copyright": "© 2025 NCCO。版權所有。",
       "social_instagram": "Instagram",
       "social_twitter": "X / Twitter",
       "social_linkedin": "LinkedIn",

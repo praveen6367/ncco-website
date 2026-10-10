@@ -1,380 +1,362 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
+      "custom_css": [],
       "settings": {
-        "eyebrow": "Trusted by leading industries across the globe",
-        "headline": "<p>Air Innovation,</p><p><em>Brand by Brand</em></p>",
-        "subtext": "From personal spaces to large-scale industries, each NCCO brand delivers specialized solutions backed by nanotechnology and global trust.",
-        "bullet_1": "5 specialist brands under one group",
-        "bullet_2": "Technology deployed in 500+ organisations",
-        "bullet_3": "Trusted across 40+ countries and regions",
-        "cta_label": "Get a Free Consultation",
-        "cta_url": "/pages/contact-us",
-        "card_image_asset": "brand-ncco-hero-card.png",
-        "background_asset": "brand-ncco-hero-bg.png",
-        "overlay_opacity": 55,
-        "subtext_gap": 180
+        "eyebrow": "獲全球頂尖業界信賴",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>以創新科技<br/>品牌相承</p>",
+        "subtext": "無論是個人空間還是大規模工業應用，NCCO旗下的各品牌均提供有納米技術和全球信賴支持的專業解決方案。",
+        "bullet_1": "消除有毒氣體及揮發性有機化合物",
+        "bullet_2": "專為實驗室、國防及工業領域打造",
+        "bullet_3": "先進離子過濾技術",
+        "cta_label": "立即選購",
+        "cta_url": "#brands",
+        "card_image_asset": "",
+        "background_image": "shopify://shop_images/73.png",
+        "background_asset": "",
+        "compact": false,
+        "overlay_opacity": 50,
+        "overlay_solid_color": "",
+        "dark": true
       }
     },
-    "ncco-trust-logos": {
-      "type": "ncco-trust-logos",
+    "ncco_science_statement_UA8Dzq": {
+      "type": "ncco-science-statement",
+      "name": "NCCO Science Statement",
+      "settings": {
+        "eyebrow": "關於我們",
+        "text_before_image_1": "NCCO-IG",
+        "text_between": "採用科學護膚配方，保護如手套般貼合，修復如",
+        "text_after_image_2": "療程般有效，完全不含刺激性化學成分。",
+        "card_1_title": "實證保護",
+        "card_1_text": "臨床測試殺滅99.9%細菌及病毒。",
+        "card_2_title": "純淨配方",
+        "card_2_text": "無毒、無酒精，敏感肌膚適用。",
+        "card_3_title": "肌膚優先",
+        "card_3_text": "深層保濕、修復肌膚，舒緩易敏感肌膚。"
+      }
+    },
+    "ncco_about_strip_c3CyFm": {
+      "type": "ncco-about-strip",
       "blocks": {
-        "tl_01": {
-          "type": "logo",
+        "item_fKQc6T": {
+          "type": "item",
           "settings": {
-            "asset": "tl-New-World-China.webp",
-            "alt": "New World China"
+            "number": "01",
+            "image": "shopify://shop_images/Frame_1.svg",
+            "title": "抗病毒複合體",
+            "body": "我們的NCCO專利技術由香港科技大學支持，廣受全球醫院、實驗室及家庭信賴。"
           }
         },
-        "tl_02": {
-          "type": "logo",
+        "item_d8y9Y6": {
+          "type": "item",
           "settings": {
-            "asset": "tl-JLL.svg",
-            "alt": "JLL"
+            "number": "02",
+            "title": "目標驅動",
+            "body": "從舒緩過敏到環境保護，我們的使命是為每個人、每個地方提供清新無污染的空氣。"
           }
         },
-        "tl_03": {
-          "type": "logo",
+        "item_tPtCpc": {
+          "type": "item",
           "settings": {
-            "asset": "tl-HSBC.svg",
-            "alt": "HSBC"
+            "number": "03",
+            "title": "全球信賴",
+            "body": "NCCO產品已應用於逾200家機構，獲政府機構、醫療服務提供者及有嚴格空氣質量需求的行業採用。"
           }
         },
-        "tl_04": {
-          "type": "logo",
+        "item_cfdfTK": {
+          "type": "item",
           "settings": {
-            "asset": "tl-HK-IFC-Mall.webp",
-            "alt": "IFC"
-          }
-        },
-        "tl_05": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-MTR.svg",
-            "alt": "MTR"
-          }
-        },
-        "tl_06": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-HKHA.svg",
-            "alt": "HKHA"
+            "number": "04",
+            "title": "品牌創新",
+            "body": "旗下五個子品牌，為個人、專業及工業空間提供度身訂造的空氣淨化解決方案。"
           }
         }
       },
       "block_order": [
-        "tl_01",
-        "tl_02",
-        "tl_03",
-        "tl_04",
-        "tl_05",
-        "tl_06"
+        "item_fKQc6T",
+        "item_d8y9Y6",
+        "item_tPtCpc",
+        "item_cfdfTK"
+      ],
+      "custom_css": [
+        ".ncco-about-strip {background: #f4fbfd;}",
+        ".ncco-about-strip__heading,.ncco-about-card__title {color: #0d3b60;}",
+        ".ncco-about-strip__eyebrow,.ncco-about-strip__sub,.ncco-about-card__body {color: #8295a8;}",
+        ".ncco-about-strip__eyebrow:before {background: #55c2df;}",
+        ".ncco-about-card {background: #fff;}",
+        ".ncco-about-card__num {color: #d9dde2;}",
+        ".ncco-about-strip__cta {background: #55c2df !important;}"
       ],
       "settings": {
-        "heading": "Trusted by industry leaders for",
-        "heading_highlight": "Quality and Reliability",
-        "static_grid": false
+        "eyebrow": "重要成分",
+        "heading": "安全。強效。實證。",
+        "subtext": "NCCO-IG 肌膚修復精華的每種成分均經精心挑選，在不含任何有害化學物質的情況下保護肌膚、恢復健康並持續滋養。",
+        "cta_label": "探索背後的科學",
+        "cta_url": "/pages/about-us"
       }
     },
-    "ncco-parent": {
-      "type": "ncco-brand-showcase",
+    "ncco_product_lineup_pBqqVP": {
+      "type": "ncco-product-lineup",
       "blocks": {
-        "f1": {
-          "type": "feature",
+        "collection_tab_xiphHK": {
+          "type": "collection_tab",
           "settings": {
-            "icon_asset": "benefit-icon-1.png",
-            "title": "Molecular-Level Purification",
-            "body": "Decomposes pollutants like VOCs, formaldehyde, and viruses — doesn't just trap them."
+            "label": "所有產品",
+            "collection": "frontpage"
           }
         },
-        "f2": {
-          "type": "feature",
+        "collection_tab_RbFgFp": {
+          "type": "collection_tab",
           "settings": {
-            "icon_asset": "benefit-icon-2.png",
-            "title": "Continuous & Stable Operation",
-            "body": "Operates 24/7 without generating secondary pollution or ozone."
+            "label": "B.Duck x NCCO-IG",
+            "collection": ""
           }
         },
-        "f3": {
-          "type": "feature",
+        "collection_tab_aiFHVL": {
+          "type": "collection_tab",
           "settings": {
-            "icon_asset": "benefit-icon-3.png",
-            "title": "Research-Driven Performance",
-            "body": "Developed from years of academic and industrial research with global certifications."
+            "label": "套裝組合",
+            "collection": ""
           }
         },
-        "f4": {
-          "type": "feature",
+        "collection_tab_UgWnD3": {
+          "type": "collection_tab",
           "settings": {
-            "icon_asset": "benefit-icon-4.png",
-            "title": "Patented Nanotech Reactor",
-            "body": "Powered by exclusive NCCO reactor technology built for durability and high efficiency."
-          }
-        },
-        "f5": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "benefit-icon-5.png",
-            "title": "Deployed Worldwide",
-            "body": "Used by over 500+ organizations across public transport, hospitals, and industrial setups."
-          }
-        },
-        "f6": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "benefit-icon-6.png",
-            "title": "Reusable & Low Maintenance",
-            "body": "NCCO filters are long-lasting, washable, and reduce replacement costs."
+            "label": "修復精華",
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4",
-        "f5",
-        "f6"
+        "collection_tab_xiphHK",
+        "collection_tab_RbFgFp",
+        "collection_tab_aiFHVL",
+        "collection_tab_UgWnD3"
       ],
+      "name": "NCCO Product Lineup",
       "settings": {
-        "layout": "cards",
-        "cta_variant": "yellow",
-        "eyebrow": "Parent Brand",
-        "brand_logo_asset": "brand-ncco-logo.png",
-        "brand_name": "NCCO",
-        "description": "As the foundation of our group, NCCO leads with breakthrough nanotechnology, setting the standard for long-lasting and effective air purification across all applications.",
-        "cta_label": "Discover NCCO",
-        "cta_url": "/pages/brand-ncco"
+        "eyebrow": "產品系列",
+        "heading": "NCCO-IG 肌膚修復精華",
+        "description": "經臨床測試的肌膚修復配方，深層保濕、修復並保護肌膚。殺滅99.9%病毒及細菌，同時舒緩乾燥、敏感及易敏肌膚，完全不含毒素或酒精。",
+        "quick_view_text": "快速預覽",
+        "button_label": "查看所有產品",
+        "button_url": "",
+        "products_to_show": 4,
+        "max_width": 1600,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_horizontal": 30,
+        "heading_size": 58,
+        "description_size": 13,
+        "card_width": 340,
+        "card_height": 420,
+        "card_gap": 26,
+        "card_radius": 16,
+        "section_radius": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#0d3b60",
+        "eyebrow_color": "#8295a8",
+        "accent_color": "#55c2df",
+        "description_color": "#8295a8",
+        "tabs_background": "#f3f5f6",
+        "tab_text_color": "#8295a8",
+        "active_tab_background": "#ffffff",
+        "active_tab_text": "#0d3b60",
+        "card_background": "#f5f7f8",
+        "card_title_color": "#0d3b60",
+        "price_color": "#55c2df",
+        "quick_view_color": "#55c2df",
+        "button_background": "#55c2df",
+        "button_text_color": "#ffffff",
+        "button_icon_background": "#ffffff",
+        "button_icon_color": "#0d3b60"
       }
     },
-    "ncco-rht": {
-      "type": "ncco-brand-showcase",
+    "ncco_unique_benefits_tX6nBD": {
+      "type": "ncco-unique-benefits",
       "blocks": {
-        "f1": {
-          "type": "feature",
+        "benefit_7PXRNV": {
+          "type": "benefit",
           "settings": {
-            "body": "Trusted worldwide in demanding operational settings."
+            "title": "隱形防護罩",
+            "description": "形成透氣防護屏障，保護肌膚免受細菌、刺激物及污染物侵害。"
           }
         },
-        "f2": {
-          "type": "feature",
+        "benefit_ekHxbt": {
+          "type": "benefit",
           "settings": {
-            "body": "Engineered for durability in high-traffic or industrial environments."
+            "title": "臨床實證",
+            "description": "臨床測試殺滅99.9%病毒及細菌，包括人類冠狀病毒。"
           }
         },
-        "f3": {
-          "type": "feature",
+        "benefit_9m9AT6": {
+          "type": "benefit",
           "settings": {
-            "body": "Ideal for subways, cleanrooms, and government facilities."
+            "title": "深層保濕",
+            "description": "滋潤修復乾燥、龜裂或易生濕疹的肌膚，無黏膩感或殘留。"
           }
         },
-        "f4": {
-          "type": "feature",
+        "benefit_89KRT8": {
+          "type": "benefit",
           "settings": {
-            "body": "Features modular installation and energy-efficient designs."
+            "title": "安全純淨",
+            "description": "適合所有膚質，包括敏感及易敏肌膚，不含刺激性化學成分。"
+          }
+        },
+        "benefit_TRqTkQ": {
+          "type": "benefit",
+          "settings": {
+            "title": "持久效果",
+            "description": "效果持續數小時，全日提供持續保護。"
+          }
+        },
+        "benefit_PnTN4r": {
+          "type": "benefit",
+          "settings": {
+            "title": "隨身攜帶",
+            "description": "小巧輕便，完美放入口袋、袋包或桌上。"
+          }
+        },
+        "benefit_Pkxbbh": {
+          "type": "benefit",
+          "settings": {
+            "title": "無黏膩感",
+            "description": "順滑清爽，使用後感覺自然舒適。"
+          }
+        },
+        "benefit_QCMwrP": {
+          "type": "benefit",
+          "settings": {
+            "title": "科學支撐",
+            "description": "採用先進護膚技術及皮膚科研究開發而成。"
           }
         }
       },
       "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
+        "benefit_7PXRNV",
+        "benefit_ekHxbt",
+        "benefit_9m9AT6",
+        "benefit_89KRT8",
+        "benefit_TRqTkQ",
+        "benefit_PnTN4r",
+        "benefit_Pkxbbh",
+        "benefit_QCMwrP"
       ],
+      "name": "NCCO Unique Benefits",
       "settings": {
-        "layout": "dark-gallery",
-        "cta_variant": "yellow",
-        "eyebrow": "Commercial & Industrial Solutions",
-        "brand_logo_asset": "brand-rht-logo.png",
-        "brand_name": "RHT",
-        "description": "Engineered for hospitals, transport, and industries, RHT delivers high-capacity air purification systems for demanding environments.",
-        "cta_label": "View More Details",
-        "cta_url": "/pages/brand-rht",
-        "asset_1": "rht-p1.png",
-        "asset_2": "rht-p2.png",
-        "asset_3": "rht-p3.png",
-        "asset_4": "rht-p4.png"
+        "eyebrow": "獨特優勢",
+        "heading": "前所未有的肌膚防護體驗",
+        "description": "NCCO-IG融合先進護膚科學與日常實用性，提供無形、持久的保護，溫和、強效且實證有效。"
       }
     },
-    "ncco-bmola": {
-      "type": "ncco-brand-showcase",
+    "ncco_text_image_4GBQUx": {
+      "type": "ncco-text-image",
+      "custom_css": [
+        ".ncco-iwt__cta a {background: #55c2df !important; color: #fff !important; border-color: #55c2df !important;}",
+        ".ncco-iwt__cta a .ncco-cta__icon {background: #fff !important; color: #0d3b60 !important;}"
+      ],
+      "name": "NCCO Image + Text",
+      "settings": {
+        "eyebrow": "實驗室測試保護",
+        "heading": "科學實證，專家信賴。",
+        "intro": "<p>NCCO-IG 肌膚修復精華不只溫和有效——更獲認證實驗室測試支持。從殺滅病毒的效力到肌膚安全性，每項聲明均通過獨立研究及皮膚科驗證。</p>",
+        "text": "<p>NCCO-IG 肌膚修復精華不只溫和有效——更獲認證實驗室測試支持。從殺滅病毒的效力到肌膚安全性，每項聲明均通過獨立研究及皮膚科驗證。</p>",
+        "image": "shopify://shop_images/Group_1000003563.png",
+        "asset": "",
+        "asset_secondary": "",
+        "overlay_text": "",
+        "reverse_layout": true,
+        "cta_label": "查看全部實驗室報告",
+        "cta_url": "",
+        "dark": false
+      }
+    },
+    "ncco_questions_TmCHaX": {
+      "type": "ncco-questions",
       "blocks": {
-        "f1": {
-          "type": "feature",
+        "faq_nMgdM9": {
+          "type": "faq",
           "settings": {
-            "body": "Perfect for individuals, families, and remote work setups"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "f2": {
-          "type": "feature",
+        "faq_Y8eJNM": {
+          "type": "faq",
           "settings": {
-            "body": "Combines high-performance filtration with elegant design."
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "f3": {
-          "type": "feature",
+        "faq_mTrb6w": {
+          "type": "faq",
           "settings": {
-            "body": "Brings clean air to everyday spaces at home or on the move"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "f4": {
-          "type": "feature",
+        "faq_d4GEYK": {
+          "type": "faq",
           "settings": {
-            "body": "Easy to use, lightweight, and low-maintenance"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_kd39T3": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_qjaLyD": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         }
       },
       "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
+        "faq_nMgdM9",
+        "faq_Y8eJNM",
+        "faq_mTrb6w",
+        "faq_d4GEYK",
+        "faq_kd39T3",
+        "faq_qjaLyD"
       ],
+      "name": "NCCO Questions",
       "settings": {
-        "layout": "split",
-        "cta_variant": "blue",
-        "eyebrow": "Consumer Air Purifiers",
-        "brand_logo_asset": "brand-bmola-logo.png",
-        "brand_name": "b-MOLA",
-        "description": "Designed for everyday comfort and convenience, b-MOLA brings advanced NCCO technology into compact devices for homes, cars, workspaces, and beyond.",
-        "cta_label": "View More Details",
-        "cta_url": "/pages/brand-bmola",
-        "asset_1": "bmola-p1.png",
-        "asset_2": "bmola-p2.png",
-        "asset_3": "bmola-p3.png"
-      }
-    },
-    "ncco-ig": {
-      "type": "ncco-brand-showcase",
-      "blocks": {
-        "f1": {
-          "type": "feature",
-          "settings": {
-            "body": "Specializes in long-term sterilization systems for healthcare and critical care facilities"
-          }
-        },
-        "f2": {
-          "type": "feature",
-          "settings": {
-            "body": "Effective against airborne viruses, bacteria, and VOCs"
-          }
-        },
-        "f3": {
-          "type": "feature",
-          "settings": {
-            "body": "Designed for continuous, high-safety operation in labs, clinics, and quarantine areas"
-          }
-        },
-        "f4": {
-          "type": "feature",
-          "settings": {
-            "body": "Requires minimal maintenance over time"
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "layout": "dark-gallery",
-        "card_theme": "light",
-        "cta_variant": "blue",
-        "eyebrow": "Sterilization & Healthcare",
-        "brand_logo_asset": "brand-nccoig-logo.png",
-        "brand_name": "NCCO-IG",
-        "description": "Built for critical healthcare and lab environments, NCCO-IG offers robust sterilization systems that deliver continuous protection against airborne pathogens and pollutants.",
-        "cta_label": "View More Details",
-        "cta_url": "/pages/brand-nccoog",
-        "asset_1": "nccoig-p1.png",
-        "asset_2": "nccoig-p2.png",
-        "asset_3": "nccoig-p3.png"
-      }
-    },
-    "ncco-05plus": {
-      "type": "ncco-brand-showcase",
-      "blocks": {
-        "f1": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "05plus-icon-1.svg",
-            "title": "Low Noise Operation",
-            "body": "Enjoy a peaceful atmosphere while O5+ works silently to maintain the perfect indoor climate."
-          }
-        },
-        "f2": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "05plus-icon-2.svg",
-            "title": "Smart Humidity Sensing",
-            "body": "Automatically detects and adjusts humidity levels to keep your room consistently fresh and balanced."
-          }
-        },
-        "f3": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "05plus-icon-3.svg",
-            "title": "Large Water Tank Capacity",
-            "body": "With a 1750ml tank, O5+ runs longer without frequent emptying, making it convenient for daily use."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3"
-      ],
-      "settings": {
-        "layout": "cards",
-        "cta_variant": "blue",
-        "eyebrow": "Fresh Living Made Simple",
-        "brand_logo_asset": "05plus-logo.png",
-        "brand_name": "05+",
-        "description": "Keep your space dry, healthy, and comfortable with advanced O5+ technology designed to prevent mold, reduce humidity, and create a fresher home environment.",
-        "cta_label": "View More Details",
-        "cta_url": "/pages/brand-05plus"
-      }
-    },
-    "ncco-certifications": {
-      "type": "ncco-certifications",
-      "settings": {
-        "eyebrow": "certifications",
-        "heading": "Globally Certified. Internationally Trusted.",
-        "featured_asset": "ncco-certifications-web.png"
+        "eyebrow": "常見問題",
+        "heading": "常見問題解答"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "heading": "We're Here to Help",
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
         "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "提交訊息"
       }
     }
   },
   "order": [
     "ncco-hero",
-    "ncco-trust-logos",
-    "ncco-parent",
-    "ncco-rht",
-    "ncco-bmola",
-    "ncco-ig",
-    "ncco-05plus",
-    "ncco-certifications",
+    "ncco_science_statement_UA8Dzq",
+    "ncco_about_strip_c3CyFm",
+    "ncco_product_lineup_pBqqVP",
+    "ncco_unique_benefits_tX6nBD",
+    "ncco_text_image_4GBQUx",
+    "ncco_questions_TmCHaX",
     "ncco-contact-cta"
   ]
 }

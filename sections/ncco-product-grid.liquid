@@ -47,7 +47,11 @@
             {% endif %}
             {% if block.settings.link_label != blank %}
               <a href="{{ block.settings.link_url | default: '#' }}" class="ncco-pg__learn">
-                {{ block.settings.link_label }}
+                {% if block.settings.link_label == 'Learn More' or block.settings.link_label == blank %}
+                  {{ 'sections.ncco_product_grid.learn_more' | t | default: '了解更多' }}
+                {% else %}
+                  {{ block.settings.link_label }}
+                {% endif %}
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             {% endif %}

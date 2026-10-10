@@ -1,46 +1,30 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "Get In Touch",
-        "headline": "<p>We're Here <em>to Help</em></p>",
-        "subtext": "Speak to our team about product enquiries, commercial solutions, or technical support. We respond within one business day.",
+        "eyebrow": "聯絡我們",
+        "headline": "<p>我們<em>隨時為你服務</em></p>",
+        "subtext": "歡迎就產品查詢、商業解決方案或技術支援聯絡我們的團隊。我們將於一個工作天內回覆。",
         "overlay_opacity": 50,
         "dark": true
-      }
-    },
-    "contact-form": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "Send Us a Message",
-        "heading_size": "h2",
-        "color_scheme": "scheme-1"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "heading": "Our Office",
+        "eyebrow": "聯絡我們",
+        "heading": "我們的辦公室",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Pak Shek Kok, Shatin, New Territories, Hong Kong",
         "phone": "+852 2417 0075",
         "email": "sales@rhtind.com.hk",
-        "submit_label": "Send Message"
+        "submit_label": "提交"
       }
     }
   },
   "order": [
     "ncco-hero",
-    "contact-form",
     "ncco-contact-cta"
   ]
 }

@@ -1,21 +1,12 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "Our Impact",
-        "headline": "<p>Clean Air for <em>Every Environment</em></p>",
-        "subtext": "From hospitals and factories to homes and offices — NCCO technology delivers proven air purification across every sector, every day.",
-        "cta_label": "Explore All Applications",
+        "eyebrow": "我們的影響力",
+        "headline": "<p>潔淨空氣，<em>遍及每個環境</em></p>",
+        "subtext": "從醫院、工廠到家居與辦公室——NCCO技術在每個領域、每一天提供經過驗證的空氣淨化方案。",
+        "cta_label": "探索所有應用場景",
         "cta_url": "#sectors",
         "overlay_opacity": 55,
         "dark": true
@@ -24,7 +15,8 @@
     "ncco-trust-logos": {
       "type": "ncco-trust-logos",
       "settings": {
-        "heading": "Trusted by world-leading institutions"
+        "heading": "深受全球頂尖機構信賴",
+        "heading_highlight": "品質與可靠保證"
       }
     },
     "ncco-icon-grid": {
@@ -33,29 +25,29 @@
         "card_medical": {
           "type": "card",
           "settings": {
-            "title": "Medical",
-            "body": "<p>Trusted in 300+ hospitals worldwide. Hospital-grade pathogen elimination for ICUs, theatres, and clinical laboratories.</p><p><a href=\"/pages/medical-use\">Explore Medical →</a></p>"
+            "title": "醫療",
+            "body": "<p>全球300+家醫院信賴。適用於ICU、手術室及臨床實驗室的醫院級病原體消除方案。</p><p><a href=\"/pages/medical-use\">探索醫療應用 →</a></p>"
           }
         },
         "card_commercial": {
           "type": "card",
           "settings": {
-            "title": "Commercial",
-            "body": "<p>HVAC-integrated purification for offices, airports, shopping malls, hotels, and schools across Hong Kong and beyond.</p><p><a href=\"/pages/commercial-use\">Explore Commercial →</a></p>"
+            "title": "商業",
+            "body": "<p>整合HVAC的淨化方案，適用於香港及海外的辦公室、機場、購物商場、酒店及學校。</p><p><a href=\"/pages/commercial-use\">探索商業應用 →</a></p>"
           }
         },
         "card_industrial": {
           "type": "card",
           "settings": {
-            "title": "Industrial",
-            "body": "<p>VOC and toxic emission control for factories, waste processing facilities, and large-scale manufacturing plants.</p><p><a href=\"/pages/industrial-use\">Explore Industrial →</a></p>"
+            "title": "工業",
+            "body": "<p>適用於工廠、廢物處理設施及大型製造廠的VOC及有毒排放控制方案。</p><p><a href=\"/pages/industrial-use\">探索工業應用 →</a></p>"
           }
         },
         "card_residential": {
           "type": "card",
           "settings": {
-            "title": "Residential",
-            "body": "<p>Hong Kong's #1 home air purification brand — whisper-quiet, 12-year catalyst, and proven safe for the whole family.</p><p><a href=\"/pages/residential-use\">Explore Residential →</a></p>"
+            "title": "住宅",
+            "body": "<p>香港第一家居空氣淨化品牌——超靜音、12年濾芯壽命，經驗證對全家人安全無虞。</p><p><a href=\"/pages/residential-use\">探索住宅應用 →</a></p>"
           }
         }
       },
@@ -66,9 +58,9 @@
         "card_residential"
       ],
       "settings": {
-        "eyebrow": "Impact Areas",
-        "heading": "One Technology. Four Sectors.",
-        "subtext": "NCCO is the only air purification technology simultaneously deployed across residential, commercial, industrial, and medical sectors worldwide.",
+        "eyebrow": "影響範疇",
+        "heading": "一項技術。四大領域。",
+        "subtext": "NCCO是全球唯一同時應用於住宅、商業、工業及醫療四大領域的空氣淨化技術。",
         "columns": "4",
         "dark": false
       }
@@ -80,7 +72,7 @@
           "type": "stat",
           "settings": {
             "number": "300+",
-            "label": "Hospitals worldwide",
+            "label": "全球合作醫院",
             "sublabel": ""
           }
         },
@@ -88,7 +80,7 @@
           "type": "stat",
           "settings": {
             "number": "600+",
-            "label": "Trusted partners",
+            "label": "信賴合作夥伴",
             "sublabel": ""
           }
         },
@@ -96,7 +88,7 @@
           "type": "stat",
           "settings": {
             "number": "20+",
-            "label": "Years of research",
+            "label": "研究年資",
             "sublabel": ""
           }
         },
@@ -104,7 +96,7 @@
           "type": "stat",
           "settings": {
             "number": "99%",
-            "label": "Bactericidal rate",
+            "label": "殺菌率",
             "sublabel": ""
           }
         }
@@ -116,16 +108,16 @@
         "stat_4"
       ],
       "settings": {
-        "heading": "The Numbers Behind Our Impact"
+        "heading": "數字見證我們的影響力"
       }
     },
     "ncco-cta-band": {
       "type": "ncco-cta-band",
       "settings": {
-        "eyebrow": "Next Step",
-        "heading": "Ready to See NCCO in Action?",
-        "subtext": "Our team can assess your environment and recommend the right NCCO system for your sector and scale.",
-        "cta_label": "Request a Consultation",
+        "eyebrow": "下一步",
+        "heading": "準備好見識NCCO的實際效能？",
+        "subtext": "我們的團隊可評估您的環境，並為您的行業規模推薦合適的NCCO系統。",
+        "cta_label": "預約諮詢",
         "cta_url": "/pages/contact-us",
         "bg_color": "#003da5"
       }
@@ -133,19 +125,19 @@
     "ncco-certifications": {
       "type": "ncco-certifications",
       "settings": {
-        "eyebrow": "International Standards",
-        "heading": "Certified Safe. Trusted Worldwide.",
+        "eyebrow": "國際標準",
+        "heading": "認證安全。全球信賴。",
         "featured_asset": "ncco-certifications-web.png"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "heading": "We're Here to Help",
+        "heading": "隨時為您提供協助",
         "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "提交"
       }
     }
   },

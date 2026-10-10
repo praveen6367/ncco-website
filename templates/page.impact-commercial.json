@@ -1,168 +1,478 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "ncco-hero": {
+    "ncco_hero_rKqCDF": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "Commercial",
-        "headline": "<p>Smarter Air for <em>Modern Commercial Spaces</em></p>",
-        "subtext": "NCCO provides 24/7 reliable air purification for offices, retail, schools, airports, and public spaces — combating VOCs, bacteria, and odours without disrupting business operations.",
-        "cta_label": "Explore Commercial Solutions",
-        "cta_url": "#solutions",
+        "eyebrow": "",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>智慧空氣方案<br/>適合現代商業空間</p>",
+        "subtext": "NCCO系統以潔淨空氣方案守護各類建築，促進健康、專注力與工作環境的安心感。",
+        "bullet_1": "",
+        "bullet_2": "",
+        "bullet_3": "",
+        "cta_label": "",
+        "cta_url": "/pages/contact-us",
+        "card_image_asset": "ncco-hero-card-img.png",
+        "background_asset": "",
+        "compact": false,
         "overlay_opacity": 55,
-        "dark": true
+        "overlay_solid_color": "",
+        "dark": true,
+        "custom_css": ".ncco-hero__inner{justify-content:flex-start !important;padding-left:224px !important;padding-right:224px !important;} .ncco-hero__bg{height:460px !important;} .ncco-hero-wrap--compact .ncco-hero__bg{height:460px !important;} .ncco-hero__title{font-size:clamp(30px,3.3vw,52px) !important;} .ncco-hero__sub{margin-top:20px !important;font-size:14px !important;} @media(max-width:1024px){.ncco-hero__inner{padding-left:40px !important;padding-right:40px !important;} } @media(max-width:600px){.ncco-hero__inner{padding-left:16px !important;padding-right:16px !important;} .ncco-hero__sub{margin-top:14px !important;} }"
       }
     },
-    "ncco-trust-logos": {
+    "ncco_trust_logos_CH6CXU": {
       "type": "ncco-trust-logos",
+      "blocks": {
+        "logo_bbT4Ng": {
+          "type": "logo",
+          "settings": {
+            "asset": "",
+            "alt": ""
+          }
+        },
+        "logo_ywUtNH": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Hospital-authority-trim.png",
+            "alt": "Hospital Authority"
+          }
+        },
+        "logo_3tFkmp": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ArchSD-trim.png",
+            "alt": "ArchSD"
+          }
+        },
+        "logo_eGpyF9": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Emaar-Properties-trim.png",
+            "alt": "Emaar Properties"
+          }
+        },
+        "logo_UReHQn": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-New-World-China-trim.png",
+            "alt": "New World China"
+          }
+        },
+        "logo_3YEQ6N": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Hong-Kong-Land-trim.png",
+            "alt": "Hong Kong Land"
+          }
+        },
+        "logo_m6Xgch": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-IFC-Mall-trim.png",
+            "alt": "HK IFC Mall"
+          }
+        },
+        "logo_6tQHTy": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HAECO-trim.png",
+            "alt": "HAECO"
+          }
+        },
+        "logo_gXpXqV": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-changi-airport-singapore-trim.png",
+            "alt": "Changi Airport Singapore"
+          }
+        },
+        "logo_iFfTwp": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Perfit-trim.png",
+            "alt": "Perfit"
+          }
+        },
+        "logo_EbzghJ": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-International-Airport-trim.png",
+            "alt": "HK International Airport"
+          }
+        },
+        "logo_e6mWFb": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Henderson-trim.png",
+            "alt": "Henderson"
+          }
+        },
+        "logo_7FJjcf": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CMA-Testing-trim.png",
+            "alt": "CMA Testing"
+          }
+        },
+        "logo_hFemKb": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Megabox-trim.png",
+            "alt": "Megabox"
+          }
+        },
+        "logo_TUG7rQ": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR-trim.png",
+            "alt": "MTR"
+          }
+        },
+        "logo_6hpnpt": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Mira-Place-trim.png",
+            "alt": "Mira Place"
+          }
+        },
+        "logo_EQdCnB": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ABC-Pathways-International-Kindergarten-trim.png",
+            "alt": "ABC Pathways International Kindergarten"
+          }
+        },
+        "logo_bWqPrP": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CPL-Aromas-trim.png",
+            "alt": "CPL Aromas"
+          }
+        },
+        "logo_aC63qR": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HKJC-trim.png",
+            "alt": "HKJC"
+          }
+        },
+        "logo_yewbFd": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-LCSD-trim.png",
+            "alt": "LCSD"
+          }
+        },
+        "logo_3qgCYN": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-kai-shing-management-services-limited-trim.png",
+            "alt": "Kai Shing Management Services"
+          }
+        },
+        "logo_BTyNRc": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR-Propertym-trim.png",
+            "alt": "MTR Property"
+          }
+        },
+        "logo_tVbGPH": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Royal-Perth-Hospital-trim.png",
+            "alt": "Royal Perth Hospital"
+          }
+        },
+        "logo_fRrYYY": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Savills-trim.png",
+            "alt": "Savills"
+          }
+        },
+        "logo_PkdtLN": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Cohiba-atmosphere-trim.png",
+            "alt": "Cohiba Atmosphere"
+          }
+        },
+        "logo_cqza7k": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-FEHD-trim.png",
+            "alt": "FEHD"
+          }
+        }
+      },
+      "block_order": [
+        "logo_bbT4Ng",
+        "logo_ywUtNH",
+        "logo_3tFkmp",
+        "logo_eGpyF9",
+        "logo_UReHQn",
+        "logo_3YEQ6N",
+        "logo_m6Xgch",
+        "logo_6tQHTy",
+        "logo_gXpXqV",
+        "logo_iFfTwp",
+        "logo_EbzghJ",
+        "logo_e6mWFb",
+        "logo_7FJjcf",
+        "logo_hFemKb",
+        "logo_TUG7rQ",
+        "logo_6hpnpt",
+        "logo_EQdCnB",
+        "logo_bWqPrP",
+        "logo_aC63qR",
+        "logo_yewbFd",
+        "logo_3qgCYN",
+        "logo_BTyNRc",
+        "logo_tVbGPH",
+        "logo_fRrYYY",
+        "logo_PkdtLN",
+        "logo_cqza7k"
+      ],
       "settings": {
-        "heading": "Trusted by world-leading businesses"
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠性",
+        "static_grid": false
       }
     },
-    "ncco-icon-grid": {
-      "type": "ncco-icon-grid",
+    "ncco_text_image_tw4rWp": {
+      "type": "ncco-text-image",
+      "name": "NCCO Image + Text",
+      "settings": {
+        "eyebrow": "產品認證",
+        "heading": "權威認證・全球信賴",
+        "intro": "",
+        "text": "<p>NCCO空氣淨化技術不只是創新——更獲國際認可認證及實際使用性能支持。從FDA批准到CE合規，NCCO達到全球最高安全及性能標準。獲全球醫院、機場、公共交通系統及家庭信賴，NCCO為可持續高效空氣淨化樹立新標準。</p>",
+        "image": "",
+        "asset": "ncco-certifications-web.png",
+        "asset_secondary": "",
+        "overlay_text": "",
+        "cta_label": "探索NCCO",
+        "cta_url": "",
+        "dark": false,
+        "custom_css": ".ncco-iwt{padding:clamp(32px,4.0625vw,78px) clamp(24px,9.27vw,178px) !important;}"
+      }
+    },
+    "ncco-contact-cta": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "提交訊息"
+      }
+    },
+    "ncco_res_commitment": {
+      "type": "ncco-residential-commitment",
+      "name": "NCCO Residential Commitment",
+      "settings": {
+        "image_1": "ncco-res-collage-1.jpg",
+        "image_2": "ncco-res-collage-2.jpg",
+        "image_3": "ncco-res-collage-3.jpg",
+        "image_4": "ncco-res-collage-4.jpg",
+        "image_5": "ncco-res-collage-5.jpg",
+        "image_6": "ncco-res-collage-6.jpg",
+        "stat_number": "99%",
+        "stat_label": "空氣淨化效率",
+        "eyebrow": "我們對家居的承諾",
+        "heading": "潔淨空氣，香港家庭信賴之選",
+        "body": "<p>我們很榮幸成為香港最暢銷的家用空氣淨化品牌，將日常生活空間轉化為更潔淨、更安全的環境。我們成熟的 NCCO 技術，透過長效保護與智能設計，為您帶來安心。</p>",
+        "point_1_title": "為何重要",
+        "point_1_body": "<p>室內空氣看似潔淨，但往往藏有來自清潔劑、傢俬及日常生活的有害污染物。這些肉眼看不見的微粒可能影響睡眠、呼吸及家人健康。NCCO 淨化器不僅捕捉污染物，更主動將其分解，確保真正潔淨的空氣。</p>",
+        "point_2_title": "我們解決的問題",
+        "point_2_body": "<p>從化學氣味、烹飪油煙到過敏原及寵物毛屑，NCCO 系統淨化您家中每個角落。無論是睡房、嬰兒房或廚房，我們寧靜的醫療級技術，為小孩、長者及寵物締造更潔淨健康的空間。</p>",
+        "cta_label": "預約免費諮詢",
+        "cta_url": "/pages/contact-us"
+      }
+    },
+    "ncco_res_features": {
+      "type": "ncco-residential-features",
+      "name": "NCCO Residential Features",
       "blocks": {
         "card_1": {
           "type": "card",
           "settings": {
-            "title": "24/7 Continuous Operation",
-            "body": "<p>NCCO systems are engineered for round-the-clock performance in high-traffic environments — offices, malls, airports, schools, and hotels.</p>"
+            "icon_asset": "benefit-icon-1.png",
+            "title": "主動分解技術",
+            "body": "<p>在分子層面分解有害氣體、異味、細菌及揮發性有機物，只留下潔淨、可自由呼吸的空氣。</p>"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "title": "HVAC Integration Ready",
-            "body": "<p>NCCO technology integrates modularly with existing PAU/AHU HVAC systems, enabling large-scale commercial deployment without full infrastructure replacement.</p>"
+            "icon_asset": "benefit-icon-3.png",
+            "title": "家庭安全科技",
+            "body": "<p>零臭氧、零化學物質——以健康為本的設計，100% 適合嬰兒、寵物及家中長者。</p>"
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
-            "title": "No Secondary Pollution",
-            "body": "<p>Unlike activated carbon that re-releases pollutants when saturated, NCCO breaks them down permanently. Clean air stays clean.</p>"
+            "icon_asset": "benefit-icon-2.png",
+            "title": "靜音運作",
+            "body": "<p>於睡房、嬰兒房及書房靜音運作，不打擾家人休息與生活。</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon_asset": "benefit-icon-6.png",
+            "title": "低維護設計",
+            "body": "<p>耐用工程設計，濾芯使用壽命長達12年，大幅減少更換需求，讓您安心無憂。</p>"
           }
         }
       },
       "block_order": [
         "card_1",
         "card_2",
-        "card_3"
+        "card_3",
+        "card_4"
       ],
       "settings": {
-        "eyebrow": "Commercial Applications",
-        "heading": "Purifying the Air That Powers Your Business",
-        "subtext": "Cleaner air drives better performance. Studies show improved indoor air quality directly links to higher productivity and lower absenteeism.",
-        "columns": "3",
-        "dark": false
+        "eyebrow": "家居專用，選擇NCCO的理由",
+        "heading": "為日常舒適而生，值得信賴的保護",
+        "body": "<p>NCCO 將醫療級空氣淨化技術帶入日常家居，結合持久效能、寧靜運作及家庭安全科技。從細小的市區單位到寬敞的大宅，NCCO 為香港家庭提供值得信賴的保護。</p>",
+        "note": "<p>NCCO（納米局限催化氧化）不僅止於過濾——它能徹底分解有害污染物，而非僅僅隱藏它們。</p><p>它不只捕捉污染物，更將其徹底分解。</p>"
       }
     },
-    "ncco-iwt-1": {
-      "type": "ncco-image-with-text",
+    "ncco_res_before_after": {
+      "type": "ncco-residential-before-after",
+      "name": "NCCO Residential Before/After",
       "settings": {
-        "heading": "Smarter Air Quality for Smart Workspaces",
-        "text": "<p>Poor indoor air quality costs businesses billions annually in lost productivity and sick days. NCCO technology eliminates the root cause — not just the symptoms. Our systems run silently, continuously, and without disruption to your team or customers.</p>",
-        "asset": "ncco-img-commercial-office.png",
-        "layout": "image_first",
-        "dark": false
+        "image_before": "ncco-img-residential-room.png",
+        "label_before": "淨化前",
+        "image_after": "ncco-img-air-purifier-room.png",
+        "label_after": "淨化後",
+        "eyebrow": "家居淨化成效",
+        "heading": "看得見、呼吸得到的真實轉變",
+        "body": "<p>NCCO 技術為您家中的空氣質素帶來明顯而持久的改善。從濃重異味、過敏原到有害室內污染物，我們的系統不僅過濾空氣——更徹底轉化它。</p><p>NCCO 原本專為醫院設計，如今已獲香港數千個家庭信賴，將醫療級保護帶到您最重視的地方：客廳、睡房及家庭生活空間。</p><p>親身感受淨化前後的分別——更新鮮、更安全的空氣，由此開始。</p>",
+        "cta_label": "預約免費諮詢",
+        "cta_url": "/pages/contact-us"
       }
     },
-    "ncco-iwt-2": {
-      "type": "ncco-image-with-text",
+    "ncco_res_pollutants": {
+      "type": "ncco-residential-pollutants",
+      "name": "NCCO Residential Pollutants",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "light": false,
+            "title": "傢俬釋出的甲醛",
+            "body": "<p>來自油漆、木製品及黏合劑，這種有害毒素可在室內空氣中殘留多年。</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "light": true,
+            "title": "寵物毛屑及過敏原",
+            "body": "<p>來自寵物、塵蟎及布藝的微細顆粒，可能引發過敏、哮喘及皮膚敏感，對兒童影響尤甚。</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "light": true,
+            "title": "烹飪油煙及異味",
+            "body": "<p>日常烹飪產生的油煙與氣味會黏附於傢俬及布藝，在用餐後久久不散。</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "light": false,
+            "title": "清潔劑及噴霧中的VOC",
+            "body": "<p>日常清潔用品釋放的揮發性有機化合物（VOCs），可能刺激皮膚、眼睛及呼吸系統。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
-        "heading": "Proven Across Hong Kong's Most Demanding Venues",
-        "text": "<p>NCCO has been deployed in Hong Kong International Airport, MTR Lok Ma Chau station washrooms, IFC Mall, schools, and office buildings. The same technology trusted in hospitals is now available for commercial deployment at any scale.</p>",
-        "asset": "ncco-img-city-night.png",
-        "layout": "text_first",
-        "dark": false
+        "eyebrow": "常見室內污染物",
+        "heading": "您家中的空氣，藏著什麼？",
+        "body": "<p>即使看似一塵不染的家居，仍可能潛藏影響家人健康的有害污染物。NCCO 的先進技術能針對性分解這些污染物，為您帶來真正潔淨、安全的空氣。</p>"
       }
     },
-    "ncco-cta-band": {
-      "type": "ncco-cta-band",
-      "settings": {
-        "heading": "Providing Cleaner Air Solutions for Business",
-        "subtext": "Speak to our commercial team about system sizing, HVAC integration, and installation for your space.",
-        "cta_label": "Request a Consultation",
-        "cta_url": "/pages/contact-us",
-        "bg_color": "#081d3a"
-      }
-    },
-    "ncco-certifications": {
-      "type": "ncco-certifications",
-      "settings": {
-        "eyebrow": "International Standards",
-        "heading": "Certified Safe. Trusted Worldwide.",
-        "featured_asset": "ncco-certifications-web.png"
-      }
-    },
-    "collapsible-content": {
-      "type": "collapsible-content",
+    "ncco_res_faq": {
+      "type": "ncco-faq",
+      "name": "NCCO Residential FAQ",
       "blocks": {
         "faq_1": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "What commercial environments is NCCO suitable for?",
-            "row_content": "<p>NCCO is deployed in offices, retail stores, shopping malls, hotels, schools, airports, public transport facilities, and restaurants. Any enclosed commercial space with air quality requirements benefits from NCCO.</p>"
+            "heading": "NCCO 空氣淨化器有何獨特之處？",
+            "answer": "<p>NCCO 不僅捕捉污染物，更將其徹底分解，確保空氣更潔淨，不會產生二次污染。</p>"
           }
         },
         "faq_2": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "Can NCCO be integrated into our existing HVAC system?",
-            "row_content": "<p>Yes. NCCO technology is modular and can be retrofitted into existing Primary Air Units (PAUs) and Air Handling Units (AHUs). Our team will assess your current system and recommend the optimal integration approach.</p>"
+            "heading": "什麼是活性氧？對人體有害嗎？",
+            "answer": "<p>活性氧是 NCCO 催化程序中產生的高反應性氧分子。其濃度遠低於對人體有害的水平，並已通過認證，可安全於有人使用的空間內持續運作。</p>"
           }
         },
         "faq_3": {
-          "type": "collapsible_row",
+          "type": "faq_item",
           "settings": {
-            "heading": "What are the maintenance requirements for commercial NCCO systems?",
-            "row_content": "<p>The NCCO catalyst lasts up to 12 years under normal conditions. Routine maintenance is minimal — primarily filter inspection and system checks. Our team provides ongoing maintenance support packages.</p>"
+            "heading": "淨化過程中產生的活性氧會影響健康嗎？",
+            "answer": "<p>不會。NCCO 納米孔反應層內產生的活性氧，會在進入環境空氣前已用於分解污染物，對人、寵物及植物均完全安全。</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "為何殺菌效率未能達到100%？",
+            "answer": "<p>在現實環境中，由於空氣中的污染物會持續產生，沒有任何淨化技術能達致絕對100%殺菌。NCCO 在標準化測試條件下，可分解超過99%的目標污染物，處於業界領先水平。</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "NCCO 氧聚解反應層的實際使用壽命有多長？",
+            "answer": "<p>NCCO 催化反應層在正常家居使用下，設計壽命長達12年。與需要頻密更換的傳統濾網不同，反應層能透過催化程序自我再生，大幅降低長期維護成本。</p>"
           }
         }
       },
       "block_order": [
         "faq_1",
         "faq_2",
-        "faq_3"
+        "faq_3",
+        "faq_4",
+        "faq_5"
       ],
       "settings": {
-        "caption": "FAQ",
-        "heading": "Frequently Asked Questions",
-        "heading_size": "h2",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "open_first_collapsible_row": false
-      }
-    },
-    "ncco-contact-cta": {
-      "type": "ncco-contact-cta",
-      "settings": {
-        "heading": "We're Here to Help",
-        "email": "sales@rhtind.com.hk",
-        "phone": "+852 2417 0075",
-        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "eyebrow": "",
+        "heading": "你需要知道的一切",
+        "bg_image": "ncco-faq-bg.png"
       }
     }
   },
   "order": [
-    "ncco-hero",
-    "ncco-trust-logos",
-    "ncco-icon-grid",
-    "ncco-iwt-1",
-    "ncco-iwt-2",
-    "ncco-cta-band",
-    "ncco-certifications",
-    "collapsible-content",
+    "ncco_hero_rKqCDF",
+    "ncco_trust_logos_CH6CXU",
+    "ncco_res_commitment",
+    "ncco_res_features",
+    "ncco_res_before_after",
+    "ncco_res_pollutants",
+    "ncco_text_image_tw4rWp",
+    "ncco_res_faq",
     "ncco-contact-cta"
   ]
 }

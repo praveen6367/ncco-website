@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "歡迎瀏覽 NCCO 官方網站",
             "link": ""
           }
         }
@@ -39,8 +39,8 @@
       "type": "header",
       "settings": {
         "menu": "main-menu",
-        "cta_label": "Contact Us",
-        "cta_url": "/pages/contact-us",
+        "cta_label": "聯絡我們",
+        "cta_url": "/pages/contact",
         "color_scheme": "scheme-1"
       }
     }

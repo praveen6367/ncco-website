@@ -106,7 +106,9 @@
       "back_to_blog": "Back to blog",
       "share": "Share this article",
       "success": "Your comment was posted successfully! Thank you!",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "table_of_contents": "Contents",
+      "related_blogs": "Related Articles"
     }
   },
   "onboarding": {
@@ -346,7 +348,8 @@
       "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">remove all</a>"
     },
     "video": {
-      "load_video": "Load video: {{ description }}"
+      "load_video": "Load video: {{ description }}",
+      "play": "Play video"
     },
     "slideshow": {
       "load_slide": "Load slide",
@@ -385,17 +388,27 @@
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
     },
+    "ncco_product_grid": {
+      "learn_more": "Learn More"
+    },
+    "ncco_product_lineup": {
+      "empty": "No products found in this collection.",
+      "select_collection": "Select a collection for this tab."
+    },
     "ncco_contact_cta": {
-      "email_label": "Email Us",
-      "phone_label": "Call Us",
-      "office_label": "Head Office",
-      "form_name": "Name",
-      "form_email": "Email",
-      "form_phone": "Mobile Number",
-      "form_message": "Message",
+      "eyebrow_default": "Get In Touch",
+      "heading_default": "We're Here to Help",
+      "subtext_default": "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you.",
+      "email_label": "EMAIL US",
+      "phone_label": "CALL US",
+      "office_label": "HEAD OFFICE",
+      "form_name": "NAME",
+      "form_email": "EMAIL ADDRESS",
+      "form_phone": "MOBILE NUMBER",
+      "form_message": "MESSAGE",
       "placeholder_name": "Enter Name",
-      "placeholder_email": "Enter Email",
-      "placeholder_phone": "Enter Mobile Numbers",
+      "placeholder_email": "Enter Email Address",
+      "placeholder_phone": "Enter Mobile Number",
       "placeholder_message": "Enter Message",
       "success": "Message sent — we'll be in touch soon.",
       "submit_default": "SUBMIT"

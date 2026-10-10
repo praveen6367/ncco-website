@@ -1,462 +1,600 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "bmola-hero": {
+    "ncco-hero": {
       "type": "ncco-hero",
+      "custom_css": [],
       "settings": {
-        "logo_asset": "brand-bmola-logo.png",
-        "brand_color": "#05A0C5",
-        "cta_text_color": "#ffffff",
-        "headline": "<p>Clean Air. With b-MOLA</p><p>Portable Purifiers.</p>",
-        "subtext": "Experience medical-grade air purification in your home, car, or office with sleek, powerful b-MOLA devices.",
-        "bullet_1": "Removes 99.9% of PM2.5, allergens, and viruses",
-        "bullet_2": "Whisper-quiet and energy-efficient design",
-        "bullet_3": "Perfect for homes, cars, and personal spaces",
-        "cta_label": "Discover Our Products",
-        "cta_url": "/pages/contact-us",
-        "card_image_asset": "brand-bmola-hero-card.jpg",
-        "background_asset": "brand-bmola-hero-bg.jpg",
-        "overlay_opacity": 65,
-        "subtext_gap": 200
+        "hero_height": 650,
+        "content_left": 115,
+        "content_top": 120,
+        "content_width": 395,
+        "subtext_top": 235,
+        "subtext_width": 350,
+        "card_width": 320,
+        "card_height": 240,
+        "card_top": 130,
+        "card_right": 25,
+        "card_radius": 20,
+        "eyebrow": "家用空氣淨化品牌",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>家用及便攜式<br/>空氣淨化方案</p>",
+        "subtext": "b-MOLA 設備將 NCCO 醫療級氧聚解技術帶入家居、汽車和個人空間。NCCO 技術能分解污染物而非僅僅吸附，提供長效潔淨的空氣。",
+        "bullet_1": "高效去除 PM2.5、過敏原與病毒達 99.9% 以上",
+        "bullet_2": "靜音節能設計，運作安靜高效",
+        "bullet_3": "理想適用於家居、汽車及個人環境",
+        "cta_label": "探索b-MOLA",
+        "cta_url": "#products",
+        "card_image_asset": "",
+        "background_asset": "",
+        "compact": false,
+        "overlay_opacity": 40,
+        "overlay_solid_color": "",
+        "dark": false
       }
     },
-    "bmola-trust": {
+    "ncco_trust_logos_FUW7ga": {
       "type": "ncco-trust-logos",
       "blocks": {
-        "tl1": {
+        "logo_rWBP3X": {
           "type": "logo",
           "settings": {
-            "asset": "tl-HSBC.svg",
-            "alt": "HSBC"
+            "asset": "",
+            "alt": ""
           }
         },
-        "tl2": {
+        "logo_Czwyqw": {
           "type": "logo",
           "settings": {
-            "asset": "tl-MTR.svg",
-            "alt": "MTR"
+            "asset": "tl-Hospital-authority.webp",
+            "alt": "Hospital Authority"
           }
         },
-        "tl3": {
+        "logo_TM3G94": {
           "type": "logo",
           "settings": {
-            "asset": "tl-HK-IFC-Mall.webp",
-            "alt": "IFC Mall"
+            "asset": "tl-ArchSD.webp",
+            "alt": "ArchSD"
           }
         },
-        "tl4": {
+        "logo_Lqygkm": {
           "type": "logo",
           "settings": {
-            "asset": "tl-HKHA.svg",
-            "alt": "HKHA"
+            "asset": "tl-Emaar-Properties.webp",
+            "alt": "Emaar Properties"
           }
         },
-        "tl5": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-JLL.svg",
-            "alt": "JLL"
-          }
-        },
-        "tl6": {
+        "logo_EAaTpc": {
           "type": "logo",
           "settings": {
             "asset": "tl-New-World-China.webp",
             "alt": "New World China"
           }
-        }
-      },
-      "block_order": [
-        "tl1",
-        "tl2",
-        "tl3",
-        "tl4",
-        "tl5",
-        "tl6"
-      ],
-      "settings": {
-        "heading": "Currently ensuring a better living standard for",
-        "heading_highlight": "40+ Countries and Regions"
-      }
-    },
-    "bmola-about": {
-      "type": "ncco-feature-split",
-      "blocks": {
-        "f1": {
-          "type": "feature",
+        },
+        "logo_wPCG3Q": {
+          "type": "logo",
           "settings": {
-            "title": "Built on NCCO Technology",
-            "body": "Backed by the proven NCCO purification system, b-MOLA ensures powerful air cleaning in compact, portable formats."
+            "asset": "tl-Hong-Kong-Land.webp",
+            "alt": "Hong Kong Land"
           }
         },
-        "f2": {
-          "type": "feature",
+        "logo_WrAeU7": {
+          "type": "logo",
           "settings": {
-            "title": "Made for Modern Living",
-            "body": "Whether at your desk, in your car, or on the move — b-MOLA fits seamlessly into your lifestyle without compromising on performance."
+            "asset": "tl-HK-IFC-Mall.webp",
+            "alt": "HK IFC Mall"
           }
         },
-        "f3": {
-          "type": "feature",
+        "logo_bTFPy8": {
+          "type": "logo",
           "settings": {
-            "title": "Trusted Daily Companion",
-            "body": "Used across homes, offices, and travel spaces, b-MOLA is trusted by thousands to deliver clean air on demand."
+            "asset": "tl-HAECO.webp",
+            "alt": "HAECO"
           }
         },
-        "f4": {
-          "type": "feature",
+        "logo_8Ep4RH": {
+          "type": "logo",
           "settings": {
-            "title": "Design Meets Function",
-            "body": "Minimalist aesthetics, long battery life, and ultra-quiet operation — b-MOLA is where smart technology meets personal well-being."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "eyebrow": "About Us",
-        "heading": "Engineered for Clean Living. Designed for Real Life.",
-        "body": "<p>With decades of research and innovation, NCCO is redefining air purification through science, technology, and global impact.</p>",
-        "dark": false,
-        "numbered": true,
-        "bg_color": "#F0F4FA",
-        "accent_color": "#05A0C5",
-        "cta_label": "Know More About Us",
-        "cta_url": "/pages/about-us",
-        "cta_variant": "teal"
-      }
-    },
-    "bmola-gallery": {
-      "type": "ncco-brand-about",
-      "blocks": {
-        "i1": {
-          "type": "image",
-          "settings": {
-            "asset": "rht-p1.png",
-            "caption": ""
+            "asset": "tl-changi-airport-singapore.webp",
+            "alt": "Changi Airport Singapore"
           }
         },
-        "i2": {
-          "type": "image",
+        "logo_TJ3NNX": {
+          "type": "logo",
           "settings": {
-            "asset": "rht-p2.png",
-            "caption": "Yan Oi Tong Kindergarten"
+            "asset": "tl-Perfit.webp",
+            "alt": "Perfit"
           }
         },
-        "i3": {
-          "type": "image",
+        "logo_bibhQ7": {
+          "type": "logo",
           "settings": {
-            "asset": "rht-p3.png",
-            "caption": ""
+            "asset": "tl-HK-International-Airport.webp",
+            "alt": "HK International Airport"
           }
         },
-        "i4": {
-          "type": "image",
+        "logo_w74Dd3": {
+          "type": "logo",
           "settings": {
-            "asset": "case-hkjc-shatin.png",
-            "caption": ""
+            "asset": "tl-Henderson.webp",
+            "alt": "Henderson"
           }
         },
-        "i5": {
-          "type": "image",
+        "logo_7n7KbF": {
+          "type": "logo",
           "settings": {
-            "asset": "rht-p4.png",
-            "caption": ""
+            "asset": "tl-CMA-Testing.webp",
+            "alt": "CMA Testing"
           }
         },
-        "i6": {
-          "type": "image",
+        "logo_TtGzxW": {
+          "type": "logo",
           "settings": {
-            "asset": "case-hkia.png",
-            "caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "i1",
-        "i2",
-        "i3",
-        "i4",
-        "i5",
-        "i6"
-      ],
-      "settings": {
-        "bg_color": "#ffffff",
-        "centered": true,
-        "eyebrow": "Our Products",
-        "heading": "Explore Our Purifiers",
-        "subtext": "Explore our range of portable air purifiers designed to deliver advanced protection in every environment.",
-        "gallery_columns": "3"
-      }
-    },
-    "bmola-benefits": {
-      "type": "ncco-icon-grid",
-      "blocks": {
-        "b1": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "bmola-icon-tech.svg",
-            "title": "Advanced NCCO Tech",
-            "body": "<p>Neutralizes pollutants, odors, bacteria, and viruses at the molecular level — not just traps them.</p>"
+            "asset": "tl-Megabox.webp",
+            "alt": "Megabox"
           }
         },
-        "b2": {
-          "type": "card",
+        "logo_Jfc8xV": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-shield.svg",
-            "title": "Medical-Grade Protection",
-            "body": "<p>Delivers the same level of protection trusted by hospitals and medical facilities worldwide.</p>"
+            "asset": "tl-MTR.webp",
+            "alt": "MTR"
           }
         },
-        "b3": {
-          "type": "card",
+        "logo_WJqe33": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-portable.svg",
-            "title": "Portable & Lightweight",
-            "body": "<p>Compact, lightweight, and easy to carry — ideal for home, car, office, or travel.</p>"
+            "asset": "tl-Mira-Place.webp",
+            "alt": "Mira Place"
           }
         },
-        "b4": {
-          "type": "card",
+        "logo_GtKP4k": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-silent.svg",
-            "title": "Silent Operation",
-            "body": "<p>Whisper-quiet performance, so you enjoy clean air without any noise disruption.</p>"
+            "asset": "tl-ABC-Pathways-International-Kindergarten.webp",
+            "alt": "ABC Pathways International Kindergarten"
           }
         },
-        "b5": {
-          "type": "card",
+        "logo_yRNPXD": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-filter.svg",
-            "title": "Long-Lasting Filters",
-            "body": "<p>Low-maintenance filters that last significantly longer than traditional HEPA systems.</p>"
+            "asset": "tl-CPL-Aromas.webp",
+            "alt": "CPL Aromas"
           }
         },
-        "b6": {
-          "type": "card",
+        "logo_hJPNRx": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-power.svg",
-            "title": "Rechargeable Power",
-            "body": "<p>Runs on built-in power with long battery life, optimized for everyday use.</p>"
+            "asset": "tl-HKJC.webp",
+            "alt": "HKJC"
           }
         },
-        "b7": {
-          "type": "card",
+        "logo_zpgL3e": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-design.svg",
-            "title": "Minimalist Design",
-            "body": "<p>Sleek, modern design that blends effortlessly into any environment.</p>"
+            "asset": "tl-LCSD.webp",
+            "alt": "LCSD"
           }
         },
-        "b8": {
-          "type": "card",
+        "logo_eKrNCw": {
+          "type": "logo",
           "settings": {
-            "icon_asset": "bmola-icon-global.svg",
-            "title": "Globally Certified",
-            "body": "<p>Backed by certifications and used in public transportation, clinics, and professional spaces.</p>"
+            "asset": "tl-kai-shing-management-services-limited.webp",
+            "alt": "Kai Shing Management Services"
+          }
+        },
+        "logo_aFYz4y": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR-Propertym.webp",
+            "alt": "MTR Property"
+          }
+        },
+        "logo_wdPCbC": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Royal-Perth-Hospital.webp",
+            "alt": "Royal Perth Hospital"
+          }
+        },
+        "logo_nXeUpG": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Savills.webp",
+            "alt": "Savills"
+          }
+        },
+        "logo_63yHLf": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Cohiba-atmosphere.webp",
+            "alt": "Cohiba Atmosphere"
+          }
+        },
+        "logo_3nfEmp": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-FEHD.webp",
+            "alt": "FEHD"
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5",
-        "b6",
-        "b7",
-        "b8"
+        "logo_rWBP3X",
+        "logo_Czwyqw",
+        "logo_TM3G94",
+        "logo_Lqygkm",
+        "logo_EAaTpc",
+        "logo_wPCG3Q",
+        "logo_WrAeU7",
+        "logo_bTFPy8",
+        "logo_8Ep4RH",
+        "logo_TJ3NNX",
+        "logo_bibhQ7",
+        "logo_w74Dd3",
+        "logo_7n7KbF",
+        "logo_TtGzxW",
+        "logo_Jfc8xV",
+        "logo_WJqe33",
+        "logo_GtKP4k",
+        "logo_yRNPXD",
+        "logo_hJPNRx",
+        "logo_zpgL3e",
+        "logo_eKrNCw",
+        "logo_aFYz4y",
+        "logo_wdPCbC",
+        "logo_nXeUpG",
+        "logo_63yHLf",
+        "logo_3nfEmp"
       ],
       "settings": {
-        "eyebrow": "Unique Features",
-        "heading": "Choose Us for Unmatched Performance",
-        "subtext": "b-MOLA purifiers bring medical-grade air protection into everyday life. Designed for flexibility and built with advanced NCCO technology, our devices are trusted by professionals and perfect for personal spaces.",
-        "columns": "4",
-        "align": "center",
-        "numbered": false,
-        "flat": false,
-        "cta_label": "",
-        "cta_url": "/pages/contact-us",
-        "dark": true,
-        "split_header": false,
-        "table_grid": true,
-        "hero_card": false,
-        "accent_color": "#05A0C5",
-        "cta_variant": "blue"
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠性",
+        "static_grid": false
       }
     },
-    "bmola-products": {
-      "type": "ncco-product-grid",
+    "ncco_about_strip_fitLUf": {
+      "type": "ncco-about-strip",
       "blocks": {
-        "p1": {
+        "item_xE8BUn": {
+          "type": "item",
+          "settings": {
+            "number": "01",
+            "title": "建基於NCCO技術",
+            "body": "憑藉經過驗證的NCCO淨化系統支持，b-MOLA以小巧便攜的形式確保強效空氣淨化。"
+          }
+        },
+        "item_XN8wnB": {
+          "type": "item",
+          "settings": {
+            "number": "03",
+            "title": "信賴的日常伴侶",
+            "body": "應用於家居、辦公室及旅途空間，數千人信賴b-MOLA按需提供潔淨空氣。"
+          }
+        },
+        "item_chchfV": {
+          "type": "item",
+          "settings": {
+            "number": "03",
+            "title": "專為現代生活而造",
+            "body": "無論在書桌旁、車內或旅途中，b-MOLA都能無縫融入您的生活方式，同時不影響性能。"
+          }
+        },
+        "item_KkKeQe": {
+          "type": "item",
+          "settings": {
+            "number": "04",
+            "title": "設計與功能兼備",
+            "body": "極簡美學、長效電池壽命及超靜音運作——b-MOLA是智能技術與個人健康的完美結合。"
+          }
+        }
+      },
+      "block_order": [
+        "item_xE8BUn",
+        "item_XN8wnB",
+        "item_chchfV",
+        "item_KkKeQe"
+      ],
+      "custom_css": [
+        ".ncco-about-strip {background: #f4fbfd;}",
+        ".ncco-about-strip__heading,.ncco-about-card__title {color: #0d3b60;}",
+        ".ncco-about-strip__eyebrow,.ncco-about-strip__sub,.ncco-about-card__body {color: #8295a8;}",
+        ".ncco-about-strip__eyebrow:before {background: #55c2df;}",
+        ".ncco-about-card {background: #fff;}",
+        ".ncco-about-card__num {color: #d9dde2;}",
+        ".ncco-about-strip__cta {background: #55c2df !important;}"
+      ],
+      "name": "NCCO About Strip",
+      "settings": {
+        "eyebrow": "關於我們",
+        "heading": "為潔淨生活而設計，為真實生活而打造。",
+        "subtext": "憑藉數十年的研究與創新，NCCO正透過科學、技術及全球影響力重新定義空氣淨化。",
+        "cta_label": "了解更多關於我們",
+        "cta_url": ""
+      }
+    },
+    "ncco_products_ENTAmw": {
+      "type": "ncco-products",
+      "blocks": {
+        "product_Ed7tj8": {
           "type": "product",
           "settings": {
-            "product_code": "BM-Pro",
-            "product_name": "Home Air Purifier",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "home",
-            "asset": "bmola-p1.png"
+            "title": "",
+            "text": "",
+            "link": "",
+            "overlay": false,
+            "overlay_opacity": 45
           }
         },
-        "p2": {
+        "product_N4Wh3h": {
           "type": "product",
           "settings": {
-            "product_code": "BM-300",
-            "product_name": "Bedroom Purifier",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "home",
-            "asset": "bmola-p2.png"
+            "image": "shopify://shop_images/Frame_1984078681_361a1bc1-63bc-433c-816b-153063dceaf3.png",
+            "title": "仁愛堂幼稚園",
+            "text": "",
+            "link": "",
+            "overlay": true,
+            "overlay_opacity": 45
           }
         },
-        "p3": {
+        "product_trhR6h": {
           "type": "product",
           "settings": {
-            "product_code": "BM-Go",
-            "product_name": "Car & Travel Purifier",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "portable",
-            "asset": "bmola-p3.png"
+            "image": "shopify://shop_images/Frame_1984078683_a18631ba-7075-40ed-a1a2-38b3d8b580c9.png",
+            "title": "",
+            "text": "",
+            "link": "",
+            "overlay": false,
+            "overlay_opacity": 45
+          }
+        },
+        "product_MrX3Cd": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/39.png",
+            "title": "",
+            "text": "",
+            "link": "",
+            "overlay": false,
+            "overlay_opacity": 45
+          }
+        },
+        "product_MUh8g4": {
+          "type": "product",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "",
+            "overlay": false,
+            "overlay_opacity": 45
+          }
+        },
+        "product_ENwxP8": {
+          "type": "product",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "",
+            "overlay": false,
+            "overlay_opacity": 45
           }
         }
       },
       "block_order": [
-        "p1",
-        "p2",
-        "p3"
+        "product_Ed7tj8",
+        "product_N4Wh3h",
+        "product_trhR6h",
+        "product_MrX3Cd",
+        "product_MUh8g4",
+        "product_ENwxP8"
       ],
+      "custom_css": [],
+      "name": "NCCO Products",
       "settings": {
-        "eyebrow": "Product Lineup",
-        "heading": "Find Your b-MoLa",
-        "subtext": "Explore our range of portable air purifiers — from compact travel units to full-room home purifiers designed for every space and lifestyle.",
-        "cta_label": "Request Product Info",
-        "cta_url": "/pages/contact-us",
-        "cta_variant": "blue",
-        "tab_1": "All Products",
-        "tab_2": "Home",
-        "tab_3": "Portable",
-        "dark": false,
-        "accent_color": "#05A0C5"
+        "eyebrow": "我們的產品",
+        "heading": "探索我們的淨化器",
+        "description": "<p>探索我們的便攜式空氣淨化器系列，專為在每個環境中提供先進保護而設計。</p>"
       }
     },
-    "bmola-how": {
-      "type": "ncco-dual-image-text",
-      "settings": {
-        "eyebrow": "NCCO Science",
-        "heading": "How b-MOLA Protects Your Space",
-        "text": "<p>Unlike conventional filters that trap particles, b-MoLa uses patented NCCO (Nano-Confined Catalytic Oxidation) technology to decompose pollutants at the molecular level — breaking them down into harmless water and CO₂.</p><p>No ozone. No toxic byproducts. Just clean, safe air for your family.</p>",
-        "image_primary": "bmola-p1.png",
-        "image_secondary": "bmola-p2.png",
-        "layout": "image_first",
-        "dark": false,
-        "accent_color": "#05A0C5"
-      }
-    },
-    "bmola-certifications": {
-      "type": "ncco-certifications",
-      "settings": {
-        "eyebrow": "Tested and Certified",
-        "heading": "Certified Safe. Trusted Worldwide.",
-        "featured_asset": "ncco-certifications-web.png"
-      }
-    },
-    "bmola-faq": {
-      "type": "ncco-faq",
+    "ncco_unique_benefits_jgE3PQ": {
+      "type": "ncco-unique-benefits",
       "blocks": {
-        "q1": {
-          "type": "faq_item",
+        "benefit_YgBamP": {
+          "type": "benefit",
           "settings": {
-            "heading": "How often does the b-MoLa filter need replacing?",
-            "answer": "<p>The NCCO catalyst in b-MoLa purifiers lasts up to 12 years under normal use — far longer than conventional HEPA or activated carbon filters which need replacing every 6–12 months.</p>"
+            "title": "隱形防護罩",
+            "description": "形成透氣防護屏障，保護肌膚免受細菌、刺激物及污染物侵害。"
           }
         },
-        "q2": {
-          "type": "faq_item",
+        "benefit_aiThQC": {
+          "type": "benefit",
           "settings": {
-            "heading": "Is b-MoLa safe for children and pets?",
-            "answer": "<p>Yes. The NCCO catalyst is a non-toxic mineral. Ozone output is below 0.03 ppm — well under the international UL 867 safety limit of 0.05 ppm. b-MoLa is used in kindergartens and elderly care homes.</p>"
+            "title": "臨床實證",
+            "description": "臨床測試殺滅99.9%病毒及細菌，包括人類冠狀病毒。"
           }
         },
-        "q3": {
-          "type": "faq_item",
+        "benefit_Gm87w4": {
+          "type": "benefit",
           "settings": {
-            "heading": "Can b-MoLa be used in a car?",
-            "answer": "<p>Yes. Several b-MoLa models are portable and USB-rechargeable, making them ideal for use in cars, on planes, and in hotel rooms.</p>"
+            "title": "深層保濕",
+            "description": "滋潤修復乾燥、龜裂或易生濕疹的肌膚，無黏膩感或殘留。"
           }
         },
-        "q4": {
-          "type": "faq_item",
+        "benefit_CYMLpc": {
+          "type": "benefit",
           "settings": {
-            "heading": "How is b-MoLa different from standard HEPA purifiers?",
-            "answer": "<p>Standard HEPA purifiers trap particles — they don't destroy them. b-MoLa uses NCCO catalytic oxidation to decompose pollutants at the molecular level into harmless water and CO₂.</p>"
+            "title": "安全純淨",
+            "description": "適合所有膚質，包括敏感及易敏肌膚，不含刺激性化學成分。"
           }
         },
-        "q5": {
-          "type": "faq_item",
+        "benefit_PbHxxW": {
+          "type": "benefit",
           "settings": {
-            "heading": "What spaces does b-MoLa cover?",
-            "answer": "<p>b-MoLa models range from compact car and travel units to full-room home purifiers covering spaces up to 30m². There is a model suited to every room type and lifestyle.</p>"
+            "title": "持久效果",
+            "description": "效果持續數小時，全日提供持續保護。"
           }
         },
-        "q6": {
-          "type": "faq_item",
+        "benefit_9kjC6j": {
+          "type": "benefit",
           "settings": {
-            "heading": "Where is b-MoLa sold?",
-            "answer": "<p>b-MoLa is available across Hong Kong, mainland China, and 40+ countries and regions through authorised retailers and the NCCO Group online store.</p>"
+            "title": "隨身攜帶",
+            "description": "小巧輕便，完美放入口袋、袋包或桌上。"
+          }
+        },
+        "benefit_RTjwmU": {
+          "type": "benefit",
+          "settings": {
+            "title": "無黏膩感",
+            "description": "順滑清爽，使用後感覺自然舒適。"
+          }
+        },
+        "benefit_nCDr3k": {
+          "type": "benefit",
+          "settings": {
+            "title": "科學支撐",
+            "description": "採用先進護膚技術及皮膚科研究開發而成。"
           }
         }
       },
       "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6"
+        "benefit_YgBamP",
+        "benefit_aiThQC",
+        "benefit_Gm87w4",
+        "benefit_CYMLpc",
+        "benefit_PbHxxW",
+        "benefit_9kjC6j",
+        "benefit_RTjwmU",
+        "benefit_nCDr3k"
       ],
+      "name": "NCCO Unique Benefits",
       "settings": {
-        "eyebrow": "You Ask",
-        "accent_color": "#05A0C5",
-        "heading": "Frequently Asked Questions",
-        "three_col": true
+        "eyebrow": "獨特優勢",
+        "heading": "前所未有的肌膚防護體驗",
+        "description": "NCCO-IG融合先進護膚科學與日常實用性，提供無形、持久的保護，溫和、強效且實證有效。"
       }
     },
-    "bmola-contact": {
+    "ncco_text_image_CVWqz6": {
+      "type": "ncco-text-image",
+      "custom_css": [
+        ".ncco-iwt {background: #fff !important;}",
+        ".ncco-iwt__heading {color: #071a20 !important;}",
+        ".ncco-iwt__body,.ncco-iwt__body p {color: #71838a !important;}",
+        ".ncco-eyebrow {color: #71838a !important;}",
+        ".ncco-eyebrow:before {background: #08b8d4 !important;}",
+        ".ncco-iwt__cta .ncco-cta {background: #08b8d4 !important; color: #fff !important; border-color: #08b8d4 !important;}",
+        ".ncco-iwt__cta .ncco-cta * {color: #fff !important;}"
+      ],
+      "name": "NCCO Image + Text",
+      "settings": {
+        "eyebrow": "產品認證",
+        "heading": "認證安全，全球信賴。",
+        "intro": "<p>b-MOLA空氣淨化器不只設計精美——更獲全球認可認證及真實使用案例支持。從FDA登記到CE合規，我們的技術達到國際安全及性能標準。獲全球醫院、診所、公共交通系統及家庭信賴，b-MOLA代表便攜式空氣淨化的新標準。<br/><br/></p>",
+        "text": "<p>b-MOLA空氣淨化器不只設計精美——更獲全球認可認證及真實使用案例支持。從FDA登記到CE合規，我們的技術達到國際安全及性能標準。獲全球醫院、診所、公共交通系統及家庭信賴，b-MOLA代表便攜式空氣淨化的新標準。<br/><br/></p>",
+        "image": "shopify://shop_images/Group_1000003563.png",
+        "asset": "",
+        "asset_secondary": "",
+        "overlay_text": "",
+        "reverse_layout": false,
+        "cta_label": "探索我們的產品",
+        "cta_url": "",
+        "dark": false
+      }
+    },
+    "ncco_video_section_xAApBW": {
+      "type": "ncco-video-section",
+      "name": "NCCO Video Section",
+      "settings": {
+        "eyebrow": "親眼見證實效",
+        "heading": "b-MOLA如何保護您的空間",
+        "description": "<p>觀看我們的短片，了解b-MOLA的NCCO技術如何淨化空氣、中和有害顆粒及改善室內環境——以真實科學為基礎，而非空洞承諾。</p>",
+        "button_text": "下載產品冊",
+        "button_url": "",
+        "video_url": ""
+      }
+    },
+    "ncco_questions_F94KmW": {
+      "type": "ncco-questions",
+      "blocks": {
+        "faq_iHRtfJ": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_38HmU3": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_RfG46P": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_UQh97p": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_PnztL7": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        },
+        "faq_WC9EQi": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_iHRtfJ",
+        "faq_38HmU3",
+        "faq_RfG46P",
+        "faq_UQh97p",
+        "faq_PnztL7",
+        "faq_WC9EQi"
+      ],
+      "name": "NCCO Questions",
+      "settings": {
+        "eyebrow": "常見問題",
+        "heading": "常見問題解答"
+      }
+    },
+    "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "accent_color": "#05A0C5",
-        "heading": "We're Here to Help",
-        "email": "info@b-mola.com.hk",
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
+        "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "提交訊息"
       }
     }
   },
   "order": [
-    "bmola-hero",
-    "bmola-trust",
-    "bmola-about",
-    "bmola-gallery",
-    "bmola-benefits",
-    "bmola-products",
-    "bmola-how",
-    "bmola-certifications",
-    "bmola-faq",
-    "bmola-contact"
+    "ncco-hero",
+    "ncco_trust_logos_FUW7ga",
+    "ncco_about_strip_fitLUf",
+    "ncco_products_ENTAmw",
+    "ncco_unique_benefits_jgE3PQ",
+    "ncco_text_image_CVWqz6",
+    "ncco_video_section_xAApBW",
+    "ncco_questions_F94KmW",
+    "ncco-contact-cta"
   ]
 }

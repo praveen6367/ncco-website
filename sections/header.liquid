@@ -32,7 +32,7 @@
         {%- if link.links.size > 0 or is_brand_menu or is_impact_menu -%}
           <div class="ncco-hdr__item ncco-hdr__item--drop">
             {%- if is_brand_menu -%}
-              <a href="{{ link.url | default: root_path | append: '/pages/our-brands' }}" class="ncco-hdr__link" aria-haspopup="true">
+              <a href="{%- if link.url != blank and link.url != '#' -%}{{ link.url }}{%- else -%}{{ root_path }}/pages/our-brands{%- endif -%}" class="ncco-hdr__link" aria-haspopup="true">
                 {{- link.title -}}
                 <svg class="ncco-hdr__chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -188,9 +188,10 @@
         {%- endform -%}
       </div>
 
-      {%- if section.settings.cta_label != blank -%}
-        <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact-us{% endif %}" class="ncco-hdr__cta">
-          <span>{{ section.settings.cta_label }}</span>
+      {%- if section.settings.cta_label != blank or true -%}
+        {%- assign default_cta = 'ncco.header.contact_us' | t -%}
+        <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact{% endif %}" class="ncco-hdr__cta">
+          <span>{% if section.settings.cta_label != blank and section.settings.cta_label != 'Contact Us' and section.settings.cta_label != '聯絡我們' %}{{ section.settings.cta_label }}{% else %}{{ default_cta }}{% endif %}</span>
           <span class="ncco-hdr__cta-icon" aria-hidden="true">
             <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="19" cy="19" r="19" fill="#FECB07"/>
@@ -360,7 +361,7 @@
   </div>
 
   <div class="ncco-mob-nav__foot">
-    <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact-us{% endif %}" class="ncco-mob-nav__cta">
+    <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ root_path }}/pages/contact{% endif %}" class="ncco-mob-nav__cta">
       {%- assign default_cta = 'ncco.header.contact_us' | t -%}
       <span>{{ section.settings.cta_label | default: default_cta }}</span>
       <span class="ncco-mob-nav__cta-icon" aria-hidden="true">

@@ -231,7 +231,7 @@
                 {%- else -%}
 
                   <div class="ncco-product-lineup__empty">
-                    No products found in this collection.
+                    {{ 'sections.ncco_product_lineup.empty' | t }}
                   </div>
 
                 {%- endfor -%}
@@ -239,7 +239,7 @@
               {%- else -%}
 
                 <div class="ncco-product-lineup__empty">
-                  Select a collection for this tab.
+                  {{ 'sections.ncco_product_lineup.select_collection' | t }}
                 </div>
 
               {%- endif -%}

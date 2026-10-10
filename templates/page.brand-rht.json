@@ -1,465 +1,624 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "rht-hero": {
+    "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "logo_asset": "brand-rht-logo.png",
-        "brand_color": "#22B39F",
-        "cta_text_color": "#ffffff",
-        "headline": "<p>Industrial-Grade</p><p><em>Air Purification</em></p>",
-        "subtext": "Designed for hospitals, factories, and high-demand environments, RHT systems deliver reliable, large-scale air purification backed by NCCO's patented technology.",
-        "bullet_1": "99.9% purification rate against airborne pollutants",
-        "bullet_2": "Adapts in real time to changing air quality",
-        "bullet_3": "Backed by NCCO's patented technology",
-        "cta_label": "Discover our Products",
-        "cta_url": "/pages/contact-us",
-        "card_image_asset": "brand-rht-hero-card.png",
-        "background_asset": "brand-rht-hero-bg.jpg",
-        "overlay_opacity": 65,
-        "subtext_gap": 255
+        "eyebrow": "RHT 信山實業",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>工業級空氣淨化<br/>解決方案</p>",
+        "subtext": "信山實業 (RHT) 系統專為醫院、工廠和高要求環境設計，透過 NCCO 專利技術，提供可靠且大規模的空氣淨化系統。",
+        "bullet_1": "對空氣傳播污染物的去除率極高",
+        "bullet_2": "具備模組化安裝與持續運作",
+        "bullet_3": "由 NCCO 專利技術支持",
+        "cta_label": "探索RHT產品",
+        "cta_url": "#products",
+        "card_image_asset": "",
+        "background_image": "shopify://shop_images/thermal-power-plant_1.png",
+        "background_asset": "",
+        "compact": false,
+        "overlay_opacity": 55,
+        "overlay_solid_color": "",
+        "dark": true
       }
     },
-    "rht-trust": {
+    "ncco_trust_logos_Kk3WYQ": {
       "type": "ncco-trust-logos",
       "blocks": {
-        "tl_01": {
+        "logo_pJ76da": {
+          "type": "logo",
+          "settings": {
+            "asset": "",
+            "alt": ""
+          }
+        },
+        "logo_FhBw3Y": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Hospital-authority.webp",
+            "alt": "Hospital Authority"
+          }
+        },
+        "logo_X7pRFm": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ArchSD.webp",
+            "alt": "ArchSD"
+          }
+        },
+        "logo_T3NXMD": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Emaar-Properties.webp",
+            "alt": "Emaar Properties"
+          }
+        },
+        "logo_rYVpnA": {
           "type": "logo",
           "settings": {
             "asset": "tl-New-World-China.webp",
             "alt": "New World China"
           }
         },
-        "tl_02": {
+        "logo_WqxKcG": {
           "type": "logo",
           "settings": {
-            "asset": "tl-JLL.svg",
-            "alt": "JLL"
+            "asset": "tl-Hong-Kong-Land.webp",
+            "alt": "Hong Kong Land"
           }
         },
-        "tl_03": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-HSBC.svg",
-            "alt": "HSBC"
-          }
-        },
-        "tl_04": {
+        "logo_QVtJdK": {
           "type": "logo",
           "settings": {
             "asset": "tl-HK-IFC-Mall.webp",
-            "alt": "IFC"
+            "alt": "HK IFC Mall"
           }
         },
-        "tl_05": {
+        "logo_ExBRcL": {
           "type": "logo",
           "settings": {
-            "asset": "tl-MTR.svg",
+            "asset": "tl-HAECO.webp",
+            "alt": "HAECO"
+          }
+        },
+        "logo_MrWVqN": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-changi-airport-singapore.webp",
+            "alt": "Changi Airport Singapore"
+          }
+        },
+        "logo_3tzpTj": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Perfit.webp",
+            "alt": "Perfit"
+          }
+        },
+        "logo_ziPy47": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HK-International-Airport.webp",
+            "alt": "HK International Airport"
+          }
+        },
+        "logo_q7aQHR": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Henderson.webp",
+            "alt": "Henderson"
+          }
+        },
+        "logo_9xdH9W": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CMA-Testing.webp",
+            "alt": "CMA Testing"
+          }
+        },
+        "logo_EQxWhi": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Megabox.webp",
+            "alt": "Megabox"
+          }
+        },
+        "logo_dQFwNt": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR.webp",
             "alt": "MTR"
           }
         },
-        "tl_06": {
+        "logo_Aa9gb3": {
           "type": "logo",
           "settings": {
-            "asset": "tl-HKHA.svg",
-            "alt": "HKHA"
+            "asset": "tl-Mira-Place.webp",
+            "alt": "Mira Place"
+          }
+        },
+        "logo_J8YLFU": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-ABC-Pathways-International-Kindergarten.webp",
+            "alt": "ABC Pathways International Kindergarten"
+          }
+        },
+        "logo_WtXR76": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-CPL-Aromas.webp",
+            "alt": "CPL Aromas"
+          }
+        },
+        "logo_z7K6D9": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-HKJC.webp",
+            "alt": "HKJC"
+          }
+        },
+        "logo_kwjXV7": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-LCSD.webp",
+            "alt": "LCSD"
+          }
+        },
+        "logo_qwcr4g": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-kai-shing-management-services-limited.webp",
+            "alt": "Kai Shing Management Services"
+          }
+        },
+        "logo_yWR6cf": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-MTR-Propertym.webp",
+            "alt": "MTR Property"
+          }
+        },
+        "logo_WmrBVf": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Royal-Perth-Hospital.webp",
+            "alt": "Royal Perth Hospital"
+          }
+        },
+        "logo_rbyiiz": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Savills.webp",
+            "alt": "Savills"
+          }
+        },
+        "logo_MpznCX": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-Cohiba-atmosphere.webp",
+            "alt": "Cohiba Atmosphere"
+          }
+        },
+        "logo_btqE7f": {
+          "type": "logo",
+          "settings": {
+            "asset": "tl-FEHD.webp",
+            "alt": "FEHD"
           }
         }
       },
       "block_order": [
-        "tl_01",
-        "tl_02",
-        "tl_03",
-        "tl_04",
-        "tl_05",
-        "tl_06"
+        "logo_pJ76da",
+        "logo_FhBw3Y",
+        "logo_X7pRFm",
+        "logo_T3NXMD",
+        "logo_rYVpnA",
+        "logo_WqxKcG",
+        "logo_QVtJdK",
+        "logo_ExBRcL",
+        "logo_MrWVqN",
+        "logo_3tzpTj",
+        "logo_ziPy47",
+        "logo_q7aQHR",
+        "logo_9xdH9W",
+        "logo_EQxWhi",
+        "logo_dQFwNt",
+        "logo_Aa9gb3",
+        "logo_J8YLFU",
+        "logo_WtXR76",
+        "logo_z7K6D9",
+        "logo_kwjXV7",
+        "logo_qwcr4g",
+        "logo_yWR6cf",
+        "logo_WmrBVf",
+        "logo_rbyiiz",
+        "logo_MpznCX",
+        "logo_btqE7f"
       ],
       "settings": {
-        "heading": "Trusted by Industry Leaders for",
-        "heading_highlight": "Quality and Reliability"
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠性",
+        "static_grid": false
       }
     },
-    "rht-about": {
-      "type": "ncco-brand-about",
+    "ncco_industrial_brand_ApdFX7": {
+      "type": "ncco-industrial-brand",
       "blocks": {
-        "f1": {
+        "feature_LbzTLz": {
           "type": "feature",
           "settings": {
-            "title": "Bringing Clean Air to Scale",
-            "body": "We develop industrial-grade air purification systems for hospitals, transit, and factories — built to run continuously and reliably."
+            "title": "大規模帶來潔淨空氣",
+            "text": "我們為醫院、交通及工廠開發工業級空氣淨化系統，設計用於持續可靠運作。"
           }
         },
-        "f2": {
+        "feature_rtFdXz": {
           "type": "feature",
           "settings": {
-            "title": "Built for Critical Infrastructure",
-            "body": "RHT units use NCCO technology and are designed for high-demand spaces — efficient, adaptable, and trusted by professionals."
+            "title": "專為關鍵基礎設施而建",
+            "text": "RHT設備採用NCCO技術，專為高需求空間設計——高效、靈活，獲專業人士信賴。"
           }
         },
-        "i1": {
-          "type": "image",
+        "case_YHU6cP": {
+          "type": "case",
           "settings": {
-            "asset": "rht-p1.png",
-            "caption": "HSBC Asia Pacific Data Centre"
+            "image": "shopify://shop_images/Frame_1984078681_361a1bc1-63bc-433c-816b-153063dceaf3.png",
+            "label": "亞太數據中心",
+            "image_alt": ""
           }
         },
-        "i2": {
-          "type": "image",
+        "case_W3rdKY": {
+          "type": "case",
           "settings": {
-            "asset": "rht-p2.png",
-            "caption": "Yan Oi Tong Kindergarten"
+            "image": "shopify://shop_images/Frame_1984078683_a18631ba-7075-40ed-a1a2-38b3d8b580c9.png",
+            "label": "仁愛堂幼稚園",
+            "image_alt": ""
           }
         },
-        "i3": {
-          "type": "image",
+        "case_Hjzq8F": {
+          "type": "case",
           "settings": {
-            "asset": "rht-p3.png",
-            "caption": "HK Baptist Hospital"
+            "image": "shopify://shop_images/Frame_1984078682_f1c2b2fe-f757-4c6d-8257-bbe7083b717e.png",
+            "label": "香港浸信醫院",
+            "image_alt": ""
           }
         },
-        "i4": {
-          "type": "image",
+        "case_4gWyTA": {
+          "type": "case",
           "settings": {
-            "asset": "rht-p4.png",
-            "caption": "Singapore Airport & Zoo"
+            "image": "shopify://shop_images/39.png",
+            "label": "新加坡機場",
+            "image_alt": ""
           }
         }
       },
       "block_order": [
-        "f1",
-        "f2",
-        "i1",
-        "i2",
-        "i3",
-        "i4"
+        "feature_LbzTLz",
+        "feature_rtFdXz",
+        "case_YHU6cP",
+        "case_W3rdKY",
+        "case_Hjzq8F",
+        "case_4gWyTA"
       ],
+      "name": "NCCO Industrial Brand",
       "settings": {
-        "bg_color": "#EEF7F5",
-        "eyebrow": "Just An Intro",
-        "heading": "An Industrial Air Purification Brand Built for Performance",
-        "cta_label": "Know More About Us",
-        "cta_url": "/pages/about-us",
-        "cta_color": "#22B39F",
-        "cta_text_color": "#ffffff"
+        "eyebrow": "品牌簡介",
+        "heading": "專為高效能打造的工業空氣淨化品牌",
+        "button_text": "了解更多關於我們",
+        "button_url": ""
       }
     },
-    "rht-benefits": {
-      "type": "ncco-icon-grid",
+    "ncco_industrial_benefits_Gb7TbA": {
+      "type": "ncco-industrial-benefits",
       "blocks": {
-        "b1": {
-          "type": "card",
+        "benefit_gaXwt9": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-spaces.svg",
-            "title": "Designed for Large Spaces",
-            "body": "<p>Purifies high air volumes across hospitals, stations, and factories.</p>"
+            "icon": "layers",
+            "title": "專為大型空間設計",
+            "text": "淨化醫院、車站及工廠的大量空氣。"
           }
         },
-        "b2": {
-          "type": "card",
+        "benefit_JmLr8h": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-modular.svg",
-            "title": "Modular Installation",
-            "body": "<p>Fits diverse infrastructures with scalable setup options.</p>"
+            "icon": "puzzle",
+            "title": "模組化安裝",
+            "text": "配合多種基礎設施，提供可擴展的安裝選項。"
           }
         },
-        "b3": {
-          "type": "card",
+        "benefit_gNBeX3": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-reliable.svg",
-            "title": "24/7 Reliable Operation",
-            "body": "<p>Non-stop air treatment with minimal downtime or servicing.</p>"
+            "icon": "clock",
+            "title": "24/7可靠運作",
+            "text": "全天候空氣處理，停機時間及維修需求極少。"
           }
         },
-        "b4": {
-          "type": "card",
+        "benefit_4WnhnD": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-tech.svg",
-            "title": "Powered by NCCO Technology",
-            "body": "<p>Breaks down pollutants using patented nanotech purification.</p>"
+            "icon": "technology",
+            "title": "NCCO技術驅動",
+            "text": "採用專利納米技術淨化，分解污染物。"
           }
         },
-        "b5": {
-          "type": "card",
+        "benefit_DckJhc": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-energy.svg",
-            "title": "Energy-Efficient Design",
-            "body": "<p>Optimized airflow reduces power use without compromising results.</p>"
+            "icon": "energy",
+            "title": "節能設計",
+            "text": "優化氣流減少耗電量，同時不影響淨化效果。"
           }
         },
-        "b6": {
-          "type": "card",
+        "benefit_n9pQK9": {
+          "type": "benefit",
           "settings": {
-            "icon_asset": "rht-icon-maintenance.svg",
-            "title": "Low Maintenance, Long Life",
-            "body": "<p>Durable systems that reduce filter change cycles and cost.</p>"
+            "icon": "tools",
+            "title": "低維護，長壽命",
+            "text": "耐用系統減少濾網更換週期及成本。"
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5",
-        "b6"
+        "benefit_gaXwt9",
+        "benefit_JmLr8h",
+        "benefit_gNBeX3",
+        "benefit_4WnhnD",
+        "benefit_DckJhc",
+        "benefit_n9pQK9"
       ],
+      "name": "NCCO Industrial Benefits",
       "settings": {
-        "eyebrow": "Industrial Benefits",
-        "heading": "Engineered for Demanding Spaces",
-        "subtext": "RHT systems are built to deliver powerful, continuous air purification in high-risk, high-traffic environments where performance and reliability are non-negotiable.",
-        "columns": "3",
-        "align": "left",
-        "numbered": false,
-        "flat": false,
-        "cta_label": "Explore Product Range",
-        "cta_url": "/pages/contact-us",
-        "dark": false,
-        "split_header": true,
-        "table_grid": true,
-        "accent_color": "#20B39F",
-        "cta_variant": "teal"
+        "eyebrow": "工業優勢",
+        "heading": "專為高要求空間而設",
+        "description": "<p>RHT系統專為在高風險、高流量環境中提供強效持續的空氣淨化而建，性能與可靠性不容妥協。</p>",
+        "button_text": "探索產品系列",
+        "button_url": ""
       }
     },
-    "rht-invented": {
-      "type": "ncco-icon-grid",
+    "ncco_industrial_solutions_xibykQ": {
+      "type": "ncco-industrial-solutions",
       "blocks": {
-        "t1": {
-          "type": "card",
+        "solution_nXUHnb": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO Air",
-            "body": "<p>NCCO (Nano-Confined Catalytic Oxidation) is suitable for household air purification and widely used in commercial, industrial, and medical institutions.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-AIR",
+            "description": "<p>NCCO（氧聚解）適合家居空氣淨化，亦廣泛應用於商業、工業及醫療機構。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         },
-        "t2": {
-          "type": "card",
+        "solution_jkR36W": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO - Invisible Glove",
-            "body": "<p>The NCCO-IG technology uses nanotechnology to form a layer of film on the surface of the skin that disinfects, moisturizes, and protects against damaged skin infections.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-INVISIBLE GLOVE",
+            "description": "<p>NCCO技術利用納米技術在皮膚表面形成薄膜，具消毒、保濕及保護受損皮膚免受感染的功效。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         },
-        "t3": {
-          "type": "card",
+        "solution_7N4keU": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO - ZRD",
-            "body": "<p>ZRD (Zeolite Radioactive Dust Removal System) effectively removes radioactive materials and toxic gases from the air — for airports and hospitals.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-ZRD",
+            "description": "<p>ZRD（沸石放射性塵埃清除系統）是RHT的專利技術之一。ZRD系統能有效清除空氣中的放射性物質及有毒氣體，可用作緊急系統。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         },
-        "t4": {
-          "type": "card",
+        "solution_LY8hcU": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO - PIS",
-            "body": "<p>Pollutants Isolation System creates an indoor air barrier to prevent outdoor contaminants from entering, decomposing pollutants into water and CO₂.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-PIS",
+            "description": "<p>工業生產在日常製造過程中釋放大量污染物，對附近建築物造成嚴重污染。污染物隔離系統（PIS）創建室內空氣屏障，防止室外污染物進入室內。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         },
-        "t5": {
-          "type": "card",
+        "solution_t8ACQ7": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO - Masks",
-            "body": "<p>NCCO masks protect factory workers from long-term exposure to high-concentration harmful chemical gases, with patents secured globally.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-MASKS",
+            "description": "<p>工業生產中常使用許多有毒化合物，嚴重危害員工健康。RHT研究團隊成功利用NCCO技術開發了NCCO口罩。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         },
-        "t6": {
-          "type": "card",
+        "solution_HBj6m6": {
+          "type": "solution",
           "settings": {
-            "title": "NCCO - MDS",
-            "body": "<p>Mobile Deodorising System uses NCCO's patented technology for far longer-lasting odour treatment than activated charcoal at sewage and waste sites.</p>",
-            "link_label": "Learn More",
-            "link_url": "/pages/about-us"
+            "title": "NCCO-MDS",
+            "description": "<p>污水處理廠長期散發惡臭。目前主要採用活性炭空氣淨化系統去除異味。</p>",
+            "link_text": "了解更多",
+            "link_url": ""
           }
         }
       },
       "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4",
-        "t5",
-        "t6"
+        "solution_nXUHnb",
+        "solution_jkR36W",
+        "solution_7N4keU",
+        "solution_LY8hcU",
+        "solution_t8ACQ7",
+        "solution_HBj6m6"
       ],
+      "name": "NCCO Industrial Solutions",
       "settings": {
-        "eyebrow": "Industrial Benefits",
-        "heading": "Invented in Hong Kong",
-        "columns": "3",
-        "align": "left",
-        "numbered": false,
-        "flat": false,
-        "cta_label": "Request Product Specs",
-        "cta_url": "/pages/contact-us",
-        "dark": true,
-        "split_header": true,
-        "hero_card": true,
-        "bg_asset": "rht-invented-bg.jpg",
-        "accent_color": "#20B39F",
-        "cta_variant": "teal"
+        "background_image": "shopify://shop_images/beautiful-shot-tall-city-buildings-cloudy-sky-night_1.png",
+        "eyebrow": "工業解決方案",
+        "heading": "香港創新發明",
+        "button_text": "索取產品規格",
+        "button_url": ""
       }
     },
-    "rht-products": {
-      "type": "ncco-product-grid",
+    "ncco_product_lineup_YYKq8i": {
+      "type": "ncco-product-lineup",
       "blocks": {
-        "p1": {
-          "type": "product",
+        "collection_tab_YAmfng": {
+          "type": "collection_tab",
           "settings": {
-            "product_code": "RH-490C",
-            "product_name": "Ceiling Filtration Unit",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "industrial",
-            "asset": "rht-product-1.png"
+            "label": "所有產品",
+            "collection": "",
+            "image_source": "products",
+            "image_alt": ""
           }
         },
-        "p2": {
-          "type": "product",
+        "collection_tab_Je7NQy": {
+          "type": "collection_tab",
           "settings": {
-            "product_code": "RH-220",
-            "product_name": "Duct Mounted Mobile Unit",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "industrial",
-            "asset": "rht-product-2.png"
+            "label": "B.Duck x NCCO-IG",
+            "collection": "",
+            "image_source": "products",
+            "image_alt": ""
           }
         },
-        "p3": {
-          "type": "product",
+        "collection_tab_wiMQtz": {
+          "type": "collection_tab",
           "settings": {
-            "product_code": "RM-480",
-            "product_name": "Mobile Filtration Unit",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "industrial",
-            "asset": "rht-product-3.png"
+            "label": "套裝組合",
+            "collection": "",
+            "image_source": "products",
+            "image_alt": ""
           }
         },
-        "p4": {
-          "type": "product",
+        "collection_tab_reGBiJ": {
+          "type": "collection_tab",
           "settings": {
-            "product_code": "RA-805",
-            "product_name": "Customised Deodorising System",
-            "link_label": "Learn More",
-            "link_url": "/pages/contact-us",
-            "category": "industrial",
-            "asset": "rht-product-4.png"
+            "label": "修復精華",
+            "collection": "",
+            "image_source": "products",
+            "image_alt": ""
           }
         }
       },
       "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4"
+        "collection_tab_YAmfng",
+        "collection_tab_Je7NQy",
+        "collection_tab_wiMQtz",
+        "collection_tab_reGBiJ"
       ],
+      "name": "NCCO Product Lineup",
       "settings": {
-        "eyebrow": "Product Lineup",
-        "heading": "Solutions Built for Scale",
-        "subtext": "Explore our range of industrial air purification systems, engineered for diverse infrastructure from transit stations to clinical spaces.",
-        "cta_label": "Request Product Specs",
-        "cta_url": "/pages/contact-us",
-        "cta_variant": "teal",
-        "tab_1": "Solutions",
-        "tab_2": "Industrial",
-        "tab_3": "Domestic",
-        "dark": false,
-        "accent_color": "#20B39F"
+        "eyebrow": "產品系列",
+        "heading": "NCCO-IG 肌膚修復精華",
+        "description": "經臨床測試的肌膚修復配方，深層保濕、修復並保護肌膚。殺滅99.9%病毒及細菌，同時舒緩乾燥、敏感及易敏肌膚，完全不含毒素或酒精。",
+        "quick_view_text": "快速預覽",
+        "button_label": "查看所有產品",
+        "button_url": "",
+        "products_to_show": 4,
+        "max_width": 1600,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_horizontal": 30,
+        "heading_size": 58,
+        "description_size": 13,
+        "card_width": 340,
+        "card_height": 420,
+        "card_gap": 26,
+        "card_radius": 16,
+        "section_radius": 0,
+        "background_color": "#FFFFFF",
+        "heading_color": "#0D3B60",
+        "eyebrow_color": "#8295A8",
+        "accent_color": "#55C2DF",
+        "description_color": "#8295A8",
+        "tabs_background": "#F3F5F6",
+        "tab_text_color": "#8295A8",
+        "active_tab_background": "#FFFFFF",
+        "active_tab_text": "#0D3B60",
+        "card_background": "#F5F7F8",
+        "card_title_color": "#0D3B60",
+        "price_color": "#55C2DF",
+        "quick_view_color": "#55C2DF",
+        "button_background": "#55C2DF",
+        "button_text_color": "#FFFFFF",
+        "button_icon_background": "#FFFFFF",
+        "button_icon_color": "#0D3B60"
       }
     },
-    "rht-faq": {
-      "type": "ncco-faq",
+    "ncco_questions_DyMRbV": {
+      "type": "ncco-questions",
       "blocks": {
-        "q1": {
-          "type": "faq_item",
+        "faq_pP9F7J": {
+          "type": "faq",
           "settings": {
-            "heading": "What environments is RHT designed for?",
-            "answer": "<p>RHT systems are engineered for large-scale, high-traffic environments including hospitals, subway stations, airports, factories, and data centres where continuous air quality control is critical.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "q2": {
-          "type": "faq_item",
+        "faq_rLkHjf": {
+          "type": "faq",
           "settings": {
-            "heading": "How does RHT differ from standard HEPA filters?",
-            "answer": "<p>Unlike HEPA filters that trap pollutants, RHT uses NCCO (Nano-Confined Catalytic Oxidation) technology to decompose pollutants at the molecular level into harmless water and CO₂ — with no filter replacement needed.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "q3": {
-          "type": "faq_item",
+        "faq_WDQNpe": {
+          "type": "faq",
           "settings": {
-            "heading": "Is RHT technology safe for hospitals?",
-            "answer": "<p>Yes. RHT systems produce zero ozone and no toxic byproducts, making them safe for patients, healthcare workers, and high-sensitivity environments including ICUs and operating theatres.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "q4": {
-          "type": "faq_item",
+        "faq_bFJ97k": {
+          "type": "faq",
           "settings": {
-            "heading": "What is the maintenance requirement?",
-            "answer": "<p>RHT systems require minimal maintenance. The NCCO reactor is washable and reusable, dramatically reducing the frequency and cost of filter replacements compared to conventional systems.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "q5": {
-          "type": "faq_item",
+        "faq_8yBeCh": {
+          "type": "faq",
           "settings": {
-            "heading": "Can RHT systems integrate with existing HVAC?",
-            "answer": "<p>Yes. RHT units are modular and designed to integrate with existing HVAC infrastructure, duct systems, and building management systems for seamless operation at scale.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         },
-        "q6": {
-          "type": "faq_item",
+        "faq_djTCjE": {
+          "type": "faq",
           "settings": {
-            "heading": "Where are RHT systems deployed globally?",
-            "answer": "<p>RHT systems are deployed in hundreds of facilities worldwide including HSBC Asia Pacific Data Centre, Hong Kong Baptist Hospital, Yan Oi Tong Kindergarten, and major transit networks.</p>"
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適合無菌區域及醫療設施使用。</p>"
           }
         }
       },
       "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6"
+        "faq_pP9F7J",
+        "faq_rLkHjf",
+        "faq_WDQNpe",
+        "faq_bFJ97k",
+        "faq_8yBeCh",
+        "faq_djTCjE"
       ],
+      "name": "NCCO Questions",
       "settings": {
-        "eyebrow": "You Ask",
-        "accent_color": "#20B39F",
-        "heading": "Frequently Asked Questions",
-        "three_col": true
+        "eyebrow": "常見問題",
+        "heading": "常見問題解答"
       }
     },
-    "rht-contact": {
+    "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "accent_color": "#20B39F",
-        "heading": "We're Here to Help",
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
         "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "提交訊息"
       }
     }
   },
   "order": [
-    "rht-hero",
-    "rht-trust",
-    "rht-about",
-    "rht-benefits",
-    "rht-invented",
-    "rht-products",
-    "rht-faq",
-    "rht-contact"
+    "ncco-hero",
+    "ncco_trust_logos_Kk3WYQ",
+    "ncco_industrial_brand_ApdFX7",
+    "ncco_industrial_benefits_Gb7TbA",
+    "ncco_industrial_solutions_xibykQ",
+    "ncco_product_lineup_YYKq8i",
+    "ncco_questions_DyMRbV",
+    "ncco-contact-cta"
   ]
 }

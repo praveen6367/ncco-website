@@ -107,8 +107,16 @@
 .ncco-pbanner__title em,
 .ncco-pbanner__title .highlight {
   font-style: normal;
-  color: var(--ncco-accent, #FECB07);
-  -webkit-text-fill-color: var(--ncco-accent, #FECB07);
+  background: linear-gradient(90deg, #FECB07 0%, rgba(254, 203, 7, 0) 54.5%),
+              linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding-right: 0.1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .ncco-pbanner__sub {
@@ -119,7 +127,7 @@
   letter-spacing: -0.2px;
   color: rgba(255, 255, 255, 0.88);
   margin: 0;
-  max-width: 520px;
+  max-width: 580px;
 }
 
 @media (max-width: 1024px) {

@@ -1,349 +1,139 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "Trusted by 500+ institutions worldwide",
-        "headline": "<p>Advanced Air Purification</p><p><em>Begins with NCCO</em></p>",
-        "subtext": "Advanced air purification technology for healthier homes, safer hospitals, and cleaner workplaces — powered by patented NCCO innovation.",
-        "bullet_1": "99.9% purification efficiency",
-        "bullet_2": "Safe for kids, pets, and hospitals",
-        "bullet_3": "Proven by 20+ years of research",
-        "cta_label": "Get a Free Consultation",
-        "cta_url": "/pages/contact-us",
-        "card_image_asset": "brand-ncco-hero-card.png",
-        "background_asset": "brand-ncco-hero-bg.png",
-        "overlay_opacity": 80,
-        "subtext_gap": 160
-      }
-    },
-    "ncco-trust": {
-      "type": "ncco-trust-logos",
-      "blocks": {
-        "tl_01": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-New-World-China.webp",
-            "alt": "New World China"
-          }
-        },
-        "tl_02": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-JLL.svg",
-            "alt": "JLL"
-          }
-        },
-        "tl_03": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-HSBC.svg",
-            "alt": "HSBC"
-          }
-        },
-        "tl_04": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-HK-IFC-Mall.webp",
-            "alt": "IFC"
-          }
-        },
-        "tl_05": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-MTR.svg",
-            "alt": "MTR"
-          }
-        },
-        "tl_06": {
-          "type": "logo",
-          "settings": {
-            "asset": "tl-HKHA.svg",
-            "alt": "HKHA"
-          }
-        }
-      },
-      "block_order": [
-        "tl_01",
-        "tl_02",
-        "tl_03",
-        "tl_04",
-        "tl_05",
-        "tl_06"
-      ],
-      "settings": {
-        "heading": "Trusted by Industry Leaders for",
-        "heading_highlight": "Quality and Reliability"
-      }
-    },
-    "ncco-about": {
-      "type": "ncco-feature-split",
-      "blocks": {
-        "f1": {
-          "type": "feature",
-          "settings": {
-            "title": "Research-Backed Technology",
-            "body": "Backed by Hong Kong University of Science and Technology, our patented NCCO technology is trusted in hospitals, labs, and homes across the globe."
-          }
-        },
-        "f2": {
-          "type": "feature",
-          "settings": {
-            "title": "A Mission for Clean Air",
-            "body": "From allergy relief to environmental protection, our mission is to deliver breathable, pollutant-free air for everyone, everywhere."
-          }
-        },
-        "f3": {
-          "type": "feature",
-          "settings": {
-            "title": "Deployed at Scale",
-            "body": "Deployed in over 200+ institutions, NCCO products are used by government bodies, healthcare providers, and industries with critical air quality needs."
-          }
-        },
-        "f4": {
-          "type": "feature",
-          "settings": {
-            "title": "Five Sub-Brands, One Mission",
-            "body": "With five distinct sub-brands, we bring tailored air purification solutions for personal, professional, and industrial spaces."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "eyebrow": "About Us",
-        "heading": "Invisible Protection for Every Space",
-        "body": "<p>With decades of research and innovation, NCCO is redefining air purification through science, technology, and global impact.</p>",
-        "dark": true,
-        "cta_label": "Know more about us",
+        "eyebrow": "科研創新 · 潔淨呼吸",
+        "headline": "<p>開創空氣淨化領域<br/>的革新時代</p>",
+        "subtext": "NCCO是目前唯一同時應用在工業、商業、醫院及家居三大領域的空氣淨化技術，從全球超過300家醫院到日常家居。NCCO提供長效且經科學驗證的解決方案，徹底改變我們體驗潔淨空氣的方式。",
+        "cta_label": "探索NCCO技術",
         "cta_url": "/pages/about-us",
-        "cta_variant": "yellow"
+        "overlay_opacity": 55,
+        "dark": true
       }
     },
-    "ncco-tech-cards": {
-      "type": "ncco-brand-showcase",
-      "blocks": {
-        "f1": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-1.svg",
-            "title": "End-to-End Air Safety",
-            "body": "Purifies every layer of air quality from gases and pathogens to odors and allergens."
-          }
-        },
-        "f2": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-3.svg",
-            "title": "Built for High-Sensitivity Zones",
-            "body": "Designed for environments where purity is critical including ICUs, labs, schools, and transit."
-          }
-        },
-        "f3": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-5.svg",
-            "title": "Seamless Tech Integration",
-            "body": "Adaptable to HVAC systems, portable devices, and standalone purifiers."
-          }
-        },
-        "f4": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-2.svg",
-            "title": "Backed by Data, Not Hype",
-            "body": "Validated through clinical studies, field testing, and long-term real-world deployment."
-          }
-        },
-        "f5": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-4.svg",
-            "title": "Designed with Human Health in Mind",
-            "body": "Non-toxic, zero-ozone, and always safe for vulnerable groups like children and the elderly."
-          }
-        },
-        "f6": {
-          "type": "feature",
-          "settings": {
-            "icon_asset": "brand-ncco-tech-icon-6.svg",
-            "title": "Future-Proof Clean Tech",
-            "body": "Continuously improved through R&D to meet evolving environmental challenges."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4",
-        "f5",
-        "f6"
-      ],
+    "ncco-trust-logos": {
+      "type": "ncco-trust-logos",
       "settings": {
-        "layout": "cards",
-        "cta_variant": "yellow",
-        "eyebrow": "NCCO",
-        "brand_name": "Technology That Leads by Design",
-        "description": "As the foundation of our group, NCCO leads with breakthrough nanotechnology, setting the standard for long-lasting and effective air purification across all applications.",
-        "cta_label": "Discover NCCO",
-        "cta_url": "/pages/contact-us"
+        "heading": "深受業界領袖信賴的",
+        "heading_highlight": "品質與可靠保證"
       }
     },
-    "ncco-diagram": {
-      "type": "ncco-ncco-diagram",
-      "settings": {
-        "eyebrow": "NCCO Technology",
-        "heading": "NCCO Technology",
-        "body": "<p>Breathe easy with our unique NCCO (Nano Confined Catalytic Oxidation) air treatment technology.</p><p>Developed by RHT, in partnership with members of the Hong Kong University of Science and Technology Entrepreneurship Program, our NCCO reactor combined with active oxygen wipes out bacteria, viruses, and harmful chemicals.</p>",
-        "diagram_asset": "brand-ncco-tech-diagram.png"
-      }
-    },
-    "ncco-advantages": {
+    "ncco-icon-grid": {
       "type": "ncco-icon-grid",
       "blocks": {
-        "adv1": {
+        "card_1": {
           "type": "card",
           "settings": {
-            "icon_asset": "brand-ncco-adv-icon-1.svg",
-            "title": "Environmental",
-            "body": "<p>NCCO filtration is significantly more durable than activated carbon filter adsorption, which means there is no need for frequent and costly filter changes. NCCO technology is extremely ECO-Friendly and very cost-effective.</p>"
+            "title": "主動分子分解",
+            "body": "<p>與活性炭困住污染物不同，NCCO將其分解為無害的水和二氧化碳——徹底消除二次污染。</p>"
           }
         },
-        "adv2": {
+        "card_2": {
           "type": "card",
           "settings": {
-            "icon_asset": "brand-ncco-adv-icon-2.svg",
-            "title": "Energy Saving",
-            "body": "<p>Effectively removes odors, thus reducing the number of air changes and the amount of air conditioning required. This directly reduces energy consumption and cost.</p>"
+            "title": "12年催化劑壽命",
+            "body": "<p>NCCO氧化層可再生且具可持續性。在正常保養下，催化劑可使用長達12年。</p>"
           }
         },
-        "adv3": {
+        "card_3": {
           "type": "card",
           "settings": {
-            "icon_asset": "brand-ncco-adv-icon-3.svg",
-            "title": "Sustainable Development",
-            "body": "<p>The NCCO reactor functions as a catalyst and has a high degree of sustainability due to its continuous regeneration process. The prolonged filter lifetime of the NCCO reactor results in a reduction of solid waste generated during its usage.</p>"
-          }
-        },
-        "adv4": {
-          "type": "card",
-          "settings": {
-            "icon_asset": "brand-ncco-adv-icon-4.svg",
-            "title": "Safety",
-            "body": "<p>NCCO can decompose gaseous pollutants into H₂O and CO₂ as well as kill bacteria and viruses. Therefore, no secondary pollution.</p>"
+            "title": "醫院級保護",
+            "body": "<p>全球300+家醫院信賴。NCCO技術達到最嚴苛環境下空氣淨化的最高標準。</p>"
           }
         }
       },
       "block_order": [
-        "adv1",
-        "adv2",
-        "adv3",
-        "adv4"
+        "card_1",
+        "card_2",
+        "card_3"
       ],
       "settings": {
-        "eyebrow": "NCCO Advantage",
-        "heading": "NCCO Advantages",
-        "subtext": "NCCO air treatment technology for your well-being and peace of mind. Unlike activated carbon filters, our NCCO reactor uses recyclable mineral as a catalyst, reducing pollution, introduces long-acting sustainability and costs. It effectively removes gaseous pollutants such as VOCs and odors. It kills bacteria and viruses (including Covid). It is also highly effective in filtering dust, smoke, allergens and mould. Experience improved air quality and an enhanced quality of life with NCCO.",
-        "columns": "4",
-        "align": "left",
-        "numbered": true,
-        "flat": true,
+        "eyebrow": "NCCO為何有效",
+        "heading": "一項技術，無限應用。",
+        "subtext": "唯一同時應用於工業、商業、醫院及住宅領域的空氣淨化技術。",
+        "columns": "3",
         "dark": false
       }
     },
-    "ncco-faq": {
-      "type": "ncco-faq",
+    "ncco-cta-band": {
+      "type": "ncco-cta-band",
+      "settings": {
+        "eyebrow": "應用範疇",
+        "heading": "從家居到醫院，從工廠到辦公室。",
+        "subtext": "NCCO是唯一獲證實可應用於四大領域的技術：住宅、商業、工業及醫療。",
+        "cta_label": "查看所有應用",
+        "cta_url": "/pages/residential-use",
+        "bg_color": "#081d3a"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
       "blocks": {
-        "q1": {
-          "type": "faq_item",
+        "faq_1": {
+          "type": "collapsible_row",
           "settings": {
-            "heading": "What does NCCO stand for?",
-            "answer": "<p>NCCO stands for Nano-Confined Catalytic Oxidation — a patented air purification technology that breaks down harmful gases, VOCs, viruses, and bacteria at the molecular level.</p>"
+            "heading": "NCCO代表什麼？",
+            "row_content": "<p>NCCO代表氧聚解（Nano Confined Catalytic Oxidation）。每個詞描述淨化過程中的一個步驟：納米級催化劑、受限納米管結構、催化反應，以及將污染物氧化為水和二氧化碳。</p>"
           }
         },
-        "q2": {
-          "type": "faq_item",
+        "faq_2": {
+          "type": "collapsible_row",
           "settings": {
-            "heading": "How is NCCO different from traditional HEPA or carbon filters?",
-            "answer": "<p>Unlike HEPA or carbon filters that trap pollutants, NCCO technology actively decomposes them at the molecular level into harmless water and CO₂ — ensuring long-term clean air with no secondary pollution.</p>"
+            "heading": "NCCO與HEPA或活性炭有何不同？",
+            "row_content": "<p>HEPA過濾器困住顆粒。活性炭吸附氣體（飽和時會重新釋放）。NCCO在分子層面分解污染物——無二次污染，無濾網飽和問題。</p>"
           }
         },
-        "q3": {
-          "type": "faq_item",
+        "faq_3": {
+          "type": "collapsible_row",
           "settings": {
-            "heading": "Is NCCO safe for use around children and pets?",
-            "answer": "<p>Yes. NCCO technology produces zero ozone and no toxic byproducts, making it completely safe for children, pets, the elderly, and even hospital patients.</p>"
-          }
-        },
-        "q4": {
-          "type": "faq_item",
-          "settings": {
-            "heading": "Where is NCCO technology currently used?",
-            "answer": "<p>NCCO is deployed across hospitals, subways, offices, schools, government facilities, airports, and homes in over 500+ organizations worldwide including MTR, HSBC, and IFC Mall.</p>"
-          }
-        },
-        "q5": {
-          "type": "faq_item",
-          "settings": {
-            "heading": "Do NCCO filters need frequent replacement?",
-            "answer": "<p>No. NCCO filters are washable and reusable. Unlike activated carbon, the NCCO reactor self-regenerates through catalytic oxidation, dramatically reducing replacement frequency and costs.</p>"
-          }
-        },
-        "q6": {
-          "type": "faq_item",
-          "settings": {
-            "heading": "Can I use NCCO in small spaces like bedrooms or vehicles?",
-            "answer": "<p>Absolutely. The b-MOLA line brings NCCO technology into compact, consumer-friendly devices designed specifically for homes, cars, offices, and personal use.</p>"
+            "heading": "NCCO技術安全嗎？",
+            "row_content": "<p>安全。催化劑材料為無毒人工礦物。淨化過程中臭氧濃度低於0.03 ppm——遠低於國際UL 867安全標準的0.05 ppm。適合嬰兒、長者及孕婦使用。</p>"
           }
         }
       },
       "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6"
+        "faq_1",
+        "faq_2",
+        "faq_3"
       ],
       "settings": {
-        "eyebrow": "You Ask",
-        "heading": "Frequently Asked Questions",
-        "three_col": true
+        "caption": "常見問題",
+        "heading": "常見問題解答",
+        "heading_size": "h2",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false
+      }
+    },
+    "ncco-certifications": {
+      "type": "ncco-certifications",
+      "settings": {
+        "eyebrow": "品質標準",
+        "heading": "認證安全，全球信賴。",
+        "featured_asset": "ncco-certifications-web.png"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "heading": "We're Here to Help",
+        "heading": "隨時為你提供專業方案",
         "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "提交訊息"
       }
     }
   },
   "order": [
     "ncco-hero",
-    "ncco-trust",
-    "ncco-about",
-    "ncco-tech-cards",
-    "ncco-diagram",
-    "ncco-advantages",
-    "ncco-faq",
+    "ncco-trust-logos",
+    "ncco-icon-grid",
+    "ncco-cta-band",
+    "collapsible-content",
+    "ncco-certifications",
     "ncco-contact-cta"
   ]
 }

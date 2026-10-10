@@ -1,26 +1,506 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "404 Error",
-        "headline": "<p>Page <em>Not Found</em></p>",
-        "subtext": "The page you're looking for doesn't exist or has been moved.",
-        "cta_label": "Back to Home",
+        "eyebrow": "",
+        "logo_asset": "",
+        "brand_color": "",
+        "cta_text_color": "",
+        "headline": "<p>由<br/><em>NCCO的05+品牌</em>驅動</p>",
+        "subtext": "找不到此頁面，或頁面已被移走。",
+        "bullet_1": "食物保鮮期延長2-3倍",
+        "bullet_2": "100%無化學物質防蟲保護",
+        "bullet_3": "家庭安全、環保設計",
+        "cta_label": "立即選購產品",
         "cta_url": "/",
-        "dark": true,
-        "overlay_opacity": 0
+        "card_image_asset": "",
+        "background_image": "shopify://shop_images/woman-doing-herself-scalp-massage_1.png",
+        "background_asset": "",
+        "compact": false,
+        "overlay_opacity": 0,
+        "overlay_solid_color": "",
+        "dark": true
+      }
+    },
+    "ncco_industrial_intro_iTxjhj": {
+      "type": "ncco-industrial-intro",
+      "blocks": {
+        "feature_V87UYk": {
+          "type": "feature",
+          "settings": {
+            "title": "潔淨空氣，規模化應用",
+            "text": "<p>我們為醫院、交通及工廠研發工業級空氣淨化系統，持續穩定運作，值得信賴。</p>"
+          }
+        },
+        "feature_A7hWUp": {
+          "type": "feature",
+          "settings": {
+            "title": "專為關鍵基礎設施而設",
+            "text": "<p>05+裝置採用NCCO技術，專為高需求場所設計，高效、靈活，深受專業人士信賴。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_V87UYk",
+        "feature_A7hWUp"
+      ],
+      "name": "NCCO Industrial Intro",
+      "settings": {
+        "eyebrow": "簡單介紹",
+        "heading": "專為卓越性能而設的工業空氣淨化品牌",
+        "button_label": "了解更多關於我們",
+        "button_url": ""
+      }
+    },
+    "ncco_freshness_showcase_wN44CN": {
+      "type": "ncco-freshness-showcase",
+      "blocks": {
+        "feature_76F4hy": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "一鍵真空密封，即時氣密儲存"
+          }
+        },
+        "feature_LWRx8L": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "延長食物保鮮期2-3倍"
+          }
+        },
+        "feature_EPAfjJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "防止細菌、氧化及水分積聚"
+          }
+        },
+        "feature_t3DTff": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "USB充電、可水洗、可冷凍儲存罐"
+          }
+        },
+        "feature_mnb3ff": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "3種罐身尺寸，滿足日常家居需求"
+          }
+        }
+      },
+      "block_order": [
+        "feature_76F4hy",
+        "feature_LWRx8L",
+        "feature_EPAfjJ",
+        "feature_t3DTff",
+        "feature_mnb3ff"
+      ],
+      "name": "NCCO Freshness Showcase",
+      "settings": {
+        "eyebrow": "一鍵真空儲存，讓食物更新鮮、更安心",
+        "heading": "鎖住新鮮",
+        "description": "<p>NCCO真空技術讓你輕鬆保持食物新鮮、衛生、妥善保存——只需輕輕一按。</p>",
+        "image_1": "shopify://shop_images/Frame_1984078671_6c5851b6-208e-4e8a-9652-d3d247cdb715.png",
+        "image_2": "shopify://shop_images/Frame_1984078673_ef4bcfc0-b0f3-4aec-83ef-fe48e722ba4d.png",
+        "image_3": "shopify://shop_images/Frame_1984078674_0e8de41e-c777-4f63-a024-388ecc0642aa.png",
+        "image_4": "shopify://shop_images/Frame_1984078672_f63b4e4c-95c9-4b65-8ad3-5890223d9837.png",
+        "gallery_layout": "four_images",
+        "button_label": "購買家居防蟲驅蚊器",
+        "button_url": ""
+      }
+    },
+    "ncco_rht_solutions_cNm4Pw": {
+      "type": "ncco-rht-solutions",
+      "blocks": {
+        "point_m7mCVW": {
+          "type": "point",
+          "settings": {
+            "text": "專為高流量或工業環境設計，耐用可靠。"
+          }
+        },
+        "point_9AMACU": {
+          "type": "point",
+          "settings": {
+            "text": "專為高流量或工業環境設計，耐用可靠。"
+          }
+        },
+        "point_Cc93wA": {
+          "type": "point",
+          "settings": {
+            "text": "適用於地鐵、無塵室及政府設施。"
+          }
+        },
+        "point_rEegDY": {
+          "type": "point",
+          "settings": {
+            "text": "採用模組化安裝及節能設計。"
+          }
+        },
+        "product_XWXapb": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/Rectangle_34624097.png",
+            "title": ""
+          }
+        },
+        "product_jhK4NU": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/Rectangle_34624098.png",
+            "title": ""
+          }
+        },
+        "product_ETwncm": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/image_213.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "point_m7mCVW",
+        "point_9AMACU",
+        "point_Cc93wA",
+        "point_rEegDY",
+        "product_XWXapb",
+        "product_jhK4NU",
+        "product_ETwncm"
+      ],
+      "name": "NCCO RHT Solutions",
+      "settings": {
+        "eyebrow": "聰明儲存，整理並保護您的食材。",
+        "logo_text": "日常食材，安心儲存",
+        "logo_alt": "",
+        "description": "專為醫院、交通及工業設計，RHT提供高容量空氣淨化系統，適用於嚴苛環境。",
+        "light_theme": false,
+        "button_text": "查看更多詳情",
+        "button_url": ""
+      }
+    },
+    "ncco_freshness_showcase_pbnFTQ": {
+      "type": "ncco-freshness-showcase",
+      "blocks": {
+        "feature_mVUbAW": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "輕巧僅重36.5g，方便攜帶，適合旅遊、戶外活動及日常使用。"
+          }
+        },
+        "feature_Q7nqyT": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "獨特聲波有效驅趕白紋伊蚊及庫蚊等常見蚊種，覆蓋範圍廣泛。"
+          }
+        },
+        "feature_wRnQAD": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "100%無化學物質，對嬰兒、孕婦、寵物及環境無害。"
+          }
+        },
+        "feature_rpmAha": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "單次充電可享長達20小時不間斷驅蚊保護。"
+          }
+        },
+        "feature_QUybXm": {
+          "type": "feature",
+          "settings": {
+            "icon": "✦",
+            "text": "覆蓋範圍達3平方米，無論身處何地均可建立可靠保護區。"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mVUbAW",
+        "feature_Q7nqyT",
+        "feature_wRnQAD",
+        "feature_rpmAha",
+        "feature_QUybXm"
+      ],
+      "name": "NCCO Freshness Showcase",
+      "settings": {
+        "eyebrow": "產品亮點",
+        "heading": "安心防護，告別蚊患。",
+        "description": "<p>05+ 超聲波迷你驅蚊器帶來卓越防蚊保護。採用創新超聲波技術，無化學物質，便攜易用，適合全家安心使用。完美適用於戶外活動或日常生活。<br/><br/></p>",
+        "image_1": "shopify://shop_images/Frame_1984078682_b0322a3f-ca31-443c-8916-fb4f30a247d6.png",
+        "image_2": "shopify://shop_images/Frame_1984078681_a18d3b6a-8282-475d-8172-9bfcc7f4c331.png",
+        "image_3": "shopify://shop_images/39.png",
+        "image_4": "shopify://shop_images/Frame_1984078684.png",
+        "gallery_layout": "center_image",
+        "button_label": "購買真空儲存套裝",
+        "button_url": ""
+      }
+    },
+    "ncco_rht_solutions_FpWRmr": {
+      "type": "ncco-rht-solutions",
+      "blocks": {
+        "point_ejHa77": {
+          "type": "point",
+          "settings": {
+            "text": "專為高流量或工業環境設計，耐用可靠。"
+          }
+        },
+        "point_XtTWEX": {
+          "type": "point",
+          "settings": {
+            "text": "專為高流量或工業環境設計，耐用可靠。"
+          }
+        },
+        "point_7THWxa": {
+          "type": "point",
+          "settings": {
+            "text": "適用於地鐵、無塵室及政府設施。"
+          }
+        },
+        "point_CTaJUh": {
+          "type": "point",
+          "settings": {
+            "text": "採用模組化安裝及節能設計。"
+          }
+        },
+        "product_meHXKY": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/Rectangle_34624097.png",
+            "title": ""
+          }
+        },
+        "product_dJLRJi": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/Rectangle_34624098.png",
+            "title": ""
+          }
+        },
+        "product_jjHUaq": {
+          "type": "product",
+          "settings": {
+            "image_source": "image",
+            "product": "",
+            "image": "shopify://shop_images/image_213.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "point_ejHa77",
+        "point_XtTWEX",
+        "point_7THWxa",
+        "point_CTaJUh",
+        "product_meHXKY",
+        "product_dJLRJi",
+        "product_jjHUaq"
+      ],
+      "name": "NCCO RHT Solutions",
+      "settings": {
+        "eyebrow": "聰明儲存，整理並保護您的食材。",
+        "logo_text": "日常食材，安心儲存",
+        "logo_alt": "",
+        "description": "專為醫院、交通及工業設計，RHT提供高容量空氣淨化系統，適用於嚴苛環境。",
+        "light_theme": true,
+        "button_text": "查看更多詳情",
+        "button_url": ""
+      }
+    },
+    "ncco_product_lineup_jQpyKn": {
+      "type": "ncco-product-lineup",
+      "blocks": {
+        "collection_tab_kefepX": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "全部產品",
+            "collection": ""
+          }
+        },
+        "collection_tab_KNbkrT": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "B.Duck x NCCO-IG",
+            "collection": ""
+          }
+        },
+        "collection_tab_CKMR9P": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "套裝組合",
+            "collection": ""
+          }
+        },
+        "collection_tab_EkkmmN": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "恢復精華",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_kefepX",
+        "collection_tab_KNbkrT",
+        "collection_tab_CKMR9P",
+        "collection_tab_EkkmmN"
+      ],
+      "name": "NCCO Product Lineup",
+      "settings": {
+        "eyebrow": "無化學物質工具，可持續安全日常使用。",
+        "heading": "現代家居清潔科技",
+        "description": "每件05+產品均體現NCCO透過安全、環保及精心設計工具，簡化健康生活的使命。",
+        "quick_view_text": "快速預覽",
+        "button_label": "查看全部產品",
+        "button_url": "",
+        "products_to_show": 4,
+        "max_width": 1600,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_horizontal": 30,
+        "heading_size": 58,
+        "description_size": 13,
+        "card_width": 340,
+        "card_height": 420,
+        "card_gap": 26,
+        "card_radius": 16,
+        "section_radius": 0,
+        "background_color": "#FFFFFF",
+        "heading_color": "#0D3B60",
+        "eyebrow_color": "#8295A8",
+        "accent_color": "#55C2DF",
+        "description_color": "#8295A8",
+        "tabs_background": "#F3F5F6",
+        "tab_text_color": "#8295A8",
+        "active_tab_background": "#FFFFFF",
+        "active_tab_text": "#0D3B60",
+        "card_background": "#F5F7F8",
+        "card_title_color": "#0D3B60",
+        "price_color": "#55C2DF",
+        "quick_view_color": "#55C2DF",
+        "button_background": "#0200C3",
+        "button_text_color": "#FFFFFF",
+        "button_icon_background": "#FFD931",
+        "button_icon_color": "#0D3B60"
+      }
+    },
+    "ncco_text_image_WfNKGC": {
+      "type": "ncco-text-image",
+      "name": "NCCO Image + Text",
+      "settings": {
+        "eyebrow": "認證",
+        "heading": "認證安全。全球信賴。",
+        "intro": "<p>NCCO空氣淨化技術不僅具創新性，更獲得國際認可認證及實際應用驗證。從FDA認可到CE合規，NCCO達到全球最高安全及性能標準。在全球各地的醫院、機場、公共交通系統及家庭中廣受信賴，NCCO在可持續高效空氣淨化方面樹立新標竿。<br/><br/></p>",
+        "text": "<p>NCCO空氣淨化技術不僅具創新性，更獲得國際認可認證及實際應用驗證。從FDA認可到CE合規，NCCO達到全球最高安全及性能標準。在全球各地的醫院、機場、公共交通系統及家庭中廣受信賴，NCCO在可持續高效空氣淨化方面樹立新標竿。<br/><br/></p>",
+        "image": "shopify://shop_images/Group_1000003563.png",
+        "asset": "",
+        "asset_secondary": "",
+        "overlay_text": "",
+        "reverse_layout": false,
+        "cta_label": "探索NCCO",
+        "cta_url": "",
+        "dark": false
+      }
+    },
+    "ncco_questions_kDnftX": {
+      "type": "ncco-questions",
+      "blocks": {
+        "faq_4wWkHB": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        },
+        "faq_GEjRXK": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        },
+        "faq_Vy3jxW": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        },
+        "faq_UVVK7C": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        },
+        "faq_ph8GCh": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        },
+        "faq_iAchRh": {
+          "type": "faq",
+          "settings": {
+            "question": "NCCO-IG為何適合醫院及臨床環境？",
+            "answer": "<p>NCCO-IG採用專利納米催化氧化技術，消滅空氣中的細菌、病毒及有害氣體，非常適用於無菌區域及醫療設施。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_4wWkHB",
+        "faq_GEjRXK",
+        "faq_Vy3jxW",
+        "faq_UVVK7C",
+        "faq_ph8GCh",
+        "faq_iAchRh"
+      ],
+      "name": "NCCO Questions",
+      "settings": {
+        "eyebrow": "您的問題",
+        "heading": "常見問題解答"
+      }
+    },
+    "ncco_contact_cta_fKT8fh": {
+      "type": "ncco-contact-cta",
+      "settings": {
+        "eyebrow": "聯絡我們",
+        "heading": "隨時為你提供專業方案",
+        "subtext": "無論你有任何查詢、需要產品詳情，或想探討合作機會，我們都非常樂意與你聯繫。",
+        "email": "sales@rhtind.com.hk",
+        "phone": "+852 2417 0075",
+        "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
+        "submit_label": "提交"
       }
     }
   },
-  "order": ["ncco-hero"]
+  "order": [
+    "ncco-hero",
+    "ncco_industrial_intro_iTxjhj",
+    "ncco_freshness_showcase_wN44CN",
+    "ncco_rht_solutions_cNm4Pw",
+    "ncco_freshness_showcase_pbnFTQ",
+    "ncco_rht_solutions_FpWRmr",
+    "ncco_product_lineup_jQpyKn",
+    "ncco_text_image_WfNKGC",
+    "ncco_questions_kDnftX",
+    "ncco_contact_cta_fKT8fh"
+  ]
 }

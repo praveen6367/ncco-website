@@ -1,29 +1,15 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ncco-hero": {
       "type": "ncco-hero",
       "settings": {
-        "eyebrow": "Trusted by leading industries across the globe",
-        "headline": "<p>Air Innovation,</p><p><em>Brand by Brand</em></p>",
-        "subtext": "From personal spaces to large-scale industries, each NCCO brand delivers specialized solutions backed by nanotechnology and global trust.",
-        "bullet_1": "5 specialist brands under one group",
-        "bullet_2": "Technology deployed in 500+ organisations",
-        "bullet_3": "Trusted across 40+ countries and regions",
-        "cta_label": "Get a Free Consultation",
-        "cta_url": "/pages/contact-us",
-        "card_image_asset": "brand-ncco-hero-card.png",
-        "background_asset": "brand-ncco-hero-bg.png",
-        "overlay_opacity": 55,
-        "subtext_gap": 180
+        "eyebrow": "旗下品牌",
+        "headline": "<p>創新空氣淨化 <em>品牌薈萃</em></p>",
+        "subtext": "從家居生活到大型工業設施 —— 我們的品牌陣容將 NCCO 氧聚解淨化技術帶到每個環境。",
+        "cta_label": "探索旗下品牌",
+        "cta_url": "#brands",
+        "overlay_opacity": 50,
+        "dark": true
       }
     },
     "ncco-trust-logos": {
@@ -81,9 +67,9 @@
         "tl_06"
       ],
       "settings": {
-        "heading": "Trusted by industry leaders for",
-        "heading_highlight": "Quality and Reliability",
-        "static_grid": false
+        "heading": "深受全球領先企業信賴",
+        "static_grid": true,
+        "heading_highlight": "品質與可靠保證"
       }
     },
     "ncco-parent": {
@@ -93,48 +79,48 @@
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-1.png",
-            "title": "Molecular-Level Purification",
-            "body": "Decomposes pollutants like VOCs, formaldehyde, and viruses — doesn't just trap them."
+            "title": "香港科技大學專利研發",
+            "body": "與香港科技大學合作研發，獲全球專利保護。"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-2.png",
-            "title": "Continuous & Stable Operation",
-            "body": "Operates 24/7 without generating secondary pollution or ozone."
+            "title": "醫療級效能",
+            "body": "經全球多國公立醫院及醫療機構採用認證。"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-3.png",
-            "title": "Research-Driven Performance",
-            "body": "Developed from years of academic and industrial research with global certifications."
+            "title": "主動分解污染物",
+            "body": "將甲醛、細菌及有害氣體徹底分解為無害水分子與二氧化碳。"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-4.png",
-            "title": "Patented Nanotech Reactor",
-            "body": "Powered by exclusive NCCO reactor technology built for durability and high efficiency."
+            "title": "長效持久設計",
+            "body": "採用專利NCCO反應層技術，持久高效，耐用耐磨。"
           }
         },
         "f5": {
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-5.png",
-            "title": "Deployed Worldwide",
-            "body": "Used by over 500+ organizations across public transport, hospitals, and industrial setups."
+            "title": "全球廣泛應用",
+            "body": "獲超過500間公共交通、醫院及工業機構信賴採用。"
           }
         },
         "f6": {
           "type": "feature",
           "settings": {
             "icon_asset": "benefit-icon-6.png",
-            "title": "Reusable & Low Maintenance",
-            "body": "NCCO filters are long-lasting, washable, and reduce replacement costs."
+            "title": "可重複使用與低維護",
+            "body": "NCCO濾芯壽命長，可清洗再生，大幅降低更換成本。"
           }
         }
       },
@@ -149,11 +135,11 @@
       "settings": {
         "layout": "cards",
         "cta_variant": "yellow",
-        "eyebrow": "Parent Brand",
+        "eyebrow": "核心品牌",
         "brand_logo_asset": "brand-ncco-logo.png",
         "brand_name": "NCCO",
-        "description": "As the foundation of our group, NCCO leads with breakthrough nanotechnology, setting the standard for long-lasting and effective air purification across all applications.",
-        "cta_label": "Discover NCCO",
+        "description": "作為集團核心，NCCO 以突破性納米技術為先導，為所有應用場景訂立持久高效的空氣淨化標準。",
+        "cta_label": "了解 NCCO",
         "cta_url": "/pages/brand-ncco"
       }
     },
@@ -163,25 +149,25 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "body": "Trusted worldwide in demanding operational settings."
+            "body": "深獲全球高要求營運場所信賴。"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "body": "Engineered for durability in high-traffic or industrial environments."
+            "body": "專為高人流及工業環境之耐用度而設。"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "body": "Ideal for subways, cleanrooms, and government facilities."
+            "body": "適用於鐵路、無塵室及政府設施。"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
-            "body": "Features modular installation and energy-efficient designs."
+            "body": "具備模組化安裝與節能設計。"
           }
         }
       },
@@ -194,11 +180,11 @@
       "settings": {
         "layout": "dark-gallery",
         "cta_variant": "yellow",
-        "eyebrow": "Commercial & Industrial Solutions",
+        "eyebrow": "商業及工業淨化方案",
         "brand_logo_asset": "brand-rht-logo.png",
         "brand_name": "RHT",
-        "description": "Engineered for hospitals, transport, and industries, RHT delivers high-capacity air purification systems for demanding environments.",
-        "cta_label": "View More Details",
+        "description": "專為醫院、交通系統及工業廠房設計，RHT 提供高處理量空氣淨化系統，應對嚴苛運作環境。",
+        "cta_label": "了解更多詳情",
         "cta_url": "/pages/brand-rht",
         "asset_1": "rht-p1.png",
         "asset_2": "rht-p2.png",
@@ -212,25 +198,25 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "body": "Perfect for individuals, families, and remote work setups"
+            "body": "完美適合個人、家庭及遠程辦公空間。"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "body": "Combines high-performance filtration with elegant design."
+            "body": "結合高效能淨化與優雅外觀設計。"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "body": "Brings clean air to everyday spaces at home or on the move"
+            "body": "隨時隨地為日常空間帶來潔淨空氣。"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
-            "body": "Easy to use, lightweight, and low-maintenance"
+            "body": "操作簡單、機身輕巧、低維護需求。"
           }
         }
       },
@@ -243,11 +229,11 @@
       "settings": {
         "layout": "split",
         "cta_variant": "blue",
-        "eyebrow": "Consumer Air Purifiers",
+        "eyebrow": "消費級空氣淨化器",
         "brand_logo_asset": "brand-bmola-logo.png",
         "brand_name": "b-MOLA",
-        "description": "Designed for everyday comfort and convenience, b-MOLA brings advanced NCCO technology into compact devices for homes, cars, workspaces, and beyond.",
-        "cta_label": "View More Details",
+        "description": "專為日常生活舒適便利而設，b-MOLA 將先進 NCCO 氧聚解技術融入輕巧設備，守護家居、車載及辦公空間。",
+        "cta_label": "了解更多詳情",
         "cta_url": "/pages/brand-bmola",
         "asset_1": "bmola-p1.png",
         "asset_2": "bmola-p2.png",
@@ -260,25 +246,25 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "body": "Specializes in long-term sterilization systems for healthcare and critical care facilities"
+            "body": "專注於醫療保健及重症護理設施的長效殺菌系統。"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "body": "Effective against airborne viruses, bacteria, and VOCs"
+            "body": "有效分解空氣中的病毒、細菌及揮發性有機物 (VOC)。"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "body": "Designed for continuous, high-safety operation in labs, clinics, and quarantine areas"
+            "body": "專為實驗室、診所及隔離區域之連續高安全運作而設。"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
-            "body": "Requires minimal maintenance over time"
+            "body": "長期使用僅需極低維護。"
           }
         }
       },
@@ -292,11 +278,11 @@
         "layout": "dark-gallery",
         "card_theme": "light",
         "cta_variant": "blue",
-        "eyebrow": "Sterilization & Healthcare",
+        "eyebrow": "專業殺菌與醫療應用",
         "brand_logo_asset": "brand-nccoig-logo.png",
         "brand_name": "NCCO-IG",
-        "description": "Built for critical healthcare and lab environments, NCCO-IG offers robust sterilization systems that deliver continuous protection against airborne pathogens and pollutants.",
-        "cta_label": "View More Details",
+        "description": "專為關鍵醫療及實驗室環境打造，NCCO-IG 提供強效殺菌系統，持續抵禦空氣傳播病原體及污染物。",
+        "cta_label": "了解更多詳情",
         "cta_url": "/pages/brand-nccoog",
         "asset_1": "nccoig-p1.png",
         "asset_2": "nccoig-p2.png",
@@ -310,24 +296,24 @@
           "type": "feature",
           "settings": {
             "icon_asset": "05plus-icon-1.svg",
-            "title": "Low Noise Operation",
-            "body": "Enjoy a peaceful atmosphere while O5+ works silently to maintain the perfect indoor climate."
+            "title": "低噪音運作",
+            "body": "寧靜運作，默默營造理想室內氣候。"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
             "icon_asset": "05plus-icon-2.svg",
-            "title": "Smart Humidity Sensing",
-            "body": "Automatically detects and adjusts humidity levels to keep your room consistently fresh and balanced."
+            "title": "智能濕度感應",
+            "body": "自動偵測並調節濕度，讓室內始終保持清新平衡。"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
             "icon_asset": "05plus-icon-3.svg",
-            "title": "Large Water Tank Capacity",
-            "body": "With a 1750ml tank, O5+ runs longer without frequent emptying, making it convenient for daily use."
+            "title": "大容量水箱",
+            "body": "配備 1750ml 大水箱，減少倒水頻率，日常使用更便捷。"
           }
         }
       },
@@ -339,30 +325,30 @@
       "settings": {
         "layout": "cards",
         "cta_variant": "blue",
-        "eyebrow": "Fresh Living Made Simple",
+        "eyebrow": "清新生活，由細節開始",
         "brand_logo_asset": "05plus-logo.png",
         "brand_name": "05+",
-        "description": "Keep your space dry, healthy, and comfortable with advanced O5+ technology designed to prevent mold, reduce humidity, and create a fresher home environment.",
-        "cta_label": "View More Details",
+        "description": "利用先進 05+ 技術保持空間乾爽健康，防霉防潮，營造更清新的家居環境。",
+        "cta_label": "了解更多詳情",
         "cta_url": "/pages/brand-05plus"
       }
     },
     "ncco-certifications": {
       "type": "ncco-certifications",
       "settings": {
-        "eyebrow": "certifications",
-        "heading": "Globally Certified. Internationally Trusted.",
+        "eyebrow": "權威認證",
+        "heading": "權威認證・全球信賴",
         "featured_asset": "ncco-certifications-web.png"
       }
     },
     "ncco-contact-cta": {
       "type": "ncco-contact-cta",
       "settings": {
-        "heading": "We're Here to Help",
+        "heading": "隨時為你提供專業方案",
         "email": "sales@rhtind.com.hk",
         "phone": "+852 2417 0075",
         "address": "Unit 208-209, Wireless Centre, No. 3 Science Park East Avenue, Hong Kong Science Park, Shatin, NT, Hong Kong",
-        "submit_label": "Send Message"
+        "submit_label": "發送訊息"
       }
     }
   },

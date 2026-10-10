@@ -7,12 +7,27 @@
     <!-- Left: heading + contact info -->
     <div class="ncco-contact__left ncco-reveal">
       <div class="ncco-contact__left-top">
+        {%- assign default_eyebrow = 'sections.ncco_contact_cta.eyebrow_default' | t -%}
+        {%- assign default_heading = 'sections.ncco_contact_cta.heading_default' | t -%}
+        {%- assign default_subtext = 'sections.ncco_contact_cta.subtext_default' | t -%}
+        {%- assign eyebrow_val = section.settings.eyebrow -%}
+        {%- if eyebrow_val == blank or eyebrow_val == 'Get In Touch' -%}
+          {%- assign eyebrow_val = default_eyebrow -%}
+        {%- endif -%}
+        {%- assign heading_val = section.settings.heading -%}
+        {%- if heading_val == blank or heading_val == "We're Here to Help" -%}
+          {%- assign heading_val = default_heading -%}
+        {%- endif -%}
+        {%- assign subtext_val = section.settings.subtext -%}
+        {%- if subtext_val == blank or subtext_val == "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you." -%}
+          {%- assign subtext_val = default_subtext -%}
+        {%- endif -%}
         <div class="ncco-contact__eyebrow-wrap">
           <span class="ncco-contact__bar" style="background:#FECB07;"></span>
-          <p class="ncco-contact__eyebrow">{{ section.settings.eyebrow | default: 'Get In Touch' }}</p>
+          <p class="ncco-contact__eyebrow">{{ eyebrow_val }}</p>
         </div>
-        <h2 class="ncco-contact__heading">{{ section.settings.heading | default: "We're Here to Help" }}</h2>
-        <p class="ncco-contact__subtext">{{ section.settings.subtext | default: "Whether you have a question, need product details, or want to explore partnership opportunities we'd love to hear from you." }}</p>
+        <h2 class="ncco-contact__heading">{{ heading_val }}</h2>
+        <p class="ncco-contact__subtext">{{ subtext_val }}</p>
       </div>
 
       <div class="ncco-contact__info-list">
@@ -26,7 +41,7 @@
             </svg>
           </div>
           <div class="ncco-contact__info-text">
-            <span class="ncco-contact__info-label">EMAIL US</span>
+            <span class="ncco-contact__info-label">{{ 'sections.ncco_contact_cta.email_label' | t }}</span>
             <a href="mailto:{{ section.settings.email }}" class="ncco-contact__info-value">{{ section.settings.email }}</a>
           </div>
         </div>
@@ -42,7 +57,7 @@
             </svg>
           </div>
           <div class="ncco-contact__info-text">
-            <span class="ncco-contact__info-label">CALL US</span>
+            <span class="ncco-contact__info-label">{{ 'sections.ncco_contact_cta.phone_label' | t }}</span>
             <a href="tel:{{ section.settings.phone | remove: ' ' }}" class="ncco-contact__info-value">{{ section.settings.phone }}</a>
           </div>
         </div>
@@ -58,7 +73,7 @@
             </svg>
           </div>
           <div class="ncco-contact__info-text">
-            <span class="ncco-contact__info-label">HEAD OFFICE</span>
+            <span class="ncco-contact__info-label">{{ 'sections.ncco_contact_cta.office_label' | t }}</span>
             <span class="ncco-contact__info-value">{{ section.settings.address }}</span>
           </div>
         </div>
@@ -72,7 +87,7 @@
       {%- form 'contact', id: 'ncco-contact-form-v2' -%}
 
         {% if form.posted_successfully? %}
-          <p class="ncco-contact__success">Message sent — we'll be in touch soon.</p>
+          <p class="ncco-contact__success">{{ 'sections.ncco_contact_cta.success' | t }}</p>
         {% else %}
 
           {% if form.errors %}
@@ -80,27 +95,32 @@
           {% endif %}
 
           <div class="ncco-contact__field">
-            <label for="ncco-contact-name" class="ncco-contact__label">NAME</label>
-            <input id="ncco-contact-name" type="text" name="contact[name]" placeholder="Enter Name" autocomplete="name" required class="ncco-contact__input">
+            <label for="ncco-contact-name" class="ncco-contact__label">{{ 'sections.ncco_contact_cta.form_name' | t }}</label>
+            <input id="ncco-contact-name" type="text" name="contact[name]" placeholder="{{ 'sections.ncco_contact_cta.placeholder_name' | t }}" autocomplete="name" required class="ncco-contact__input">
           </div>
 
           <div class="ncco-contact__field">
-            <label for="ncco-contact-email" class="ncco-contact__label">EMAIL ADDRESS</label>
-            <input id="ncco-contact-email" type="email" name="contact[email]" placeholder="Enter Email Address" autocomplete="email" required class="ncco-contact__input">
+            <label for="ncco-contact-email" class="ncco-contact__label">{{ 'sections.ncco_contact_cta.form_email' | t }}</label>
+            <input id="ncco-contact-email" type="email" name="contact[email]" placeholder="{{ 'sections.ncco_contact_cta.placeholder_email' | t }}" autocomplete="email" required class="ncco-contact__input">
           </div>
 
           <div class="ncco-contact__field">
-            <label for="ncco-contact-phone" class="ncco-contact__label">MOBILE NUMBER</label>
-            <input id="ncco-contact-phone" type="tel" name="contact[phone]" placeholder="Enter Mobile Number" autocomplete="tel" class="ncco-contact__input">
+            <label for="ncco-contact-phone" class="ncco-contact__label">{{ 'sections.ncco_contact_cta.form_phone' | t }}</label>
+            <input id="ncco-contact-phone" type="tel" name="contact[phone]" placeholder="{{ 'sections.ncco_contact_cta.placeholder_phone' | t }}" autocomplete="tel" class="ncco-contact__input">
           </div>
 
           <div class="ncco-contact__field">
-            <label for="ncco-contact-message" class="ncco-contact__label">MESSAGE</label>
-            <textarea id="ncco-contact-message" name="contact[body]" placeholder="Enter Message" rows="5" class="ncco-contact__textarea"></textarea>
+            <label for="ncco-contact-message" class="ncco-contact__label">{{ 'sections.ncco_contact_cta.form_message' | t }}</label>
+            <textarea id="ncco-contact-message" name="contact[body]" placeholder="{{ 'sections.ncco_contact_cta.placeholder_message' | t }}" rows="5" class="ncco-contact__textarea"></textarea>
           </div>
 
           <button type="submit" class="ncco-contact__submit">
-            <span>{{ section.settings.submit_label | default: 'SUBMIT' }}</span>
+            {%- assign default_submit = 'sections.ncco_contact_cta.submit_default' | t -%}
+            {%- assign submit_val = section.settings.submit_label -%}
+            {%- if submit_val == blank or submit_val == 'SUBMIT' -%}
+              {%- assign submit_val = default_submit -%}
+            {%- endif -%}
+            <span>{{ submit_val }}</span>
             <span class="ncco-contact__submit-icon" aria-hidden="true">
               <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="19" cy="19" r="19" fill="#FECB07"/>
